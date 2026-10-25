@@ -1,0 +1,1946 @@
+{
+ "sections": [
+  {
+   "en": "Cable trays",
+   "ru": "Кабельные трассы",
+   "codes": [
+    "CWAY",
+    "CWBRAN",
+    "RPATH",
+    "POINTR",
+    "HATTA",
+    "TATTA",
+    "CONSEQ",
+    "CTMTRL"
+   ]
+  },
+  {
+   "en": "Equipment",
+   "ru": "Оборудование",
+   "codes": [
+    "EQUIPMENT",
+    "SUBEQUIPMENT"
+   ]
+  },
+  {
+   "en": "Where everything lives",
+   "ru": "Где всё лежит",
+   "codes": [
+    "ZONE",
+    "SITE"
+   ]
+  }
+ ],
+ "elements": [
+  {
+   "code": "CWAY",
+   "en": "Cable way",
+   "ru": "Кабельная трасса",
+   "n_en": "The container of a cable tray route. It holds branches (CWBRAN); the geometry lives in them, not here.",
+   "n_ru": "Контейнер кабельной трассы. Содержит ветки (CWBRAN); геометрия — в них, а не здесь.",
+   "page": "DMRM5.09.129",
+   "owners": [
+    "CONVEYOR",
+    "ZONE"
+   ],
+   "members": [
+    "CWBRAN"
+   ],
+   "a": [
+    {
+     "n": "Name",
+     "en": "Name of the element",
+     "ru": "Имя элемента",
+     "st": "ok",
+     "key": "NAME",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Description",
+     "en": "Description of the element",
+     "ru": "Описание",
+     "st": "ok",
+     "key": "DESC",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Function",
+     "en": "Function",
+     "ru": "Назначение",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Cablayout",
+     "en": "Cable layout",
+     "ru": "Раскладка кабелей (текст, в чертах)",
+     "st": "ok",
+     "key": "CABLAYOUT",
+     "note_en": "A text attribute: CABLAY |CEN| — without bars it is a syntax error.",
+     "note_ru": "Текстовый атрибут: CABLAY |CEN| — без черт синтаксическая ошибка."
+    },
+    {
+     "n": "Purpose",
+     "en": "Description code word",
+     "ru": "Код назначения",
+     "st": "ok",
+     "key": "PURPOSE",
+     "note_en": "A code word, up to 4 characters by DMRM.",
+     "note_ru": "Кодовое слово, по DMRM до 4 знаков."
+    },
+    {
+     "n": "Position",
+     "en": "Position",
+     "ru": "Положение",
+     "st": "ok",
+     "key": "POS",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "MaxLay",
+     "en": "Maximum Layers",
+     "ru": "Максимум слоёв",
+     "st": "ok",
+     "key": "MAXLAY",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "MaxCab",
+     "en": "Maximum Number of cables",
+     "ru": "Максимум кабелей",
+     "st": "ok",
+     "key": "MAXCAB",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Uuidia",
+     "en": "Universally unique identifier",
+     "ru": "Уникальный идентификатор",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Underground",
+     "en": "Underground",
+     "ru": "Подземный",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    }
+   ],
+   "extra": [
+    "Type",
+    "Lock",
+    "Owner"
+   ],
+   "real": true
+  },
+  {
+   "code": "CWBRAN",
+   "en": "Cable way branch",
+   "ru": "Ветка кабельной трассы",
+   "n_en": "One run of tray. Head and tail have no coordinates of their own: the first and last points of its RPATH set them. HPOS / TPOS on a CWBRAN give an error — verified by a run.",
+   "n_ru": "Один участок лотка. Своих координат у головы и хвоста нет: их задают первая и последняя точки RPATH. HPOS / TPOS на CWBRAN дают ошибку — проверено прогоном.",
+   "page": "DMRM5.09.130",
+   "owners": [
+    "CWAY"
+   ],
+   "members": [
+    "RBRAN",
+    "CTMTRL",
+    "HATTA",
+    "RPATH",
+    "RTFEAT",
+    "SEGSEQ",
+    "TATTA"
+   ],
+   "a": [
+    {
+     "n": "Name",
+     "en": "Name of the element",
+     "ru": "Имя элемента",
+     "st": "ok",
+     "key": "NAME",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Description",
+     "en": "Description of the element",
+     "ru": "Описание",
+     "st": "ok",
+     "key": "DESC",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Function",
+     "en": "Function",
+     "ru": "Назначение",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Cablayout",
+     "en": "Cable layout",
+     "ru": "Раскладка кабелей (текст, в чертах)",
+     "st": "ok",
+     "key": "CABLAYOUT",
+     "note_en": "A text attribute: CABLAY |CEN| — without bars it is a syntax error.",
+     "note_ru": "Текстовый атрибут: CABLAY |CEN| — без черт синтаксическая ошибка."
+    },
+    {
+     "n": "Purpose",
+     "en": "Description code word",
+     "ru": "Код назначения",
+     "st": "ok",
+     "key": "PURPOSE",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Number",
+     "en": "Number",
+     "ru": "Номер",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Area",
+     "en": "Area",
+     "ru": "Зона/участок",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "MaxLay",
+     "en": "Maximum Layers",
+     "ru": "Максимум слоёв",
+     "st": "ok",
+     "key": "MAXLAY",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "MaxCab",
+     "en": "Maximum Number of cables",
+     "ru": "Максимум кабелей",
+     "st": "ok",
+     "key": "MAXCAB",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Position",
+     "en": "Position",
+     "ru": "Положение",
+     "st": "ok",
+     "key": "POS",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Orientation",
+     "ru": "Ориентация",
+     "st": "ok",
+     "key": "ORI",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "HCRef",
+     "en": "Head connections",
+     "ru": "Ссылка на голову",
+     "st": "ok",
+     "key": "HCREF",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "TCRef",
+     "en": "Tail connections",
+     "ru": "Ссылка на хвост",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Level",
+     "en": "Drawing level",
+     "ru": "Уровень отображения",
+     "st": "ok",
+     "key": "LEVEL",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "Obstruction level",
+     "ru": "Уровень препятствия",
+     "st": "ok",
+     "key": "OBST",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Desparam",
+     "en": "Design parameters",
+     "ru": "Параметры проектирования",
+     "st": "ok",
+     "key": "DESPARAM",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Bangle",
+     "en": "Beta angle",
+     "ru": "Угол бета",
+     "st": "ok",
+     "key": "BANGLE",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "CloseFlag",
+     "en": "True if branch is closed",
+     "ru": "Закрытый лоток",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "CWJusLine",
+     "en": "Cable Way Justification Line",
+     "ru": "Линия привязки ветки",
+     "st": "ok",
+     "key": "CWJUSLINE",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "BRadius",
+     "en": "Bend radius",
+     "ru": "Радиус гиба",
+     "st": "ok",
+     "key": "BRADIUS",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "VHeight",
+     "en": "Volume height",
+     "ru": "Высота лотка",
+     "st": "ok",
+     "key": "VHEIGHT",
+     "note_en": "Written like VWidth.",
+     "note_ru": "Пишется как VWidth."
+    },
+    {
+     "n": "VWidth",
+     "en": "Volume width",
+     "ru": "Ширина лотка",
+     "st": "ok",
+     "key": "VWIDTH",
+     "note_en": "Units are allowed: VWIDTH 700mm (run of 22 Sep). A number in bars is a syntax error.",
+     "note_ru": "Единицы допустимы: VWIDTH 700mm (прогон 22.09). Число в чертах — синтаксическая ошибка."
+    },
+    {
+     "n": "VShape",
+     "en": "Volume shape",
+     "ru": "Форма сечения",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Rllogical",
+     "en": "Rule logical array",
+     "ru": "",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "CExs",
+     "en": "Percentage excess for passing cables",
+     "ru": "",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "MaxFil",
+     "en": "Maximum percentage fill level",
+     "ru": "Предельное заполнение",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "IClass",
+     "en": "Interference class",
+     "ru": "Класс изоляции",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Uuidia",
+     "en": "Universally unique identifier",
+     "ru": "Уникальный идентификатор",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Resvolume",
+     "en": "Reserved volume",
+     "ru": "Резервируемый объём",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Extvolume",
+     "en": "Volume for material",
+     "ru": "Внешний объём",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Underground",
+     "en": "Underground",
+     "ru": "Подземный",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "MatType",
+     "en": "Material type",
+     "ru": "Тип материала лотка",
+     "st": "ok",
+     "key": "MATTYPE",
+     "note_en": "",
+     "note_ru": ""
+    }
+   ],
+   "extra": [
+    "Type",
+    "Lock",
+    "Owner",
+    "AHeight",
+    "UseMaterial",
+    "Fixedb"
+   ],
+   "real": true
+  },
+  {
+   "code": "HATTA",
+   "en": "Head attachment point",
+   "ru": "Точка привязки головы",
+   "n_en": "No coordinates of its own — only name, description and function. Verified by a run.",
+   "n_ru": "Своих координат нет — только имя, описание и назначение. Проверено прогоном.",
+   "page": "DMRM5.09.135",
+   "owners": [
+    "CABLE",
+    "CTWALL",
+    "CWBRAN",
+    "HANDRA",
+    "RBRAN",
+    "RUTVOLUME"
+   ],
+   "members": [],
+   "a": [
+    {
+     "n": "Name",
+     "en": "Name of the element",
+     "ru": "Имя элемента",
+     "st": "ok",
+     "key": "NAME",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Description",
+     "en": "Description of the element",
+     "ru": "Описание",
+     "st": "ok",
+     "key": "DESC",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Function",
+     "en": "Function",
+     "ru": "Назначение",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "TATTA",
+   "en": "Tail attachment point",
+   "ru": "Точка привязки хвоста",
+   "n_en": "No coordinates of its own — only name, description and function. Verified by a run.",
+   "n_ru": "Своих координат нет — только имя, описание и назначение. Проверено прогоном.",
+   "page": "DMRM5.09.146",
+   "owners": [
+    "CABLE",
+    "CTWALL",
+    "CWBRAN",
+    "HANDRA",
+    "RBRAN",
+    "RUTVOLUME"
+   ],
+   "members": [],
+   "a": [
+    {
+     "n": "Name",
+     "en": "Name of the element",
+     "ru": "Имя элемента",
+     "st": "ok",
+     "key": "NAME",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Description",
+     "en": "Description of the element",
+     "ru": "Описание",
+     "st": "ok",
+     "key": "DESC",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Function",
+     "en": "Function",
+     "ru": "Назначение",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "RPATH",
+   "en": "Route path",
+   "ru": "Маршрут ветки",
+   "n_en": "NEW RPATH does not create the first point: Q MEM right after it is unset. Points are added one by one with NEW POINTR — verified by a run (26 Aug).",
+   "n_ru": "NEW RPATH не создаёт первую точку: Q MEM сразу после него — unset. Точки добавляются по одной через NEW POINTR — проверено прогоном 26.08.",
+   "page": "DMRM5.09.143",
+   "owners": [
+    "BPANEL",
+    "BPOPEN",
+    "CABLE",
+    "CTWALL",
+    "CWBRAN",
+    "HANDRA",
+    "PLOPEN",
+    "PLTFRM",
+    "RBRAN",
+    "RUTVOLUME",
+    "STRFLT",
+    "STRLNG",
+    "WLOPEN"
+   ],
+   "members": [
+    "CURVE",
+    "EXTGEO",
+    "POINTR",
+    "RSECT"
+   ],
+   "a": [
+    {
+     "n": "Name",
+     "en": "Name of the element",
+     "ru": "Имя элемента",
+     "st": "ok",
+     "key": "NAME",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Ydirection",
+     "en": "Preferred Y axis direction",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Drnstart",
+     "en": "Plane normal at start of SCTN/GENSEC",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Drnend",
+     "en": "Plane normal at end of SCTN/GENSEC",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "POINTR",
+   "en": "Point on a path",
+   "ru": "Точка маршрута",
+   "n_en": "A point of the route. Its POS is measured from the owner, like any POS without WRT.",
+   "n_ru": "Точка маршрута. Её POS отсчитывается от владельца, как любой POS без WRT.",
+   "page": "DMRM5.09.138",
+   "owners": [
+    "RPATH"
+   ],
+   "members": [],
+   "a": [
+    {
+     "n": "Name",
+     "en": "Name of the element",
+     "ru": "Имя элемента",
+     "st": "ok",
+     "key": "NAME",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Description",
+     "en": "Description of the element",
+     "ru": "Описание",
+     "st": "ok",
+     "key": "DESC",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Function",
+     "en": "Function",
+     "ru": "Назначение",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Position",
+     "en": "Position",
+     "ru": "Положение",
+     "st": "ok",
+     "key": "POS",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "SIGREF",
+     "en": "Significant point reference",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "PointType",
+     "en": "Point type",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Fradius",
+     "en": "Fillet radius",
+     "ru": "Радиус скругления в точке",
+     "st": "ok",
+     "key": "FRADIUS",
+     "note_en": "Measured on the tray AXIS, not on its edge (run of 29 Sep); Q FRADIUS prints a number (run of 28 Sep).",
+     "note_ru": "Меряется по ОСИ лотка, а не по кромке (прогон 29.09); Q FRADIUS печатает число (прогон 28.09)."
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "CONSEQ",
+   "en": "Connectivity sequence",
+   "ru": "Последовательность связей",
+   "n_en": "A branch made by the standard tool has one; a branch created by hand does not get one. What it is needed for — not found out yet.",
+   "n_ru": "У ветки от штатного инструмента есть, у созданной вручную не появляется. Зачем он нужен — пока не выяснено.",
+   "page": "DMRM5.09.119",
+   "owners": [
+    "CWBRAN",
+    "RBRAN"
+   ],
+   "members": [
+    "RATTA"
+   ],
+   "a": [
+    {
+     "n": "Name",
+     "en": "Name of the element",
+     "ru": "Имя элемента",
+     "st": "ok",
+     "key": "NAME",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Description",
+     "en": "Description of the element",
+     "ru": "Описание",
+     "st": "ok",
+     "key": "DESC",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Function",
+     "en": "Function",
+     "ru": "Назначение",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "CTMTRL",
+   "en": "Cable tray material",
+   "ru": "Материал лотка",
+   "n_en": "",
+   "n_ru": "",
+   "page": "DMRM5.09.792",
+   "owners": [
+    "CWBRAN"
+   ],
+   "members": [
+    "CTBEND",
+    "CTCOUP",
+    "CTCROS",
+    "CTREDU",
+    "CTRISE",
+    "CTSTRA",
+    "CTTEE"
+   ],
+   "a": [
+    {
+     "n": "Name",
+     "en": "Name of the element",
+     "ru": "Имя элемента",
+     "st": "ok",
+     "key": "NAME",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Description",
+     "en": "Description of the element",
+     "ru": "Описание",
+     "st": "ok",
+     "key": "DESC",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Function",
+     "en": "Function",
+     "ru": "Назначение",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "Description code word",
+     "ru": "Код назначения",
+     "st": "ok",
+     "key": "PURPOSE",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Desparam",
+     "en": "Design parameters",
+     "ru": "Параметры проектирования",
+     "st": "ok",
+     "key": "DESPARAM",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "CTSPE",
+     "en": "Cable tray specification",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "TrayW",
+     "en": "Tray Width",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "TrayH",
+     "en": "Tray height",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "TierHeight",
+     "en": "Heights of trays measured from path",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "FGap",
+     "en": "First offset distance",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "IGap",
+     "en": "Intermediate offset distance",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "LGap",
+     "en": "Last offset distance",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "EQUIPMENT",
+   "en": "Equipment",
+   "ru": "Оборудование",
+   "n_en": "Can own NOZZLEs besides the usual primitives — that is what sets it apart from other carriers of geometry.",
+   "n_ru": "Может владеть NOZZLE помимо обычных примитивов — этим и отличается от прочих носителей геометрии.",
+   "page": "DMRM5.09.184",
+   "owners": [
+    "CONVEYOR",
+    "ZONE"
+   ],
+   "members": [
+    "AIDGROUP",
+    "BOX",
+    "BPANEL",
+    "CONE",
+    "CTORUS",
+    "CYLINDER",
+    "DDSE",
+    "DIMGROUP",
+    "DISH",
+    "DPSET",
+    "DRAWING",
+    "ELCONN",
+    "EQUCOM",
+    "EXTRUSION",
+    "LOAPOINT",
+    "NOZZLE",
+    "PANEL",
+    "POHEDRON",
+    "POLYHEDRON",
+    "PVOLUME",
+    "PYRAMID",
+    "REVOLUTION",
+    "RPLANE",
+    "RTORUS",
+    "SLCYLINDER",
+    "SNOUT",
+    "SUBEQUIPMENT",
+    "TEXT",
+    "TMPLATE"
+   ],
+   "a": [
+    {
+     "n": "Name",
+     "en": "Name of the element",
+     "ru": "Имя элемента",
+     "st": "ok",
+     "key": "NAME",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Description",
+     "en": "Description of the element",
+     "ru": "Описание",
+     "st": "ok",
+     "key": "DESC",
+     "note_en": "EQUI and SUBE have it, BOX does not; 250 characters — «Too many values» (run of 1 Oct).",
+     "note_ru": "У EQUI и SUBE есть, у BOX нет; 250 знаков — «Too many values» (прогон 01.10)."
+    },
+    {
+     "n": "Function",
+     "en": "Function",
+     "ru": "Назначение",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "Description code word",
+     "ru": "Код назначения",
+     "st": "ok",
+     "key": "PURPOSE",
+     "note_en": "Written and inherited by a copy made in E3D — verified by a run.",
+     "note_ru": "Записывается и наследуется копией, сделанной в E3D, — проверено прогоном."
+    },
+    {
+     "n": "Number",
+     "en": "Number",
+     "ru": "Номер",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Area",
+     "en": "Area",
+     "ru": "Зона/участок",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Usrweight",
+     "en": "User entered weight value",
+     "ru": "Вес, задан вручную",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Usrwweight",
+     "en": "User entered wet weight value",
+     "ru": "Вес с заполнением, вручную",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Usrcogravity",
+     "en": "User centre of gravity position",
+     "ru": "Центр тяжести, вручную",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Usrwcogravity",
+     "en": "User wet centre of gravity position",
+     "ru": "Центр тяжести с заполнением",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Position",
+     "en": "Position",
+     "ru": "Положение",
+     "st": "ok",
+     "key": "POS",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Orientation",
+     "ru": "Ориентация",
+     "st": "ok",
+     "key": "ORI",
+     "note_en": "ORI on an EQUI turns it together with its children (run of 24 Sep); with an angle: ORI Y IS N AND Z IS E 45 U (run of 29 Sep).",
+     "note_ru": "ORI на EQUI поворачивает вместе с детьми (прогон 24.09); с углом — ORI Y IS N AND Z IS E 45 U (прогон 29.09)."
+    },
+    {
+     "n": "Desparam",
+     "en": "Design parameters",
+     "ru": "Параметры проектирования",
+     "st": "ok",
+     "key": "DESPARAM",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Built",
+     "en": "Built/Unbuilt flag",
+     "ru": "Признак «построено»",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Ispec",
+     "en": "Insulation spec reference",
+     "ru": "Спецификация изоляции",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Uwmtxt",
+     "en": "User weight Manager text",
+     "ru": "Текст менеджера весов",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Dscode",
+     "en": "Design code",
+     "ru": "Код проектирования",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Ptspec",
+     "en": "Paint specification",
+     "ru": "Спецификация окраски",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Inschedule",
+     "en": "Inspection schedule",
+     "ru": "График обследования",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Skey",
+     "en": "Symbol key",
+     "ru": "Ключ символа",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "StlRef",
+     "en": "Steel Reference",
+     "ru": "Ссылка на металл",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin reference (for templates)",
+     "ru": "Ссылка начала координат (шаблоны)",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Stmf",
+     "en": "Template selection pointer",
+     "ru": "Указатель выбора шаблона",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Invfarray",
+     "en": "Array of Inventory Items",
+     "ru": "Массив позиций инвентаря",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Uuidia",
+     "en": "Universally unique identifier",
+     "ru": "Уникальный идентификатор",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Propst",
+     "en": "Property set reference array",
+     "ru": "Набор свойств",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Spref",
+     "en": "Component spec reference",
+     "ru": "Ссылка на спецификацию компонента",
+     "st": "ok",
+     "key": "SPREF",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Fstatus",
+     "en": "Fstatus",
+     "ru": "",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Mdsysf",
+     "en": "Reference Array of Model and Design Elements",
+     "ru": "Ссылки на модели и элементы",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Inprtref",
+     "en": "Inside paint reference",
+     "ru": "",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Ouprtref",
+     "en": "Outside paint reference",
+     "ru": "",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    }
+   ],
+   "extra": [
+    "Type",
+    "Lock",
+    "Owner"
+   ],
+   "real": true
+  },
+  {
+   "code": "SUBEQUIPMENT",
+   "en": "Sub-equipment",
+   "ru": "Подсборка оборудования",
+   "n_en": "The same as EQUIPMENT, but it lives inside one and cannot hold sub-equipment of its own.",
+   "n_ru": "То же, что EQUIPMENT, но лежит внутри него и своих подсборок иметь не может.",
+   "page": "DMRM5.09.187",
+   "owners": [
+    "EQUIPMENT"
+   ],
+   "members": [
+    "BPANEL",
+    "BOX",
+    "CONE",
+    "CTORUS",
+    "CYLINDER",
+    "DDSE",
+    "DISH",
+    "DPSET",
+    "DRAWING",
+    "ELCONN",
+    "EQUCOM",
+    "EXTRUSION",
+    "LOAPOINT",
+    "NOZZLE",
+    "PANEL",
+    "POHEDRON",
+    "POLYHEDRON",
+    "PVOLUME",
+    "PYRAMID",
+    "REVOLUTION",
+    "RPLANE",
+    "RTORUS",
+    "SLCYLINDER",
+    "SNOUT",
+    "TEXT",
+    "TMPLATE"
+   ],
+   "a": [
+    {
+     "n": "Name",
+     "en": "Name of the element",
+     "ru": "Имя элемента",
+     "st": "ok",
+     "key": "NAME",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Description",
+     "en": "Description of the element",
+     "ru": "Описание",
+     "st": "ok",
+     "key": "DESC",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Function",
+     "en": "Function",
+     "ru": "Назначение",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "Description code word",
+     "ru": "Код назначения",
+     "st": "ok",
+     "key": "PURPOSE",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Number",
+     "en": "Number",
+     "ru": "Номер",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Area",
+     "en": "Area",
+     "ru": "Зона/участок",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Usrweight",
+     "en": "User entered weight value",
+     "ru": "Вес, задан вручную",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Usrwweight",
+     "en": "User entered wet weight value",
+     "ru": "Вес с заполнением, вручную",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Usrcogravity",
+     "en": "User centre of gravity position",
+     "ru": "Центр тяжести, вручную",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Usrwcogravity",
+     "en": "User wet centre of gravity position",
+     "ru": "Центр тяжести с заполнением",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Uwmtxt",
+     "en": "User weight Manager text",
+     "ru": "Текст менеджера весов",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Position",
+     "en": "Position",
+     "ru": "Положение",
+     "st": "ok",
+     "key": "POS",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Orientation",
+     "ru": "Ориентация",
+     "st": "ok",
+     "key": "ORI",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Built",
+     "en": "Built/Unbuilt flag",
+     "ru": "Признак «построено»",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Ispec",
+     "en": "Insulation spec reference",
+     "ru": "Спецификация изоляции",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Dscode",
+     "en": "Design code",
+     "ru": "Код проектирования",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Ptspec",
+     "en": "Paint specification",
+     "ru": "Спецификация окраски",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Inschedule",
+     "en": "Inspection schedule",
+     "ru": "График обследования",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Skey",
+     "en": "Symbol key",
+     "ru": "Ключ символа",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "StlRef",
+     "en": "Steel Reference",
+     "ru": "Ссылка на металл",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Desparam",
+     "en": "Design parameters",
+     "ru": "Параметры проектирования",
+     "st": "ok",
+     "key": "DESPARAM",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Uuidia",
+     "en": "Universally unique identifier",
+     "ru": "Уникальный идентификатор",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Propst",
+     "en": "Property set reference array",
+     "ru": "Набор свойств",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin reference (for templates)",
+     "ru": "Ссылка начала координат (шаблоны)",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Stmf",
+     "en": "Template selection pointer",
+     "ru": "Указатель выбора шаблона",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Invfarray",
+     "en": "Array of Inventory Items",
+     "ru": "Массив позиций инвентаря",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Spref",
+     "en": "Component spec reference",
+     "ru": "Ссылка на спецификацию компонента",
+     "st": "ok",
+     "key": "SPREF",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Mdsysf",
+     "en": "Reference Array of Model and Design Elements",
+     "ru": "Ссылки на модели и элементы",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "ZONE",
+   "en": "Zone",
+   "ru": "Зона",
+   "n_en": "",
+   "n_ru": "",
+   "page": "DMRM5.09.082",
+   "owners": [
+    "APPLDATA",
+    "SITE",
+    "ZONE"
+   ],
+   "members": [
+    "AIDGROUP",
+    "BOUNDARY",
+    "CABLE",
+    "RBRAN",
+    "CWAY",
+    "CONVEYOR",
+    "DATUM",
+    "DDSE",
+    "DIMGROUP",
+    "DPSET",
+    "DRAWING",
+    "EQUIPMENT",
+    "HVAC",
+    "JNTBOX",
+    "PIPE",
+    "PTRACK",
+    "PULLPIT",
+    "PVOLUME",
+    "RBRAN",
+    "RESTRAINT",
+    "RPLANE",
+    "STRUCTURE",
+    "SUPPORT",
+    "TEXT",
+    "TRNMOD",
+    "UPANEL",
+    "VOLMODEL",
+    "XGEOMETRY",
+    "ZONE"
+   ],
+   "a": [
+    {
+     "n": "Name",
+     "en": "Name of the element",
+     "ru": "Имя элемента",
+     "st": "ok",
+     "key": "NAME",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Description",
+     "en": "Description of the element",
+     "ru": "Описание",
+     "st": "ok",
+     "key": "DESC",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Function",
+     "en": "Function",
+     "ru": "Назначение",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "Description code word",
+     "ru": "Код назначения",
+     "st": "ok",
+     "key": "PURPOSE",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Number",
+     "en": "Number",
+     "ru": "Номер",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Area",
+     "en": "Area",
+     "ru": "Зона/участок",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Position",
+     "en": "Position",
+     "ru": "Положение",
+     "st": "ok",
+     "key": "POS",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Orientation",
+     "ru": "Ориентация",
+     "st": "ok",
+     "key": "ORI",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Pspec",
+     "en": "Pipe specification",
+     "ru": "",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Ispec",
+     "en": "Insulation spec reference",
+     "ru": "Спецификация изоляции",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Tspec",
+     "en": "Tracing spec reference",
+     "ru": "",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "BendMacReference",
+     "en": "Bending Machine reference",
+     "ru": "",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "DUnion",
+     "en": "DRAFT element union detail flag",
+     "ru": "",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Module",
+     "en": "Module",
+     "ru": "",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin reference (for templates)",
+     "ru": "Ссылка начала координат (шаблоны)",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Stmf",
+     "en": "Template selection pointer",
+     "ru": "Указатель выбора шаблона",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Offsrf",
+     "en": "Model offset datum",
+     "ru": "",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Uuidia",
+     "en": "Universally unique identifier",
+     "ru": "Уникальный идентификатор",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Rlstored",
+     "en": "Array of ROUTER saved rules",
+     "ru": "",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Fstatus",
+     "en": "Fstatus",
+     "ru": "",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Facode",
+     "en": "Facode",
+     "ru": "",
+     "st": "seen",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "SpcRef",
+     "en": "Reference to a space element",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    }
+   ],
+   "extra": [
+    "Type",
+    "ActType",
+    "Lock",
+    "Owner"
+   ],
+   "real": true
+  },
+  {
+   "code": "SITE",
+   "en": "Site",
+   "ru": "Площадка",
+   "n_en": "",
+   "n_ru": "",
+   "page": "DMRM5.09.079",
+   "owners": [
+    "WORLD"
+   ],
+   "members": [
+    "AIDGROUP",
+    "BOUNDARY",
+    "DDSE",
+    "DIMGROUP",
+    "DPSET",
+    "DRAWING",
+    "GRDMODEL",
+    "TEXT",
+    "TRNMOD",
+    "ZONE"
+   ],
+   "a": [
+    {
+     "n": "Name",
+     "en": "Name of the element",
+     "ru": "Имя элемента",
+     "st": "ok",
+     "key": "NAME",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Description",
+     "en": "Description of the element",
+     "ru": "Описание",
+     "st": "ok",
+     "key": "DESC",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Function",
+     "en": "Function",
+     "ru": "Назначение",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "Description code word",
+     "ru": "Код назначения",
+     "st": "ok",
+     "key": "PURPOSE",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Number",
+     "en": "Number",
+     "ru": "Номер",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Area",
+     "en": "Area",
+     "ru": "Зона/участок",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Position",
+     "en": "Position",
+     "ru": "Положение",
+     "st": "ok",
+     "key": "POS",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Orientation",
+     "ru": "Ориентация",
+     "st": "ok",
+     "key": "ORI",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Module",
+     "en": "Module",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin reference (for templates)",
+     "ru": "Ссылка начала координат (шаблоны)",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Stmf",
+     "en": "Template selection pointer",
+     "ru": "Указатель выбора шаблона",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Uuidia",
+     "en": "Universally unique identifier",
+     "ru": "Уникальный идентификатор",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    },
+    {
+     "n": "Rlstored",
+     "en": "Array of ROUTER saved rules",
+     "ru": "",
+     "st": "man",
+     "key": "",
+     "note_en": "",
+     "note_ru": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  }
+ ],
+ "status": {
+  "en": {
+   "ok": [
+    "Command verified",
+    "The command that writes or reads it ran in E3D — on at least one element type; the register row says which."
+   ],
+   "seen": [
+    "In a real model",
+    "Printed by Q ATT on a real model; not written by us yet."
+   ],
+   "man": [
+    "Manual only",
+    "In the Data Model Reference Manual 2.1; not in our model dumps."
+   ]
+  },
+  "ru": {
+   "ok": [
+    "Команда проверена",
+    "Команда, которая его пишет или читает, запускалась в E3D — хотя бы на одном типе элемента; на каком — сказано в строке реестра."
+   ],
+   "seen": [
+    "Есть в модели",
+    "Q ATT напечатал его на реальной модели; сами ещё не писали."
+   ],
+   "man": [
+    "По мануалу",
+    "Есть в Data Model Reference Manual 2.1; в наших выгрузках не встречался."
+   ]
+  }
+ },
+ "order": [
+  "ok",
+  "seen",
+  "man"
+ ],
+ "about": "bracketPML attributes — generated, CC BY 4.0; list, owners and members after the AVEVA Data Model Reference Manual 2.1"
+}

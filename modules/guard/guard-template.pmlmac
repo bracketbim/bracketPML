@@ -1,0 +1,9 @@
+$* bracketPML / guard - a rollback mark around a bulk change.
+$* 1. The mark goes first. Change the label to say what the change is.
+MARKDB |bracketPML: before bulk change|
+$* 2. Your change goes here, for example:
+$*    =12345678/6304
+$*    NAME /PMLC-CWBRAN-T1/01
+$* 3. Check the result before saving: Q ATT, Q MEM, the 3D view.
+$* 4. Fine  -> type SAVEWORK  (the mark is erased, no way back after it)
+$*    Wrong -> type UNDODB    (everything under the mark is undone at once)

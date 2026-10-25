@@ -1,0 +1,15 @@
+$* bracketPML / reorder - probe: swap two members with REORDER and roll back.
+$* Stand on the FIRST member of an owner that has at least two members. Paste as Macro.
+$* Do not SAVEWORK while it runs.
+MARKDB |bracketPML reorder probe|
+VAR !!bpmlA REF
+NEXT
+VAR !!bpmlB REF
+VAR !!bpmlO OWNER
+REORDER $!!bpmlB BEFORE $!!bpmlA
+$!!bpmlO
+$P expected: the first two members have swapped places
+Q MEM
+UNDODB
+$P after UNDODB the original order is back:
+Q MEM

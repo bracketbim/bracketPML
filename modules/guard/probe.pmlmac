@@ -1,0 +1,10 @@
+$* bracketPML / guard - probe: see MARKDB / UNDODB work in your E3D.
+$* Stand on one test element that has a DESC (EQUI, SUBE, CWBRAN). A plain paste is enough.
+$* Do not SAVEWORK while it runs.
+Q DESC
+MARKDB |bracketPML guard probe|
+DESC |bracketPML probe - this text must disappear|
+Q DESC
+UNDODB
+Q DESC
+$P The last answer must equal the first one: the change was rolled back.

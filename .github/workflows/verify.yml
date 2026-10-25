@@ -1,0 +1,17 @@
+name: verify
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Links, structure, no private data
+        run: python tools/verify.py
+      - name: Helpers work
+        run: |
+          python modules/escaping/pml_text.py
+          python modules/reorder/reorder.py modules/reorder/q-mem-example.txt
+          python modules/export-safe/read_export.py modules/export-safe/output-example.txt

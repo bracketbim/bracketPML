@@ -1,0 +1,2517 @@
+{
+ "about": "bracketPML register — generated, CC BY 4.0",
+ "e3d": "2.1",
+ "last_run": "2026-10-23",
+ "status": {
+  "ok": {
+   "name": "Verified",
+   "means": "Ran in E3D 2.1, the result was checked."
+  },
+  "bad": {
+   "name": "Fails",
+   "means": "Ran and gave an error — do not use; the row says what to use instead."
+  },
+  "mac": {
+   "name": "Macro only",
+   "means": "Works in a macro file or with Paste as Macro, not line by line."
+  },
+  "doc": {
+   "name": "Documented",
+   "means": "In the AVEVA documentation or the $Q grammar; not run by us yet."
+  },
+  "ref": {
+   "name": "Seen in code",
+   "means": "Appears in real PML code; not run by us yet."
+  }
+ },
+ "groups": [
+  {
+   "id": 0,
+   "title": "The Commands window — how it runs what you paste",
+   "desc": "Common Functionality User Guide 2.1, Command Window. The window opens from Home → Windows and is hidden by default. The key fact: a plain paste runs every line as a separate command, so a multi-line block never comes together. The right-click menu has a second item that solves it.",
+   "n": 12
+  },
+  {
+   "id": 1,
+   "title": "Where to stand — navigation",
+   "desc": "Almost every command works on the current element (CE). First stand on it, then act.",
+   "n": 8
+  },
+  {
+   "id": 2,
+   "title": "Create — cable trays",
+   "desc": "The order is exactly this: tray, branch, section, head and tail, route, point coordinates.",
+   "n": 27
+  },
+  {
+   "id": 3,
+   "title": "Create — equipment",
+   "desc": "Equipment and its geometry: EQUI, SUBE, primitives and negative primitives.",
+   "n": 28
+  },
+  {
+   "id": 4,
+   "title": "Find and look",
+   "desc": "Read-only. These commands change nothing — use them freely.",
+   "n": 22
+  },
+  {
+   "id": 5,
+   "title": "Change",
+   "desc": "These write to the database. There is no UNDO command, but rollback exists and is verified: MARKDB |label| before the operation, UNDODB back to it, UNDODB n — n marks back. Its one limit is verified too: SAVEWORK erases the mark, after saving UNDODB answers «No mark to UNDO to». Order of work: mark, change, check, and only then SAVEWORK.",
+   "n": 21
+  },
+  {
+   "id": 6,
+   "title": "Show on screen",
+   "desc": "Working with the view. The model does not change.",
+   "n": 15
+  },
+  {
+   "id": 7,
+   "title": "Drawings and isometrics (DRAW module)",
+   "desc": "IsoADP is NOT in this build: the DRAW module has no Isometric Automatic Drawing Production item and ISOADP $Q gives CP: Syntax error. The 2.1 docs describe it, but the licence is different. An isometric is therefore an ordinary view with an isometric direction, built with the commands below. NEW DRWG $Q and ISODRAFT $Q print their syntax, so the commands exist; they were not run.",
+   "n": 10
+  },
+  {
+   "id": 8,
+   "title": "Beyond E3D — files and Windows",
+   "desc": "Found in real PML code, then verified by runs. Works from a macro file (Paste as Macro) and needs neither admin rights nor PMLLIB. Cyrillic and other non-Latin text passes on write but NOT on read — see the ReadFile row.",
+   "n": 5
+  },
+  {
+   "id": 9,
+   "title": "Save and exit",
+   "desc": "",
+   "n": 4
+  },
+  {
+   "id": 10,
+   "title": "Variables and substitution",
+   "desc": "Works right in the Command Line. Anything beyond substitution lives in a macro file — see the next section.",
+   "n": 16
+  },
+  {
+   "id": 11,
+   "title": "The PML language — works in a macro file, not in the Command Line",
+   "desc": "E3D 2.1 runs PML2 with full backward compatibility with PML1: one interpreter, both syntaxes work and mix in real macros. Anything longer than one line will not run from a plain paste — each line goes as a separate command (if and endif each fail on their own). The way out is in the docs: right-click → Paste as Macro writes the paste to a temporary file and runs it as a macro, and there blocks work. So logic can run straight from the Commands window — just from a different menu item.",
+   "n": 26
+  }
+ ],
+ "rows": [
+  {
+   "id": "right-click-paste",
+   "g": 0,
+   "cmd": "right-click → Paste",
+   "what": "Plain paste",
+   "note": "Word for word: «executes each line of the copied text as a separate command as if they had been typed». That is why an if line fails with «Invalid syntax» — it runs alone. And on the first error the remaining lines of the paste do NOT run — the tail has to be entered again.",
+   "st": "doc",
+   "key": "ПРАВЫЙ",
+   "dates": [
+    "2026-09-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "right-click-paste-as-macro",
+   "g": 0,
+   "cmd": "right-click → Paste as Macro",
+   "what": "Paste as a macro",
+   "note": "Word for word: «first creates a temporary file containing the copied macro commands and executes this as a macro». This is how if, do and handle work — and it is faster for many commands.",
+   "st": "doc",
+   "key": "ПРАВЫЙ",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "drag-a-mac-file-from-explorer",
+   "g": 0,
+   "cmd": "drag a .mac file from Explorer",
+   "what": "Run a macro file",
+   "note": "«Macro files can also be dragged into the command window».",
+   "st": "doc",
+   "key": "ПЕРЕТАЩИТЬ",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "m-c-temp-file-pmlmac",
+   "g": 0,
+   "cmd": "$M C:\\Temp\\file.pmlmac",
+   "what": "The same, as a command",
+   "note": "Arguments $1…$9 work.",
+   "st": "ok",
+   "key": "$M",
+   "dates": [
+    "2026-08-26"
+   ],
+   "runs": []
+  },
+  {
+   "id": "alpha-log-c-temp-log-txt-overwrite",
+   "g": 0,
+   "cmd": "alpha log /C:\\Temp\\log.txt OVERWRITE",
+   "what": "Write everything the window prints to a file",
+   "note": "Long Q MEM and Q ATT outputs land in full, without the window's truncation. The file is UTF-8 with BOM. Stop with alpha log END.",
+   "st": "ok",
+   "key": "ALPHA LOG",
+   "dates": [
+    "2026-09-25"
+   ],
+   "runs": []
+  },
+  {
+   "id": "alpha-log-end",
+   "g": 0,
+   "cmd": "alpha log END",
+   "what": "Stop writing to the file",
+   "note": "",
+   "st": "ok",
+   "key": "ALPHA LOG",
+   "dates": [
+    "2026-09-25"
+   ],
+   "runs": []
+  },
+  {
+   "id": "double-click-a-history-line",
+   "g": 0,
+   "cmd": "double-click a history line",
+   "what": "Bring a command back into the input field",
+   "note": "Up and Down arrows walk the history.",
+   "st": "doc",
+   "key": "ДВОЙНОЙ",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "right-click-clear",
+   "g": 0,
+   "cmd": "right-click → Clear",
+   "what": "Clear the window",
+   "note": "The window keeps roughly the last 1000 lines of output.",
+   "st": "doc",
+   "key": "ПРАВЫЙ",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "q-evar-pmllib",
+   "g": 0,
+   "cmd": "Q EVAR |PMLLIB|",
+   "what": "See the PML library path from inside E3D",
+   "note": "Printed about ten paths. This is an E3D variable, not a Windows one — echo %PMLLIB% in cmd does not see it. But those folders are not writable for a normal user: your own functions and forms through PMLLIB are out of reach.",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-27",
+    "2026-09-16"
+   ],
+   "runs": []
+  },
+  {
+   "id": "pml-rehash-all",
+   "g": 0,
+   "cmd": "PML REHASH ALL",
+   "what": "Re-read the library after editing a .pmlfnc",
+   "note": "",
+   "st": "doc",
+   "key": "PML",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "pml-index",
+   "g": 0,
+   "cmd": "PML INDEX",
+   "what": "Library index",
+   "note": "",
+   "st": "doc",
+   "key": "PML",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "pml-trace-on",
+   "g": 0,
+   "cmd": "PML TRACE ON",
+   "what": "Trace PML execution",
+   "note": "",
+   "st": "doc",
+   "key": "PML",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "pmlc-cway-t1",
+   "g": 1,
+   "cmd": "/PMLC-CWAY-T1",
+   "what": "Go to an element by name",
+   "note": "The main way: just the name on its own line.",
+   "st": "ok",
+   "key": "NAV",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "rpath-1",
+   "g": 1,
+   "cmd": "RPATH 1",
+   "what": "Step into a member of the current element by type and number",
+   "note": "Inside a branch: RPATH 1, then POINTR 2.",
+   "st": "ok",
+   "key": "RPATH",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "pointr-2",
+   "g": 1,
+   "cmd": "POINTR 2",
+   "what": "Second route point",
+   "note": "Works after stepping into RPATH.",
+   "st": "ok",
+   "key": "POINTR",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "equipment-2-of-extzone-pmlc",
+   "g": 1,
+   "cmd": "EQUIPMENT 2 of :EXTZONE /PMLC",
+   "what": "Go to an unnamed element by number",
+   "note": "The number counts ALL members of the zone and shifts when elements move.",
+   "st": "ok",
+   "key": "NAV",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "12345678-7844",
+   "g": 1,
+   "cmd": "=12345678/7844",
+   "what": "Go by stable reference",
+   "note": "Works; Q NAME afterwards prints the name. A reference does not shift when elements move or are renamed — bulk operations go by =ref only.",
+   "st": "ok",
+   "key": "NAV",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "owner",
+   "g": 1,
+   "cmd": "OWNER",
+   "what": "Go up to the owner",
+   "note": "Not run. Templates use the full name instead.",
+   "st": "doc",
+   "key": "OWNER",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "goto-owner",
+   "g": 1,
+   "cmd": "GOTO OWNER",
+   "what": "Follow a reference attribute",
+   "note": "GOTO $Q prints its continuations: CFDPROPERTY, LFDPROPERTY, TFDPROPERTY, FRSTWORLD, PARENT, SPLPARENT, CLCONNECTIONS and «any reference attribute». So the command exists, but it follows a REFERENCE, not a name. The move itself was not run.",
+   "st": "doc",
+   "key": "GOTO",
+   "dates": [
+    "2026-09-18"
+   ],
+   "runs": []
+  },
+  {
+   "id": "goto-name",
+   "g": 1,
+   "cmd": "GOTO /NAME",
+   "what": "This does NOT work",
+   "note": "CP: Syntax error. A name is not among GOTO's continuations — that is why it fails. Going by name means typing the name itself: /PMLC-CWAY-T1. Jumping to a label in a macro is GOLABEL.",
+   "st": "bad",
+   "key": "GOTO",
+   "dates": [
+    "2026-08-26"
+   ],
+   "runs": []
+  },
+  {
+   "id": "new-cway-pmlc-cway-t1",
+   "g": 2,
+   "cmd": "NEW CWAY /PMLC-CWAY-T1",
+   "what": "Create a cable tray in a zone",
+   "note": "Owner — ZONE. NEW makes the new element current.",
+   "st": "ok",
+   "key": "NEW",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "new-cwbran-pmlc-cwbran-t2-01",
+   "g": 2,
+   "cmd": "NEW CWBRAN /PMLC-CWBRAN-T2/01",
+   "what": "Create a branch in a tray",
+   "note": "Owner — CWAY.",
+   "st": "ok",
+   "key": "NEW",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "pos-e-0-n-0-u-0",
+   "g": 2,
+   "cmd": "POS E 0 N 0 U 0",
+   "what": "Set the position",
+   "note": "Without WRT — FROM THE OWNER. For a tray branch this is where the tray is: the edit gizmo sits on the branch's POS. For a primitive POS is its centre, inside a SUBE — from the SUBE. No minus sign needed: use W / S / D.",
+   "st": "ok",
+   "key": "POS",
+   "dates": [
+    "2026-09-18",
+    "2026-09-24",
+    "2026-09-25"
+   ],
+   "runs": [
+    10
+   ]
+  },
+  {
+   "id": "pos-e-0-n-0-u-0-wrt-world",
+   "g": 2,
+   "cmd": "POS E 0 N 0 U 0 WRT WORLD",
+   "what": "The same in world coordinates",
+   "note": "The line ran and moved the tray. POS $Q does not list WRT — the $Q grammar is incomplete, and its silence is no argument against a command.",
+   "st": "ok",
+   "key": "POS",
+   "dates": [
+    "2026-09-18"
+   ],
+   "runs": []
+  },
+  {
+   "id": "pos-e-0-n-0-u-500-wrt-pmlc-cway-t1",
+   "g": 2,
+   "cmd": "POS E 0 N 0 U 500 WRT /PMLC-CWAY-T1",
+   "what": "Coordinates relative to another element",
+   "note": "",
+   "st": "ok",
+   "key": "POS",
+   "dates": [
+    "2026-09-19"
+   ],
+   "runs": []
+  },
+  {
+   "id": "pos-e-0-n-0-u-0-wrt-pmlcins",
+   "g": 2,
+   "cmd": "POS E 0 N 0 U 0 WRT $!!PMLCINS",
+   "what": "Relative to an element whose name is in a variable",
+   "note": "VAR !!PMLCINS NAME on the picked element, then this line — the rack landed next to it. This is how «pick an object in E3D» works as an insertion point.",
+   "st": "ok",
+   "key": "POS",
+   "dates": [
+    "2026-09-23"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-pos-wrt-world",
+   "g": 2,
+   "cmd": "Q POS WRT WORLD",
+   "what": "Current element's world coordinates",
+   "note": "Q POS without WRT prints relative to the owner.",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "vwidth-600",
+   "g": 2,
+   "cmd": "VWIDTH 600",
+   "what": "Tray width",
+   "note": "On a CWBRAN it is VWidth, not WIDTH.",
+   "st": "ok",
+   "key": "VWIDTH",
+   "dates": [
+    "2026-09-22"
+   ],
+   "runs": []
+  },
+  {
+   "id": "vheight-100",
+   "g": 2,
+   "cmd": "VHEIGHT 100",
+   "what": "Tray height",
+   "note": "On a CWBRAN it is VHeight, not HEIGHT.",
+   "st": "ok",
+   "key": "VHEIGHT",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "cwjusline-cent",
+   "g": 2,
+   "cmd": "CWJUSLINE CENT",
+   "what": "Branch justification line",
+   "note": "Q ATT showed CWJusLine CENT.",
+   "st": "ok",
+   "key": "CWJUSLINE",
+   "dates": [
+    "2026-09-19"
+   ],
+   "runs": []
+  },
+  {
+   "id": "new-hatta",
+   "g": 2,
+   "cmd": "NEW HATTA",
+   "what": "Create the head attachment point",
+   "note": "Has no coordinates of its own. NEW moves CE — go back to the branch.",
+   "st": "ok",
+   "key": "NEW HATTA",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "new-tatta",
+   "g": 2,
+   "cmd": "NEW TATTA",
+   "what": "Create the tail attachment point",
+   "note": "The same.",
+   "st": "ok",
+   "key": "NEW TATTA",
+   "dates": [
+    "2026-08-26"
+   ],
+   "runs": []
+  },
+  {
+   "id": "new-rpath",
+   "g": 2,
+   "cmd": "NEW RPATH",
+   "what": "Create a route",
+   "note": "Creates NO points: Q MEM right after it is unset.",
+   "st": "ok",
+   "key": "NEW",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "new-pointr",
+   "g": 2,
+   "cmd": "NEW POINTR",
+   "what": "Add a route point",
+   "note": "Needed twice for a straight branch. CE does NOT move to the new point — set coordinates in a second pass.",
+   "st": "ok",
+   "key": "NEW",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "cablay-cen",
+   "g": 2,
+   "cmd": "CABLAY |CEN|",
+   "what": "Cable layout",
+   "note": "The value is text — in vertical bars. Q ATT showed Cablayout CEN.",
+   "st": "ok",
+   "key": "CABLAY",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "cablay-cen-2",
+   "g": 2,
+   "cmd": "CABLAY CEN",
+   "what": "This does NOT work",
+   "note": "CP: Syntax error with the caret on the value — the bars are needed.",
+   "st": "bad",
+   "key": "CABLAY",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "bradius-300",
+   "g": 2,
+   "cmd": "BRADIUS 300",
+   "what": "Branch bend radius",
+   "note": "Q ATT of the branch showed BRadius 300mm.",
+   "st": "ok",
+   "key": "BRADIUS",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "bangle-0",
+   "g": 2,
+   "cmd": "BANGLE 0",
+   "what": "Branch angle",
+   "note": "Q ATT of the branch showed Bangle 0degree.",
+   "st": "ok",
+   "key": "BANGLE",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "maxlay-1",
+   "g": 2,
+   "cmd": "MAXLAY 1",
+   "what": "Maximum cable layers",
+   "note": "Q ATT of the branch showed MaxLay 1.",
+   "st": "ok",
+   "key": "MAXLAY",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "maxcab-0",
+   "g": 2,
+   "cmd": "MAXCAB 0",
+   "what": "Maximum cables",
+   "note": "Q ATT of the branch showed MaxCab 0.",
+   "st": "ok",
+   "key": "MAXCAB",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "mattype-unset",
+   "g": 2,
+   "cmd": "MATTYPE unset",
+   "what": "Tray material type",
+   "note": "Q ATT: MatType unset. Values: unset, Perforated, Unperforated.",
+   "st": "ok",
+   "key": "MATTYPE",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "fradius-300",
+   "g": 2,
+   "cmd": "FRADIUS 300",
+   "what": "Fillet radius at a point (on POINTR)",
+   "note": "The radius is measured on the tray AXIS, not on its edge. Q FRADIUS prints the number.",
+   "st": "ok",
+   "key": "FRADIUS",
+   "dates": [
+    "2026-08-27",
+    "2026-09-29"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-hcref",
+   "g": 2,
+   "cmd": "Q HCREF",
+   "what": "What the branch head connects to (Q TCREF — the tail)",
+   "note": "Unconnected trays print HCRef unset. Connected ones were not seen yet.",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-09-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "new-conseq",
+   "g": 2,
+   "cmd": "NEW CONSEQ",
+   "what": "Branch connection sequence",
+   "note": "Do NOT create it by hand: a tee connection creates it itself, and later branches go into the same one.",
+   "st": "ok",
+   "key": "NEW CONSEQ",
+   "dates": [
+    "2026-09-17"
+   ],
+   "runs": []
+  },
+  {
+   "id": "usematerial",
+   "g": 2,
+   "cmd": "USEMATERIAL",
+   "what": "Use Material in the branch creation form",
+   "note": "Cable Design User Guide 2.1; not run as a command.",
+   "st": "doc",
+   "key": "USEMATERIAL",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "hpos",
+   "g": 2,
+   "cmd": "HPOS",
+   "what": "Branch head — this does NOT work (nor TPOS, HDIR, TDIR)",
+   "note": "Current element does not have a head or a tail attribute: a branch's position is set by its RPATH points.",
+   "st": "bad",
+   "key": "HPOS",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "width-600",
+   "g": 2,
+   "cmd": "WIDTH 600",
+   "what": "Width — this does NOT work (nor HEIGHT)",
+   "note": "On a CWBRAN it is VWIDTH / VHEIGHT.",
+   "st": "bad",
+   "key": "WIDTH",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "new-equi-test-equi-001",
+   "g": 3,
+   "cmd": "NEW EQUI /TEST-EQUI-001",
+   "what": "Create equipment in a zone",
+   "note": "",
+   "st": "ok",
+   "key": "NEW EQUI",
+   "dates": [
+    "2026-08-26"
+   ],
+   "runs": []
+  },
+  {
+   "id": "new-sube-test-equi-001-sube-1",
+   "g": 3,
+   "cmd": "NEW SUBE /TEST-EQUI-001/SUBE-1",
+   "what": "Sub-equipment inside equipment",
+   "note": "Owner — EQUIPMENT only. A SUBE has DESC.",
+   "st": "ok",
+   "key": "NEW SUBE",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "new-box-test-equi-001-box-1",
+   "g": 3,
+   "cmd": "NEW BOX /TEST-EQUI-001/BOX-1",
+   "what": "Box",
+   "note": "Owner — EQUI or SUBE. POS is the centre of the box. A BOX has no DESC.",
+   "st": "ok",
+   "key": "NEW BOX",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "xlen-1000",
+   "g": 3,
+   "cmd": "XLEN 1000",
+   "what": "Length along X",
+   "note": "Accepts 0 and negative values too — E3D does not check sizes; your generator must.",
+   "st": "ok",
+   "key": "XLEN",
+   "dates": [
+    "2026-09-24"
+   ],
+   "runs": []
+  },
+  {
+   "id": "ylen-1000",
+   "g": 3,
+   "cmd": "YLEN 1000",
+   "what": "Length along Y",
+   "note": "",
+   "st": "ok",
+   "key": "YLEN",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "zlen-1000",
+   "g": 3,
+   "cmd": "ZLEN 1000",
+   "what": "Height along Z",
+   "note": "",
+   "st": "ok",
+   "key": "ZLEN",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "new-cylinder-cyl-1",
+   "g": 3,
+   "cmd": "NEW CYLINDER /…/CYL-1",
+   "what": "Cylinder",
+   "note": "DIAM and HEIG. POS is the centre of the cylinder.",
+   "st": "ok",
+   "key": "NEW CYLINDER",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "diam-800",
+   "g": 3,
+   "cmd": "DIAM 800",
+   "what": "Diameter",
+   "note": "",
+   "st": "ok",
+   "key": "DIAM",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "heig-1000",
+   "g": 3,
+   "cmd": "HEIG 1000",
+   "what": "Height",
+   "note": "",
+   "st": "ok",
+   "key": "HEIG",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "ori-y-is-n-and-z-is-e",
+   "g": 3,
+   "cmd": "ORI Y IS N AND Z IS E",
+   "what": "Rotate: cylinder axis to the east",
+   "note": "The cylinder lay perpendicular to face E (Z IS W — to the west). ORI on an EQUI rotates it with all its parts.",
+   "st": "ok",
+   "key": "ORI",
+   "dates": [
+    "2026-09-24",
+    "2026-09-25"
+   ],
+   "runs": []
+  },
+  {
+   "id": "new-ncylinder",
+   "g": 3,
+   "cmd": "NEW NCYLINDER",
+   "what": "Round hole (negative primitive)",
+   "note": "The hole is visible in 3D. A negative lives INSIDE the primitive, not in the EQUI.",
+   "st": "ok",
+   "key": "NEW NCYLINDER",
+   "dates": [
+    "2026-09-18"
+   ],
+   "runs": []
+  },
+  {
+   "id": "new-nbox",
+   "g": 3,
+   "cmd": "NEW NBOX",
+   "what": "Rectangular cut-out",
+   "note": "BOX lists it among Legal Members (DMRM 2.1); not run.",
+   "st": "doc",
+   "key": "NEW NBOX",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "delete-equi",
+   "g": 3,
+   "cmd": "DELETE EQUI",
+   "what": "Delete the current equipment",
+   "note": "Deleted it with all children; UNDODB brought it back. Check Q NAME first — be sure where you stand.",
+   "st": "ok",
+   "key": "DELETE",
+   "dates": [
+    "2026-09-24"
+   ],
+   "runs": []
+  },
+  {
+   "id": "new-nozzle",
+   "g": 3,
+   "cmd": "NEW NOZZLE",
+   "what": "Equipment nozzle",
+   "note": "Needs a specification; not tried.",
+   "st": "doc",
+   "key": "NEW",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "new-elconn",
+   "g": 3,
+   "cmd": "NEW ELCONN",
+   "what": "Electrical connection point",
+   "note": "Created directly in an EQUI, POS works; by default Y is N and Z is U, Catref empty. Like a nozzle on a pipe — a cable connects to it. On real catalogue boxes the link to the catalogue is CATREF, not SPREF. Look in 3D and cable connection not checked.",
+   "st": "ok",
+   "key": "NEW ELCONN",
+   "dates": [
+    "2026-09-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "purpose-pmlc",
+   "g": 3,
+   "cmd": "PURPOSE PMLC",
+   "what": "A purpose mark to find your own elements later",
+   "note": "Written without bars, Q PURP prints Purpose PMLC, and a Ctrl+C / Ctrl+V copy of the EQUI inherits it — keep that in mind when you filter by it.",
+   "st": "ok",
+   "key": "PURPOSE",
+   "dates": [
+    "2026-10-09"
+   ],
+   "runs": [
+    17
+   ]
+  },
+  {
+   "id": "level-1-3",
+   "g": 3,
+   "cmd": "LEVEL 1 3",
+   "what": "Drawing levels (e.g. hide a service zone from review models)",
+   "note": "Q LEVEL prints Level 1 3; works right at creation.",
+   "st": "ok",
+   "key": "LEVEL",
+   "dates": [
+    "2026-09-28",
+    "2026-09-29"
+   ],
+   "runs": []
+  },
+  {
+   "id": "obst-1",
+   "g": 3,
+   "cmd": "OBST 1",
+   "what": "Obstruction level",
+   "note": "Q OBST prints Obstruction 1.",
+   "st": "ok",
+   "key": "OBST",
+   "dates": [
+    "2026-09-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "ori-y-is-n-and-z-is-e-45-u",
+   "g": 3,
+   "cmd": "ORI Y IS N AND Z IS E 45 U",
+   "what": "Rotate by an angle (a tilted element)",
+   "note": "Q ORI prints the same form back.",
+   "st": "ok",
+   "key": "ORI",
+   "dates": [
+    "2026-09-29"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-spref",
+   "g": 3,
+   "cmd": "Q SPREF",
+   "what": "Catalogue reference of an item (on an ELCONN — Q CATREF)",
+   "note": "Prints the SPCO of a catalogue box. Writing SPREF / CATREF was not run.",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-09-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-desparam",
+   "g": 3,
+   "cmd": "Q DESPARAM",
+   "what": "Design parameters from the catalogue",
+   "note": "Printed 2 2 1 1 0.3 on a catalogue box; meaning not established.",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-09-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "new-cone",
+   "g": 3,
+   "cmd": "NEW CONE",
+   "what": "Cone (also NEW SNOUT, DISH, PYRAMID, CTORUS, RTORUS, SLCYLINDER, EXTRUSION, REVOLUTION, POLYHEDRON)",
+   "note": "DMRM 2.1, Primitive category; not run.",
+   "st": "doc",
+   "key": "NEW CONE",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "new-ncone",
+   "g": 3,
+   "cmd": "NEW NCONE",
+   "what": "Negative cone — a cut-out (also NSNOUT, NDISH, NPYRAMID, NCTORUS, NRTORUS, NSLCYLINDER)",
+   "note": "DMRM 2.1; of the negatives only NCYLINDER was run.",
+   "st": "doc",
+   "key": "NEW NCONE",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "radi-500",
+   "g": 3,
+   "cmd": "RADI 500",
+   "what": "Primitive radius",
+   "note": "DMRM 2.1: Radius; this form appears in real code.",
+   "st": "ref",
+   "key": "RADI",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "angle-90",
+   "g": 3,
+   "cmd": "ANGLE 90",
+   "what": "Primitive angle",
+   "note": "DMRM 2.1: Angle; this form appears in real code.",
+   "st": "ref",
+   "key": "ANGLE",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "xoff-100",
+   "g": 3,
+   "cmd": "XOFF 100",
+   "what": "X offset (also XBOT, YBOT, XTOP, YTOP)",
+   "note": "DMRM 2.1; these forms appear in real code.",
+   "st": "ref",
+   "key": "XOFF",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "dtop-300",
+   "g": 3,
+   "cmd": "DTOP 300",
+   "what": "Top diameter (also DBOT, YOFF, RINS, ROUT, XTSH, YTSH, XBSH, YBSH)",
+   "note": "DMRM 2.1; these abbreviations were not seen in real code — check with $Q.",
+   "st": "doc",
+   "key": "DTOP",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "new-gpset",
+   "g": 3,
+   "cmd": "NEW GPSET",
+   "what": "A set (collection) of elements",
+   "note": "NEW GPSET $Q prints its grammar; the element itself was not created.",
+   "st": "doc",
+   "key": "NEW GPSET",
+   "dates": [
+    "2026-09-17"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-pos",
+   "g": 4,
+   "cmd": "Q POS",
+   "what": "Current element's coordinates",
+   "note": "Position E 10000mm N 0mm U 0mm",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-att",
+   "g": 4,
+   "cmd": "Q ATT",
+   "what": "All attributes of the current element",
+   "note": "The fullest answer — and the way to check a result.",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-name",
+   "g": 4,
+   "cmd": "Q NAME",
+   "what": "Name",
+   "note": "",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-type",
+   "g": 4,
+   "cmd": "Q TYPE",
+   "what": "Element type",
+   "note": "",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-owner",
+   "g": 4,
+   "cmd": "Q OWNER",
+   "what": "Owner",
+   "note": "",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-ref",
+   "g": 4,
+   "cmd": "Q REF",
+   "what": "Stable reference like =12345678/26685",
+   "note": "Does not depend on numbering — the best way to address an element.",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-mem",
+   "g": 4,
+   "cmd": "Q MEM",
+   "what": "Members: what is inside",
+   "note": "Prints =ref references of all members at once.",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-desc",
+   "g": 4,
+   "cmd": "Q DESC",
+   "what": "Description",
+   "note": "",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-drawlist",
+   "g": 4,
+   "cmd": "Q DRAWLIST",
+   "what": "What is on screen now",
+   "note": "An element differs from its contents by owner.",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-name-of-pmlc-cwbran-t1-01",
+   "g": 4,
+   "cmd": "Q NAME OF /PMLC-CWBRAN-T1/01",
+   "what": "Read an attribute WITHOUT moving to the element",
+   "note": "Cuts bulk queries to a third.",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-name-type-owner",
+   "g": 4,
+   "cmd": "Q NAME TYPE OWNER",
+   "what": "Several attributes in one line",
+   "note": "",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-var-x",
+   "g": 4,
+   "cmd": "Q VAR !!x",
+   "what": "Show a variable",
+   "note": "",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-09-23"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-mem-att",
+   "g": 4,
+   "cmd": "Q MEM ATT",
+   "what": "Members and attributes",
+   "note": "Prints Q MEM and Q ATT of the CURRENT element — not attributes of its members.",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-q",
+   "g": 4,
+   "cmd": "Q $Q",
+   "what": "What the Q command accepts at all",
+   "note": "$Q after any command prints its syntax for your build. Changes nothing.",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "q-wvol",
+   "g": 4,
+   "cmd": "Q WVOL",
+   "what": "Element's world box — 6 numbers",
+   "note": "«Wvolume x1 y1 z1 x2 y2 z2», in mm, without E/N/U, world coordinates. Works on GENSEC, EQUI, TEE.",
+   "st": "ok",
+   "key": "Q WVOL",
+   "dates": [
+    "2026-10-09"
+   ],
+   "runs": [
+    17
+   ]
+  },
+  {
+   "id": "q-purp",
+   "g": 4,
+   "cmd": "Q PURP",
+   "what": "Purpose mark (PURPOSE)",
+   "note": "Prints Purpose PMLC.",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-10-09"
+   ],
+   "runs": [
+    17
+   ]
+  },
+  {
+   "id": "q-ori",
+   "g": 4,
+   "cmd": "Q ORI",
+   "what": "Orientation",
+   "note": "Prints Orientation Y is N and Z is U.",
+   "st": "ok",
+   "key": "Q",
+   "dates": [
+    "2026-09-24"
+   ],
+   "runs": []
+  },
+  {
+   "id": "var-x-acttype",
+   "g": 4,
+   "cmd": "VAR !!x ACTTYPE",
+   "what": "Project element type (:EXTZONE)",
+   "note": "<STRING> ':EXTZONE', with the colon; TYPE of the same zone is ZONE.",
+   "st": "ok",
+   "key": "VAR",
+   "dates": [
+    "2026-09-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "next",
+   "g": 4,
+   "cmd": "NEXT",
+   "what": "To the next member of the same owner",
+   "note": "From ELCONN 1 to ELCONN 2 and 3.",
+   "st": "ok",
+   "key": "NEXT",
+   "dates": [
+    "2026-09-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "new-equi-q",
+   "g": 4,
+   "cmd": "NEW EQUI $Q",
+   "what": "$Q after a command — its syntax in this build",
+   "note": "The main scouting tool (but the grammar is incomplete: WRT is missing from POS $Q, yet it works).",
+   "st": "ok",
+   "key": "NEW EQUI",
+   "dates": [
+    "2026-08-26"
+   ],
+   "runs": []
+  },
+  {
+   "id": "id",
+   "g": 4,
+   "cmd": "ID @",
+   "what": "Pick an element with a click in 3D",
+   "note": "ID @ + click — the element becomes current. Esc does not leave the mode.",
+   "st": "ok",
+   "key": "ID @",
+   "dates": [
+    "2026-09-28"
+   ],
+   "runs": []
+  },
+  {
+   "id": "syn",
+   "g": 4,
+   "cmd": "SYN",
+   "what": "This does NOT work",
+   "note": "There is no such command: CP: Syntax error.",
+   "st": "bad",
+   "key": "SYN",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "pos-e-8000-n-0-u-0",
+   "g": 5,
+   "cmd": "POS E 8000 N 0 U 0",
+   "what": "Move an element",
+   "note": "",
+   "st": "ok",
+   "key": "POS",
+   "dates": [
+    "2026-09-17",
+    "2026-09-18",
+    "2026-09-19",
+    "2026-09-23",
+    "2026-09-24",
+    "2026-09-25",
+    "2026-09-29"
+   ],
+   "runs": [
+    14
+   ]
+  },
+  {
+   "id": "by-w2000",
+   "g": 5,
+   "cmd": "BY W2000",
+   "what": "Shift by 2000 towards W",
+   "note": "Checked on a route point: 10000 became 8000.",
+   "st": "ok",
+   "key": "BY",
+   "dates": [
+    "2026-08-26"
+   ],
+   "runs": []
+  },
+  {
+   "id": "desc-text-with-spaces",
+   "g": 5,
+   "cmd": "DESC |text with spaces|",
+   "what": "Write a description",
+   "note": "Text with spaces — only in vertical bars (single quotes work too). A $ inside must be doubled: $$.",
+   "st": "ok",
+   "key": "DESC",
+   "dates": [
+    "2026-09-22",
+    "2026-09-24",
+    "2026-10-11",
+    "2026-10-15"
+   ],
+   "runs": [
+    18,
+    19
+   ]
+  },
+  {
+   "id": "name-new",
+   "g": 5,
+   "cmd": "NAME /NEW",
+   "what": "Rename the CURRENT element",
+   "note": "Stand on the element, NAME /NEW — renamed. Together with going by =ref this is bulk tagging: two lines per element and no positional addressing. A name already in use is rejected and nothing changes.",
+   "st": "ok",
+   "key": "NAME",
+   "dates": [
+    "2026-08-27",
+    "2026-09-18"
+   ],
+   "runs": []
+  },
+  {
+   "id": "rename-new",
+   "g": 5,
+   "cmd": "RENAME /NEW",
+   "what": "The same",
+   "note": "Works just like NAME.",
+   "st": "ok",
+   "key": "RENAME",
+   "dates": [
+    "2026-09-18"
+   ],
+   "runs": []
+  },
+  {
+   "id": "rename-old-new",
+   "g": 5,
+   "cmd": "RENAME /OLD /NEW",
+   "what": "This does NOT work",
+   "note": "«(2,109) Undefined name», caret on the second name. There is no two-argument form: you rename by STANDING on the element.",
+   "st": "bad",
+   "key": "RENAME",
+   "dates": [
+    "2026-09-18"
+   ],
+   "runs": []
+  },
+  {
+   "id": "reorder-a-before-b",
+   "g": 5,
+   "cmd": "REORDER /A BEFORE /B",
+   "what": "Move within the list of members",
+   "note": "Changes the order inside the owner, does not touch the elements: branches swapped places in Q MEM, coordinates unchanged. First what you move, then what it goes before; works with full names and with =ref of unnamed elements. Found in real public code; the 2.1 manual has no page for it.",
+   "st": "ok",
+   "key": "REORDER",
+   "dates": [
+    "2026-09-23"
+   ],
+   "runs": []
+  },
+  {
+   "id": "reorder-a-after-b",
+   "g": 5,
+   "cmd": "REORDER /A AFTER /B",
+   "what": "The same, but after the given element",
+   "note": "The AFTER form was never run — build chains from BEFORE only.",
+   "st": "ref",
+   "key": "REORDER",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "include-12345678-6393",
+   "g": 5,
+   "cmd": "INCLUDE =12345678/6393",
+   "what": "Move an element inside the current one",
+   "note": "Takes a name or a reference. Does not change CE — stand on the receiving zone once.",
+   "st": "ok",
+   "key": "INCLUDE",
+   "dates": [
+    "2026-08-26"
+   ],
+   "runs": []
+  },
+  {
+   "id": "claim-pmlc-cwbran-t1-01-hier",
+   "g": 5,
+   "cmd": "CLAIM /PMLC-CWBRAN-T1/01 HIER",
+   "what": "Claim an element with its hierarchy",
+   "note": "",
+   "st": "ok",
+   "key": "CLAIM",
+   "dates": [
+    "2026-08-26"
+   ],
+   "runs": []
+  },
+  {
+   "id": "unclaim-all",
+   "g": 5,
+   "cmd": "UNCLAIM ALL",
+   "what": "Release claims",
+   "note": "",
+   "st": "ref",
+   "key": "UNCLAIM",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "lock-all",
+   "g": 5,
+   "cmd": "LOCK ALL",
+   "what": "Lock against changes",
+   "note": "",
+   "st": "ref",
+   "key": "LOCK",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "undo",
+   "g": 5,
+   "cmd": "UNDO",
+   "what": "There is no command with this name",
+   "note": "CP: Syntax error. Rollback is called differently — see the next rows.",
+   "st": "bad",
+   "key": "UNDO",
+   "dates": [
+    "2026-09-16"
+   ],
+   "runs": []
+  },
+  {
+   "id": "markdb-before-bulk-edit",
+   "g": 5,
+   "cmd": "MARKDB |before bulk edit|",
+   "what": "Set a rollback mark BEFORE the operation",
+   "note": "Both forms ran: MARKDB |probe| and MARKDB 'probe'. WITHOUT quotes — CP: Syntax error, as with DESC and CABLAY. PML Console puts a mark as the first line of every code it writes.",
+   "st": "ok",
+   "key": "MARKDB",
+   "dates": [
+    "2026-09-16"
+   ],
+   "runs": []
+  },
+  {
+   "id": "undodb",
+   "g": 5,
+   "cmd": "UNDODB",
+   "what": "Roll the database back to the last mark",
+   "note": "Restored a broken DESC, undid a rename and the creation of an element; UNDODB n goes back n MARKS (not n edits). After SAVEWORK there is no mark any more — No mark to UNDO to.",
+   "st": "ok",
+   "key": "UNDODB",
+   "dates": [
+    "2026-09-16",
+    "2026-09-17"
+   ],
+   "runs": []
+  },
+  {
+   "id": "incl-12345678-6393",
+   "g": 5,
+   "cmd": "INCL =12345678/6393",
+   "what": "Same as INCLUDE",
+   "note": "Abbreviation.",
+   "st": "ok",
+   "key": "INCL",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "redodb",
+   "g": 5,
+   "cmd": "REDODB",
+   "what": "Redo what UNDODB undid",
+   "note": "In the $Q grammar; not run.",
+   "st": "doc",
+   "key": "REDODB",
+   "dates": [
+    "2026-09-16"
+   ],
+   "runs": []
+  },
+  {
+   "id": "clearmark",
+   "g": 5,
+   "cmd": "CLEARMARK",
+   "what": "Clear rollback marks",
+   "note": "In the $Q grammar; not run.",
+   "st": "doc",
+   "key": "CLEARMARK",
+   "dates": [
+    "2026-09-16"
+   ],
+   "runs": []
+  },
+  {
+   "id": "endmarkdb",
+   "g": 5,
+   "cmd": "ENDMARKDB",
+   "what": "Close a mark's scope",
+   "note": "In the $Q grammar; not run.",
+   "st": "doc",
+   "key": "ENDMARKDB",
+   "dates": [
+    "2026-09-16"
+   ],
+   "runs": []
+  },
+  {
+   "id": "unlock-all",
+   "g": 5,
+   "cmd": "UNLOCK ALL",
+   "what": "Unlock",
+   "note": "",
+   "st": "ref",
+   "key": "UNLOCK",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "purpose-pmlc-2",
+   "g": 5,
+   "cmd": "PURPOSE PMLC",
+   "what": "Mark an element as yours (works on equipment too)",
+   "note": "Written, and a copy inherits it.",
+   "st": "ok",
+   "key": "PURPOSE",
+   "dates": [
+    "2026-10-09"
+   ],
+   "runs": []
+  },
+  {
+   "id": "add-ce",
+   "g": 6,
+   "cmd": "ADD CE",
+   "what": "Add the current element to the view",
+   "note": "",
+   "st": "ref",
+   "key": "ADD",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "add-all-within-vol-ce-1000-all",
+   "g": 6,
+   "cmd": "ADD ALL WITHIN VOL CE 1000 ALL",
+   "what": "Add everything within a distance of the element",
+   "note": "",
+   "st": "ref",
+   "key": "ADD",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "rem-all",
+   "g": 6,
+   "cmd": "REM ALL",
+   "what": "Clear the view",
+   "note": "",
+   "st": "ref",
+   "key": "REM",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "mark-ce-mem",
+   "g": 6,
+   "cmd": "MARK CE MEM",
+   "what": "Label the members of the current element",
+   "note": "This is how route points get labels.",
+   "st": "ok",
+   "key": "MARK",
+   "dates": [
+    "2026-08-26"
+   ],
+   "runs": []
+  },
+  {
+   "id": "unmark-all",
+   "g": 6,
+   "cmd": "UNMARK ALL",
+   "what": "Remove labels",
+   "note": "",
+   "st": "ref",
+   "key": "UNMARK",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "col-ce-green",
+   "g": 6,
+   "cmd": "COL CE GREEN",
+   "what": "Change colour",
+   "note": "",
+   "st": "ref",
+   "key": "COL",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "axes-at-ce",
+   "g": 6,
+   "cmd": "AXES AT CE",
+   "what": "Show axes at the element",
+   "note": "",
+   "st": "ref",
+   "key": "AXES",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "alp-req-clear",
+   "g": 6,
+   "cmd": "ALP REQ CLEAR",
+   "what": "Clear the command window",
+   "note": "",
+   "st": "ref",
+   "key": "ALP",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "axes-on",
+   "g": 6,
+   "cmd": "AXES ON",
+   "what": "Axes on screen (AXES OFF — remove)",
+   "note": "",
+   "st": "ref",
+   "key": "AXES",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "choo-all",
+   "g": 6,
+   "cmd": "CHOO ALL",
+   "what": "Choose all",
+   "note": "",
+   "st": "ref",
+   "key": "CHOO",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "dir-n-45-e",
+   "g": 6,
+   "cmd": "DIR N 45 E",
+   "what": "View direction",
+   "note": "",
+   "st": "ref",
+   "key": "DIR",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "thro-ce",
+   "g": 6,
+   "cmd": "THRO CE",
+   "what": "View through the element",
+   "note": "",
+   "st": "ref",
+   "key": "THRO",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "update-all",
+   "g": 6,
+   "cmd": "UPDATE ALL",
+   "what": "Refresh the view",
+   "note": "",
+   "st": "ref",
+   "key": "UPDATE",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "enhance-ce-col-red",
+   "g": 6,
+   "cmd": "ENHANCE CE COL RED",
+   "what": "Highlight the element",
+   "note": "",
+   "st": "ref",
+   "key": "ENHANCE",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "console-show",
+   "g": 6,
+   "cmd": "console show",
+   "what": "Show the console window",
+   "note": "",
+   "st": "ref",
+   "key": "CONSOLE",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "new-drwg-cway-iso-001",
+   "g": 7,
+   "cmd": "NEW DRWG /CWAY-ISO-001",
+   "what": "Create a drawing",
+   "note": "Hierarchy DEPT → REGI → DRWG → SHEE → VIEW. Missing DEPT and REGI are created automatically.",
+   "st": "doc",
+   "key": "NEW",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "new-sheet-sh1",
+   "g": 7,
+   "cmd": "NEW SHEET /SH1",
+   "what": "Create a sheet",
+   "note": "Can be skipped if the drawing has one sheet.",
+   "st": "doc",
+   "key": "NEW",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "new-view-v1",
+   "g": 7,
+   "cmd": "NEW VIEW /V1",
+   "what": "Create a view",
+   "note": "With NEW DRWG this is the minimum; the rest is optional.",
+   "st": "doc",
+   "key": "NEW",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "desadd-cway-el-001",
+   "g": 7,
+   "cmd": "DESADD /CWAY-EL-001",
+   "what": "Put a model element into the view",
+   "note": "Takes a zone, a tray, equipment. Several calls add several elements.",
+   "st": "doc",
+   "key": "DESADD",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "desremove-name",
+   "g": 7,
+   "cmd": "DESREMOVE /name",
+   "what": "Remove an element from the view",
+   "note": "Abbreviation DESREM.",
+   "st": "doc",
+   "key": "DESREMOVE",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "iso3",
+   "g": 7,
+   "cmd": "ISO3",
+   "what": "Isometric view direction",
+   "note": "ISO1…ISO4 exist — a route may run across the sheet, pick the direction.",
+   "st": "doc",
+   "key": "ISO3",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "plan",
+   "g": 7,
+   "cmd": "PLAN",
+   "what": "Plan view",
+   "note": "",
+   "st": "doc",
+   "key": "PLAN",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "elevation-n",
+   "g": 7,
+   "cmd": "ELEVATION N",
+   "what": "Elevation from the north",
+   "note": "",
+   "st": "doc",
+   "key": "ELEVATION",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "look-e",
+   "g": 7,
+   "cmd": "LOOK E",
+   "what": "Look east",
+   "note": "Also LOOK N45W and LOOK THROUGH / LOOK FROM with coordinates.",
+   "st": "doc",
+   "key": "LOOK",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "update-design",
+   "g": 7,
+   "cmd": "UPDATE DESIGN",
+   "what": "Redraw the view",
+   "note": "Required after changing the direction or the contents of the view.",
+   "st": "doc",
+   "key": "UPDATE",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "syscom-cmd-c-mkdir-c-temp-out",
+   "g": 8,
+   "cmd": "SYSCOM 'cmd /c mkdir C:\\Temp\\OUT'",
+   "what": "Run a Windows command from PML",
+   "note": "The command ran and the file was created. The value goes in single quotes or vertical bars: SYSCOM |$!cmd|. No admin rights needed.",
+   "st": "ok",
+   "key": "SYSCOM",
+   "dates": [
+    "2026-09-16"
+   ],
+   "runs": []
+  },
+  {
+   "id": "ce-attributes",
+   "g": 8,
+   "cmd": "!!CE.Attributes()",
+   "what": "Array of the names of all attributes of the current element",
+   "note": "Includes project UDAs.",
+   "st": "ok",
+   "key": "!",
+   "dates": [
+    "2026-09-25"
+   ],
+   "runs": []
+  },
+  {
+   "id": "f-object-file-c-temp-out-csv",
+   "g": 8,
+   "cmd": "!f = object FILE('C:\\Temp\\out.csv')",
+   "what": "Open a file from PML",
+   "note": "Works in a macro file; PMLLIB not needed.",
+   "st": "ok",
+   "key": "!",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "lines-f-readfile",
+   "g": 8,
+   "cmd": "!lines = !f.ReadFile()",
+   "what": "Read a file into an array of lines",
+   "note": "Returned an <ARRAY> of lines. ENCODING: a file saved by Notepad in UTF-8 came in as mojibake — ReadFile reads a single-byte code page, so save files for reading in ANSI. On write non-Latin text comes out right — the two directions are not symmetric.",
+   "st": "ok",
+   "key": "!",
+   "dates": [
+    "2026-09-18"
+   ],
+   "runs": []
+  },
+  {
+   "id": "f-writefile-overwrite-lines",
+   "g": 8,
+   "cmd": "!f.WriteFile('OVERWRITE', !lines)",
+   "what": "Write an array of lines to a file",
+   "note": "Writes UTF-8 with BOM, read correctly by Notepad and Excel — no PMLLIB, no admin rights. A PML string is at most ~1000 characters, and one written line must stay under ~800 bytes.",
+   "st": "ok",
+   "key": "!",
+   "dates": [
+    "2026-09-16",
+    "2026-09-17"
+   ],
+   "runs": [
+    11
+   ]
+  },
+  {
+   "id": "get-work",
+   "g": 9,
+   "cmd": "GET WORK",
+   "what": "Pull other users' changes from the database",
+   "note": "",
+   "st": "ref",
+   "key": "GET",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "savework",
+   "g": 9,
+   "cmd": "SAVEWORK",
+   "what": "Save your work to the database",
+   "note": "Erases the rollback mark — afterwards UNDODB answers No mark to UNDO to. Save only after checking.",
+   "st": "ok",
+   "key": "SAVEWORK",
+   "dates": [
+    "2026-09-17"
+   ],
+   "runs": []
+  },
+  {
+   "id": "quit",
+   "g": 9,
+   "cmd": "QUIT",
+   "what": "Exit WITHOUT saving",
+   "note": "Rolls back the whole session. The second line of defence: UNDODB undoes one mark, QUIT — everything since the last SAVEWORK.",
+   "st": "ref",
+   "key": "QUIT",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "finish",
+   "g": 9,
+   "cmd": "FINISH",
+   "what": "Exit with saving",
+   "note": "",
+   "st": "ref",
+   "key": "FINISH",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "x-3",
+   "g": 10,
+   "cmd": "!!x = 3",
+   "what": "Global variable, lives for the whole session",
+   "note": "Non-Latin text in the value works.",
+   "st": "ok",
+   "key": "!",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "x-3-2",
+   "g": 10,
+   "cmd": "!x = 3",
+   "what": "Local — only inside a macro",
+   "note": "In the Command Line it does not survive to the next line — use !!x there.",
+   "st": "ok",
+   "key": "!",
+   "dates": [
+    "2026-09-19"
+   ],
+   "runs": []
+  },
+  {
+   "id": "var-x-name",
+   "g": 10,
+   "cmd": "VAR !!x NAME",
+   "what": "Read an attribute of the current element into a variable",
+   "note": "Works in the Command Line too. VAR reads an attribute of any type into a string; !x = NAME fails if the types do not match.",
+   "st": "ok",
+   "key": "VAR",
+   "dates": [
+    "2026-09-22",
+    "2026-09-23"
+   ],
+   "runs": []
+  },
+  {
+   "id": "p-x",
+   "g": 10,
+   "cmd": "$P $!!x",
+   "what": "Print the value",
+   "note": "",
+   "st": "ok",
+   "key": "$P",
+   "dates": [
+    "2026-10-11"
+   ],
+   "runs": [
+    18
+   ]
+  },
+  {
+   "id": "cmd-q-name-then-cmd",
+   "g": 10,
+   "cmd": "!!cmd = 'Q NAME'   then   $!!cmd",
+   "what": "Run a command built as a string",
+   "note": "The only way found to be dynamic without a macro.",
+   "st": "ok",
+   "key": "!",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "var-eq-collect-all-equi-with-type-eq-equi-for-ce",
+   "g": 10,
+   "cmd": "VAR !!eq COLLECT ALL EQUI WITH ( TYPE EQ 'EQUI' ) FOR CE",
+   "what": "Collect elements with a filter",
+   "note": "Collects, but the result has no array methods: !!eq.Size() is an error. do !e values !!eq works.",
+   "st": "ok",
+   "key": "VAR",
+   "dates": [
+    "2026-09-16",
+    "2026-09-22",
+    "2026-09-23"
+   ],
+   "runs": []
+  },
+  {
+   "id": "m-c-temp-t-mac-arg1-arg2",
+   "g": 10,
+   "cmd": "$M C:\\Temp\\t.mac arg1 arg2",
+   "what": "Run a macro with arguments",
+   "note": "$1…$9 are available in the file. Non-Latin text in the file body reads correctly only if the file is saved in ANSI; UTF-8 breaks.",
+   "st": "ok",
+   "key": "$M",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "if-then-endif",
+   "g": 10,
+   "cmd": "if … then … endif",
+   "what": "Condition",
+   "note": "Plain paste — PML: Invalid syntax. Through right-click → Paste as Macro it works.",
+   "st": "mac",
+   "key": "IF",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "do-enddo",
+   "g": 10,
+   "cmd": "do … enddo",
+   "what": "Loop",
+   "note": "The same.",
+   "st": "mac",
+   "key": "DO",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "handle-any-endhandle",
+   "g": 10,
+   "cmd": "handle any … endhandle",
+   "what": "Catch an error",
+   "note": "The same.",
+   "st": "mac",
+   "key": "HANDLE",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "var-x-owner",
+   "g": 10,
+   "cmd": "VAR !!x OWNER",
+   "what": "An element's owner into a variable — then $!!x goes to it",
+   "note": "Returns '/name'.",
+   "st": "ok",
+   "key": "VAR",
+   "dates": [
+    "2026-10-01"
+   ],
+   "runs": []
+  },
+  {
+   "id": "var-x-collect-all-cwbran-with-unset-desc-for-pml",
+   "g": 10,
+   "cmd": "VAR !x COLLECT ALL CWBRAN WITH (UNSET(DESC)) FOR /PMLC",
+   "what": "Collect with a condition on an attribute",
+   "note": "Gave 2 of 6 — exactly the number without a description. Logical functions apply to attributes inside WITH.",
+   "st": "ok",
+   "key": "VAR",
+   "dates": [
+    "2026-09-19"
+   ],
+   "runs": []
+  },
+  {
+   "id": "var-s-collect-all-site-for-world",
+   "g": 10,
+   "cmd": "VAR !s COLLECT ALL SITE FOR WORLD",
+   "what": "Collect across the whole database",
+   "note": "",
+   "st": "ok",
+   "key": "VAR",
+   "dates": [
+    "2026-09-22"
+   ],
+   "runs": []
+  },
+  {
+   "id": "nm-name",
+   "g": 10,
+   "cmd": "!nm = NAME",
+   "what": "An attribute of the current element into a variable (in a macro)",
+   "note": "!x = REF — the reference. If !x already holds a string and the attribute is a number — incompatible types.",
+   "st": "ok",
+   "key": "!",
+   "dates": [
+    "2026-09-19"
+   ],
+   "runs": []
+  },
+  {
+   "id": "a-object-array",
+   "g": 10,
+   "cmd": "!!a = object ARRAY()",
+   "what": "An array; .Append() adds",
+   "note": "",
+   "st": "ok",
+   "key": "!",
+   "dates": [
+    "2026-09-16"
+   ],
+   "runs": []
+  },
+  {
+   "id": "h",
+   "g": 10,
+   "cmd": "$H",
+   "what": "Help",
+   "note": "",
+   "st": "doc",
+   "key": "$H",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "comment",
+   "g": 11,
+   "cmd": "$* comment",
+   "what": "A comment in a macro",
+   "note": "On a par with --; appears 103 times in the code corpus.",
+   "st": "ref",
+   "key": "",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "if-x-gt-5-then-elseif-else-endif",
+   "g": 11,
+   "cmd": "if ( !x gt 5 ) then … elseif … else … endif",
+   "what": "Condition, PML1 form",
+   "note": "PML1: comparisons only in words eq ne gt lt ge le, variables !name, substitution $!name.",
+   "st": "ref",
+   "key": "IF",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "if-x-5-and-n-matchwild-pipe-then",
+   "g": 11,
+   "cmd": "if ( !x > 5 and !n.Matchwild('PIPE*') ) then",
+   "what": "Condition, PML2 form",
+   "note": "PML2 added == != > < and the logical AND OR NOT. Matchwild appears 37 times in the corpus.",
+   "st": "ref",
+   "key": "IF",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "do-i-from-1-to-10",
+   "g": 11,
+   "cmd": "do !i from 1 to 10",
+   "what": "Counting loop",
+   "note": "88 times in the corpus.",
+   "st": "ref",
+   "key": "DO",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "do-i-from-1-to-10-by-2",
+   "g": 11,
+   "cmd": "do !i from 1 to 10 by 2",
+   "what": "Loop with a step",
+   "note": "The by step did not appear in the corpus.",
+   "st": "doc",
+   "key": "DO",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "do-elem-values-array",
+   "g": 11,
+   "cmd": "do !elem values !array",
+   "what": "Loop over array values",
+   "note": "The most common form, 117 times.",
+   "st": "ref",
+   "key": "DO",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "do-i-indices-array",
+   "g": 11,
+   "cmd": "do !i indices !array",
+   "what": "Loop over indices",
+   "note": "5 times in the corpus.",
+   "st": "ref",
+   "key": "DO",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "do-while-flag",
+   "g": 11,
+   "cmd": "do while ( !flag )",
+   "what": "Loop while a condition holds",
+   "note": "Not met in our corpus.",
+   "st": "doc",
+   "key": "DO",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "break",
+   "g": 11,
+   "cmd": "break",
+   "what": "Leave the loop",
+   "note": "",
+   "st": "ref",
+   "key": "BREAK",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "skip",
+   "g": 11,
+   "cmd": "skip",
+   "what": "Go to the next iteration",
+   "note": "",
+   "st": "ref",
+   "key": "SKIP",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "break-if-skip-if",
+   "g": 11,
+   "cmd": "break if ( … ) / skip if ( … )",
+   "what": "Leave or skip on a condition",
+   "note": "skip if met once, break if — never.",
+   "st": "doc",
+   "key": "BREAK",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "handle-any-endhandle-2",
+   "g": 11,
+   "cmd": "handle any … endhandle",
+   "what": "Catch any error",
+   "note": "193 times in the corpus. It goes RIGHT AFTER the guarded line, not before it.",
+   "st": "ref",
+   "key": "HANDLE",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "handle-41-64",
+   "g": 11,
+   "cmd": "handle (41,64)",
+   "what": "Catch a specific error by number",
+   "note": "Not met in the corpus.",
+   "st": "doc",
+   "key": "HANDLE",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "elsehandle-none-elsehandle-any",
+   "g": 11,
+   "cmd": "elsehandle NONE / elsehandle ANY",
+   "what": "Handler branches: no error / any",
+   "note": "47 times in the corpus.",
+   "st": "ref",
+   "key": "ELSEHANDLE",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "error-text",
+   "g": 11,
+   "cmd": "$!!error.text",
+   "what": "Text of the caught error",
+   "note": "In the corpus. The code and line fields — by the documentation.",
+   "st": "ref",
+   "key": "$!",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "return-error-1-could-not-run",
+   "g": 11,
+   "cmd": "return error 1 'Could not run'",
+   "what": "Raise your own error",
+   "note": "3 times in the corpus.",
+   "st": "ref",
+   "key": "RETURN",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "m-c-temp-t-mac-arg1-arg2-2",
+   "g": 11,
+   "cmd": "$M C:\\Temp\\t.mac arg1 arg2",
+   "what": "Run a macro from the Command Line",
+   "note": "The only bridge between the command line and the language: the call itself works.",
+   "st": "ok",
+   "key": "$M",
+   "dates": [
+    "2026-08-26"
+   ],
+   "runs": []
+  },
+  {
+   "id": "define-function-name",
+   "g": 11,
+   "cmd": "define function !!name",
+   "what": "A function in name.pmlfnc",
+   "note": "The file must sit in a PMLLIB folder, and those are not writable for a normal user — the way is closed.",
+   "st": "doc",
+   "key": "DEFINE",
+   "dates": [
+    "2026-09-16"
+   ],
+   "runs": []
+  },
+  {
+   "id": "setup-form-name-exit",
+   "g": 11,
+   "cmd": "setup form !!name … exit",
+   "what": "A form with fields and buttons straight from a macro",
+   "note": "Via Paste as Macro the form appeared without PMLLIB, buttons work — a field, !!CE.Name, q var, $M file.mac. define method after exit — Method not found: keep the logic in .mac files.",
+   "st": "ok",
+   "key": "SETUP",
+   "dates": [
+    "2026-09-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "endif",
+   "g": 11,
+   "cmd": "endif",
+   "what": "End of if (macro only)",
+   "note": "Plain paste — Invalid syntax; through Paste as Macro — works.",
+   "st": "mac",
+   "key": "ENDIF",
+   "dates": [
+    "2026-08-27"
+   ],
+   "runs": []
+  },
+  {
+   "id": "enddo",
+   "g": 11,
+   "cmd": "enddo",
+   "what": "End of do (macro only)",
+   "note": "The same.",
+   "st": "mac",
+   "key": "ENDDO",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "endhandle",
+   "g": 11,
+   "cmd": "endhandle",
+   "what": "End of handle (macro only)",
+   "note": "The same.",
+   "st": "mac",
+   "key": "ENDHANDLE",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "golabel-label",
+   "g": 11,
+   "cmd": "golabel /label",
+   "what": "Jump to a label (and label /label)",
+   "note": "Only in a macro file (SOFTCG 6.06.11).",
+   "st": "doc",
+   "key": "GOLABEL",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "return",
+   "g": 11,
+   "cmd": "return",
+   "what": "Leave the PML file",
+   "note": "SOFTCG 4.04.03.",
+   "st": "doc",
+   "key": "RETURN",
+   "dates": [],
+   "runs": []
+  },
+  {
+   "id": "view-v-volume-width-60-height-20",
+   "g": 11,
+   "cmd": "view .v VOLUME width 60 height 20",
+   "what": "A 3D window in a form from a macro",
+   "note": "Shows everything the main 3D view shows.",
+   "st": "ok",
+   "key": "VIEW",
+   "dates": [
+    "2026-09-28"
+   ],
+   "runs": [
+    13
+   ]
+  },
+  {
+   "id": "edgpacket",
+   "g": 11,
+   "cmd": "EDGPACKET",
+   "what": "Pick a point on an edge with a click (definePosition)",
+   "note": "q var prints the point WRT the owner; the packet lives until Esc.",
+   "st": "ok",
+   "key": "EDGPACKET",
+   "dates": [
+    "2026-09-28"
+   ],
+   "runs": [
+    13
+   ]
+  }
+ ]
+}

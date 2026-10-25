@@ -1,0 +1,27 @@
+$* bracketPML / escaping - probe: check the text rules in YOUR E3D.
+$* Stand on one test element that has a DESC (EQUI, SUBE, CWBRAN). Paste as Macro.
+$* Everything is written under a rollback mark and undone by UNDODB.
+$* Do not SAVEWORK while it runs. Compare each Q DESC answer with the expected text.
+MARKDB |bracketPML escaping probe|
+$P expected: Description cable tray 600
+DESC |cable tray 600|
+Q DESC
+$P expected: Description price $$5  (one dollar sign)
+DESC |price $$5|
+Q DESC
+$P expected: Description 3/4" pipe
+DESC |3/4" pipe|
+Q DESC
+$P expected: Description single quotes work too
+DESC 'single quotes work too'
+Q DESC
+UNDODB
+$P after UNDODB the description is back to what it was:
+Q DESC
+$P NOT YET VERIFIED BY US: a vertical bar inside single quotes. Expected: Description a, bar, b
+$P If this line fails, nothing was written - tell us the error text.
+MARKDB |bracketPML escaping probe 2|
+DESC 'a|b'
+Q DESC
+UNDODB
+Q DESC

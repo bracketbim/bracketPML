@@ -1,0 +1,48 @@
+name: Run report
+description: You ran a PML command or a probe in AVEVA E3D — tell us what it printed.
+title: "Run report: <command>"
+labels: ["run report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you! A run report is how the register grows. Please remove anything you do not want to share (project names, references, paths).
+  - type: input
+    id: version
+    attributes:
+      label: E3D version
+      description: From Help → About, e.g. «AVEVA E3D Design 2.1.0.x» or «3.1».
+    validations:
+      required: true
+  - type: textarea
+    id: ran
+    attributes:
+      label: What you ran
+      description: The exact lines, as you pasted them.
+      render: text
+    validations:
+      required: true
+  - type: dropdown
+    id: how
+    attributes:
+      label: How you ran it
+      options:
+        - Typed line by line
+        - Plain paste
+        - Right-click → Paste as Macro
+        - $M macro file
+    validations:
+      required: true
+  - type: textarea
+    id: printed
+    attributes:
+      label: What E3D printed
+      description: Word for word, including error numbers like (2,109) and the caret line ^^.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: checked
+    attributes:
+      label: What you checked afterwards
+      description: Q ATT, Q MEM, the 3D view — anything that shows the result.

@@ -1,0 +1,17 @@
+$* bracketPML / export-safe - probe: the safe start, the count and the end line, on ONE element.
+$* Stand on any element. Paste as Macro. Read-only: the model is not changed.
+$* Then: python read_export.py C:\Temp\bpml-probe.txt  ->  ok: 1 items
+$* Run it twice: the first line closes a log left open by anything before, the error is caught.
+alpha log END
+handle any
+endhandle
+!n = 0
+alpha log /C:\Temp\bpml-probe.txt OVERWRITE
+$P #BPML BEGIN
+VAR !rf REF
+VAR !nm NAME
+$P #ITEM $!rf $!nm
+!n = !n + 1
+$P #BPML END $!n
+alpha log END
+$P written: C:\Temp\bpml-probe.txt

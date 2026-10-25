@@ -1,0 +1,32 @@
+$* bracketPML / export-safe - every cable tray branch of one area to a text file.
+$* Read-only: the model is not changed. Paste with right-click -> Paste as Macro.
+$* Set your area on the line !area = ... (a zone or a site).
+$* The last line of the file is #BPML END <count>; read_export.py checks it.
+alpha log END
+handle any
+endhandle
+!n = 0
+!ok = 1
+!area = '/PMLC'
+alpha log /C:\Temp\bpml-export.txt OVERWRITE
+$P #BPML BEGIN
+$!area
+handle any
+  !ok = 0
+endhandle
+if (!ok EQ 0) then
+  $P #BPML NOAREA $!area
+endif
+if (!ok EQ 1) then
+  VAR !items COLLECT ALL CWBRAN FOR CE
+  do !e values !items
+    $!e
+    VAR !rf REF
+    VAR !nm NAME
+    $P #ITEM $!rf $!nm
+    !n = !n + 1
+  enddo
+endif
+$P #BPML END $!n
+alpha log END
+$P written: C:\Temp\bpml-export.txt - $!n branches

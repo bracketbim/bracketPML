@@ -6,7 +6,7 @@
 
 **Команды:** `IF` **Только макрос** · `DO` **Только макрос** · `HANDLE` **Только макрос**
 
-**Что мы думали.** Сначала — догадка, что блоки в командной строке падают. Потом — цитата из руководства по PML: «The program does not discriminate between input from the GUI, the keyboard, or a macro file» (программа не различает ввод из интерфейса, с клавиатуры или из файла макроса). И мы написали, что ошибались.
+**Что мы думали.** Сначала — догадка, что блоки в командной строке падают. Потом — цитата из руководства по PML (Software Customisation Guide 2.1, 8.08.2): «The program does not discriminate between input from the GUI, the keyboard, or a macro file» (программа не различает ввод из интерфейса, с клавиатуры или из файла макроса). И мы написали, что ошибались.
 
 **Что показал прогон.** `if (!!t GT 1) then` → `PML: Invalid syntax in the current context`. То же с `do … enddo` и `endhandle`. Первая догадка была верной, а «поправка» по мануалу — нет.
 

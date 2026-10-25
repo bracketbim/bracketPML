@@ -6,7 +6,7 @@
 
 **Commands:** `IF` **Macro only** · `DO` **Macro only** · `HANDLE` **Macro only**
 
-**What we believed.** First a guess that blocks fail in the Command Line. Then a quote from the PML guide — «The program does not discriminate between input from the GUI, the keyboard, or a macro file» — and we wrote that we had been wrong.
+**What we believed.** First a guess that blocks fail in the Command Line. Then a quote from the PML guide (Software Customisation Guide 2.1, 8.08.2) — «The program does not discriminate between input from the GUI, the keyboard, or a macro file» — and we wrote that we had been wrong.
 
 **What a run showed.** `if (!!t GT 1) then` → `PML: Invalid syntax in the current context`. The same for `do … enddo` and `endhandle`. The first guess was right; the «correction» from the manual was not.
 

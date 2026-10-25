@@ -13,8 +13,7 @@ Every command here carries the run that proved it. Nothing is written from memor
 <a href="#myths">Myths</a> ·
 <a href="attributes.md">Attributes</a> ·
 <a href="syntax.md">Syntax</a> ·
-<a href="CONTRIBUTING.md">Send a run report</a> ·
-<a href="ru/README.md">По-русски</a>
+<a href="CONTRIBUTING.md">Send a run report</a>
 </p>
 
 ---

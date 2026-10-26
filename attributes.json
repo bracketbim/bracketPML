@@ -17,7 +17,39 @@
    "en": "Equipment",
    "codes": [
     "EQUIPMENT",
-    "SUBEQUIPMENT"
+    "SUBEQUIPMENT",
+    "NOZZLE"
+   ]
+  },
+  {
+   "en": "Primitives",
+   "codes": [
+    "BOX",
+    "CYLINDER",
+    "CONE",
+    "SNOUT",
+    "DISH",
+    "PYRAMID",
+    "CTORUS",
+    "RTORUS",
+    "SLCYLINDER",
+    "EXTRUSION",
+    "REVOLUTION",
+    "POLYHEDRON"
+   ]
+  },
+  {
+   "en": "Holes (negative primitives)",
+   "codes": [
+    "NBOX",
+    "NCYLINDER",
+    "NCONE",
+    "NSNOUT",
+    "NDISH",
+    "NPYRAMID",
+    "NCTORUS",
+    "NRTORUS",
+    "NSLCYLINDER"
    ]
   },
   {
@@ -47,6 +79,7 @@
      "en": "Cable arrangement setting; the value is text in |bars|",
      "st": "ok",
      "key": "CABLAYOUT",
+     "acc": "text",
      "note_en": "A text attribute: CABLAY |CEN| — without bars it is a syntax error."
     },
     {
@@ -54,6 +87,7 @@
      "en": "Free text about the element; text with spaces goes in |bars|",
      "st": "ok",
      "key": "DESC",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -61,6 +95,7 @@
      "en": "Upper limit of cables",
      "st": "ok",
      "key": "MAXCAB",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -68,6 +103,7 @@
      "en": "Upper limit of cable layers",
      "st": "ok",
      "key": "MAXLAY",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -75,6 +111,7 @@
      "en": "The element’s name; it starts with a slash",
      "st": "ok",
      "key": "NAME",
+     "acc": "name",
      "note_en": ""
     },
     {
@@ -82,6 +119,7 @@
      "en": "Where the element sits, measured from its owner",
      "st": "ok",
      "key": "POS",
+     "acc": "pos",
      "note_en": ""
     },
     {
@@ -89,6 +127,7 @@
      "en": "A short code word for marking and filtering elements",
      "st": "ok",
      "key": "PURPOSE",
+     "acc": "word",
      "note_en": "A code word, up to 4 characters by DMRM."
     },
     {
@@ -96,6 +135,7 @@
      "en": "Free text: what the element is for",
      "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -103,6 +143,7 @@
      "en": "Flag: the route runs below ground",
      "st": "seen",
      "key": "",
+     "acc": "logical",
      "note_en": ""
     },
     {
@@ -110,6 +151,7 @@
      "en": "Globally unique ID of the element",
      "st": "man",
      "key": "",
+     "acc": "",
      "note_en": ""
     }
    ],
@@ -143,6 +185,7 @@
      "en": "Turn of the section about the branch axis (beta)",
      "st": "ok",
      "key": "BANGLE",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -150,6 +193,7 @@
      "en": "Radius of the bends along the branch",
      "st": "ok",
      "key": "BRADIUS",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -157,6 +201,7 @@
      "en": "Cable arrangement setting; the value is text in |bars|",
      "st": "ok",
      "key": "CABLAYOUT",
+     "acc": "text",
      "note_en": "A text attribute: CABLAY |CEN| — without bars it is a syntax error."
     },
     {
@@ -164,6 +209,7 @@
      "en": "Which line of the tray section the route follows",
      "st": "ok",
      "key": "CWJUSLINE",
+     "acc": "word",
      "note_en": ""
     },
     {
@@ -171,6 +217,7 @@
      "en": "Free text about the element; text with spaces goes in |bars|",
      "st": "ok",
      "key": "DESC",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -178,6 +225,7 @@
      "en": "A list of numeric design values",
      "st": "ok",
      "key": "DESPARAM",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -185,6 +233,7 @@
      "en": "What the start of the branch is connected to",
      "st": "ok",
      "key": "HCREF",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -192,6 +241,7 @@
      "en": "The range of drawing levels at which the element is shown",
      "st": "ok",
      "key": "LEVEL",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -199,6 +249,7 @@
      "en": "Kind of tray material",
      "st": "ok",
      "key": "MATTYPE",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -206,6 +257,7 @@
      "en": "Upper limit of cables",
      "st": "ok",
      "key": "MAXCAB",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -213,6 +265,7 @@
      "en": "Upper limit of cable layers",
      "st": "ok",
      "key": "MAXLAY",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -220,6 +273,7 @@
      "en": "The element’s name; it starts with a slash",
      "st": "ok",
      "key": "NAME",
+     "acc": "name",
      "note_en": ""
     },
     {
@@ -227,6 +281,7 @@
      "en": "How solid the element counts in clash checks",
      "st": "ok",
      "key": "OBST",
+     "acc": "obst",
      "note_en": ""
     },
     {
@@ -234,6 +289,7 @@
      "en": "Which way the element’s axes point",
      "st": "ok",
      "key": "ORI",
+     "acc": "dir",
      "note_en": ""
     },
     {
@@ -241,6 +297,7 @@
      "en": "Where the element sits, measured from its owner",
      "st": "ok",
      "key": "POS",
+     "acc": "pos",
      "note_en": ""
     },
     {
@@ -248,6 +305,7 @@
      "en": "A short code word for marking and filtering elements",
      "st": "ok",
      "key": "PURPOSE",
+     "acc": "word",
      "note_en": ""
     },
     {
@@ -255,6 +313,7 @@
      "en": "Height of the tray section",
      "st": "ok",
      "key": "VHEIGHT",
+     "acc": "number",
      "note_en": "Written like VWidth."
     },
     {
@@ -262,6 +321,7 @@
      "en": "Width of the tray section",
      "st": "ok",
      "key": "VWIDTH",
+     "acc": "number",
      "note_en": "Units are allowed: VWIDTH 700mm (run of 22 Sep). A number in bars is a syntax error."
     },
     {
@@ -269,6 +329,7 @@
      "en": "The area number the element belongs to",
      "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -276,6 +337,7 @@
      "en": "Extra allowance, in percent, for cables passing through",
      "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -283,6 +345,7 @@
      "en": "Flag: the branch forms a closed loop",
      "st": "seen",
      "key": "",
+     "acc": "logical",
      "note_en": ""
     },
     {
@@ -290,6 +353,7 @@
      "en": "Space taken by the tray material",
      "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -297,6 +361,7 @@
      "en": "Free text: what the element is for",
      "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -304,6 +369,7 @@
      "en": "The class used when checking clashes",
      "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -311,6 +377,7 @@
      "en": "The highest allowed fill, in percent",
      "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -318,6 +385,7 @@
      "en": "A numeric label of the element",
      "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -325,6 +393,7 @@
      "en": "Space kept free around the tray",
      "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -332,6 +401,7 @@
      "en": "Logical values used by rules",
      "st": "seen",
      "key": "",
+     "acc": "expr",
      "note_en": ""
     },
     {
@@ -339,6 +409,7 @@
      "en": "What the end of the branch is connected to",
      "st": "seen",
      "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -346,6 +417,7 @@
      "en": "Flag: the route runs below ground",
      "st": "seen",
      "key": "",
+     "acc": "logical",
      "note_en": ""
     },
     {
@@ -353,6 +425,7 @@
      "en": "Shape of the tray section",
      "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -360,6 +433,7 @@
      "en": "Globally unique ID of the element",
      "st": "man",
      "key": "",
+     "acc": "",
      "note_en": ""
     }
    ],
@@ -393,6 +467,7 @@
      "en": "Free text about the element; text with spaces goes in |bars|",
      "st": "ok",
      "key": "DESC",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -400,13 +475,15 @@
      "en": "The element’s name; it starts with a slash",
      "st": "ok",
      "key": "NAME",
+     "acc": "name",
      "note_en": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     }
    ],
@@ -433,6 +510,7 @@
      "en": "Free text about the element; text with spaces goes in |bars|",
      "st": "ok",
      "key": "DESC",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -440,13 +518,15 @@
      "en": "The element’s name; it starts with a slash",
      "st": "ok",
      "key": "NAME",
+     "acc": "name",
      "note_en": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     }
    ],
@@ -485,27 +565,31 @@
      "en": "The element’s name; it starts with a slash",
      "st": "ok",
      "key": "NAME",
+     "acc": "name",
      "note_en": ""
     },
     {
      "n": "Drnend",
      "en": "Direction of the cut plane at the end of the section",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "dir",
      "note_en": ""
     },
     {
      "n": "Drnstart",
      "en": "Direction of the cut plane at the start of the section",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "dir",
      "note_en": ""
     },
     {
      "n": "Ydirection",
      "en": "Which way the Y axis of the section should point",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "dir",
      "note_en": ""
     }
    ],
@@ -527,6 +611,7 @@
      "en": "Free text about the element; text with spaces goes in |bars|",
      "st": "ok",
      "key": "DESC",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -534,6 +619,7 @@
      "en": "Fillet radius at this point, measured on the tray axis",
      "st": "ok",
      "key": "FRADIUS",
+     "acc": "number",
      "note_en": "Measured on the tray AXIS, not on its edge (run of 29 Sep); Q FRADIUS prints a number (run of 28 Sep)."
     },
     {
@@ -541,6 +627,7 @@
      "en": "The element’s name; it starts with a slash",
      "st": "ok",
      "key": "NAME",
+     "acc": "name",
      "note_en": ""
     },
     {
@@ -548,13 +635,23 @@
      "en": "Where the element sits, measured from its owner",
      "st": "ok",
      "key": "POS",
+     "acc": "pos",
      "note_en": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "SIGREF",
+     "en": "Link to a significant point",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -562,13 +659,7 @@
      "en": "Kind of route point",
      "st": "man",
      "key": "",
-     "note_en": ""
-    },
-    {
-     "n": "SIGREF",
-     "en": "Link to a significant point",
-     "st": "man",
-     "key": "",
+     "acc": "",
      "note_en": ""
     }
    ],
@@ -593,6 +684,7 @@
      "en": "Free text about the element; text with spaces goes in |bars|",
      "st": "ok",
      "key": "DESC",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -600,13 +692,15 @@
      "en": "The element’s name; it starts with a slash",
      "st": "ok",
      "key": "NAME",
+     "acc": "name",
      "note_en": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     }
    ],
@@ -636,6 +730,7 @@
      "en": "Free text about the element; text with spaces goes in |bars|",
      "st": "ok",
      "key": "DESC",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -643,6 +738,7 @@
      "en": "A list of numeric design values",
      "st": "ok",
      "key": "DESPARAM",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -650,6 +746,7 @@
      "en": "The element’s name; it starts with a slash",
      "st": "ok",
      "key": "NAME",
+     "acc": "name",
      "note_en": ""
     },
     {
@@ -657,62 +754,71 @@
      "en": "A short code word for marking and filtering elements",
      "st": "ok",
      "key": "PURPOSE",
+     "acc": "word",
      "note_en": ""
     },
     {
      "n": "CTSPE",
      "en": "Link to the cable tray specification",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
      "n": "FGap",
      "en": "Gap: the first one",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
      "n": "IGap",
      "en": "Gap: the ones in between",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
      "n": "LGap",
      "en": "Gap: the last one",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
      "n": "TierHeight",
      "en": "Height of each tray tier above the route",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
      "n": "TrayH",
      "en": "How high the trays are",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
      "n": "TrayW",
      "en": "How wide the trays are",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     }
    ],
@@ -765,6 +871,7 @@
      "en": "Free text about the element; text with spaces goes in |bars|",
      "st": "ok",
      "key": "DESC",
+     "acc": "text",
      "note_en": "EQUI and SUBE have it, BOX does not; 250 characters — «Too many values» (run of 1 Oct)."
     },
     {
@@ -772,6 +879,7 @@
      "en": "A list of numeric design values",
      "st": "ok",
      "key": "DESPARAM",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -779,6 +887,7 @@
      "en": "The element’s name; it starts with a slash",
      "st": "ok",
      "key": "NAME",
+     "acc": "name",
      "note_en": ""
     },
     {
@@ -786,6 +895,7 @@
      "en": "Which way the element’s axes point",
      "st": "ok",
      "key": "ORI",
+     "acc": "dir",
      "note_en": "ORI on an EQUI turns it together with its children (run of 24 Sep); with an angle: ORI Y IS N AND Z IS E 45 U (run of 29 Sep)."
     },
     {
@@ -793,6 +903,7 @@
      "en": "Where the element sits, measured from its owner",
      "st": "ok",
      "key": "POS",
+     "acc": "pos",
      "note_en": ""
     },
     {
@@ -800,6 +911,7 @@
      "en": "A short code word for marking and filtering elements",
      "st": "ok",
      "key": "PURPOSE",
+     "acc": "word",
      "note_en": "Written and inherited by a copy made in E3D — verified by a run."
     },
     {
@@ -807,6 +919,7 @@
      "en": "Link to the component specification",
      "st": "ok",
      "key": "SPREF",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -814,6 +927,7 @@
      "en": "The area number the element belongs to",
      "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -821,6 +935,7 @@
      "en": "Flag: built or not yet built",
      "st": "seen",
      "key": "",
+     "acc": "logical",
      "note_en": ""
     },
     {
@@ -828,6 +943,7 @@
      "en": "Code of the design standard",
      "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -835,6 +951,7 @@
      "en": "Not explained in the manual",
      "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -842,6 +959,7 @@
      "en": "Free text: what the element is for",
      "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -849,6 +967,7 @@
      "en": "Paint on the inside (link)",
      "st": "seen",
      "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -856,6 +975,7 @@
      "en": "Schedule of inspections",
      "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -863,6 +983,7 @@
      "en": "Link to the insulation specification",
      "st": "seen",
      "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -870,6 +991,7 @@
      "en": "Links to model and design elements",
      "st": "seen",
      "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -877,6 +999,7 @@
      "en": "A numeric label of the element",
      "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -884,6 +1007,7 @@
      "en": "Paint on the outside (link)",
      "st": "seen",
      "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -891,6 +1015,7 @@
      "en": "Links to property sets",
      "st": "seen",
      "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -898,6 +1023,7 @@
      "en": "Link to the paint specification",
      "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -905,6 +1031,7 @@
      "en": "Key of the drawing symbol",
      "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -912,6 +1039,7 @@
      "en": "Link to a steel element",
      "st": "seen",
      "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -919,6 +1047,7 @@
      "en": "Centre of gravity typed in by hand",
      "st": "seen",
      "key": "",
+     "acc": "expr",
      "note_en": ""
     },
     {
@@ -926,6 +1055,7 @@
      "en": "Centre of gravity with contents, typed in by hand",
      "st": "seen",
      "key": "",
+     "acc": "expr",
      "note_en": ""
     },
     {
@@ -933,6 +1063,7 @@
      "en": "Weight typed in by hand",
      "st": "seen",
      "key": "",
+     "acc": "expr",
      "note_en": ""
     },
     {
@@ -940,6 +1071,7 @@
      "en": "Weight with contents (wet), typed in by hand",
      "st": "seen",
      "key": "",
+     "acc": "expr",
      "note_en": ""
     },
     {
@@ -947,6 +1079,7 @@
      "en": "Text kept for the weight manager",
      "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -954,6 +1087,7 @@
      "en": "List of inventory items",
      "st": "man",
      "key": "",
+     "acc": "",
      "note_en": ""
     },
     {
@@ -961,6 +1095,7 @@
      "en": "Origin link used by templates",
      "st": "man",
      "key": "",
+     "acc": "",
      "note_en": ""
     },
     {
@@ -968,6 +1103,7 @@
      "en": "Pointer that picks the template",
      "st": "man",
      "key": "",
+     "acc": "",
      "note_en": ""
     },
     {
@@ -975,6 +1111,7 @@
      "en": "Globally unique ID of the element",
      "st": "man",
      "key": "",
+     "acc": "",
      "note_en": ""
     }
    ],
@@ -1027,6 +1164,7 @@
      "en": "Free text about the element; text with spaces goes in |bars|",
      "st": "ok",
      "key": "DESC",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -1034,6 +1172,7 @@
      "en": "A list of numeric design values",
      "st": "ok",
      "key": "DESPARAM",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -1041,6 +1180,7 @@
      "en": "The element’s name; it starts with a slash",
      "st": "ok",
      "key": "NAME",
+     "acc": "name",
      "note_en": ""
     },
     {
@@ -1048,6 +1188,7 @@
      "en": "Which way the element’s axes point",
      "st": "ok",
      "key": "ORI",
+     "acc": "dir",
      "note_en": ""
     },
     {
@@ -1055,6 +1196,7 @@
      "en": "Where the element sits, measured from its owner",
      "st": "ok",
      "key": "POS",
+     "acc": "pos",
      "note_en": ""
     },
     {
@@ -1062,6 +1204,7 @@
      "en": "A short code word for marking and filtering elements",
      "st": "ok",
      "key": "PURPOSE",
+     "acc": "word",
      "note_en": ""
     },
     {
@@ -1069,41 +1212,143 @@
      "en": "Link to the component specification",
      "st": "ok",
      "key": "SPREF",
+     "acc": "ref",
      "note_en": ""
     },
     {
      "n": "Area",
      "en": "The area number the element belongs to",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
      "n": "Built",
      "en": "Flag: built or not yet built",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "logical",
      "note_en": ""
     },
     {
      "n": "Dscode",
      "en": "Code of the design standard",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
      "n": "Inschedule",
      "en": "Schedule of inspections",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Ispec",
+     "en": "Link to the insulation specification",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Mdsysf",
+     "en": "Links to model and design elements",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Number",
+     "en": "A numeric label of the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Propst",
+     "en": "Links to property sets",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Ptspec",
+     "en": "Link to the paint specification",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Skey",
+     "en": "Key of the drawing symbol",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "StlRef",
+     "en": "Link to a steel element",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Usrcogravity",
+     "en": "Centre of gravity typed in by hand",
+     "st": "seen",
+     "key": "",
+     "acc": "expr",
+     "note_en": ""
+    },
+    {
+     "n": "Usrwcogravity",
+     "en": "Centre of gravity with contents, typed in by hand",
+     "st": "seen",
+     "key": "",
+     "acc": "expr",
+     "note_en": ""
+    },
+    {
+     "n": "Usrweight",
+     "en": "Weight typed in by hand",
+     "st": "seen",
+     "key": "",
+     "acc": "expr",
+     "note_en": ""
+    },
+    {
+     "n": "Usrwweight",
+     "en": "Weight with contents (wet), typed in by hand",
+     "st": "seen",
+     "key": "",
+     "acc": "expr",
+     "note_en": ""
+    },
+    {
+     "n": "Uwmtxt",
+     "en": "Text kept for the weight manager",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -1111,27 +1356,7 @@
      "en": "List of inventory items",
      "st": "man",
      "key": "",
-     "note_en": ""
-    },
-    {
-     "n": "Ispec",
-     "en": "Link to the insulation specification",
-     "st": "man",
-     "key": "",
-     "note_en": ""
-    },
-    {
-     "n": "Mdsysf",
-     "en": "Links to model and design elements",
-     "st": "man",
-     "key": "",
-     "note_en": ""
-    },
-    {
-     "n": "Number",
-     "en": "A numeric label of the element",
-     "st": "man",
-     "key": "",
+     "acc": "",
      "note_en": ""
     },
     {
@@ -1139,34 +1364,7 @@
      "en": "Origin link used by templates",
      "st": "man",
      "key": "",
-     "note_en": ""
-    },
-    {
-     "n": "Propst",
-     "en": "Links to property sets",
-     "st": "man",
-     "key": "",
-     "note_en": ""
-    },
-    {
-     "n": "Ptspec",
-     "en": "Link to the paint specification",
-     "st": "man",
-     "key": "",
-     "note_en": ""
-    },
-    {
-     "n": "Skey",
-     "en": "Key of the drawing symbol",
-     "st": "man",
-     "key": "",
-     "note_en": ""
-    },
-    {
-     "n": "StlRef",
-     "en": "Link to a steel element",
-     "st": "man",
-     "key": "",
+     "acc": "",
      "note_en": ""
     },
     {
@@ -1174,34 +1372,7 @@
      "en": "Pointer that picks the template",
      "st": "man",
      "key": "",
-     "note_en": ""
-    },
-    {
-     "n": "Usrcogravity",
-     "en": "Centre of gravity typed in by hand",
-     "st": "man",
-     "key": "",
-     "note_en": ""
-    },
-    {
-     "n": "Usrwcogravity",
-     "en": "Centre of gravity with contents, typed in by hand",
-     "st": "man",
-     "key": "",
-     "note_en": ""
-    },
-    {
-     "n": "Usrweight",
-     "en": "Weight typed in by hand",
-     "st": "man",
-     "key": "",
-     "note_en": ""
-    },
-    {
-     "n": "Usrwweight",
-     "en": "Weight with contents (wet), typed in by hand",
-     "st": "man",
-     "key": "",
+     "acc": "",
      "note_en": ""
     },
     {
@@ -1209,13 +1380,7 @@
      "en": "Globally unique ID of the element",
      "st": "man",
      "key": "",
-     "note_en": ""
-    },
-    {
-     "n": "Uwmtxt",
-     "en": "Text kept for the weight manager",
-     "st": "man",
-     "key": "",
+     "acc": "",
      "note_en": ""
     }
    ],
@@ -1269,6 +1434,7 @@
      "en": "Free text about the element; text with spaces goes in |bars|",
      "st": "ok",
      "key": "DESC",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -1276,6 +1442,7 @@
      "en": "The element’s name; it starts with a slash",
      "st": "ok",
      "key": "NAME",
+     "acc": "name",
      "note_en": ""
     },
     {
@@ -1283,6 +1450,7 @@
      "en": "Which way the element’s axes point",
      "st": "ok",
      "key": "ORI",
+     "acc": "dir",
      "note_en": ""
     },
     {
@@ -1290,6 +1458,7 @@
      "en": "Where the element sits, measured from its owner",
      "st": "ok",
      "key": "POS",
+     "acc": "pos",
      "note_en": ""
     },
     {
@@ -1297,6 +1466,7 @@
      "en": "A short code word for marking and filtering elements",
      "st": "ok",
      "key": "PURPOSE",
+     "acc": "word",
      "note_en": ""
     },
     {
@@ -1304,6 +1474,7 @@
      "en": "The area number the element belongs to",
      "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -1311,6 +1482,7 @@
      "en": "Link to the pipe bending machine",
      "st": "seen",
      "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -1318,6 +1490,7 @@
      "en": "Flag used by DRAFT for joining element details",
      "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -1325,6 +1498,7 @@
      "en": "Not explained in the manual",
      "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -1332,6 +1506,7 @@
      "en": "Not explained in the manual",
      "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -1339,6 +1514,7 @@
      "en": "Free text: what the element is for",
      "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -1346,6 +1522,7 @@
      "en": "Link to the insulation specification",
      "st": "seen",
      "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -1353,6 +1530,7 @@
      "en": "The module the element belongs to",
      "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -1360,6 +1538,7 @@
      "en": "A numeric label of the element",
      "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -1367,6 +1546,7 @@
      "en": "Datum point of the model offset",
      "st": "seen",
      "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -1374,6 +1554,7 @@
      "en": "Link to the piping specification",
      "st": "seen",
      "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -1381,6 +1562,7 @@
      "en": "Rules saved by ROUTER",
      "st": "seen",
      "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -1388,6 +1570,7 @@
      "en": "Link to the trace heating specification",
      "st": "seen",
      "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -1395,6 +1578,7 @@
      "en": "Origin link used by templates",
      "st": "man",
      "key": "",
+     "acc": "",
      "note_en": ""
     },
     {
@@ -1402,6 +1586,7 @@
      "en": "Link to a space element",
      "st": "man",
      "key": "",
+     "acc": "",
      "note_en": ""
     },
     {
@@ -1409,6 +1594,7 @@
      "en": "Pointer that picks the template",
      "st": "man",
      "key": "",
+     "acc": "",
      "note_en": ""
     },
     {
@@ -1416,6 +1602,7 @@
      "en": "Globally unique ID of the element",
      "st": "man",
      "key": "",
+     "acc": "",
      "note_en": ""
     }
    ],
@@ -1453,6 +1640,7 @@
      "en": "Free text about the element; text with spaces goes in |bars|",
      "st": "ok",
      "key": "DESC",
+     "acc": "text",
      "note_en": ""
     },
     {
@@ -1460,6 +1648,7 @@
      "en": "The element’s name; it starts with a slash",
      "st": "ok",
      "key": "NAME",
+     "acc": "name",
      "note_en": ""
     },
     {
@@ -1467,6 +1656,7 @@
      "en": "Which way the element’s axes point",
      "st": "ok",
      "key": "ORI",
+     "acc": "dir",
      "note_en": ""
     },
     {
@@ -1474,6 +1664,7 @@
      "en": "Where the element sits, measured from its owner",
      "st": "ok",
      "key": "POS",
+     "acc": "pos",
      "note_en": ""
     },
     {
@@ -1481,34 +1672,47 @@
      "en": "A short code word for marking and filtering elements",
      "st": "ok",
      "key": "PURPOSE",
+     "acc": "word",
      "note_en": ""
     },
     {
      "n": "Area",
      "en": "The area number the element belongs to",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "number",
      "note_en": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
      "n": "Module",
      "en": "The module the element belongs to",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "text",
      "note_en": ""
     },
     {
      "n": "Number",
      "en": "A numeric label of the element",
-     "st": "man",
+     "st": "seen",
      "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Rlstored",
+     "en": "Rules saved by ROUTER",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
      "note_en": ""
     },
     {
@@ -1516,13 +1720,7 @@
      "en": "Origin link used by templates",
      "st": "man",
      "key": "",
-     "note_en": ""
-    },
-    {
-     "n": "Rlstored",
-     "en": "Rules saved by ROUTER",
-     "st": "man",
-     "key": "",
+     "acc": "",
      "note_en": ""
     },
     {
@@ -1530,6 +1728,7 @@
      "en": "Pointer that picks the template",
      "st": "man",
      "key": "",
+     "acc": "",
      "note_en": ""
     },
     {
@@ -1537,6 +1736,3076 @@
      "en": "Globally unique ID of the element",
      "st": "man",
      "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "NOZZLE",
+   "en": "Nozzle",
+   "n_en": "A connection point on equipment, built from a catalogue component (Catref).",
+   "page": "DMRM5.09.185",
+   "owners": [
+    "EQUIPMENT",
+    "SUBEQUIPMENT",
+    "TMPLATE"
+   ],
+   "members": [
+    "DDSE",
+    "DPSET",
+    "TMPLATE"
+   ],
+   "a": [
+    {
+     "n": "Description",
+     "en": "Free text about the element; text with spaces goes in |bars|",
+     "st": "ok",
+     "key": "DESC",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Desparam",
+     "en": "A list of numeric design values",
+     "st": "ok",
+     "key": "DESPARAM",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Angle",
+     "en": "How far the shape sweeps or turns, in degrees",
+     "st": "seen",
+     "key": "",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Bselector",
+     "en": "Text that picks which bolts the connection takes",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Catref",
+     "en": "Points to the catalogue component this element is drawn from",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Cref",
+     "en": "Points to whatever is connected here, such as a pipe branch",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Duty",
+     "en": "Free text: what the connection carries",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Function",
+     "en": "Free text: what the element is for",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Inprtref",
+     "en": "Paint on the inside (link)",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Ispec",
+     "en": "Link to the insulation specification",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Ouprtref",
+     "en": "Paint on the outside (link)",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Pressure",
+     "en": "Design pressure of the connection",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Radius",
+     "en": "A radius of the shape (for a dish, the knuckle)",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Temperature",
+     "en": "Design temperature of the connection",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "TPressure",
+     "en": "Pressure used to test the connection",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Invfarray",
+     "en": "List of inventory items",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "SloDirection",
+     "en": "A list of directions the slope follows",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Stmf",
+     "en": "Pointer that picks the template",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "BOX",
+   "en": "Box",
+   "n_en": "A block of Xlength by Ylength by Zlength. POS is the centre of the box.",
+   "page": "DMRM5.09.547",
+   "owners": [
+    "EQUIPMENT",
+    "ENVLOP",
+    "JNTBOX",
+    "PTRACK",
+    "PULLPIT",
+    "STRUCTURE",
+    "SUBEQUIPMENT",
+    "SUBSTRUCTURE",
+    "SVOLMODEL",
+    "TMPLATE",
+    "TRNPRI",
+    "VOLMODEL"
+   ],
+   "members": [
+    "NBOX",
+    "NCONE",
+    "NCTORUS",
+    "NCYLINDER",
+    "NDISH",
+    "NPOLYHEDRON",
+    "NPYRAMID",
+    "NREVOLUTION",
+    "NRTORUS",
+    "NSLCYLINDER",
+    "NSNOUT",
+    "NXTRUSION"
+   ],
+   "a": [
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Xlength",
+     "en": "Size along the local X axis",
+     "st": "ok",
+     "key": "XLEN",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Ylength",
+     "en": "Size along the local Y axis",
+     "st": "ok",
+     "key": "YLEN",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Zlength",
+     "en": "Size along the local Z axis",
+     "st": "ok",
+     "key": "ZLEN",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "CONE",
+   "en": "Cone",
+   "n_en": "Two diameters, Dtop and Dbottom, and a Height between them.",
+   "page": "DMRM5.09.548",
+   "owners": [
+    "EQUIPMENT",
+    "JNTBOX",
+    "PTRACK",
+    "PULLPIT",
+    "STRUCTURE",
+    "SUBEQUIPMENT",
+    "SUBSTRUCTURE",
+    "SVOLMODEL",
+    "TMPLATE",
+    "TRNPRI",
+    "VOLMODEL"
+   ],
+   "members": [
+    "NBOX",
+    "NCONE",
+    "NCTORUS",
+    "NCYLINDER",
+    "NDISH",
+    "NPOLYHEDRON",
+    "NPYRAMID",
+    "NREVOLUTION",
+    "NRTORUS",
+    "NSLCYLINDER",
+    "NSNOUT",
+    "NXTRUSION"
+   ],
+   "a": [
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Dbottom",
+     "en": "Diameter at the base end",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Dtop",
+     "en": "Diameter at the far end",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "CTORUS",
+   "en": "Circular torus",
+   "n_en": "A bend of round section: inner and outer radius and the Angle it sweeps.",
+   "page": "DMRM5.09.549",
+   "owners": [
+    "EQUIPMENT",
+    "JNTBOX",
+    "PTRACK",
+    "PULLPIT",
+    "STRUCTURE",
+    "SUBEQUIPMENT",
+    "SUBSTRUCTURE",
+    "SVOLMODEL",
+    "TMPLATE",
+    "TRNPRI",
+    "VOLMODEL"
+   ],
+   "members": [
+    "NBOX",
+    "NCONE",
+    "NCTORUS",
+    "NCYLINDER",
+    "NDISH",
+    "NPOLYHEDRON",
+    "NPYRAMID",
+    "NREVOLUTION",
+    "NRTORUS",
+    "NSLCYLINDER",
+    "NSNOUT",
+    "NXTRUSION"
+   ],
+   "a": [
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Angle",
+     "en": "How far the shape sweeps or turns, in degrees",
+     "st": "seen",
+     "key": "",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Rinside",
+     "en": "Distance from the torus centre to its inner edge",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Routside",
+     "en": "Distance from the torus centre to its outer edge",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "CYLINDER",
+   "en": "Cylinder",
+   "n_en": "Diameter and Height; POS is the centre. Without ORI the axis is Z of the owner.",
+   "page": "DMRM5.09.550",
+   "owners": [
+    "EQUIPMENT",
+    "JNTBOX",
+    "PTRACK",
+    "PULLPIT",
+    "STRUCTURE",
+    "SUBEQUIPMENT",
+    "SUBSTRUCTURE",
+    "SVOLMODEL",
+    "TMPLATE",
+    "TRNPRI",
+    "VOLMODEL"
+   ],
+   "members": [
+    "NBOX",
+    "NCONE",
+    "NCTORUS",
+    "NCYLINDER",
+    "NDISH",
+    "NPOLYHEDRON",
+    "NPYRAMID",
+    "NREVOLUTION",
+    "NRTORUS",
+    "NSLCYLINDER",
+    "NSNOUT",
+    "NXTRUSION"
+   ],
+   "a": [
+    {
+     "n": "Diameter",
+     "en": "Full width of the round section",
+     "st": "ok",
+     "key": "DIAM",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "DISH",
+   "en": "Dish",
+   "n_en": "A dished end: Diameter, Height and the knuckle Radius.",
+   "page": "DMRM5.09.551",
+   "owners": [
+    "EQUIPMENT",
+    "JNTBOX",
+    "PTRACK",
+    "PULLPIT",
+    "STRUCTURE",
+    "SUBEQUIPMENT",
+    "SUBSTRUCTURE",
+    "SVOLMODEL",
+    "TMPLATE",
+    "TRNPRI",
+    "VOLMODEL"
+   ],
+   "members": [
+    "NBOX",
+    "NCONE",
+    "NCTORUS",
+    "NCYLINDER",
+    "NDISH",
+    "NPOLYHEDRON",
+    "NPYRAMID",
+    "NREVOLUTION",
+    "NRTORUS",
+    "NSLCYLINDER",
+    "NSNOUT",
+    "NXTRUSION"
+   ],
+   "a": [
+    {
+     "n": "Diameter",
+     "en": "Full width of the round section",
+     "st": "ok",
+     "key": "DIAM",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Radius",
+     "en": "A radius of the shape (for a dish, the knuckle)",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "EXTRUSION",
+   "en": "Extrusion",
+   "n_en": "A profile drawn as a loop of vertices, pushed out by Height.",
+   "page": "DMRM5.09.553",
+   "owners": [
+    "EQUIPMENT",
+    "JNTBOX",
+    "PTRACK",
+    "PULLPIT",
+    "STRUCTURE",
+    "SUBEQUIPMENT",
+    "SUBSTRUCTURE",
+    "SVOLMODEL",
+    "TMPLATE",
+    "TRNPRI",
+    "VOLMODEL"
+   ],
+   "members": [
+    "LOOP",
+    "NBOX",
+    "NCONE",
+    "NCTORUS",
+    "NCYLINDER",
+    "NDISH",
+    "NPOLYHEDRON",
+    "NPYRAMID",
+    "NREVOLUTION",
+    "NRTORUS",
+    "NSLCYLINDER",
+    "NSNOUT",
+    "NXTRUSION"
+   ],
+   "a": [
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "POLYHEDRON",
+   "en": "Polyhedron",
+   "n_en": "A solid described face by face.",
+   "page": "DMRM5.09.565",
+   "owners": [
+    "EQUIPMENT",
+    "JNTBOX",
+    "PTRACK",
+    "PULLPIT",
+    "STRUCTURE",
+    "SUBEQUIPMENT",
+    "SUBSTRUCTURE",
+    "SVOLMODEL",
+    "TMPLATE",
+    "TRNPRI",
+    "VOLMODEL"
+   ],
+   "members": [
+    "NBOX",
+    "NCONE",
+    "NCTORUS",
+    "NCYLINDER",
+    "NDISH",
+    "NPOLYHEDRON",
+    "NPYRAMID",
+    "NREVOLUTION",
+    "NRTORUS",
+    "NSLCYLINDER",
+    "NSNOUT",
+    "NXTRUSION",
+    "POLFACE",
+    "POLPTLIST"
+   ],
+   "a": [
+    {
+     "n": "Description",
+     "en": "Free text about the element; text with spaces goes in |bars|",
+     "st": "ok",
+     "key": "DESC",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Function",
+     "en": "Free text: what the element is for",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "PYRAMID",
+   "en": "Pyramid",
+   "n_en": "A rectangular base and top of their own sizes; the top can be shifted.",
+   "page": "DMRM5.09.566",
+   "owners": [
+    "EQUIPMENT",
+    "JNTBOX",
+    "PTRACK",
+    "PULLPIT",
+    "STRUCTURE",
+    "SUBEQUIPMENT",
+    "SUBSTRUCTURE",
+    "SVOLMODEL",
+    "TMPLATE",
+    "TRNPRI",
+    "VOLMODEL"
+   ],
+   "members": [
+    "NBOX",
+    "NCONE",
+    "NCTORUS",
+    "NCYLINDER",
+    "NDISH",
+    "NPOLYHEDRON",
+    "NPYRAMID",
+    "NREVOLUTION",
+    "NRTORUS",
+    "NSLCYLINDER",
+    "NSNOUT",
+    "NXTRUSION"
+   ],
+   "a": [
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Xbottom",
+     "en": "Size of the base along local X",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Xoffset",
+     "en": "How far the top is shifted from the base along local X",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Xtop",
+     "en": "Size of the top face along local X",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Ybottom",
+     "en": "Size of the base along local Y",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Yoffset",
+     "en": "How far the top is shifted from the base along local Y",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Ytop",
+     "en": "Size of the top face along local Y",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "REVOLUTION",
+   "en": "Revolution",
+   "n_en": "A profile loop turned about an axis by Angle.",
+   "page": "DMRM5.09.567",
+   "owners": [
+    "EQUIPMENT",
+    "JNTBOX",
+    "PTRACK",
+    "PULLPIT",
+    "STRUCTURE",
+    "SUBEQUIPMENT",
+    "SUBSTRUCTURE",
+    "SVOLMODEL",
+    "TMPLATE",
+    "TRNPRI",
+    "VOLMODEL"
+   ],
+   "members": [
+    "LOOP",
+    "NBOX",
+    "NCONE",
+    "NCTORUS",
+    "NCYLINDER",
+    "NDISH",
+    "NPOLYHEDRON",
+    "NPYRAMID",
+    "NREVOLUTION",
+    "NRTORUS",
+    "NSLCYLINDER",
+    "NSNOUT",
+    "NXTRUSION"
+   ],
+   "a": [
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Angle",
+     "en": "How far the shape sweeps or turns, in degrees",
+     "st": "seen",
+     "key": "",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "RTORUS",
+   "en": "Rectangular torus",
+   "n_en": "A bend of rectangular section; Height is the section height.",
+   "page": "DMRM5.09.568",
+   "owners": [
+    "EQUIPMENT",
+    "JNTBOX",
+    "PTRACK",
+    "PULLPIT",
+    "STRUCTURE",
+    "SUBEQUIPMENT",
+    "SUBSTRUCTURE",
+    "SVOLMODEL",
+    "TMPLATE",
+    "TRNPRI",
+    "VOLMODEL"
+   ],
+   "members": [
+    "NBOX",
+    "NCONE",
+    "NCTORUS",
+    "NCYLINDER",
+    "NDISH",
+    "NPOLYHEDRON",
+    "NPYRAMID",
+    "NREVOLUTION",
+    "NRTORUS",
+    "NSLCYLINDER",
+    "NSNOUT",
+    "NXTRUSION"
+   ],
+   "a": [
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Angle",
+     "en": "How far the shape sweeps or turns, in degrees",
+     "st": "seen",
+     "key": "",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Rinside",
+     "en": "Distance from the torus centre to its inner edge",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Routside",
+     "en": "Distance from the torus centre to its outer edge",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "SLCYLINDER",
+   "en": "Slope-bottomed cylinder",
+   "n_en": "A cylinder whose end faces are tilted (the four shear angles).",
+   "page": "DMRM5.09.569",
+   "owners": [
+    "EQUIPMENT",
+    "JNTBOX",
+    "PTRACK",
+    "PULLPIT",
+    "STRUCTURE",
+    "SUBEQUIPMENT",
+    "SUBSTRUCTURE",
+    "SVOLMODEL",
+    "TRNPRI",
+    "TMPLATE",
+    "VOLMODEL"
+   ],
+   "members": [
+    "NBOX",
+    "NCONE",
+    "NCTORUS",
+    "NCYLINDER",
+    "NDISH",
+    "NPOLYHEDRON",
+    "NPYRAMID",
+    "NREVOLUTION",
+    "NRTORUS",
+    "NSLCYLINDER",
+    "NSNOUT",
+    "NXTRUSION"
+   ],
+   "a": [
+    {
+     "n": "Diameter",
+     "en": "Full width of the round section",
+     "st": "ok",
+     "key": "DIAM",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Xbshear",
+     "en": "Tilt of the base face, measured about local X",
+     "st": "seen",
+     "key": "",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Xtshear",
+     "en": "Tilt of the top face, measured about local X",
+     "st": "seen",
+     "key": "",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Ybshear",
+     "en": "Tilt of the base face, measured about local Y",
+     "st": "seen",
+     "key": "",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Ytshear",
+     "en": "Tilt of the top face, measured about local Y",
+     "st": "seen",
+     "key": "",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "SNOUT",
+   "en": "Snout",
+   "n_en": "A cone whose top can be shifted off the axis (Xoffset, Yoffset).",
+   "page": "DMRM5.09.570",
+   "owners": [
+    "EQUIPMENT",
+    "JNTBOX",
+    "PTRACK",
+    "PULLPIT",
+    "STRUCTURE",
+    "SUBEQUIPMENT",
+    "SUBSTRUCTURE",
+    "SVOLMODEL",
+    "TMPLATE",
+    "TRNPRI",
+    "VOLMODEL"
+   ],
+   "members": [
+    "NBOX",
+    "NCONE",
+    "NCTORUS",
+    "NCYLINDER",
+    "NDISH",
+    "NPOLYHEDRON",
+    "NPYRAMID",
+    "NREVOLUTION",
+    "NRTORUS",
+    "NSLCYLINDER",
+    "NSNOUT",
+    "NXTRUSION"
+   ],
+   "a": [
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Dbottom",
+     "en": "Diameter at the base end",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Dtop",
+     "en": "Diameter at the far end",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Xoffset",
+     "en": "How far the top is shifted from the base along local X",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Yoffset",
+     "en": "How far the top is shifted from the base along local Y",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "NBOX",
+   "en": "Negative box",
+   "n_en": "Cut out of its owner primitive; sizes as BOX.",
+   "page": "DMRM5.09.573",
+   "owners": [
+    "BOX",
+    "BPANEL",
+    "CONE",
+    "CTORUS",
+    "CYLINDER",
+    "DISH",
+    "EXTRUSION",
+    "FLOOR",
+    "GWALL",
+    "PANEL",
+    "POLYHEDRON",
+    "PYRAMID",
+    "REVOLUTION",
+    "RTORUS",
+    "SCREED",
+    "SLCYLINDER",
+    "SNOUT",
+    "TMPLATE",
+    "TRNPRI"
+   ],
+   "members": [],
+   "a": [
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Xlength",
+     "en": "Size along the local X axis",
+     "st": "ok",
+     "key": "XLEN",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Ylength",
+     "en": "Size along the local Y axis",
+     "st": "ok",
+     "key": "YLEN",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Zlength",
+     "en": "Size along the local Z axis",
+     "st": "ok",
+     "key": "ZLEN",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "NCONE",
+   "en": "Negative cone",
+   "n_en": "Cut out of its owner; sizes as CONE.",
+   "page": "DMRM5.09.574",
+   "owners": [
+    "BOX",
+    "BPANEL",
+    "CONE",
+    "CTORUS",
+    "CYLINDER",
+    "DISH",
+    "EXTRUSION",
+    "FLOOR",
+    "GWALL",
+    "PANEL",
+    "POLYHEDRON",
+    "PYRAMID",
+    "REVOLUTION",
+    "RTORUS",
+    "SCREED",
+    "SLCYLINDER",
+    "SNOUT",
+    "TMPLATE",
+    "TRNPRI"
+   ],
+   "members": [],
+   "a": [
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Dbottom",
+     "en": "Diameter at the base end",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Dtop",
+     "en": "Diameter at the far end",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "NCTORUS",
+   "en": "Negative circular torus",
+   "n_en": "Cut out of its owner; sizes as CTORUS.",
+   "page": "DMRM5.09.575",
+   "owners": [
+    "BOX",
+    "BPANEL",
+    "CONE",
+    "CTORUS",
+    "CYLINDER",
+    "DISH",
+    "EXTRUSION",
+    "FLOOR",
+    "GWALL",
+    "PANEL",
+    "POLYHEDRON",
+    "PYRAMID",
+    "REVOLUTION",
+    "RTORUS",
+    "SCREED",
+    "SLCYLINDER",
+    "SNOUT",
+    "TMPLATE",
+    "TRNPRI"
+   ],
+   "members": [],
+   "a": [
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Angle",
+     "en": "How far the shape sweeps or turns, in degrees",
+     "st": "seen",
+     "key": "",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Rinside",
+     "en": "Distance from the torus centre to its inner edge",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Routside",
+     "en": "Distance from the torus centre to its outer edge",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "NCYLINDER",
+   "en": "Negative cylinder",
+   "n_en": "A round hole in its owner; sizes as CYLINDER.",
+   "page": "DMRM5.09.576",
+   "owners": [
+    "BOX",
+    "BPANEL",
+    "CONE",
+    "CTORUS",
+    "CYLINDER",
+    "DISH",
+    "EXTRUSION",
+    "FLOOR",
+    "GWALL",
+    "PANEL",
+    "POLYHEDRON",
+    "PYRAMID",
+    "REVOLUTION",
+    "RTORUS",
+    "SCREED",
+    "SLCYLINDER",
+    "SNOUT",
+    "TMPLATE",
+    "TRNPRI"
+   ],
+   "members": [],
+   "a": [
+    {
+     "n": "Diameter",
+     "en": "Full width of the round section",
+     "st": "ok",
+     "key": "DIAM",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "NDISH",
+   "en": "Negative dish",
+   "n_en": "Cut out of its owner; sizes as DISH.",
+   "page": "DMRM5.09.577",
+   "owners": [
+    "BOX",
+    "BPANEL",
+    "CONE",
+    "CTORUS",
+    "CYLINDER",
+    "DISH",
+    "EXTRUSION",
+    "FLOOR",
+    "GWALL",
+    "PANEL",
+    "POLYHEDRON",
+    "PYRAMID",
+    "REVOLUTION",
+    "RTORUS",
+    "SCREED",
+    "SLCYLINDER",
+    "SNOUT",
+    "TMPLATE",
+    "TRNPRI"
+   ],
+   "members": [],
+   "a": [
+    {
+     "n": "Diameter",
+     "en": "Full width of the round section",
+     "st": "ok",
+     "key": "DIAM",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Radius",
+     "en": "A radius of the shape (for a dish, the knuckle)",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "NPYRAMID",
+   "en": "Negative pyramid",
+   "n_en": "Cut out of its owner; sizes as PYRAMID.",
+   "page": "DMRM5.09.579",
+   "owners": [
+    "BOX",
+    "BPANEL",
+    "CONE",
+    "CTORUS",
+    "CYLINDER",
+    "DISH",
+    "EXTRUSION",
+    "FLOOR",
+    "GWALL",
+    "PANEL",
+    "POLYHEDRON",
+    "PYRAMID",
+    "REVOLUTION",
+    "RTORUS",
+    "SCREED",
+    "SLCYLINDER",
+    "SNOUT",
+    "TMPLATE",
+    "TRNPRI"
+   ],
+   "members": [],
+   "a": [
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Xbottom",
+     "en": "Size of the base along local X",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Xoffset",
+     "en": "How far the top is shifted from the base along local X",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Xtop",
+     "en": "Size of the top face along local X",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Ybottom",
+     "en": "Size of the base along local Y",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Yoffset",
+     "en": "How far the top is shifted from the base along local Y",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Ytop",
+     "en": "Size of the top face along local Y",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "NRTORUS",
+   "en": "Negative rectangular torus",
+   "n_en": "Cut out of its owner; sizes as RTORUS.",
+   "page": "DMRM5.09.581",
+   "owners": [
+    "BOX",
+    "BPANEL",
+    "CONE",
+    "CTORUS",
+    "CYLINDER",
+    "DISH",
+    "EXTRUSION",
+    "FLOOR",
+    "GWALL",
+    "PANEL",
+    "POLYHEDRON",
+    "PYRAMID",
+    "REVOLUTION",
+    "RTORUS",
+    "SCREED",
+    "SLCYLINDER",
+    "SNOUT",
+    "TMPLATE",
+    "TRNPRI"
+   ],
+   "members": [],
+   "a": [
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Angle",
+     "en": "How far the shape sweeps or turns, in degrees",
+     "st": "seen",
+     "key": "",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Rinside",
+     "en": "Distance from the torus centre to its inner edge",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Routside",
+     "en": "Distance from the torus centre to its outer edge",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "NSLCYLINDER",
+   "en": "Negative slope-bottomed cylinder",
+   "n_en": "Cut out of its owner; sizes as SLCYLINDER.",
+   "page": "DMRM5.09.582",
+   "owners": [
+    "BOX",
+    "BPANEL",
+    "CONE",
+    "CTORUS",
+    "CYLINDER",
+    "DISH",
+    "EXTRUSION",
+    "FLOOR",
+    "GWALL",
+    "PANEL",
+    "POLYHEDRON",
+    "PYRAMID",
+    "REVOLUTION",
+    "RTORUS",
+    "SCREED",
+    "SLCYLINDER",
+    "SNOUT",
+    "TMPLATE",
+    "TRNPRI"
+   ],
+   "members": [],
+   "a": [
+    {
+     "n": "Diameter",
+     "en": "Full width of the round section",
+     "st": "ok",
+     "key": "DIAM",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Xbshear",
+     "en": "Tilt of the base face, measured about local X",
+     "st": "seen",
+     "key": "",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Xtshear",
+     "en": "Tilt of the top face, measured about local X",
+     "st": "seen",
+     "key": "",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Ybshear",
+     "en": "Tilt of the base face, measured about local Y",
+     "st": "seen",
+     "key": "",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Ytshear",
+     "en": "Tilt of the top face, measured about local Y",
+     "st": "seen",
+     "key": "",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "NSNOUT",
+   "en": "Negative snout",
+   "n_en": "Cut out of its owner; sizes as SNOUT.",
+   "page": "DMRM5.09.583",
+   "owners": [
+    "BOX",
+    "BPANEL",
+    "CONE",
+    "CTORUS",
+    "CYLINDER",
+    "DISH",
+    "EXTRUSION",
+    "FLOOR",
+    "GWALL",
+    "PANEL",
+    "POLYHEDRON",
+    "PYRAMID",
+    "REVOLUTION",
+    "RTORUS",
+    "SCREED",
+    "SLCYLINDER",
+    "SNOUT",
+    "TMPLATE",
+    "TRNPRI"
+   ],
+   "members": [],
+   "a": [
+    {
+     "n": "Height",
+     "en": "Length along the local Z axis",
+     "st": "ok",
+     "key": "HEIG",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Dbottom",
+     "en": "Diameter at the base end",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Dtop",
+     "en": "Diameter at the far end",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Xoffset",
+     "en": "How far the top is shifted from the base along local X",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Yoffset",
+     "en": "How far the top is shifted from the base along local Y",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
      "note_en": ""
     }
    ],
@@ -1565,5 +4834,21 @@
   "seen",
   "man"
  ],
+ "accepts": {
+  "en": {
+   "name": "a name: /NAME",
+   "text": "text in |bars| or 'quotes'",
+   "word": "a word or text",
+   "number": "a number",
+   "angle": "an angle, or as a direction",
+   "logical": "TRUE / FALSE (YES / NO, ON / OFF)",
+   "ref": "a reference: /NAME, =ref or NULREF",
+   "pos": "a position: E … N … U … (WRT …)",
+   "dir": "a direction; ORI as Y IS N AND Z IS U",
+   "obst": "a number, or HARD / SOFT / NONE",
+   "expr": "a value or an expression",
+   "none": "not set by its name"
+  }
+ },
  "about": "bracketPML attributes — generated, CC BY 4.0; list, owners and members after the AVEVA Data Model Reference Manual 2.1"
 }

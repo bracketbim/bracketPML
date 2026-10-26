@@ -23,7 +23,7 @@ The element becomes current (CE).
 
 | Argument | What it is |
 |---|---|
-| `TYPE` | CWAY, CWBRAN, RPATH, POINTR, HATTA, TATTA, EQUI, SUBE, BOX, CYLINDER… The current element must be a legal owner: CWAY in a ZONE, CWBRAN in a CWAY, SUBE only in an EQUI. |
+| `TYPE` | CWAY, CWBRAN, RPATH, POINTR, HATTA, TATTA, CTMTRL, EQUI, SUBE, NOZZLE, ELCONN, ZONE, every primitive (BOX, CYLINDER, CONE, SNOUT, DISH, PYRAMID, CTORUS, RTORUS, SLCYLINDER, EXTRUSION, REVOLUTION, POLYHEDRON) and every hole (NBOX, NCYLINDER…) — all created in the run of 26 Oct 2026. The current element must be a legal owner: CWAY in a ZONE, CWBRAN in a CWAY, SUBE only in an EQUI, a hole inside a primitive. |
 | `/NAME` | Optional: the name of the new element. |
 | `$Q` | Instead of creating, prints the grammar of the command in your build: NEW EQUI $Q. |
 
@@ -35,7 +35,7 @@ The new element becomes current — except NEW POINTR: CE stays where it was. NE
 - `NEW CWBRAN /PMLC-CWBRAN-T2/01` — Verified · Create a branch in a tray
 - `NEW RPATH` — Verified · Create a route
 - `NEW POINTR` — Verified · Add a route point
-- `NEW NOZZLE` — Documented · Equipment nozzle
+- `NEW NOZZLE` — Verified · Equipment nozzle
 - `NEW DRWG /CWAY-ISO-001` — Documented · Create a drawing
 - `NEW SHEET /SH1` — Documented · Create a sheet
 - `NEW VIEW /V1` — Documented · Create a view
@@ -500,13 +500,13 @@ No arguments: to the next member of the same owner.
 
 | Argument | What it is |
 |---|---|
-| `REFERENCE ATTRIBUTE` | PARENT, FRSTWORLD, CLCONNECTIONS… or any reference attribute (from GOTO $Q). Not a name. |
+| `REFERENCE ATTRIBUTE` | OWNER, PARENT, FRSTWORLD, CLCONNECTIONS… or any reference attribute (from GOTO $Q). Not a name. GOTO OWNER ran on 26 Oct 2026. |
 
 GOTO /NAME is a syntax error: to go by name, type the name itself.
 
 **Forms**
 
-- `GOTO OWNER` — Documented · Follow a reference attribute
+- `GOTO OWNER` — Verified · Follow a reference attribute
 - `GOTO /NAME` — Fails · This does NOT work
 
 ## `DO` — Loop (macro only)
@@ -514,18 +514,19 @@ GOTO /NAME is a syntax error: to go by name, type the name itself.
 | Argument | What it is |
 |---|---|
 | `!i from a to b` | A counter — run with from 1 to 3. |
+| `!i from a to b by s` | With a step: from 1 to 5 by 2 gives 1, 3, 5 (run of 26 Oct 2026). |
 | `!e values !list` | Over a list, including a COLLECT result; $!e goes to each element. |
 
-A plain paste gives «Invalid syntax» — use Paste as Macro. Other forms (by, while, indices) are not run yet.
+A plain paste gives «Invalid syntax» — use Paste as Macro. do while is a syntax error in E3D 2.1 and stops the macro (run of 26 Oct 2026). indices is not run yet.
 
 **Forms**
 
 - `do … enddo` — Macro only · Loop
 - `do !i from 1 to 10` — Seen in code · Counting loop
-- `do !i from 1 to 10 by 2` — Documented · Loop with a step
+- `do !i from 1 to 10 by 2` — Verified · Loop with a step
 - `do !elem values !array` — Seen in code · Loop over array values
 - `do !i indices !array` — Seen in code · Loop over indices
-- `do while ( !flag )` — Documented · Loop while a condition holds
+- `do while ( !flag )` — Fails · Loop on a condition — does NOT work
 
 ## `IF` — Condition (macro only)
 
@@ -545,9 +546,9 @@ A plain paste gives «Invalid syntax» — use Paste as Macro.
 
 | Argument | What it is |
 |---|---|
-| `any … endhandle` | Right AFTER the line it guards. handle any catches a move to an element that does not exist. |
+| `any … endhandle` | Right AFTER the line it guards. handle any catches a move to an element that does not exist, and the syntax error of a single command line (TYPE $Q) — the macro goes on. |
 
-A plain paste gives «Invalid syntax» — use Paste as Macro.
+A plain paste gives «Invalid syntax» — use Paste as Macro. A syntax error of the macro itself (do while) is not caught: the macro stops.
 
 **Forms**
 

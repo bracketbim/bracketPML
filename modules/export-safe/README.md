@@ -76,10 +76,10 @@ alpha log END
 | `VAR !x COLLECT ALL CWBRAN WITH (UNSET(DESC)) FOR /PMLC` | Collect with a condition on an attribute | Verified | 19 Sep 2026 |
 | `VAR !s COLLECT ALL SITE FOR WORLD` | Collect across the whole database | Verified | 22 Sep 2026 |
 | `do !i from 1 to 10` | Counting loop | Seen in code |  |
-| `do !i from 1 to 10 by 2` | Loop with a step | Documented |  |
+| `do !i from 1 to 10 by 2` | Loop with a step | Verified | 26 Oct 2026 |
 | `do !elem values !array` | Loop over array values | Seen in code |  |
 | `do !i indices !array` | Loop over indices | Seen in code |  |
-| `do while ( !flag )` | Loop while a condition holds | Documented |  |
+| `do while ( !flag )` | Loop on a condition — does NOT work | Fails | 26 Oct 2026 |
 | `handle any … endhandle` | Catch any error | Seen in code |  |
 | `handle (41,64)` | Catch a specific error by number | Documented |  |
 

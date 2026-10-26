@@ -4,7 +4,7 @@
 
 **In fact:** GOTO exists, but it follows a reference attribute (GOTO OWNER, GOTO PARENT…), not a name.
 
-**Commands:** `GOTO` **Fails** — last run 18 Sep 2026
+**Commands:** `GOTO` **Fails** — last run 26 Oct 2026
 
 **What we believed.** No such command: `GOTO /NAME` → `CP: Syntax error`.
 

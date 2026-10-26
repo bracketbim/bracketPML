@@ -4,13 +4,13 @@ Every PML command we know about, with its status and the runs behind it. **Gener
 
 | Status | Meaning | Rows |
 |---|---|---|
-| **Verified** | Ran in E3D 2.1, the result was checked. | 107 |
-| **Fails** | Ran and gave an error — do not use; the row says what to use instead. | 7 |
+| **Verified** | Ran in E3D 2.1, the result was checked. | 122 |
+| **Fails** | Ran and gave an error — do not use; the row says what to use instead. | 8 |
 | **Macro only** | Works in a macro file or with Paste as Macro, not line by line. | 6 |
-| **Documented** | In the AVEVA documentation or the $Q grammar; not run by us yet. | 38 |
-| **Seen in code** | Appears in real PML code; not run by us yet. | 36 |
+| **Documented** | In the AVEVA documentation or the $Q grammar; not run by us yet. | 30 |
+| **Seen in code** | Appears in real PML code; not run by us yet. | 28 |
 
-Last run: 23 Oct 2026 · E3D 2.1 · searchable at [bracketbim.com/pml](https://bracketbim.com/pml/)
+Last run: 26 Oct 2026 · E3D 2.1 · searchable at [bracketbim.com/pml](https://bracketbim.com/pml/)
 
 ## The Commands window — how it runs what you paste
 
@@ -27,7 +27,7 @@ Common Functionality User Guide 2.1, Command Window. The window opens from Home 
 | <a id="double-click-a-history-line"></a>`double-click a history line` | Bring a command back into the input field | Documented |  | Up and Down arrows walk the history. |
 | <a id="right-click-clear"></a>`right-click → Clear` | Clear the window | Documented |  | The window keeps roughly the last 1000 lines of output. |
 | <a id="q-evar-pmllib"></a>`Q EVAR \|PMLLIB\|` | See the PML library path from inside E3D | Verified | 27 Aug 2026, 16 Sep 2026 | Printed about ten paths. This is an E3D variable, not a Windows one — echo %PMLLIB% in cmd does not see it. But those folders are not writable for a normal user: your own functions and forms through PMLLIB are out of reach. |
-| <a id="pml-rehash-all"></a>`PML REHASH ALL` | Re-read the library after editing a .pmlfnc | Documented |  |  |
+| <a id="pml-rehash-all"></a>`PML REHASH ALL` | Re-read the library after editing a .pmlfnc | Verified | 26 Oct 2026, run 25 | Run of 26 Oct 2026: ran inside a macro with no error. |
 | <a id="pml-index"></a>`PML INDEX` | Library index | Documented |  |  |
 | <a id="pml-trace-on"></a>`PML TRACE ON` | Trace PML execution | Documented |  |  |
 
@@ -43,7 +43,7 @@ Almost every command works on the current element (CE). First stand on it, then 
 | <a id="equipment-2-of-extzone-pmlc"></a>`EQUIPMENT 2 of :EXTZONE /PMLC` | Go to an unnamed element by number | Verified | 27 Aug 2026 | The number counts ALL members of the zone and shifts when elements move. |
 | <a id="12345678-7844"></a>`=12345678/7844` | Go by stable reference | Verified | 27 Aug 2026 | Works; Q NAME afterwards prints the name. A reference does not shift when elements move or are renamed — bulk operations go by =ref only. |
 | <a id="owner"></a>`OWNER` | Go up to the owner | Documented |  | Not run. Templates use the full name instead. |
-| <a id="goto-owner"></a>`GOTO OWNER` | Follow a reference attribute | Documented | 18 Sep 2026 | GOTO $Q prints its continuations: CFDPROPERTY, LFDPROPERTY, TFDPROPERTY, FRSTWORLD, PARENT, SPLPARENT, CLCONNECTIONS and «any reference attribute». So the command exists, but it follows a REFERENCE, not a name. The move itself was not run. |
+| <a id="goto-owner"></a>`GOTO OWNER` | Follow a reference attribute | Verified | 18 Sep 2026, 26 Oct 2026, run 25 | GOTO $Q prints what may follow (run of 18 Sep): CFDPROPERTY, LFDPROPERTY, TFDPROPERTY, FRSTWORLD, PARENT, SPLPARENT, CLCONNECTIONS and «any reference attribute». So the command exists, but it follows a REFERENCE, not a name. Run of 26 Oct 2026: from a SUBE it moved to its EQUI. |
 | <a id="goto-name"></a>`GOTO /NAME` | This does NOT work | Fails | 26 Aug 2026 | CP: Syntax error. A name is not among GOTO's continuations — that is why it fails. Going by name means typing the name itself: /PMLC-CWAY-T1. Jumping to a label in a macro is GOLABEL. |
 
 ## Create — cable trays
@@ -52,8 +52,8 @@ The order is exactly this: tray, branch, section, head and tail, route, point co
 
 | Command | What it does | Status | Runs | Note |
 |---|---|---|---|---|
-| <a id="new-cway-pmlc-cway-t1"></a>`NEW CWAY /PMLC-CWAY-T1` | Create a cable tray in a zone | Verified |  | Owner — ZONE. NEW makes the new element current. |
-| <a id="new-cwbran-pmlc-cwbran-t2-01"></a>`NEW CWBRAN /PMLC-CWBRAN-T2/01` | Create a branch in a tray | Verified |  | Owner — CWAY. |
+| <a id="new-cway-pmlc-cway-t1"></a>`NEW CWAY /PMLC-CWAY-T1` | Create a cable tray in a zone | Verified | 26 Oct 2026, run 25 | Owner — ZONE. NEW makes the new element current. |
+| <a id="new-cwbran-pmlc-cwbran-t2-01"></a>`NEW CWBRAN /PMLC-CWBRAN-T2/01` | Create a branch in a tray | Verified | 26 Oct 2026, run 25 | Owner — CWAY. |
 | <a id="pos-e-0-n-0-u-0"></a>`POS E 0 N 0 U 0` | Set the position | Verified | 18 Sep 2026, 24 Sep 2026, 25 Sep 2026, run 10 | Without WRT — FROM THE OWNER. For a tray branch this is where the tray is: the edit gizmo sits on the branch's POS. For a primitive POS is its centre, inside a SUBE — from the SUBE. No minus sign needed: use W / S / D. |
 | <a id="pos-e-0-n-0-u-0-wrt-world"></a>`POS E 0 N 0 U 0 WRT WORLD` | The same in world coordinates | Verified | 18 Sep 2026 | The line ran and moved the tray. POS $Q does not list WRT — the $Q grammar is incomplete, and its silence is no argument against a command. |
 | <a id="pos-e-0-n-0-u-500-wrt-pmlc-cway-t1"></a>`POS E 0 N 0 U 500 WRT /PMLC-CWAY-T1` | Coordinates relative to another element | Verified | 19 Sep 2026 |  |
@@ -64,8 +64,8 @@ The order is exactly this: tray, branch, section, head and tail, route, point co
 | <a id="cwjusline-cent"></a>`CWJUSLINE CENT` | Branch justification line | Verified | 19 Sep 2026 | Q ATT showed CWJusLine CENT. |
 | <a id="new-hatta"></a>`NEW HATTA` | Create the head attachment point | Verified |  | Has no coordinates of its own. NEW moves CE — go back to the branch. |
 | <a id="new-tatta"></a>`NEW TATTA` | Create the tail attachment point | Verified | 26 Aug 2026 | The same. |
-| <a id="new-rpath"></a>`NEW RPATH` | Create a route | Verified |  | Creates NO points: Q MEM right after it is unset. |
-| <a id="new-pointr"></a>`NEW POINTR` | Add a route point | Verified |  | Needed twice for a straight branch. CE does NOT move to the new point — set coordinates in a second pass. |
+| <a id="new-rpath"></a>`NEW RPATH` | Create a route | Verified | 26 Oct 2026, run 25 | Creates NO points: Q MEM right after it is unset. |
+| <a id="new-pointr"></a>`NEW POINTR` | Add a route point | Verified | 26 Oct 2026, run 25 | Needed twice for a straight branch. CE does NOT move to the new point — set coordinates in a second pass. |
 | <a id="cablay-cen"></a>`CABLAY \|CEN\|` | Cable layout | Verified | 27 Aug 2026 | The value is text — in vertical bars. Q ATT showed Cablayout CEN. |
 | <a id="cablay-cen-2"></a>`CABLAY CEN` | This does NOT work | Fails | 27 Aug 2026 | CP: Syntax error with the caret on the value — the bars are needed. |
 | <a id="bradius-300"></a>`BRADIUS 300` | Branch bend radius | Verified | 27 Aug 2026 | Q ATT of the branch showed BRadius 300mm. |
@@ -97,9 +97,9 @@ Equipment and its geometry: EQUI, SUBE, primitives and negative primitives.
 | <a id="heig-1000"></a>`HEIG 1000` | Height | Verified | 27 Aug 2026 |  |
 | <a id="ori-y-is-n-and-z-is-e"></a>`ORI Y IS N AND Z IS E` | Rotate: cylinder axis to the east | Verified | 24 Sep 2026, 25 Sep 2026 | The cylinder lay perpendicular to face E (Z IS W — to the west). ORI on an EQUI rotates it with all its parts. |
 | <a id="new-ncylinder"></a>`NEW NCYLINDER` | Round hole (negative primitive) | Verified | 18 Sep 2026 | The hole is visible in 3D. A negative lives INSIDE the primitive, not in the EQUI. |
-| <a id="new-nbox"></a>`NEW NBOX` | Rectangular cut-out | Documented |  | BOX lists it among Legal Members (DMRM 2.1); not run. |
+| <a id="new-nbox"></a>`NEW NBOX` | Rectangular cut-out | Verified | 26 Oct 2026, run 25 | Run of 26 Oct 2026: created inside a BOX; XLEN / YLEN / ZLEN were written. |
 | <a id="delete-equi"></a>`DELETE EQUI` | Delete the current equipment | Verified | 24 Sep 2026 | Deleted it with all children; UNDODB brought it back. Check Q NAME first — be sure where you stand. |
-| <a id="new-nozzle"></a>`NEW NOZZLE` | Equipment nozzle | Documented |  | Needs a specification; not tried. |
+| <a id="new-nozzle"></a>`NEW NOZZLE` | Equipment nozzle | Verified | 26 Oct 2026, run 25 | Run of 26 Oct 2026: created in an EQUI even without a specification — Catref Nulref, Temperature −100000degC. Its look in 3D and connecting to it were not checked. |
 | <a id="new-elconn"></a>`NEW ELCONN` | Electrical connection point | Verified | 27 Sep 2026 | Created directly in an EQUI, POS works; by default Y is N and Z is U, Catref empty. Like a nozzle on a pipe — a cable connects to it. On real catalogue boxes the link to the catalogue is CATREF, not SPREF. Look in 3D and cable connection not checked. |
 | <a id="purpose-pmlc"></a>`PURPOSE PMLC` | A purpose mark to find your own elements later | Verified | 9 Oct 2026, run 17 | Written without bars, Q PURP prints Purpose PMLC, and a Ctrl+C / Ctrl+V copy of the EQUI inherits it — keep that in mind when you filter by it. |
 | <a id="level-1-3"></a>`LEVEL 1 3` | Drawing levels (e.g. hide a service zone from review models) | Verified | 28 Sep 2026, 29 Sep 2026 | Q LEVEL prints Level 1 3; works right at creation. |
@@ -107,8 +107,8 @@ Equipment and its geometry: EQUI, SUBE, primitives and negative primitives.
 | <a id="ori-y-is-n-and-z-is-e-45-u"></a>`ORI Y IS N AND Z IS E 45 U` | Rotate by an angle (a tilted element) | Verified | 29 Sep 2026 | Q ORI prints the same form back. |
 | <a id="q-spref"></a>`Q SPREF` | Catalogue reference of an item (on an ELCONN — Q CATREF) | Verified | 27 Sep 2026 | Prints the SPCO of a catalogue box. Writing SPREF / CATREF was not run. |
 | <a id="q-desparam"></a>`Q DESPARAM` | Design parameters from the catalogue | Verified | 27 Sep 2026 | Printed 2 2 1 1 0.3 on a catalogue box; meaning not established. |
-| <a id="new-cone"></a>`NEW CONE` | Cone (also NEW SNOUT, DISH, PYRAMID, CTORUS, RTORUS, SLCYLINDER, EXTRUSION, REVOLUTION, POLYHEDRON) | Documented |  | DMRM 2.1, Primitive category; not run. |
-| <a id="new-ncone"></a>`NEW NCONE` | Negative cone — a cut-out (also NSNOUT, NDISH, NPYRAMID, NCTORUS, NRTORUS, NSLCYLINDER) | Documented |  | DMRM 2.1; of the negatives only NCYLINDER was run. |
+| <a id="new-cone"></a>`NEW CONE` | Cone (also NEW SNOUT, DISH, PYRAMID, CTORUS, RTORUS, SLCYLINDER, EXTRUSION, REVOLUTION, POLYHEDRON) | Verified | 26 Oct 2026, run 25 | Run of 26 Oct 2026: all ten were created in a SUBE with sizes; the Q ATT of each is in the bracketPML attribute reference. Before: DMRM 2.1, Primitive category; not run. |
+| <a id="new-ncone"></a>`NEW NCONE` | Negative cone — a cut-out (also NSNOUT, NDISH, NPYRAMID, NCTORUS, NRTORUS, NSLCYLINDER) | Verified | 26 Oct 2026, run 25 | Run of 26 Oct 2026: all seven were created inside a BOX. |
 | <a id="radi-500"></a>`RADI 500` | Primitive radius | Seen in code |  | DMRM 2.1: Radius; this form appears in real code. |
 | <a id="angle-90"></a>`ANGLE 90` | Primitive angle | Seen in code |  | DMRM 2.1: Angle; this form appears in real code. |
 | <a id="xoff-100"></a>`XOFF 100` | X offset (also XBOT, YBOT, XTOP, YTOP) | Seen in code |  | DMRM 2.1; these forms appear in real code. |
@@ -161,7 +161,7 @@ These write to the database. There is no UNDO command, but rollback exists and i
 | <a id="include-12345678-6393"></a>`INCLUDE =12345678/6393` | Move an element inside the current one | Verified | 26 Aug 2026 | Takes a name or a reference. Does not change CE — stand on the receiving zone once. |
 | <a id="claim-pmlc-cwbran-t1-01-hier"></a>`CLAIM /PMLC-CWBRAN-T1/01 HIER` | Claim an element with its hierarchy | Verified | 26 Aug 2026 |  |
 | <a id="unclaim-all"></a>`UNCLAIM ALL` | Release claims | Seen in code |  |  |
-| <a id="lock-all"></a>`LOCK ALL` | Lock against changes | Seen in code |  |  |
+| <a id="lock-all"></a>`LOCK ALL` | Lock against changes | Verified | 26 Oct 2026, run 25 | Run of 26 Oct 2026: Q LOCK afterwards — Lock true. |
 | <a id="undo"></a>`UNDO` | There is no command with this name | Fails | 16 Sep 2026 | CP: Syntax error. Rollback is called differently — see the next rows. |
 | <a id="markdb-before-bulk-edit"></a>`MARKDB \|before bulk edit\|` | Set a rollback mark BEFORE the operation | Verified | 16 Sep 2026 | Both forms ran: MARKDB \|probe\| and MARKDB 'probe'. WITHOUT quotes — CP: Syntax error, as with DESC and CABLAY. PML Console puts a mark as the first line of every code it writes. |
 | <a id="undodb"></a>`UNDODB` | Roll the database back to the last mark | Verified | 16 Sep 2026, 17 Sep 2026 | Restored a broken DESC, undid a rename and the creation of an element; UNDODB n goes back n MARKS (not n edits). After SAVEWORK there is no mark any more — No mark to UNDO to. |
@@ -169,7 +169,7 @@ These write to the database. There is no UNDO command, but rollback exists and i
 | <a id="redodb"></a>`REDODB` | Redo what UNDODB undid | Documented | 16 Sep 2026 | In the $Q grammar; not run. |
 | <a id="clearmark"></a>`CLEARMARK` | Clear rollback marks | Documented | 16 Sep 2026 | In the $Q grammar; not run. |
 | <a id="endmarkdb"></a>`ENDMARKDB` | Close a mark's scope | Documented | 16 Sep 2026 | In the $Q grammar; not run. |
-| <a id="unlock-all"></a>`UNLOCK ALL` | Unlock | Seen in code |  |  |
+| <a id="unlock-all"></a>`UNLOCK ALL` | Unlock | Verified | 26 Oct 2026, run 25 | Run of 26 Oct 2026: Q LOCK afterwards — Lock false. |
 | <a id="purpose-pmlc-2"></a>`PURPOSE PMLC` | Mark an element as yours (works on equipment too) | Verified | 9 Oct 2026 | Written, and a copy inherits it. |
 
 ## Show on screen
@@ -178,21 +178,21 @@ Working with the view. The model does not change.
 
 | Command | What it does | Status | Runs | Note |
 |---|---|---|---|---|
-| <a id="add-ce"></a>`ADD CE` | Add the current element to the view | Seen in code |  |  |
+| <a id="add-ce"></a>`ADD CE` | Add the current element to the view | Verified | 26 Oct 2026, run 25 | Run of 26 Oct 2026. ADD /NAME and REMOVE /NAME too: the element appeared in the view and went away. |
 | <a id="add-all-within-vol-ce-1000-all"></a>`ADD ALL WITHIN VOL CE 1000 ALL` | Add everything within a distance of the element | Seen in code |  |  |
 | <a id="rem-all"></a>`REM ALL` | Clear the view | Seen in code |  |  |
 | <a id="mark-ce-mem"></a>`MARK CE MEM` | Label the members of the current element | Verified | 26 Aug 2026 | This is how route points get labels. |
-| <a id="unmark-all"></a>`UNMARK ALL` | Remove labels | Seen in code |  |  |
-| <a id="col-ce-green"></a>`COL CE GREEN` | Change colour | Seen in code |  |  |
-| <a id="axes-at-ce"></a>`AXES AT CE` | Show axes at the element | Seen in code |  |  |
+| <a id="unmark-all"></a>`UNMARK ALL` | Remove labels | Verified | 26 Oct 2026, run 25 | Run of 26 Oct 2026. |
+| <a id="col-ce-green"></a>`COL CE GREEN` | Change colour | Verified | 26 Oct 2026, run 25 | Run of 26 Oct 2026: no error; the colour on screen was not checked. |
+| <a id="axes-at-ce"></a>`AXES AT CE` | Show axes at the element | Verified | 26 Oct 2026, run 25 | Run of 26 Oct 2026: the axes stay in the view even after the rollback — remove them with AXES OFF (not checked). |
 | <a id="alp-req-clear"></a>`ALP REQ CLEAR` | Clear the command window | Seen in code |  |  |
 | <a id="axes-on"></a>`AXES ON` | Axes on screen (AXES OFF — remove) | Seen in code |  |  |
 | <a id="choo-all"></a>`CHOO ALL` | Choose all | Seen in code |  |  |
 | <a id="dir-n-45-e"></a>`DIR N 45 E` | View direction | Seen in code |  |  |
 | <a id="thro-ce"></a>`THRO CE` | View through the element | Seen in code |  |  |
 | <a id="update-all"></a>`UPDATE ALL` | Refresh the view | Seen in code |  |  |
-| <a id="enhance-ce-col-red"></a>`ENHANCE CE COL RED` | Highlight the element | Seen in code |  |  |
-| <a id="console-show"></a>`console show` | Show the console window | Seen in code |  |  |
+| <a id="enhance-ce-col-red"></a>`ENHANCE CE COL RED` | Highlight the element | Verified | 26 Oct 2026, run 25 | Run of 26 Oct 2026: no error; the highlight was not checked. |
+| <a id="console-show"></a>`console show` | Show the console window | Verified | 26 Oct 2026, run 25 | Run of 26 Oct 2026: no error. |
 
 ## Drawings and isometrics (DRAW module)
 
@@ -205,7 +205,7 @@ IsoADP is NOT in this build: the DRAW module has no Isometric Automatic Drawing 
 | <a id="new-view-v1"></a>`NEW VIEW /V1` | Create a view | Documented |  | With NEW DRWG this is the minimum; the rest is optional. |
 | <a id="desadd-cway-el-001"></a>`DESADD /CWAY-EL-001` | Put a model element into the view | Documented |  | Takes a zone, a tray, equipment. Several calls add several elements. |
 | <a id="desremove-name"></a>`DESREMOVE /name` | Remove an element from the view | Documented |  | Abbreviation DESREM. |
-| <a id="iso3"></a>`ISO3` | Isometric view direction | Documented |  | ISO1…ISO4 exist — a route may run across the sheet, pick the direction. |
+| <a id="iso3"></a>`ISO3` | Isometric view direction | Documented | 26 Oct 2026, run 25 | There are ISO1…ISO4 — a route may run across the sheet, so the direction is chosen. These are DRAWING view commands: in Model (Run of 26 Oct 2026) ISO3, ELEVATION N and LOOK E gave CP: Syntax error, PLAN gave Incomplete command line; not tried in DRAW. |
 | <a id="plan"></a>`PLAN` | Plan view | Documented |  |  |
 | <a id="elevation-n"></a>`ELEVATION N` | Elevation from the north | Documented |  |  |
 | <a id="look-e"></a>`LOOK E` | Look east | Documented |  | Also LOOK N45W and LOOK THROUGH / LOOK FROM with coordinates. |
@@ -265,10 +265,10 @@ E3D 2.1 runs PML2 with full backward compatibility with PML1: one interpreter, b
 | <a id="if-x-gt-5-then-elseif-else-endif"></a>`if ( !x gt 5 ) then … elseif … else … endif` | Condition, PML1 form | Seen in code |  | PML1: comparisons only in words eq ne gt lt ge le, variables !name, substitution $!name. |
 | <a id="if-x-5-and-n-matchwild-pipe-then"></a>`if ( !x > 5 and !n.Matchwild('PIPE*') ) then` | Condition, PML2 form | Seen in code |  | PML2 added == != > < and the logical AND OR NOT. Matchwild appears 37 times in the corpus. |
 | <a id="do-i-from-1-to-10"></a>`do !i from 1 to 10` | Counting loop | Seen in code |  | 88 times in the corpus. |
-| <a id="do-i-from-1-to-10-by-2"></a>`do !i from 1 to 10 by 2` | Loop with a step | Documented |  | The by step did not appear in the corpus. |
+| <a id="do-i-from-1-to-10-by-2"></a>`do !i from 1 to 10 by 2` | Loop with a step | Verified | 26 Oct 2026, run 25 | Run of 26 Oct 2026, in a macro: do !i from 1 to 5 by 2 printed 1, 3, 5. |
 | <a id="do-elem-values-array"></a>`do !elem values !array` | Loop over array values | Seen in code |  | The most common form, 117 times. |
 | <a id="do-i-indices-array"></a>`do !i indices !array` | Loop over indices | Seen in code |  | 5 times in the corpus. |
-| <a id="do-while-flag"></a>`do while ( !flag )` | Loop while a condition holds | Documented |  | Not met in our corpus. |
+| <a id="do-while-flag"></a>`do while ( !flag )` | Loop on a condition — does NOT work | Fails | 26 Oct 2026, run 25, run 26 | Run of 26 Oct 2026, in a macro: CP: Syntax error, pointing at while; the macro stops (handle does not catch it). Instead — do !i from 1 to N with break if ( … ); break if is not checked yet — a probe in the next run. |
 | <a id="break"></a>`break` | Leave the loop | Seen in code |  |  |
 | <a id="skip"></a>`skip` | Go to the next iteration | Seen in code |  |  |
 | <a id="break-if-skip-if"></a>`break if ( … ) / skip if ( … )` | Leave or skip on a condition | Documented |  | skip if met once, break if — never. |

@@ -1,7 +1,7 @@
 {
  "about": "bracketPML register — generated, CC BY 4.0",
  "e3d": "2.1",
- "last_run": "2026-10-23",
+ "last_run": "2026-10-26",
  "status": {
   "ok": {
    "name": "Verified",
@@ -214,11 +214,15 @@
    "g": 0,
    "cmd": "PML REHASH ALL",
    "what": "Re-read the library after editing a .pmlfnc",
-   "note": "",
-   "st": "doc",
+   "note": "Run of 26 Oct 2026: ran inside a macro with no error.",
+   "st": "ok",
    "key": "PML",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "pml-index",
@@ -319,13 +323,16 @@
    "g": 1,
    "cmd": "GOTO OWNER",
    "what": "Follow a reference attribute",
-   "note": "GOTO $Q prints its continuations: CFDPROPERTY, LFDPROPERTY, TFDPROPERTY, FRSTWORLD, PARENT, SPLPARENT, CLCONNECTIONS and «any reference attribute». So the command exists, but it follows a REFERENCE, not a name. The move itself was not run.",
-   "st": "doc",
+   "note": "GOTO $Q prints what may follow (run of 18 Sep): CFDPROPERTY, LFDPROPERTY, TFDPROPERTY, FRSTWORLD, PARENT, SPLPARENT, CLCONNECTIONS and «any reference attribute». So the command exists, but it follows a REFERENCE, not a name. Run of 26 Oct 2026: from a SUBE it moved to its EQUI.",
+   "st": "ok",
    "key": "GOTO",
    "dates": [
-    "2026-09-18"
+    "2026-09-18",
+    "2026-10-26"
    ],
-   "runs": []
+   "runs": [
+    25
+   ]
   },
   {
    "id": "goto-name",
@@ -348,8 +355,12 @@
    "note": "Owner — ZONE. NEW makes the new element current.",
    "st": "ok",
    "key": "NEW",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "new-cwbran-pmlc-cwbran-t2-01",
@@ -359,8 +370,12 @@
    "note": "Owner — CWAY.",
    "st": "ok",
    "key": "NEW",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "pos-e-0-n-0-u-0",
@@ -502,8 +517,12 @@
    "note": "Creates NO points: Q MEM right after it is unset.",
    "st": "ok",
    "key": "NEW",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "new-pointr",
@@ -513,8 +532,12 @@
    "note": "Needed twice for a straight branch. CE does NOT move to the new point — set coordinates in a second pass.",
    "st": "ok",
    "key": "NEW",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "cablay-cen",
@@ -829,11 +852,15 @@
    "g": 3,
    "cmd": "NEW NBOX",
    "what": "Rectangular cut-out",
-   "note": "BOX lists it among Legal Members (DMRM 2.1); not run.",
-   "st": "doc",
+   "note": "Run of 26 Oct 2026: created inside a BOX; XLEN / YLEN / ZLEN were written.",
+   "st": "ok",
    "key": "NEW NBOX",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "delete-equi",
@@ -853,11 +880,15 @@
    "g": 3,
    "cmd": "NEW NOZZLE",
    "what": "Equipment nozzle",
-   "note": "Needs a specification; not tried.",
-   "st": "doc",
+   "note": "Run of 26 Oct 2026: created in an EQUI even without a specification — Catref Nulref, Temperature −100000degC. Its look in 3D and connecting to it were not checked.",
+   "st": "ok",
    "key": "NEW",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "new-elconn",
@@ -958,22 +989,30 @@
    "g": 3,
    "cmd": "NEW CONE",
    "what": "Cone (also NEW SNOUT, DISH, PYRAMID, CTORUS, RTORUS, SLCYLINDER, EXTRUSION, REVOLUTION, POLYHEDRON)",
-   "note": "DMRM 2.1, Primitive category; not run.",
-   "st": "doc",
+   "note": "Run of 26 Oct 2026: all ten were created in a SUBE with sizes; the Q ATT of each is in the bracketPML attribute reference. Before: DMRM 2.1, Primitive category; not run.",
+   "st": "ok",
    "key": "NEW CONE",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "new-ncone",
    "g": 3,
    "cmd": "NEW NCONE",
    "what": "Negative cone — a cut-out (also NSNOUT, NDISH, NPYRAMID, NCTORUS, NRTORUS, NSLCYLINDER)",
-   "note": "DMRM 2.1; of the negatives only NCYLINDER was run.",
-   "st": "doc",
+   "note": "Run of 26 Oct 2026: all seven were created inside a BOX.",
+   "st": "ok",
    "key": "NEW NCONE",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "radi-500",
@@ -1501,11 +1540,15 @@
    "g": 5,
    "cmd": "LOCK ALL",
    "what": "Lock against changes",
-   "note": "",
-   "st": "ref",
+   "note": "Run of 26 Oct 2026: Q LOCK afterwards — Lock true.",
+   "st": "ok",
    "key": "LOCK",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "undo",
@@ -1602,11 +1645,15 @@
    "g": 5,
    "cmd": "UNLOCK ALL",
    "what": "Unlock",
-   "note": "",
-   "st": "ref",
+   "note": "Run of 26 Oct 2026: Q LOCK afterwards — Lock false.",
+   "st": "ok",
    "key": "UNLOCK",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "purpose-pmlc-2",
@@ -1626,11 +1673,15 @@
    "g": 6,
    "cmd": "ADD CE",
    "what": "Add the current element to the view",
-   "note": "",
-   "st": "ref",
+   "note": "Run of 26 Oct 2026. ADD /NAME and REMOVE /NAME too: the element appeared in the view and went away.",
+   "st": "ok",
    "key": "ADD",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "add-all-within-vol-ce-1000-all",
@@ -1672,33 +1723,45 @@
    "g": 6,
    "cmd": "UNMARK ALL",
    "what": "Remove labels",
-   "note": "",
-   "st": "ref",
+   "note": "Run of 26 Oct 2026.",
+   "st": "ok",
    "key": "UNMARK",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "col-ce-green",
    "g": 6,
    "cmd": "COL CE GREEN",
    "what": "Change colour",
-   "note": "",
-   "st": "ref",
+   "note": "Run of 26 Oct 2026: no error; the colour on screen was not checked.",
+   "st": "ok",
    "key": "COL",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "axes-at-ce",
    "g": 6,
    "cmd": "AXES AT CE",
    "what": "Show axes at the element",
-   "note": "",
-   "st": "ref",
+   "note": "Run of 26 Oct 2026: the axes stay in the view even after the rollback — remove them with AXES OFF (not checked).",
+   "st": "ok",
    "key": "AXES",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "alp-req-clear",
@@ -1771,22 +1834,30 @@
    "g": 6,
    "cmd": "ENHANCE CE COL RED",
    "what": "Highlight the element",
-   "note": "",
-   "st": "ref",
+   "note": "Run of 26 Oct 2026: no error; the highlight was not checked.",
+   "st": "ok",
    "key": "ENHANCE",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "console-show",
    "g": 6,
    "cmd": "console show",
    "what": "Show the console window",
-   "note": "",
-   "st": "ref",
+   "note": "Run of 26 Oct 2026: no error.",
+   "st": "ok",
    "key": "CONSOLE",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "new-drwg-cway-iso-001",
@@ -1848,11 +1919,15 @@
    "g": 7,
    "cmd": "ISO3",
    "what": "Isometric view direction",
-   "note": "ISO1…ISO4 exist — a route may run across the sheet, pick the direction.",
+   "note": "There are ISO1…ISO4 — a route may run across the sheet, so the direction is chosen. These are DRAWING view commands: in Model (Run of 26 Oct 2026) ISO3, ELEVATION N and LOOK E gave CP: Syntax error, PLAN gave Incomplete command line; not tried in DRAW.",
    "st": "doc",
    "key": "ISO3",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "plan",
@@ -2260,11 +2335,15 @@
    "g": 11,
    "cmd": "do !i from 1 to 10 by 2",
    "what": "Loop with a step",
-   "note": "The by step did not appear in the corpus.",
-   "st": "doc",
+   "note": "Run of 26 Oct 2026, in a macro: do !i from 1 to 5 by 2 printed 1, 3, 5.",
+   "st": "ok",
    "key": "DO",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25
+   ]
   },
   {
    "id": "do-elem-values-array",
@@ -2292,12 +2371,17 @@
    "id": "do-while-flag",
    "g": 11,
    "cmd": "do while ( !flag )",
-   "what": "Loop while a condition holds",
-   "note": "Not met in our corpus.",
-   "st": "doc",
+   "what": "Loop on a condition — does NOT work",
+   "note": "Run of 26 Oct 2026, in a macro: CP: Syntax error, pointing at while; the macro stops (handle does not catch it). Instead — do !i from 1 to N with break if ( … ); break if is not checked yet — a probe in the next run.",
+   "st": "bad",
    "key": "DO",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-26"
+   ],
+   "runs": [
+    25,
+    26
+   ]
   },
   {
    "id": "break",

@@ -53,6 +53,18 @@
    ]
   },
   {
+   "en": "Pipes and steel",
+   "codes": [
+    "PIPE",
+    "STRUCTURE",
+    "FRMWORK",
+    "SBFRAMEWORK",
+    "SCTN",
+    "GENSEC",
+    "PANEL"
+   ]
+  },
+  {
    "en": "Where everything lives",
    "codes": [
     "ZONE",
@@ -1760,6 +1772,14 @@
    ],
    "a": [
     {
+     "n": "Angle",
+     "en": "How far the shape sweeps or turns, in degrees",
+     "st": "ok",
+     "key": "ANGLE",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
      "st": "ok",
@@ -1816,11 +1836,11 @@
      "note_en": ""
     },
     {
-     "n": "Angle",
-     "en": "How far the shape sweeps or turns, in degrees",
-     "st": "seen",
-     "key": "",
-     "acc": "angle",
+     "n": "Radius",
+     "en": "A radius of the shape (for a dish, the knuckle)",
+     "st": "ok",
+     "key": "RADI",
+     "acc": "number",
      "note_en": ""
     },
     {
@@ -1890,14 +1910,6 @@
     {
      "n": "Pressure",
      "en": "Design pressure of the connection",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
-     "n": "Radius",
-     "en": "A radius of the shape (for a dish, the knuckle)",
      "st": "seen",
      "key": "",
      "acc": "number",
@@ -2123,6 +2135,22 @@
    ],
    "a": [
     {
+     "n": "Dbottom",
+     "en": "Diameter at the base end",
+     "st": "ok",
+     "key": "DBOT",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Dtop",
+     "en": "Diameter at the far end",
+     "st": "ok",
+     "key": "DTOP",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
      "n": "Height",
      "en": "Length along the local Z axis",
      "st": "ok",
@@ -2176,22 +2204,6 @@
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
-    },
-    {
-     "n": "Dbottom",
-     "en": "Diameter at the base end",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
-     "n": "Dtop",
-     "en": "Diameter at the far end",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
      "note_en": ""
     },
     {
@@ -2256,6 +2268,14 @@
    ],
    "a": [
     {
+     "n": "Angle",
+     "en": "How far the shape sweeps or turns, in degrees",
+     "st": "ok",
+     "key": "ANGLE",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
      "st": "ok",
@@ -2304,32 +2324,24 @@
      "note_en": ""
     },
     {
-     "n": "Angle",
-     "en": "How far the shape sweeps or turns, in degrees",
-     "st": "seen",
-     "key": "",
-     "acc": "angle",
-     "note_en": ""
-    },
-    {
-     "n": "RepCount",
-     "en": "Counter used when a template rule repeats the element",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
      "n": "Rinside",
      "en": "Distance from the torus centre to its inner edge",
-     "st": "seen",
-     "key": "",
+     "st": "ok",
+     "key": "RINS",
      "acc": "number",
      "note_en": ""
     },
     {
      "n": "Routside",
      "en": "Distance from the torus centre to its outer edge",
+     "st": "ok",
+     "key": "ROUT",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
      "st": "seen",
      "key": "",
      "acc": "number",
@@ -2580,8 +2592,8 @@
     {
      "n": "Radius",
      "en": "A radius of the shape (for a dish, the knuckle)",
-     "st": "seen",
-     "key": "",
+     "st": "ok",
+     "key": "RADI",
      "acc": "number",
      "note_en": ""
     },
@@ -2948,6 +2960,54 @@
      "note_en": ""
     },
     {
+     "n": "Xbottom",
+     "en": "Size of the base along local X",
+     "st": "ok",
+     "key": "XBOT",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Xoffset",
+     "en": "How far the top is shifted from the base along local X",
+     "st": "ok",
+     "key": "XOFF",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Xtop",
+     "en": "Size of the top face along local X",
+     "st": "ok",
+     "key": "XTOP",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Ybottom",
+     "en": "Size of the base along local Y",
+     "st": "ok",
+     "key": "YBOT",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Yoffset",
+     "en": "How far the top is shifted from the base along local Y",
+     "st": "ok",
+     "key": "YOFF",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Ytop",
+     "en": "Size of the top face along local Y",
+     "st": "ok",
+     "key": "YTOP",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
      "st": "seen",
@@ -2961,54 +3021,6 @@
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
-    },
-    {
-     "n": "Xbottom",
-     "en": "Size of the base along local X",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
-     "n": "Xoffset",
-     "en": "How far the top is shifted from the base along local X",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
-     "n": "Xtop",
-     "en": "Size of the top face along local X",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
-     "n": "Ybottom",
-     "en": "Size of the base along local Y",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
-     "n": "Yoffset",
-     "en": "How far the top is shifted from the base along local Y",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
-     "n": "Ytop",
-     "en": "Size of the top face along local Y",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
      "note_en": ""
     },
     {
@@ -3058,6 +3070,14 @@
    ],
    "a": [
     {
+     "n": "Angle",
+     "en": "How far the shape sweeps or turns, in degrees",
+     "st": "ok",
+     "key": "ANGLE",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
      "st": "ok",
@@ -3103,14 +3123,6 @@
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
-    },
-    {
-     "n": "Angle",
-     "en": "How far the shape sweeps or turns, in degrees",
-     "st": "seen",
-     "key": "",
-     "acc": "angle",
      "note_en": ""
     },
     {
@@ -3175,6 +3187,14 @@
    ],
    "a": [
     {
+     "n": "Angle",
+     "en": "How far the shape sweeps or turns, in degrees",
+     "st": "ok",
+     "key": "ANGLE",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
      "n": "Height",
      "en": "Length along the local Z axis",
      "st": "ok",
@@ -3231,32 +3251,24 @@
      "note_en": ""
     },
     {
-     "n": "Angle",
-     "en": "How far the shape sweeps or turns, in degrees",
-     "st": "seen",
-     "key": "",
-     "acc": "angle",
-     "note_en": ""
-    },
-    {
-     "n": "RepCount",
-     "en": "Counter used when a template rule repeats the element",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
      "n": "Rinside",
      "en": "Distance from the torus centre to its inner edge",
-     "st": "seen",
-     "key": "",
+     "st": "ok",
+     "key": "RINS",
      "acc": "number",
      "note_en": ""
     },
     {
      "n": "Routside",
      "en": "Distance from the torus centre to its outer edge",
+     "st": "ok",
+     "key": "ROUT",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
      "st": "seen",
      "key": "",
      "acc": "number",
@@ -3380,6 +3392,38 @@
      "note_en": ""
     },
     {
+     "n": "Xbshear",
+     "en": "Tilt of the base face, measured about local X",
+     "st": "ok",
+     "key": "XBSH",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Xtshear",
+     "en": "Tilt of the top face, measured about local X",
+     "st": "ok",
+     "key": "XTSH",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Ybshear",
+     "en": "Tilt of the base face, measured about local Y",
+     "st": "ok",
+     "key": "YBSH",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Ytshear",
+     "en": "Tilt of the top face, measured about local Y",
+     "st": "ok",
+     "key": "YTSH",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
      "st": "seen",
@@ -3393,38 +3437,6 @@
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
-    },
-    {
-     "n": "Xbshear",
-     "en": "Tilt of the base face, measured about local X",
-     "st": "seen",
-     "key": "",
-     "acc": "angle",
-     "note_en": ""
-    },
-    {
-     "n": "Xtshear",
-     "en": "Tilt of the top face, measured about local X",
-     "st": "seen",
-     "key": "",
-     "acc": "angle",
-     "note_en": ""
-    },
-    {
-     "n": "Ybshear",
-     "en": "Tilt of the base face, measured about local Y",
-     "st": "seen",
-     "key": "",
-     "acc": "angle",
-     "note_en": ""
-    },
-    {
-     "n": "Ytshear",
-     "en": "Tilt of the top face, measured about local Y",
-     "st": "seen",
-     "key": "",
-     "acc": "angle",
      "note_en": ""
     },
     {
@@ -3472,6 +3484,22 @@
     "NXTRUSION"
    ],
    "a": [
+    {
+     "n": "Dbottom",
+     "en": "Diameter at the base end",
+     "st": "ok",
+     "key": "DBOT",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Dtop",
+     "en": "Diameter at the far end",
+     "st": "ok",
+     "key": "DTOP",
+     "acc": "number",
+     "note_en": ""
+    },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
@@ -3529,18 +3557,18 @@
      "note_en": ""
     },
     {
-     "n": "Dbottom",
-     "en": "Diameter at the base end",
-     "st": "seen",
-     "key": "",
+     "n": "Xoffset",
+     "en": "How far the top is shifted from the base along local X",
+     "st": "ok",
+     "key": "XOFF",
      "acc": "number",
      "note_en": ""
     },
     {
-     "n": "Dtop",
-     "en": "Diameter at the far end",
-     "st": "seen",
-     "key": "",
+     "n": "Yoffset",
+     "en": "How far the top is shifted from the base along local Y",
+     "st": "ok",
+     "key": "YOFF",
      "acc": "number",
      "note_en": ""
     },
@@ -3558,22 +3586,6 @@
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
-    },
-    {
-     "n": "Xoffset",
-     "en": "How far the top is shifted from the base along local X",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
-     "n": "Yoffset",
-     "en": "How far the top is shifted from the base along local Y",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
      "note_en": ""
     },
     {
@@ -3745,6 +3757,22 @@
    "members": [],
    "a": [
     {
+     "n": "Dbottom",
+     "en": "Diameter at the base end",
+     "st": "ok",
+     "key": "DBOT",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Dtop",
+     "en": "Diameter at the far end",
+     "st": "ok",
+     "key": "DTOP",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
      "n": "Height",
      "en": "Length along the local Z axis",
      "st": "ok",
@@ -3798,22 +3826,6 @@
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
-    },
-    {
-     "n": "Dbottom",
-     "en": "Diameter at the base end",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
-     "n": "Dtop",
-     "en": "Diameter at the far end",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
      "note_en": ""
     },
     {
@@ -3873,6 +3885,14 @@
    "members": [],
    "a": [
     {
+     "n": "Angle",
+     "en": "How far the shape sweeps or turns, in degrees",
+     "st": "ok",
+     "key": "ANGLE",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
      "st": "ok",
@@ -3921,32 +3941,24 @@
      "note_en": ""
     },
     {
-     "n": "Angle",
-     "en": "How far the shape sweeps or turns, in degrees",
-     "st": "seen",
-     "key": "",
-     "acc": "angle",
-     "note_en": ""
-    },
-    {
-     "n": "RepCount",
-     "en": "Counter used when a template rule repeats the element",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
      "n": "Rinside",
      "en": "Distance from the torus centre to its inner edge",
-     "st": "seen",
-     "key": "",
+     "st": "ok",
+     "key": "RINS",
      "acc": "number",
      "note_en": ""
     },
     {
      "n": "Routside",
      "en": "Distance from the torus centre to its outer edge",
+     "st": "ok",
+     "key": "ROUT",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
      "st": "seen",
      "key": "",
      "acc": "number",
@@ -4187,8 +4199,8 @@
     {
      "n": "Radius",
      "en": "A radius of the shape (for a dish, the knuckle)",
-     "st": "seen",
-     "key": "",
+     "st": "ok",
+     "key": "RADI",
      "acc": "number",
      "note_en": ""
     },
@@ -4305,6 +4317,54 @@
      "note_en": ""
     },
     {
+     "n": "Xbottom",
+     "en": "Size of the base along local X",
+     "st": "ok",
+     "key": "XBOT",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Xoffset",
+     "en": "How far the top is shifted from the base along local X",
+     "st": "ok",
+     "key": "XOFF",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Xtop",
+     "en": "Size of the top face along local X",
+     "st": "ok",
+     "key": "XTOP",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Ybottom",
+     "en": "Size of the base along local Y",
+     "st": "ok",
+     "key": "YBOT",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Yoffset",
+     "en": "How far the top is shifted from the base along local Y",
+     "st": "ok",
+     "key": "YOFF",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Ytop",
+     "en": "Size of the top face along local Y",
+     "st": "ok",
+     "key": "YTOP",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
      "st": "seen",
@@ -4318,54 +4378,6 @@
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
-    },
-    {
-     "n": "Xbottom",
-     "en": "Size of the base along local X",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
-     "n": "Xoffset",
-     "en": "How far the top is shifted from the base along local X",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
-     "n": "Xtop",
-     "en": "Size of the top face along local X",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
-     "n": "Ybottom",
-     "en": "Size of the base along local Y",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
-     "n": "Yoffset",
-     "en": "How far the top is shifted from the base along local Y",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
-     "n": "Ytop",
-     "en": "Size of the top face along local Y",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
      "note_en": ""
     },
     {
@@ -4408,6 +4420,14 @@
    ],
    "members": [],
    "a": [
+    {
+     "n": "Angle",
+     "en": "How far the shape sweeps or turns, in degrees",
+     "st": "ok",
+     "key": "ANGLE",
+     "acc": "angle",
+     "note_en": ""
+    },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
@@ -4465,32 +4485,24 @@
      "note_en": ""
     },
     {
-     "n": "Angle",
-     "en": "How far the shape sweeps or turns, in degrees",
-     "st": "seen",
-     "key": "",
-     "acc": "angle",
-     "note_en": ""
-    },
-    {
-     "n": "RepCount",
-     "en": "Counter used when a template rule repeats the element",
-     "st": "seen",
-     "key": "",
-     "acc": "number",
-     "note_en": ""
-    },
-    {
      "n": "Rinside",
      "en": "Distance from the torus centre to its inner edge",
-     "st": "seen",
-     "key": "",
+     "st": "ok",
+     "key": "RINS",
      "acc": "number",
      "note_en": ""
     },
     {
      "n": "Routside",
      "en": "Distance from the torus centre to its outer edge",
+     "st": "ok",
+     "key": "ROUT",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
      "st": "seen",
      "key": "",
      "acc": "number",
@@ -4609,6 +4621,38 @@
      "note_en": ""
     },
     {
+     "n": "Xbshear",
+     "en": "Tilt of the base face, measured about local X",
+     "st": "ok",
+     "key": "XBSH",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Xtshear",
+     "en": "Tilt of the top face, measured about local X",
+     "st": "ok",
+     "key": "XTSH",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Ybshear",
+     "en": "Tilt of the base face, measured about local Y",
+     "st": "ok",
+     "key": "YBSH",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
+     "n": "Ytshear",
+     "en": "Tilt of the top face, measured about local Y",
+     "st": "ok",
+     "key": "YTSH",
+     "acc": "angle",
+     "note_en": ""
+    },
+    {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
      "st": "seen",
@@ -4622,38 +4666,6 @@
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
-    },
-    {
-     "n": "Xbshear",
-     "en": "Tilt of the base face, measured about local X",
-     "st": "seen",
-     "key": "",
-     "acc": "angle",
-     "note_en": ""
-    },
-    {
-     "n": "Xtshear",
-     "en": "Tilt of the top face, measured about local X",
-     "st": "seen",
-     "key": "",
-     "acc": "angle",
-     "note_en": ""
-    },
-    {
-     "n": "Ybshear",
-     "en": "Tilt of the base face, measured about local Y",
-     "st": "seen",
-     "key": "",
-     "acc": "angle",
-     "note_en": ""
-    },
-    {
-     "n": "Ytshear",
-     "en": "Tilt of the top face, measured about local Y",
-     "st": "seen",
-     "key": "",
-     "acc": "angle",
      "note_en": ""
     },
     {
@@ -4696,6 +4708,22 @@
    ],
    "members": [],
    "a": [
+    {
+     "n": "Dbottom",
+     "en": "Diameter at the base end",
+     "st": "ok",
+     "key": "DBOT",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Dtop",
+     "en": "Diameter at the far end",
+     "st": "ok",
+     "key": "DTOP",
+     "acc": "number",
+     "note_en": ""
+    },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
@@ -4753,18 +4781,18 @@
      "note_en": ""
     },
     {
-     "n": "Dbottom",
-     "en": "Diameter at the base end",
-     "st": "seen",
-     "key": "",
+     "n": "Xoffset",
+     "en": "How far the top is shifted from the base along local X",
+     "st": "ok",
+     "key": "XOFF",
      "acc": "number",
      "note_en": ""
     },
     {
-     "n": "Dtop",
-     "en": "Diameter at the far end",
-     "st": "seen",
-     "key": "",
+     "n": "Yoffset",
+     "en": "How far the top is shifted from the base along local Y",
+     "st": "ok",
+     "key": "YOFF",
      "acc": "number",
      "note_en": ""
     },
@@ -4785,16 +4813,469 @@
      "note_en": ""
     },
     {
-     "n": "Xoffset",
-     "en": "How far the top is shifted from the base along local X",
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "PIPE",
+   "en": "Pipe",
+   "n_en": "A pipeline: holds its branches (BRAN), which hold the fittings.",
+   "page": "DMRM5.09.531",
+   "owners": [
+    "CONVEYOR",
+    "ZONE"
+   ],
+   "members": [
+    "BRANCH",
+    "PPLIST",
+    "PSLIST",
+    "RESTRAINT",
+    "TEXT"
+   ],
+   "a": [
+    {
+     "n": "Description",
+     "en": "Free text about the element; text with spaces goes in |bars|",
+     "st": "ok",
+     "key": "DESC",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "BendMacReference",
+     "en": "Link to the pipe bending machine",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Bore",
+     "en": "Nominal bore of the pipe, in mm",
      "st": "seen",
      "key": "",
      "acc": "number",
      "note_en": ""
     },
     {
-     "n": "Yoffset",
-     "en": "How far the top is shifted from the base along local Y",
+     "n": "Built",
+     "en": "Flag: built or not yet built",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "Carea",
+     "en": "Area written by the Compipe mode of Isodraft",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Casref",
+     "en": "Points to the design case (pressure and temperature set)",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Ccentre",
+     "en": "Number of the cost centre the item is booked to",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Cclass",
+     "en": "Number of the cost class the item is booked to",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Cdrg",
+     "en": "Drawing number written by the Compipe mode of Isodraft",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Cnumber",
+     "en": "Line number written by the Compipe mode of Isodraft",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Deldsg",
+     "en": "Flag for how the pipe is delivered",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Drrf",
+     "en": "Link to a drawing made by the older spool tool",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Dscode",
+     "en": "Code of the design standard",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Duty",
+     "en": "Free text: what the connection carries",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Erection",
+     "en": "Number of the erection class",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Farea",
+     "en": "Area of the site where the pipe is built",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Fdrawing",
+     "en": "Number of the isometric for this pipe",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Fluref",
+     "en": "Points to the fluid the pipe carries",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Fpline",
+     "en": "Line number on the process diagram",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Frdrawing",
+     "en": "Numbers of other drawings this pipe refers to",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Frevision",
+     "en": "Revision of that isometric",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Fstatus",
+     "en": "Not explained in the manual",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Function",
+     "en": "Free text: what the element is for",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "HEATT",
+     "en": "Heat treatment the pipe needs",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Inprtref",
+     "en": "Paint on the inside (link)",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Inschedule",
+     "en": "Schedule of inspections",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Isohidden",
+     "en": "TRUE hides the item on isometric drawings",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "Ispec",
+     "en": "Link to the insulation specification",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Jmaximum",
+     "en": "Highest joint number used so far on the spool drawing",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "JNTC",
+     "en": "Code of the joint type",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Linetype",
+     "en": "Word for the kind of line, used by drawings and reports",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Lissue",
+     "en": "TRUE once a drawing of the pipe has gone out",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "Matref",
+     "en": "Points to the material the item is made of",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Mdsysf",
+     "en": "Links to model and design elements",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Ouprtref",
+     "en": "Paint on the outside (link)",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "PLANU",
+     "en": "Planning unit the item belongs to",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Pmaximum",
+     "en": "Highest part number used so far on the spool drawing",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Pressure",
+     "en": "Design pressure of the connection",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Pspec",
+     "en": "Link to the piping specification",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Ptspec",
+     "en": "Link to the paint specification",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Rev",
+     "en": "Revision number of the pipe; -1 until it is issued",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Rlstored",
+     "en": "Rules saved by ROUTER",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Safclass",
+     "en": "Number of the safety class",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Shop",
+     "en": "TRUE when the item is made in the shop, FALSE when it is made on site",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "Skey",
+     "en": "Key of the drawing symbol",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Sloreference",
+     "en": "Points to the slope rule the pipe follows",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Smaximum",
+     "en": "Highest spool number used so far on the spool drawing",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Splprefix",
+     "en": "Text put in front of every spool number of this pipe",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Temperature",
+     "en": "Design temperature of the connection",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "TPressure",
+     "en": "Pressure used to test the connection",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Tspec",
+     "en": "Link to the trace heating specification",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "WLDC",
+     "en": "Code of the weld type",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Wmaximum",
+     "en": "Highest weld number used so far on the spool drawing",
      "st": "seen",
      "key": "",
      "acc": "number",
@@ -4803,6 +5284,1799 @@
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Uuidia",
+     "en": "Globally unique ID of the element",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "STRUCTURE",
+   "en": "Structure",
+   "n_en": "Top of a piece of steelwork in a zone; holds frameworks.",
+   "page": "DMRM5.09.672",
+   "owners": [
+    "CONVEYOR",
+    "RESTRAINT",
+    "SUPPORT",
+    "ZONE"
+   ],
+   "members": [
+    "AIDGROUP",
+    "BOX",
+    "BPANEL",
+    "CONE",
+    "CTORUS",
+    "CTWALL",
+    "CYLINDER",
+    "DDSE",
+    "DIMGROUP",
+    "DISH",
+    "DPSET",
+    "DRAWING",
+    "EXTRUSION",
+    "FRMWORK",
+    "HANDRA",
+    "LADDER",
+    "LCDESCRIPTOR",
+    "PANEL",
+    "PLTFRM",
+    "POHEDRON",
+    "POLYHEDRON",
+    "PVOLUME",
+    "PYRAMID",
+    "REVOLUTION",
+    "RLADDR",
+    "ROOM",
+    "RPLANE",
+    "RPLGROUP",
+    "RTORUS",
+    "SLADDR",
+    "SLCYLINDER",
+    "SNOUT",
+    "STRFLT",
+    "STRTWR",
+    "SUBSTRUCTURE",
+    "TEXT",
+    "TMPLATE"
+   ],
+   "a": [
+    {
+     "n": "Description",
+     "en": "Free text about the element; text with spaces goes in |bars|",
+     "st": "ok",
+     "key": "DESC",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Desparam",
+     "en": "A list of numeric design values",
+     "st": "ok",
+     "key": "DESPARAM",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Area",
+     "en": "The area number the element belongs to",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Built",
+     "en": "Flag: built or not yet built",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "DUnion",
+     "en": "Flag used by DRAFT for joining element details",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Fstatus",
+     "en": "Not explained in the manual",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Function",
+     "en": "Free text: what the element is for",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "GrdRef",
+     "en": "Points to the grid the steel is set out on",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Inprtref",
+     "en": "Paint on the inside (link)",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Number",
+     "en": "A numeric label of the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Optblo",
+     "en": "Name of an optional production block",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Ouprtref",
+     "en": "Paint on the outside (link)",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Pdname",
+     "en": "Name the item carries in production",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Propst",
+     "en": "Links to property sets",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Skey",
+     "en": "Key of the drawing symbol",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Usrcogravity",
+     "en": "Centre of gravity typed in by hand",
+     "st": "seen",
+     "key": "",
+     "acc": "expr",
+     "note_en": ""
+    },
+    {
+     "n": "Usrwcogravity",
+     "en": "Centre of gravity with contents, typed in by hand",
+     "st": "seen",
+     "key": "",
+     "acc": "expr",
+     "note_en": ""
+    },
+    {
+     "n": "Usrweight",
+     "en": "Weight typed in by hand",
+     "st": "seen",
+     "key": "",
+     "acc": "expr",
+     "note_en": ""
+    },
+    {
+     "n": "Usrwweight",
+     "en": "Weight with contents (wet), typed in by hand",
+     "st": "seen",
+     "key": "",
+     "acc": "expr",
+     "note_en": ""
+    },
+    {
+     "n": "Uwmtxt",
+     "en": "Text kept for the weight manager",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Invfarray",
+     "en": "List of inventory items",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Stmf",
+     "en": "Pointer that picks the template",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Uuidia",
+     "en": "Globally unique ID of the element",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "FRMWORK",
+   "en": "Framework",
+   "n_en": "A group of members and panels; settings made here pass down to them.",
+   "page": "DMRM5.09.642",
+   "owners": [
+    "STRUCTURE"
+   ],
+   "members": [
+    "AIDGROUP",
+    "BPANEL",
+    "CFLOOR",
+    "CSCREED",
+    "CWALL",
+    "DDSE",
+    "DIMGROUP",
+    "DPSET",
+    "FIXING",
+    "FLOOR",
+    "GENSEC",
+    "GWALL",
+    "HANDRA",
+    "LADDER",
+    "PALJOINT",
+    "PANEL",
+    "PNODE",
+    "RLADDR",
+    "SBFRAMEWORK",
+    "SCREED",
+    "SCTN",
+    "SLADDR",
+    "STRFLT",
+    "STRTWR",
+    "STWALL",
+    "TEXT",
+    "TMPLATE",
+    "WALL"
+   ],
+   "a": [
+    {
+     "n": "Description",
+     "en": "Free text about the element; text with spaces goes in |bars|",
+     "st": "ok",
+     "key": "DESC",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Built",
+     "en": "Flag: built or not yet built",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "DUnion",
+     "en": "Flag used by DRAFT for joining element details",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Firesistance",
+     "en": "Fire rating of the steel",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Function",
+     "en": "Free text: what the element is for",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Grade",
+     "en": "Steel grade as a word, e.g. S355",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "GrdRef",
+     "en": "Points to the grid the steel is set out on",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Inprtref",
+     "en": "Paint on the inside (link)",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Inschedule",
+     "en": "Schedule of inspections",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Ispec",
+     "en": "Link to the insulation specification",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Matref",
+     "en": "Points to the material the item is made of",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Number",
+     "en": "A numeric label of the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Optblo",
+     "en": "Name of an optional production block",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Ouprtref",
+     "en": "Paint on the outside (link)",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Pdname",
+     "en": "Name the item carries in production",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Ptspec",
+     "en": "Link to the paint specification",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Shop",
+     "en": "TRUE when the item is made in the shop, FALSE when it is made on site",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "Skey",
+     "en": "Key of the drawing symbol",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Stspec",
+     "en": "Points to the steel specification members are chosen from",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Supref",
+     "en": "Points to the support this steel belongs to",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Stmf",
+     "en": "Pointer that picks the template",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Uuidia",
+     "en": "Globally unique ID of the element",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "SBFRAMEWORK",
+   "en": "Subframework",
+   "n_en": "A smaller group inside a framework.",
+   "page": "DMRM5.09.660",
+   "owners": [
+    "FRMWORK"
+   ],
+   "members": [
+    "BPANEL",
+    "DDSE",
+    "DPSET",
+    "FIXING",
+    "FLOOR",
+    "GENSEC",
+    "GWALL",
+    "HANDRA",
+    "LADDER",
+    "PALJOINT",
+    "PANEL",
+    "PNODE",
+    "RLADDR",
+    "SCREED",
+    "SCTN",
+    "SLADDR",
+    "STRFLT",
+    "STRTWR",
+    "STWALL",
+    "TEXT",
+    "TMPLATE",
+    "WALL"
+   ],
+   "a": [
+    {
+     "n": "Description",
+     "en": "Free text about the element; text with spaces goes in |bars|",
+     "st": "ok",
+     "key": "DESC",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Built",
+     "en": "Flag: built or not yet built",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "DUnion",
+     "en": "Flag used by DRAFT for joining element details",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Firesistance",
+     "en": "Fire rating of the steel",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Function",
+     "en": "Free text: what the element is for",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Grade",
+     "en": "Steel grade as a word, e.g. S355",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "GrdRef",
+     "en": "Points to the grid the steel is set out on",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Inschedule",
+     "en": "Schedule of inspections",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Ispec",
+     "en": "Link to the insulation specification",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Matref",
+     "en": "Points to the material the item is made of",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Number",
+     "en": "A numeric label of the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Optblo",
+     "en": "Name of an optional production block",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Pdname",
+     "en": "Name the item carries in production",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Ptspec",
+     "en": "Link to the paint specification",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Shop",
+     "en": "TRUE when the item is made in the shop, FALSE when it is made on site",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "Skey",
+     "en": "Key of the drawing symbol",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Stspec",
+     "en": "Points to the steel specification members are chosen from",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Supref",
+     "en": "Points to the support this steel belongs to",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Stmf",
+     "en": "Pointer that picks the template",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Uuidia",
+     "en": "Globally unique ID of the element",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "SCTN",
+   "en": "Section",
+   "n_en": "One straight steel member, from a start point to an end point, with a catalogue profile.",
+   "page": "DMRM5.09.663",
+   "owners": [
+    "CFLOOR",
+    "CWALL",
+    "FRMWORK",
+    "SBFRAMEWORK",
+    "TMPLATE"
+   ],
+   "members": [
+    "CMFITTING",
+    "DDSE",
+    "DPSET",
+    "FITTING",
+    "SDLOAD",
+    "SELJOINT",
+    "SNODE",
+    "SPLOAD",
+    "TMPLATE"
+   ],
+   "a": [
+    {
+     "n": "Bangle",
+     "en": "Turn of the section about the branch axis (beta)",
+     "st": "ok",
+     "key": "BANGLE",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Description",
+     "en": "Free text about the element; text with spaces goes in |bars|",
+     "st": "ok",
+     "key": "DESC",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Desparam",
+     "en": "A list of numeric design values",
+     "st": "ok",
+     "key": "DESPARAM",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Posend",
+     "en": "Where the member ends",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "PosNo",
+     "en": "Position number of the part on the drawing",
+     "st": "ok",
+     "key": "POS",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Posstart",
+     "en": "Where the member begins",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Spref",
+     "en": "Link to the component specification",
+     "st": "ok",
+     "key": "SPREF",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Antype",
+     "en": "How the member is treated in stress analysis",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Bevcodes",
+     "en": "Codes for how each edge is bevelled",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Built",
+     "en": "Flag: built or not yet built",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "Ctyend",
+     "en": "Connection type at the end",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Ctystart",
+     "en": "Connection type at the start: e.g. pinned or fixed",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Drgpriority",
+     "en": "Decides how drawings show the section",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Drnend",
+     "en": "Direction of the cut plane at the end of the section",
+     "st": "seen",
+     "key": "",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Drnstart",
+     "en": "Direction of the cut plane at the start of the section",
+     "st": "seen",
+     "key": "",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Erelease",
+     "en": "Which forces and moments are freed at the end",
+     "st": "seen",
+     "key": "",
+     "acc": "none",
+     "note_en": ""
+    },
+    {
+     "n": "Firesistance",
+     "en": "Fire rating of the steel",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Function",
+     "en": "Free text: what the element is for",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Grade",
+     "en": "Steel grade as a word, e.g. S355",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Gtype",
+     "en": "Kind of member as a word: BEAM, COLUMN, BRACE…",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Inref",
+     "en": "Points to the insulation put on the member",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Ispec",
+     "en": "Link to the insulation specification",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Jline",
+     "en": "The profile line that meets other members at the joints",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Joiend",
+     "en": "Points to the joint at the end of the member",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Joistart",
+     "en": "Points to the joint at the start of the member",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Jusline",
+     "en": "The profile line laid along the start-to-end line",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Matref",
+     "en": "Points to the material the item is made of",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Memline",
+     "en": "The line the stress analysis takes for the member",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Number",
+     "en": "A numeric label of the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "ParNam",
+     "en": "Name of the part in production",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Prodrf",
+     "en": "Link to the item in the production data",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Shop",
+     "en": "TRUE when the item is made in the shop, FALSE when it is made on site",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "Srelease",
+     "en": "Which forces and moments are freed at the start (stress analysis)",
+     "st": "seen",
+     "key": "",
+     "acc": "none",
+     "note_en": ""
+    },
+    {
+     "n": "StruClassification",
+     "en": "Class of the member in the structure: beam, column, brace…",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "WeldDp",
+     "en": "Depth of the weld",
+     "st": "seen",
+     "key": "",
+     "acc": "none",
+     "note_en": ""
+    },
+    {
+     "n": "Invfarray",
+     "en": "List of inventory items",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Uuidia",
+     "en": "Globally unique ID of the element",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "GENSEC",
+   "en": "Generic section",
+   "n_en": "A member that can follow a curved or bent path (a spine).",
+   "page": "DMRM5.09.643",
+   "owners": [
+    "BOTEXT",
+    "CAGSEG",
+    "CFLOOR",
+    "CLNLATTICE",
+    "CTFEAT",
+    "CWALL",
+    "EXTFRM",
+    "FRMWORK",
+    "HOOPSE",
+    "HRGATE",
+    "HRPANE",
+    "HRPOST",
+    "HRTERM",
+    "INTFRM",
+    "INTLNG",
+    "LDRRUN",
+    "LDRSTR",
+    "PLTGRD",
+    "RLGATE",
+    "SBFRAMEWORK",
+    "SLRAIL",
+    "STRLNG",
+    "STRSTR",
+    "TMPLATE",
+    "TOPEXT",
+    "TREAD",
+    "TWRSTL"
+   ],
+   "members": [
+    "COMFIXING",
+    "DDSE",
+    "DPSET",
+    "ENDATUM",
+    "HANCILLARY",
+    "JLDATUM",
+    "SDLOAD",
+    "SELJOINT",
+    "SPINE",
+    "SPLOAD",
+    "TMPLATE"
+   ],
+   "a": [
+    {
+     "n": "Bangle",
+     "en": "Turn of the section about the branch axis (beta)",
+     "st": "ok",
+     "key": "BANGLE",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Description",
+     "en": "Free text about the element; text with spaces goes in |bars|",
+     "st": "ok",
+     "key": "DESC",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Desparam",
+     "en": "A list of numeric design values",
+     "st": "ok",
+     "key": "DESPARAM",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "PosNo",
+     "en": "Position number of the part on the drawing",
+     "st": "ok",
+     "key": "POS",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Spref",
+     "en": "Link to the component specification",
+     "st": "ok",
+     "key": "SPREF",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Antype",
+     "en": "How the member is treated in stress analysis",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Bevcodes",
+     "en": "Codes for how each edge is bevelled",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Built",
+     "en": "Flag: built or not yet built",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "Ctyend",
+     "en": "Connection type at the end",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Ctystart",
+     "en": "Connection type at the start: e.g. pinned or fixed",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Drgpriority",
+     "en": "Decides how drawings show the section",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Erelease",
+     "en": "Which forces and moments are freed at the end",
+     "st": "seen",
+     "key": "",
+     "acc": "none",
+     "note_en": ""
+    },
+    {
+     "n": "Firesistance",
+     "en": "Fire rating of the steel",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Function",
+     "en": "Free text: what the element is for",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Grade",
+     "en": "Steel grade as a word, e.g. S355",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Gtype",
+     "en": "Kind of member as a word: BEAM, COLUMN, BRACE…",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Inref",
+     "en": "Points to the insulation put on the member",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Ispec",
+     "en": "Link to the insulation specification",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Jlnend",
+     "en": "Profile line used at the end joint",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Jlnstart",
+     "en": "Profile line used at the start joint",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Joiend",
+     "en": "Points to the joint at the end of the member",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Joistart",
+     "en": "Points to the joint at the start of the member",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Jusline",
+     "en": "The profile line laid along the start-to-end line",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "LMirror",
+     "en": "TRUE turns the profile over (mirror image)",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "Matref",
+     "en": "Points to the material the item is made of",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Memline",
+     "en": "The line the stress analysis takes for the member",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Number",
+     "en": "A numeric label of the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "ParNam",
+     "en": "Name of the part in production",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Prodrf",
+     "en": "Link to the item in the production data",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Shop",
+     "en": "TRUE when the item is made in the shop, FALSE when it is made on site",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "Srelease",
+     "en": "Which forces and moments are freed at the start (stress analysis)",
+     "st": "seen",
+     "key": "",
+     "acc": "none",
+     "note_en": ""
+    },
+    {
+     "n": "StruClassification",
+     "en": "Class of the member in the structure: beam, column, brace…",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "WeldDp",
+     "en": "Depth of the weld",
+     "st": "seen",
+     "key": "",
+     "acc": "none",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Uuidia",
+     "en": "Globally unique ID of the element",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    }
+   ],
+   "extra": [],
+   "real": false
+  },
+  {
+   "code": "PANEL",
+   "en": "Panel",
+   "n_en": "A plate: a flat shape with a thickness, e.g. a floor or a stiffener.",
+   "page": "DMRM5.09.650",
+   "owners": [
+    "BOTEXT",
+    "CEILIN",
+    "CFLOOR",
+    "CSCREED",
+    "CWALL",
+    "EQUIPMENT",
+    "EXTFRM",
+    "FRMWORK",
+    "HRPANE",
+    "HRPOST",
+    "HRTERM",
+    "INTFRM",
+    "INTLNG",
+    "JNTBOX",
+    "LDRRUN",
+    "LDRSTR",
+    "PLTGRD",
+    "PTRACK",
+    "PULLPIT",
+    "RLGATE",
+    "SBFRAMEWORK",
+    "SLRAIL",
+    "STRLNG",
+    "STRSTR",
+    "STRUCTURE",
+    "SUBEQUIPMENT",
+    "SUBSTRUCTURE",
+    "TMPLATE",
+    "TOPEXT",
+    "TREAD",
+    "TWRSTL"
+   ],
+   "members": [
+    "CMPFITTING",
+    "COFITTING",
+    "DDSE",
+    "DPSET",
+    "NBOX",
+    "NCONE",
+    "NCTORUS",
+    "NCYLINDER",
+    "NDISH",
+    "NPOLYHEDRON",
+    "NPYRAMID",
+    "NREVOLUTION",
+    "NRTORUS",
+    "NSLCYLINDER",
+    "NSNOUT",
+    "NXTRUSION",
+    "PALJOINT",
+    "PFITTING",
+    "PLOOP",
+    "STCSET",
+    "TMPLATE"
+   ],
+   "a": [
+    {
+     "n": "Description",
+     "en": "Free text about the element; text with spaces goes in |bars|",
+     "st": "ok",
+     "key": "DESC",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Desparam",
+     "en": "A list of numeric design values",
+     "st": "ok",
+     "key": "DESPARAM",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Level",
+     "en": "The range of drawing levels at which the element is shown",
+     "st": "ok",
+     "key": "LEVEL",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Name",
+     "en": "The element’s name; it starts with a slash",
+     "st": "ok",
+     "key": "NAME",
+     "acc": "name",
+     "note_en": ""
+    },
+    {
+     "n": "Obstruction",
+     "en": "How solid the element counts in clash checks",
+     "st": "ok",
+     "key": "OBST",
+     "acc": "obst",
+     "note_en": ""
+    },
+    {
+     "n": "Orientation",
+     "en": "Which way the element’s axes point",
+     "st": "ok",
+     "key": "ORI",
+     "acc": "dir",
+     "note_en": ""
+    },
+    {
+     "n": "Position",
+     "en": "Where the element sits, measured from its owner",
+     "st": "ok",
+     "key": "POS",
+     "acc": "pos",
+     "note_en": ""
+    },
+    {
+     "n": "PosNo",
+     "en": "Position number of the part on the drawing",
+     "st": "ok",
+     "key": "POS",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Purpose",
+     "en": "A short code word for marking and filtering elements",
+     "st": "ok",
+     "key": "PURPOSE",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Spref",
+     "en": "Link to the component specification",
+     "st": "ok",
+     "key": "SPREF",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Bevcodes",
+     "en": "Codes for how each edge is bevelled",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Built",
+     "en": "Flag: built or not yet built",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "Excess",
+     "en": "Extra material left on the plate for trimming on site",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Firesistance",
+     "en": "Fire rating of the steel",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Function",
+     "en": "Free text: what the element is for",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Grade",
+     "en": "Steel grade as a word, e.g. S355",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Gtype",
+     "en": "Kind of member as a word: BEAM, COLUMN, BRACE…",
+     "st": "seen",
+     "key": "",
+     "acc": "word",
+     "note_en": ""
+    },
+    {
+     "n": "Ispec",
+     "en": "Link to the insulation specification",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Matref",
+     "en": "Points to the material the item is made of",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Number",
+     "en": "A numeric label of the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "ParNam",
+     "en": "Name of the part in production",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Prodrf",
+     "en": "Link to the item in the production data",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "RepCount",
+     "en": "Counter used when a template rule repeats the element",
+     "st": "seen",
+     "key": "",
+     "acc": "number",
+     "note_en": ""
+    },
+    {
+     "n": "Shop",
+     "en": "TRUE when the item is made in the shop, FALSE when it is made on site",
+     "st": "seen",
+     "key": "",
+     "acc": "logical",
+     "note_en": ""
+    },
+    {
+     "n": "StruClassification",
+     "en": "Class of the member in the structure: beam, column, brace…",
+     "st": "seen",
+     "key": "",
+     "acc": "text",
+     "note_en": ""
+    },
+    {
+     "n": "Tmrref",
+     "en": "Points back to the template element that repeats this one",
+     "st": "seen",
+     "key": "",
+     "acc": "ref",
+     "note_en": ""
+    },
+    {
+     "n": "Invfarray",
+     "en": "List of inventory items",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Orrf",
+     "en": "Origin link used by templates",
+     "st": "man",
+     "key": "",
+     "acc": "",
+     "note_en": ""
+    },
+    {
+     "n": "Uuidia",
+     "en": "Globally unique ID of the element",
      "st": "man",
      "key": "",
      "acc": "",

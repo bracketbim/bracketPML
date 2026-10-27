@@ -1,7 +1,7 @@
 {
  "about": "bracketPML register — generated, CC BY 4.0",
  "e3d": "2.1",
- "last_run": "2026-10-26",
+ "last_run": "2026-10-27",
  "status": {
   "ok": {
    "name": "Verified",
@@ -312,11 +312,15 @@
    "g": 1,
    "cmd": "OWNER",
    "what": "Go up to the owner",
-   "note": "Not run. Templates use the full name instead.",
-   "st": "doc",
+   "note": "Run 26 (27 Oct): from a SUBE to its EQUI.",
+   "st": "ok",
    "key": "OWNER",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-27"
+   ],
+   "runs": [
+    26
+   ]
   },
   {
    "id": "goto-owner",
@@ -356,10 +360,12 @@
    "st": "ok",
    "key": "NEW",
    "dates": [
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "runs": [
-    25
+    25,
+    26
    ]
   },
   {
@@ -371,10 +377,12 @@
    "st": "ok",
    "key": "NEW",
    "dates": [
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "runs": [
-    25
+    25,
+    26
    ]
   },
   {
@@ -518,10 +526,12 @@
    "st": "ok",
    "key": "NEW",
    "dates": [
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "runs": [
-    25
+    25,
+    26
    ]
   },
   {
@@ -533,10 +543,12 @@
    "st": "ok",
    "key": "NEW",
    "dates": [
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "runs": [
-    25
+    25,
+    26
    ]
   },
   {
@@ -1019,44 +1031,60 @@
    "g": 3,
    "cmd": "RADI 500",
    "what": "Primitive radius",
-   "note": "DMRM 2.1: Radius; this form appears in real code.",
-   "st": "ref",
+   "note": "Run 26 (27 Oct): on DISH, Q RADI prints Radius 500mm.",
+   "st": "ok",
    "key": "RADI",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-27"
+   ],
+   "runs": [
+    26
+   ]
   },
   {
    "id": "angle-90",
    "g": 3,
    "cmd": "ANGLE 90",
    "what": "Primitive angle",
-   "note": "DMRM 2.1: Angle; this form appears in real code.",
-   "st": "ref",
+   "note": "Run 26 (27 Oct): on CTORUS, Q ANGLE prints Angle 90degree.",
+   "st": "ok",
    "key": "ANGLE",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-27"
+   ],
+   "runs": [
+    26
+   ]
   },
   {
    "id": "xoff-100",
    "g": 3,
    "cmd": "XOFF 100",
    "what": "X offset (also XBOT, YBOT, XTOP, YTOP)",
-   "note": "DMRM 2.1; these forms appear in real code.",
-   "st": "ref",
+   "note": "Run 26 (27 Oct): all written and read back.",
+   "st": "ok",
    "key": "XOFF",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-27"
+   ],
+   "runs": [
+    26
+   ]
   },
   {
    "id": "dtop-300",
    "g": 3,
    "cmd": "DTOP 300",
    "what": "Top diameter (also DBOT, YOFF, RINS, ROUT, XTSH, YTSH, XBSH, YBSH)",
-   "note": "DMRM 2.1; these abbreviations were not seen in real code — check with $Q.",
-   "st": "doc",
+   "note": "Run 26 (27 Oct): all written and read back.",
+   "st": "ok",
    "key": "DTOP",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-27"
+   ],
+   "runs": [
+    26
+   ]
   },
   {
    "id": "new-gpset",
@@ -1768,11 +1796,15 @@
    "g": 6,
    "cmd": "ALP REQ CLEAR",
    "what": "Clear the command window",
-   "note": "",
-   "st": "ref",
+   "note": "Run 26 (27 Oct).",
+   "st": "ok",
    "key": "ALP",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-27"
+   ],
+   "runs": [
+    26
+   ]
   },
   {
    "id": "axes-on",
@@ -2465,11 +2497,15 @@
    "g": 11,
    "cmd": "return error 1 'Could not run'",
    "what": "Raise your own error",
-   "note": "3 times in the corpus.",
-   "st": "ref",
+   "note": "Run 26 (27 Oct): the error text shows in the window, the macro stops.",
+   "st": "ok",
    "key": "RETURN",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-27"
+   ],
+   "runs": [
+    26
+   ]
   },
   {
    "id": "m-c-temp-t-mac-arg1-arg2-2",
@@ -2550,22 +2586,30 @@
    "g": 11,
    "cmd": "golabel /label",
    "what": "Jump to a label (and label /label)",
-   "note": "Only in a macro file (SOFTCG 6.06.11).",
-   "st": "doc",
+   "note": "Only in a macro; run 26 (27 Oct).",
+   "st": "ok",
    "key": "GOLABEL",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-27"
+   ],
+   "runs": [
+    26
+   ]
   },
   {
    "id": "return",
    "g": 11,
    "cmd": "return",
    "what": "Leave the PML file",
-   "note": "SOFTCG 4.04.03.",
-   "st": "doc",
+   "note": "Run 26 (27 Oct): lines after return did not run.",
+   "st": "ok",
    "key": "RETURN",
-   "dates": [],
-   "runs": []
+   "dates": [
+    "2026-10-27"
+   ],
+   "runs": [
+    26
+   ]
   },
   {
    "id": "view-v-volume-width-60-height-20",

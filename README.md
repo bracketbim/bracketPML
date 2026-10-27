@@ -20,7 +20,7 @@ Every command here carries the run that proved it. Nothing is written from memor
 
 There is almost no public material on PML — and next to none on cable trays and cable supports. What exists is mostly «this should work». bracketPML is the opposite: a register of PML commands for AVEVA E3D 2.1, each one **run in a real E3D model**, with the date of the run, the exact answer E3D printed, and the traps found on the way.
 
-**194 commands** in the register: **122 verified**, 8 documented failures, 6 macro-only, 30 from documentation and 28 from real code still waiting for a run. Last run: 26 Oct 2026.
+**194 commands** in the register: **131 verified**, 8 documented failures, 6 macro-only, 26 from documentation and 23 from real code still waiting for a run. Last run: 27 Oct 2026.
 
 ## How to read a status
 

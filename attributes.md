@@ -248,6 +248,7 @@ Owners: EQUIPMENT, SUBEQUIPMENT, TMPLATE · Members: DDSE, DPSET, TMPLATE · DMR
 
 | Attribute | What it is | Accepts | Status | Note |
 |---|---|---|---|---|
+| `Angle` | How far the shape sweeps or turns, in degrees | an angle, or as a direction | Command verified |  |
 | `Description` | Free text about the element; text with spaces goes in \|bars\| | text in \|bars\| or 'quotes' | Command verified |  |
 | `Desparam` | A list of numeric design values | a number | Command verified |  |
 | `Height` | Length along the local Z axis | a number | Command verified |  |
@@ -255,7 +256,7 @@ Owners: EQUIPMENT, SUBEQUIPMENT, TMPLATE · Members: DDSE, DPSET, TMPLATE · DMR
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
-| `Angle` | How far the shape sweeps or turns, in degrees | an angle, or as a direction | In a real model |  |
+| `Radius` | A radius of the shape (for a dish, the knuckle) | a number | Command verified |  |
 | `Bselector` | Text that picks which bolts the connection takes | text in \|bars\| or 'quotes' | In a real model |  |
 | `Catref` | Points to the catalogue component this element is drawn from | a reference: /NAME, =ref or NULREF | In a real model |  |
 | `Cref` | Points to whatever is connected here, such as a pipe branch | a reference: /NAME, =ref or NULREF | In a real model |  |
@@ -265,7 +266,6 @@ Owners: EQUIPMENT, SUBEQUIPMENT, TMPLATE · Members: DDSE, DPSET, TMPLATE · DMR
 | `Ispec` | Link to the insulation specification | a reference: /NAME, =ref or NULREF | In a real model |  |
 | `Ouprtref` | Paint on the outside (link) | a reference: /NAME, =ref or NULREF | In a real model |  |
 | `Pressure` | Design pressure of the connection | a number | In a real model |  |
-| `Radius` | A radius of the shape (for a dish, the knuckle) | a number | In a real model |  |
 | `Temperature` | Design temperature of the connection | a number | In a real model |  |
 | `TPressure` | Pressure used to test the connection | a number | In a real model |  |
 | `Invfarray` | List of inventory items |  | Manual only |  |
@@ -325,6 +325,8 @@ Owners: EQUIPMENT, JNTBOX, PTRACK, PULLPIT, STRUCTURE, SUBEQUIPMENT, SUBSTRUCTUR
 
 | Attribute | What it is | Accepts | Status | Note |
 |---|---|---|---|---|
+| `Dbottom` | Diameter at the base end | a number | Command verified |  |
+| `Dtop` | Diameter at the far end | a number | Command verified |  |
 | `Height` | Length along the local Z axis | a number | Command verified |  |
 | `Level` | The range of drawing levels at which the element is shown | a number | Command verified |  |
 | `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
@@ -332,8 +334,6 @@ Owners: EQUIPMENT, JNTBOX, PTRACK, PULLPIT, STRUCTURE, SUBEQUIPMENT, SUBSTRUCTUR
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
-| `Dbottom` | Diameter at the base end | a number | In a real model |  |
-| `Dtop` | Diameter at the far end | a number | In a real model |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
@@ -346,6 +346,8 @@ Owners: EQUIPMENT, JNTBOX, PTRACK, PULLPIT, STRUCTURE, SUBEQUIPMENT, SUBSTRUCTUR
 
 | Attribute | What it is | Accepts | Status | Note |
 |---|---|---|---|---|
+| `Dbottom` | Diameter at the base end | a number | Command verified |  |
+| `Dtop` | Diameter at the far end | a number | Command verified |  |
 | `Height` | Length along the local Z axis | a number | Command verified |  |
 | `Level` | The range of drawing levels at which the element is shown | a number | Command verified |  |
 | `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
@@ -353,12 +355,10 @@ Owners: EQUIPMENT, JNTBOX, PTRACK, PULLPIT, STRUCTURE, SUBEQUIPMENT, SUBSTRUCTUR
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
-| `Dbottom` | Diameter at the base end | a number | In a real model |  |
-| `Dtop` | Diameter at the far end | a number | In a real model |  |
+| `Xoffset` | How far the top is shifted from the base along local X | a number | Command verified |  |
+| `Yoffset` | How far the top is shifted from the base along local Y | a number | Command verified |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
-| `Xoffset` | How far the top is shifted from the base along local X | a number | In a real model |  |
-| `Yoffset` | How far the top is shifted from the base along local Y | a number | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
 
 ### DISH — Dish
@@ -377,7 +377,7 @@ Owners: EQUIPMENT, JNTBOX, PTRACK, PULLPIT, STRUCTURE, SUBEQUIPMENT, SUBSTRUCTUR
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
-| `Radius` | A radius of the shape (for a dish, the knuckle) | a number | In a real model |  |
+| `Radius` | A radius of the shape (for a dish, the knuckle) | a number | Command verified |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
@@ -397,14 +397,14 @@ Owners: EQUIPMENT, JNTBOX, PTRACK, PULLPIT, STRUCTURE, SUBEQUIPMENT, SUBSTRUCTUR
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
+| `Xbottom` | Size of the base along local X | a number | Command verified |  |
+| `Xoffset` | How far the top is shifted from the base along local X | a number | Command verified |  |
+| `Xtop` | Size of the top face along local X | a number | Command verified |  |
+| `Ybottom` | Size of the base along local Y | a number | Command verified |  |
+| `Yoffset` | How far the top is shifted from the base along local Y | a number | Command verified |  |
+| `Ytop` | Size of the top face along local Y | a number | Command verified |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
-| `Xbottom` | Size of the base along local X | a number | In a real model |  |
-| `Xoffset` | How far the top is shifted from the base along local X | a number | In a real model |  |
-| `Xtop` | Size of the top face along local X | a number | In a real model |  |
-| `Ybottom` | Size of the base along local Y | a number | In a real model |  |
-| `Yoffset` | How far the top is shifted from the base along local Y | a number | In a real model |  |
-| `Ytop` | Size of the top face along local Y | a number | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
 
 ### CTORUS — Circular torus
@@ -415,16 +415,16 @@ Owners: EQUIPMENT, JNTBOX, PTRACK, PULLPIT, STRUCTURE, SUBEQUIPMENT, SUBSTRUCTUR
 
 | Attribute | What it is | Accepts | Status | Note |
 |---|---|---|---|---|
+| `Angle` | How far the shape sweeps or turns, in degrees | an angle, or as a direction | Command verified |  |
 | `Level` | The range of drawing levels at which the element is shown | a number | Command verified |  |
 | `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
 | `Obstruction` | How solid the element counts in clash checks | a number, or HARD / SOFT / NONE | Command verified |  |
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
-| `Angle` | How far the shape sweeps or turns, in degrees | an angle, or as a direction | In a real model |  |
+| `Rinside` | Distance from the torus centre to its inner edge | a number | Command verified |  |
+| `Routside` | Distance from the torus centre to its outer edge | a number | Command verified |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
-| `Rinside` | Distance from the torus centre to its inner edge | a number | In a real model |  |
-| `Routside` | Distance from the torus centre to its outer edge | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
 
@@ -436,6 +436,7 @@ Owners: EQUIPMENT, JNTBOX, PTRACK, PULLPIT, STRUCTURE, SUBEQUIPMENT, SUBSTRUCTUR
 
 | Attribute | What it is | Accepts | Status | Note |
 |---|---|---|---|---|
+| `Angle` | How far the shape sweeps or turns, in degrees | an angle, or as a direction | Command verified |  |
 | `Height` | Length along the local Z axis | a number | Command verified |  |
 | `Level` | The range of drawing levels at which the element is shown | a number | Command verified |  |
 | `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
@@ -443,10 +444,9 @@ Owners: EQUIPMENT, JNTBOX, PTRACK, PULLPIT, STRUCTURE, SUBEQUIPMENT, SUBSTRUCTUR
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
-| `Angle` | How far the shape sweeps or turns, in degrees | an angle, or as a direction | In a real model |  |
+| `Rinside` | Distance from the torus centre to its inner edge | a number | Command verified |  |
+| `Routside` | Distance from the torus centre to its outer edge | a number | Command verified |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
-| `Rinside` | Distance from the torus centre to its inner edge | a number | In a real model |  |
-| `Routside` | Distance from the torus centre to its outer edge | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
 
@@ -466,12 +466,12 @@ Owners: EQUIPMENT, JNTBOX, PTRACK, PULLPIT, STRUCTURE, SUBEQUIPMENT, SUBSTRUCTUR
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
+| `Xbshear` | Tilt of the base face, measured about local X | an angle, or as a direction | Command verified |  |
+| `Xtshear` | Tilt of the top face, measured about local X | an angle, or as a direction | Command verified |  |
+| `Ybshear` | Tilt of the base face, measured about local Y | an angle, or as a direction | Command verified |  |
+| `Ytshear` | Tilt of the top face, measured about local Y | an angle, or as a direction | Command verified |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
-| `Xbshear` | Tilt of the base face, measured about local X | an angle, or as a direction | In a real model |  |
-| `Xtshear` | Tilt of the top face, measured about local X | an angle, or as a direction | In a real model |  |
-| `Ybshear` | Tilt of the base face, measured about local Y | an angle, or as a direction | In a real model |  |
-| `Ytshear` | Tilt of the top face, measured about local Y | an angle, or as a direction | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
 
 ### EXTRUSION — Extrusion
@@ -501,13 +501,13 @@ Owners: EQUIPMENT, JNTBOX, PTRACK, PULLPIT, STRUCTURE, SUBEQUIPMENT, SUBSTRUCTUR
 
 | Attribute | What it is | Accepts | Status | Note |
 |---|---|---|---|---|
+| `Angle` | How far the shape sweeps or turns, in degrees | an angle, or as a direction | Command verified |  |
 | `Level` | The range of drawing levels at which the element is shown | a number | Command verified |  |
 | `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
 | `Obstruction` | How solid the element counts in clash checks | a number, or HARD / SOFT / NONE | Command verified |  |
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
-| `Angle` | How far the shape sweeps or turns, in degrees | an angle, or as a direction | In a real model |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
@@ -584,6 +584,8 @@ Owners: BOX, BPANEL, CONE, CTORUS, CYLINDER, DISH, EXTRUSION, FLOOR, GWALL, PANE
 
 | Attribute | What it is | Accepts | Status | Note |
 |---|---|---|---|---|
+| `Dbottom` | Diameter at the base end | a number | Command verified |  |
+| `Dtop` | Diameter at the far end | a number | Command verified |  |
 | `Height` | Length along the local Z axis | a number | Command verified |  |
 | `Level` | The range of drawing levels at which the element is shown | a number | Command verified |  |
 | `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
@@ -591,8 +593,6 @@ Owners: BOX, BPANEL, CONE, CTORUS, CYLINDER, DISH, EXTRUSION, FLOOR, GWALL, PANE
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
-| `Dbottom` | Diameter at the base end | a number | In a real model |  |
-| `Dtop` | Diameter at the far end | a number | In a real model |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
@@ -605,6 +605,8 @@ Owners: BOX, BPANEL, CONE, CTORUS, CYLINDER, DISH, EXTRUSION, FLOOR, GWALL, PANE
 
 | Attribute | What it is | Accepts | Status | Note |
 |---|---|---|---|---|
+| `Dbottom` | Diameter at the base end | a number | Command verified |  |
+| `Dtop` | Diameter at the far end | a number | Command verified |  |
 | `Height` | Length along the local Z axis | a number | Command verified |  |
 | `Level` | The range of drawing levels at which the element is shown | a number | Command verified |  |
 | `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
@@ -612,12 +614,10 @@ Owners: BOX, BPANEL, CONE, CTORUS, CYLINDER, DISH, EXTRUSION, FLOOR, GWALL, PANE
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
-| `Dbottom` | Diameter at the base end | a number | In a real model |  |
-| `Dtop` | Diameter at the far end | a number | In a real model |  |
+| `Xoffset` | How far the top is shifted from the base along local X | a number | Command verified |  |
+| `Yoffset` | How far the top is shifted from the base along local Y | a number | Command verified |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
-| `Xoffset` | How far the top is shifted from the base along local X | a number | In a real model |  |
-| `Yoffset` | How far the top is shifted from the base along local Y | a number | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
 
 ### NDISH — Negative dish
@@ -636,7 +636,7 @@ Owners: BOX, BPANEL, CONE, CTORUS, CYLINDER, DISH, EXTRUSION, FLOOR, GWALL, PANE
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
-| `Radius` | A radius of the shape (for a dish, the knuckle) | a number | In a real model |  |
+| `Radius` | A radius of the shape (for a dish, the knuckle) | a number | Command verified |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
@@ -656,14 +656,14 @@ Owners: BOX, BPANEL, CONE, CTORUS, CYLINDER, DISH, EXTRUSION, FLOOR, GWALL, PANE
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
+| `Xbottom` | Size of the base along local X | a number | Command verified |  |
+| `Xoffset` | How far the top is shifted from the base along local X | a number | Command verified |  |
+| `Xtop` | Size of the top face along local X | a number | Command verified |  |
+| `Ybottom` | Size of the base along local Y | a number | Command verified |  |
+| `Yoffset` | How far the top is shifted from the base along local Y | a number | Command verified |  |
+| `Ytop` | Size of the top face along local Y | a number | Command verified |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
-| `Xbottom` | Size of the base along local X | a number | In a real model |  |
-| `Xoffset` | How far the top is shifted from the base along local X | a number | In a real model |  |
-| `Xtop` | Size of the top face along local X | a number | In a real model |  |
-| `Ybottom` | Size of the base along local Y | a number | In a real model |  |
-| `Yoffset` | How far the top is shifted from the base along local Y | a number | In a real model |  |
-| `Ytop` | Size of the top face along local Y | a number | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
 
 ### NCTORUS — Negative circular torus
@@ -674,16 +674,16 @@ Owners: BOX, BPANEL, CONE, CTORUS, CYLINDER, DISH, EXTRUSION, FLOOR, GWALL, PANE
 
 | Attribute | What it is | Accepts | Status | Note |
 |---|---|---|---|---|
+| `Angle` | How far the shape sweeps or turns, in degrees | an angle, or as a direction | Command verified |  |
 | `Level` | The range of drawing levels at which the element is shown | a number | Command verified |  |
 | `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
 | `Obstruction` | How solid the element counts in clash checks | a number, or HARD / SOFT / NONE | Command verified |  |
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
-| `Angle` | How far the shape sweeps or turns, in degrees | an angle, or as a direction | In a real model |  |
+| `Rinside` | Distance from the torus centre to its inner edge | a number | Command verified |  |
+| `Routside` | Distance from the torus centre to its outer edge | a number | Command verified |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
-| `Rinside` | Distance from the torus centre to its inner edge | a number | In a real model |  |
-| `Routside` | Distance from the torus centre to its outer edge | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
 
@@ -695,6 +695,7 @@ Owners: BOX, BPANEL, CONE, CTORUS, CYLINDER, DISH, EXTRUSION, FLOOR, GWALL, PANE
 
 | Attribute | What it is | Accepts | Status | Note |
 |---|---|---|---|---|
+| `Angle` | How far the shape sweeps or turns, in degrees | an angle, or as a direction | Command verified |  |
 | `Height` | Length along the local Z axis | a number | Command verified |  |
 | `Level` | The range of drawing levels at which the element is shown | a number | Command verified |  |
 | `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
@@ -702,10 +703,9 @@ Owners: BOX, BPANEL, CONE, CTORUS, CYLINDER, DISH, EXTRUSION, FLOOR, GWALL, PANE
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
-| `Angle` | How far the shape sweeps or turns, in degrees | an angle, or as a direction | In a real model |  |
+| `Rinside` | Distance from the torus centre to its inner edge | a number | Command verified |  |
+| `Routside` | Distance from the torus centre to its outer edge | a number | Command verified |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
-| `Rinside` | Distance from the torus centre to its inner edge | a number | In a real model |  |
-| `Routside` | Distance from the torus centre to its outer edge | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
 
@@ -725,13 +725,324 @@ Owners: BOX, BPANEL, CONE, CTORUS, CYLINDER, DISH, EXTRUSION, FLOOR, GWALL, PANE
 | `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
+| `Xbshear` | Tilt of the base face, measured about local X | an angle, or as a direction | Command verified |  |
+| `Xtshear` | Tilt of the top face, measured about local X | an angle, or as a direction | Command verified |  |
+| `Ybshear` | Tilt of the base face, measured about local Y | an angle, or as a direction | Command verified |  |
+| `Ytshear` | Tilt of the top face, measured about local Y | an angle, or as a direction | Command verified |  |
 | `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
 | `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
-| `Xbshear` | Tilt of the base face, measured about local X | an angle, or as a direction | In a real model |  |
-| `Xtshear` | Tilt of the top face, measured about local X | an angle, or as a direction | In a real model |  |
-| `Ybshear` | Tilt of the base face, measured about local Y | an angle, or as a direction | In a real model |  |
-| `Ytshear` | Tilt of the top face, measured about local Y | an angle, or as a direction | In a real model |  |
 | `Orrf` | Origin link used by templates |  | Manual only |  |
+
+
+## Pipes and steel
+
+### PIPE — Pipe
+
+A pipeline: holds its branches (BRAN), which hold the fittings.
+
+Owners: CONVEYOR, ZONE · Members: BRANCH, PPLIST, PSLIST, RESTRAINT, TEXT · DMRM 5.09.531
+
+| Attribute | What it is | Accepts | Status | Note |
+|---|---|---|---|---|
+| `Description` | Free text about the element; text with spaces goes in \|bars\| | text in \|bars\| or 'quotes' | Command verified |  |
+| `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
+| `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
+| `BendMacReference` | Link to the pipe bending machine | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Bore` | Nominal bore of the pipe, in mm | a number | In a real model |  |
+| `Built` | Flag: built or not yet built | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `Carea` | Area written by the Compipe mode of Isodraft | text in \|bars\| or 'quotes' | In a real model |  |
+| `Casref` | Points to the design case (pressure and temperature set) | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Ccentre` | Number of the cost centre the item is booked to | a number | In a real model |  |
+| `Cclass` | Number of the cost class the item is booked to | a number | In a real model |  |
+| `Cdrg` | Drawing number written by the Compipe mode of Isodraft | text in \|bars\| or 'quotes' | In a real model |  |
+| `Cnumber` | Line number written by the Compipe mode of Isodraft | text in \|bars\| or 'quotes' | In a real model |  |
+| `Deldsg` | Flag for how the pipe is delivered | a word or text | In a real model |  |
+| `Drrf` | Link to a drawing made by the older spool tool | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Dscode` | Code of the design standard | text in \|bars\| or 'quotes' | In a real model |  |
+| `Duty` | Free text: what the connection carries | text in \|bars\| or 'quotes' | In a real model |  |
+| `Erection` | Number of the erection class | a number | In a real model |  |
+| `Farea` | Area of the site where the pipe is built | text in \|bars\| or 'quotes' | In a real model |  |
+| `Fdrawing` | Number of the isometric for this pipe | text in \|bars\| or 'quotes' | In a real model |  |
+| `Fluref` | Points to the fluid the pipe carries | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Fpline` | Line number on the process diagram | text in \|bars\| or 'quotes' | In a real model |  |
+| `Frdrawing` | Numbers of other drawings this pipe refers to | text in \|bars\| or 'quotes' | In a real model |  |
+| `Frevision` | Revision of that isometric | text in \|bars\| or 'quotes' | In a real model |  |
+| `Fstatus` | Not explained in the manual | text in \|bars\| or 'quotes' | In a real model |  |
+| `Function` | Free text: what the element is for | text in \|bars\| or 'quotes' | In a real model |  |
+| `HEATT` | Heat treatment the pipe needs | a number | In a real model |  |
+| `Inprtref` | Paint on the inside (link) | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Inschedule` | Schedule of inspections | text in \|bars\| or 'quotes' | In a real model |  |
+| `Isohidden` | TRUE hides the item on isometric drawings | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `Ispec` | Link to the insulation specification | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Jmaximum` | Highest joint number used so far on the spool drawing | a number | In a real model |  |
+| `JNTC` | Code of the joint type | a number | In a real model |  |
+| `Linetype` | Word for the kind of line, used by drawings and reports | a word or text | In a real model |  |
+| `Lissue` | TRUE once a drawing of the pipe has gone out | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `Matref` | Points to the material the item is made of | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Mdsysf` | Links to model and design elements | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Ouprtref` | Paint on the outside (link) | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `PLANU` | Planning unit the item belongs to | text in \|bars\| or 'quotes' | In a real model |  |
+| `Pmaximum` | Highest part number used so far on the spool drawing | a number | In a real model |  |
+| `Pressure` | Design pressure of the connection | a number | In a real model |  |
+| `Pspec` | Link to the piping specification | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Ptspec` | Link to the paint specification | text in \|bars\| or 'quotes' | In a real model |  |
+| `Rev` | Revision number of the pipe; -1 until it is issued | a number | In a real model |  |
+| `Rlstored` | Rules saved by ROUTER | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Safclass` | Number of the safety class | a number | In a real model |  |
+| `Shop` | TRUE when the item is made in the shop, FALSE when it is made on site | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `Skey` | Key of the drawing symbol | text in \|bars\| or 'quotes' | In a real model |  |
+| `Sloreference` | Points to the slope rule the pipe follows | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Smaximum` | Highest spool number used so far on the spool drawing | a number | In a real model |  |
+| `Splprefix` | Text put in front of every spool number of this pipe | text in \|bars\| or 'quotes' | In a real model |  |
+| `Temperature` | Design temperature of the connection | a number | In a real model |  |
+| `TPressure` | Pressure used to test the connection | a number | In a real model |  |
+| `Tspec` | Link to the trace heating specification | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `WLDC` | Code of the weld type | a number | In a real model |  |
+| `Wmaximum` | Highest weld number used so far on the spool drawing | a number | In a real model |  |
+| `Orrf` | Origin link used by templates |  | Manual only |  |
+| `Uuidia` | Globally unique ID of the element |  | Manual only |  |
+
+### STRUCTURE — Structure
+
+Top of a piece of steelwork in a zone; holds frameworks.
+
+Owners: CONVEYOR, RESTRAINT, SUPPORT, ZONE · Members: AIDGROUP, BOX, BPANEL, CONE, CTORUS, CTWALL, CYLINDER, DDSE, DIMGROUP, DISH, DPSET, DRAWING, EXTRUSION, FRMWORK, HANDRA, LADDER, LCDESCRIPTOR, PANEL, PLTFRM, POHEDRON, POLYHEDRON, PVOLUME, PYRAMID, REVOLUTION, RLADDR, ROOM, RPLANE, RPLGROUP, RTORUS, SLADDR, SLCYLINDER, SNOUT, STRFLT, STRTWR, SUBSTRUCTURE, TEXT, TMPLATE · DMRM 5.09.672
+
+| Attribute | What it is | Accepts | Status | Note |
+|---|---|---|---|---|
+| `Description` | Free text about the element; text with spaces goes in \|bars\| | text in \|bars\| or 'quotes' | Command verified |  |
+| `Desparam` | A list of numeric design values | a number | Command verified |  |
+| `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
+| `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
+| `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
+| `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
+| `Area` | The area number the element belongs to | a number | In a real model |  |
+| `Built` | Flag: built or not yet built | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `DUnion` | Flag used by DRAFT for joining element details | a number | In a real model |  |
+| `Fstatus` | Not explained in the manual | text in \|bars\| or 'quotes' | In a real model |  |
+| `Function` | Free text: what the element is for | text in \|bars\| or 'quotes' | In a real model |  |
+| `GrdRef` | Points to the grid the steel is set out on | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Inprtref` | Paint on the inside (link) | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Number` | A numeric label of the element | a number | In a real model |  |
+| `Optblo` | Name of an optional production block | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Ouprtref` | Paint on the outside (link) | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Pdname` | Name the item carries in production | text in \|bars\| or 'quotes' | In a real model |  |
+| `Propst` | Links to property sets | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Skey` | Key of the drawing symbol | text in \|bars\| or 'quotes' | In a real model |  |
+| `Usrcogravity` | Centre of gravity typed in by hand | a value or an expression | In a real model |  |
+| `Usrwcogravity` | Centre of gravity with contents, typed in by hand | a value or an expression | In a real model |  |
+| `Usrweight` | Weight typed in by hand | a value or an expression | In a real model |  |
+| `Usrwweight` | Weight with contents (wet), typed in by hand | a value or an expression | In a real model |  |
+| `Uwmtxt` | Text kept for the weight manager | text in \|bars\| or 'quotes' | In a real model |  |
+| `Invfarray` | List of inventory items |  | Manual only |  |
+| `Orrf` | Origin link used by templates |  | Manual only |  |
+| `Stmf` | Pointer that picks the template |  | Manual only |  |
+| `Uuidia` | Globally unique ID of the element |  | Manual only |  |
+
+### FRMWORK — Framework
+
+A group of members and panels; settings made here pass down to them.
+
+Owners: STRUCTURE · Members: AIDGROUP, BPANEL, CFLOOR, CSCREED, CWALL, DDSE, DIMGROUP, DPSET, FIXING, FLOOR, GENSEC, GWALL, HANDRA, LADDER, PALJOINT, PANEL, PNODE, RLADDR, SBFRAMEWORK, SCREED, SCTN, SLADDR, STRFLT, STRTWR, STWALL, TEXT, TMPLATE, WALL · DMRM 5.09.642
+
+| Attribute | What it is | Accepts | Status | Note |
+|---|---|---|---|---|
+| `Description` | Free text about the element; text with spaces goes in \|bars\| | text in \|bars\| or 'quotes' | Command verified |  |
+| `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
+| `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
+| `Built` | Flag: built or not yet built | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `DUnion` | Flag used by DRAFT for joining element details | a number | In a real model |  |
+| `Firesistance` | Fire rating of the steel | a number | In a real model |  |
+| `Function` | Free text: what the element is for | text in \|bars\| or 'quotes' | In a real model |  |
+| `Grade` | Steel grade as a word, e.g. S355 | a number | In a real model |  |
+| `GrdRef` | Points to the grid the steel is set out on | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Inprtref` | Paint on the inside (link) | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Inschedule` | Schedule of inspections | text in \|bars\| or 'quotes' | In a real model |  |
+| `Ispec` | Link to the insulation specification | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Matref` | Points to the material the item is made of | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Number` | A numeric label of the element | a number | In a real model |  |
+| `Optblo` | Name of an optional production block | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Ouprtref` | Paint on the outside (link) | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Pdname` | Name the item carries in production | text in \|bars\| or 'quotes' | In a real model |  |
+| `Ptspec` | Link to the paint specification | text in \|bars\| or 'quotes' | In a real model |  |
+| `Shop` | TRUE when the item is made in the shop, FALSE when it is made on site | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `Skey` | Key of the drawing symbol | text in \|bars\| or 'quotes' | In a real model |  |
+| `Stspec` | Points to the steel specification members are chosen from | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Supref` | Points to the support this steel belongs to | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Orrf` | Origin link used by templates |  | Manual only |  |
+| `Stmf` | Pointer that picks the template |  | Manual only |  |
+| `Uuidia` | Globally unique ID of the element |  | Manual only |  |
+
+### SBFRAMEWORK — Subframework
+
+A smaller group inside a framework.
+
+Owners: FRMWORK · Members: BPANEL, DDSE, DPSET, FIXING, FLOOR, GENSEC, GWALL, HANDRA, LADDER, PALJOINT, PANEL, PNODE, RLADDR, SCREED, SCTN, SLADDR, STRFLT, STRTWR, STWALL, TEXT, TMPLATE, WALL · DMRM 5.09.660
+
+| Attribute | What it is | Accepts | Status | Note |
+|---|---|---|---|---|
+| `Description` | Free text about the element; text with spaces goes in \|bars\| | text in \|bars\| or 'quotes' | Command verified |  |
+| `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
+| `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
+| `Built` | Flag: built or not yet built | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `DUnion` | Flag used by DRAFT for joining element details | a number | In a real model |  |
+| `Firesistance` | Fire rating of the steel | a number | In a real model |  |
+| `Function` | Free text: what the element is for | text in \|bars\| or 'quotes' | In a real model |  |
+| `Grade` | Steel grade as a word, e.g. S355 | a number | In a real model |  |
+| `GrdRef` | Points to the grid the steel is set out on | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Inschedule` | Schedule of inspections | text in \|bars\| or 'quotes' | In a real model |  |
+| `Ispec` | Link to the insulation specification | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Matref` | Points to the material the item is made of | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Number` | A numeric label of the element | a number | In a real model |  |
+| `Optblo` | Name of an optional production block | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Pdname` | Name the item carries in production | text in \|bars\| or 'quotes' | In a real model |  |
+| `Ptspec` | Link to the paint specification | text in \|bars\| or 'quotes' | In a real model |  |
+| `Shop` | TRUE when the item is made in the shop, FALSE when it is made on site | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `Skey` | Key of the drawing symbol | text in \|bars\| or 'quotes' | In a real model |  |
+| `Stspec` | Points to the steel specification members are chosen from | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Supref` | Points to the support this steel belongs to | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Orrf` | Origin link used by templates |  | Manual only |  |
+| `Stmf` | Pointer that picks the template |  | Manual only |  |
+| `Uuidia` | Globally unique ID of the element |  | Manual only |  |
+
+### SCTN — Section
+
+One straight steel member, from a start point to an end point, with a catalogue profile.
+
+Owners: CFLOOR, CWALL, FRMWORK, SBFRAMEWORK, TMPLATE · Members: CMFITTING, DDSE, DPSET, FITTING, SDLOAD, SELJOINT, SNODE, SPLOAD, TMPLATE · DMRM 5.09.663
+
+| Attribute | What it is | Accepts | Status | Note |
+|---|---|---|---|---|
+| `Bangle` | Turn of the section about the branch axis (beta) | a number | Command verified |  |
+| `Description` | Free text about the element; text with spaces goes in \|bars\| | text in \|bars\| or 'quotes' | Command verified |  |
+| `Desparam` | A list of numeric design values | a number | Command verified |  |
+| `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
+| `Posend` | Where the member ends | a position: E … N … U … (WRT …) | Command verified |  |
+| `PosNo` | Position number of the part on the drawing | a number | Command verified |  |
+| `Posstart` | Where the member begins | a position: E … N … U … (WRT …) | Command verified |  |
+| `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
+| `Spref` | Link to the component specification | a reference: /NAME, =ref or NULREF | Command verified |  |
+| `Antype` | How the member is treated in stress analysis | text in \|bars\| or 'quotes' | In a real model |  |
+| `Bevcodes` | Codes for how each edge is bevelled | a number | In a real model |  |
+| `Built` | Flag: built or not yet built | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `Ctyend` | Connection type at the end | a word or text | In a real model |  |
+| `Ctystart` | Connection type at the start: e.g. pinned or fixed | a word or text | In a real model |  |
+| `Drgpriority` | Decides how drawings show the section | a number | In a real model |  |
+| `Drnend` | Direction of the cut plane at the end of the section | a direction; ORI as Y IS N AND Z IS U | In a real model |  |
+| `Drnstart` | Direction of the cut plane at the start of the section | a direction; ORI as Y IS N AND Z IS U | In a real model |  |
+| `Erelease` | Which forces and moments are freed at the end | not set by its name | In a real model |  |
+| `Firesistance` | Fire rating of the steel | a number | In a real model |  |
+| `Function` | Free text: what the element is for | text in \|bars\| or 'quotes' | In a real model |  |
+| `Grade` | Steel grade as a word, e.g. S355 | a number | In a real model |  |
+| `Gtype` | Kind of member as a word: BEAM, COLUMN, BRACE… | a word or text | In a real model |  |
+| `Inref` | Points to the insulation put on the member | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Ispec` | Link to the insulation specification | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Jline` | The profile line that meets other members at the joints | a word or text | In a real model |  |
+| `Joiend` | Points to the joint at the end of the member | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Joistart` | Points to the joint at the start of the member | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Jusline` | The profile line laid along the start-to-end line | a word or text | In a real model |  |
+| `Matref` | Points to the material the item is made of | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Memline` | The line the stress analysis takes for the member | a word or text | In a real model |  |
+| `Number` | A numeric label of the element | a number | In a real model |  |
+| `ParNam` | Name of the part in production | text in \|bars\| or 'quotes' | In a real model |  |
+| `Prodrf` | Link to the item in the production data | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
+| `Shop` | TRUE when the item is made in the shop, FALSE when it is made on site | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `Srelease` | Which forces and moments are freed at the start (stress analysis) | not set by its name | In a real model |  |
+| `StruClassification` | Class of the member in the structure: beam, column, brace… | text in \|bars\| or 'quotes' | In a real model |  |
+| `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `WeldDp` | Depth of the weld | not set by its name | In a real model |  |
+| `Invfarray` | List of inventory items |  | Manual only |  |
+| `Orrf` | Origin link used by templates |  | Manual only |  |
+| `Uuidia` | Globally unique ID of the element |  | Manual only |  |
+
+### GENSEC — Generic section
+
+A member that can follow a curved or bent path (a spine).
+
+Owners: BOTEXT, CAGSEG, CFLOOR, CLNLATTICE, CTFEAT, CWALL, EXTFRM, FRMWORK, HOOPSE, HRGATE, HRPANE, HRPOST, HRTERM, INTFRM, INTLNG, LDRRUN, LDRSTR, PLTGRD, RLGATE, SBFRAMEWORK, SLRAIL, STRLNG, STRSTR, TMPLATE, TOPEXT, TREAD, TWRSTL · Members: COMFIXING, DDSE, DPSET, ENDATUM, HANCILLARY, JLDATUM, SDLOAD, SELJOINT, SPINE, SPLOAD, TMPLATE · DMRM 5.09.643
+
+| Attribute | What it is | Accepts | Status | Note |
+|---|---|---|---|---|
+| `Bangle` | Turn of the section about the branch axis (beta) | a number | Command verified |  |
+| `Description` | Free text about the element; text with spaces goes in \|bars\| | text in \|bars\| or 'quotes' | Command verified |  |
+| `Desparam` | A list of numeric design values | a number | Command verified |  |
+| `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
+| `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
+| `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
+| `PosNo` | Position number of the part on the drawing | a number | Command verified |  |
+| `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
+| `Spref` | Link to the component specification | a reference: /NAME, =ref or NULREF | Command verified |  |
+| `Antype` | How the member is treated in stress analysis | text in \|bars\| or 'quotes' | In a real model |  |
+| `Bevcodes` | Codes for how each edge is bevelled | a number | In a real model |  |
+| `Built` | Flag: built or not yet built | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `Ctyend` | Connection type at the end | a word or text | In a real model |  |
+| `Ctystart` | Connection type at the start: e.g. pinned or fixed | a word or text | In a real model |  |
+| `Drgpriority` | Decides how drawings show the section | a number | In a real model |  |
+| `Erelease` | Which forces and moments are freed at the end | not set by its name | In a real model |  |
+| `Firesistance` | Fire rating of the steel | a number | In a real model |  |
+| `Function` | Free text: what the element is for | text in \|bars\| or 'quotes' | In a real model |  |
+| `Grade` | Steel grade as a word, e.g. S355 | a number | In a real model |  |
+| `Gtype` | Kind of member as a word: BEAM, COLUMN, BRACE… | a word or text | In a real model |  |
+| `Inref` | Points to the insulation put on the member | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Ispec` | Link to the insulation specification | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Jlnend` | Profile line used at the end joint | a word or text | In a real model |  |
+| `Jlnstart` | Profile line used at the start joint | a word or text | In a real model |  |
+| `Joiend` | Points to the joint at the end of the member | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Joistart` | Points to the joint at the start of the member | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Jusline` | The profile line laid along the start-to-end line | a word or text | In a real model |  |
+| `LMirror` | TRUE turns the profile over (mirror image) | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `Matref` | Points to the material the item is made of | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Memline` | The line the stress analysis takes for the member | a word or text | In a real model |  |
+| `Number` | A numeric label of the element | a number | In a real model |  |
+| `ParNam` | Name of the part in production | text in \|bars\| or 'quotes' | In a real model |  |
+| `Prodrf` | Link to the item in the production data | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
+| `Shop` | TRUE when the item is made in the shop, FALSE when it is made on site | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `Srelease` | Which forces and moments are freed at the start (stress analysis) | not set by its name | In a real model |  |
+| `StruClassification` | Class of the member in the structure: beam, column, brace… | text in \|bars\| or 'quotes' | In a real model |  |
+| `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `WeldDp` | Depth of the weld | not set by its name | In a real model |  |
+| `Orrf` | Origin link used by templates |  | Manual only |  |
+| `Uuidia` | Globally unique ID of the element |  | Manual only |  |
+
+### PANEL — Panel
+
+A plate: a flat shape with a thickness, e.g. a floor or a stiffener.
+
+Owners: BOTEXT, CEILIN, CFLOOR, CSCREED, CWALL, EQUIPMENT, EXTFRM, FRMWORK, HRPANE, HRPOST, HRTERM, INTFRM, INTLNG, JNTBOX, LDRRUN, LDRSTR, PLTGRD, PTRACK, PULLPIT, RLGATE, SBFRAMEWORK, SLRAIL, STRLNG, STRSTR, STRUCTURE, SUBEQUIPMENT, SUBSTRUCTURE, TMPLATE, TOPEXT, TREAD, TWRSTL · Members: CMPFITTING, COFITTING, DDSE, DPSET, NBOX, NCONE, NCTORUS, NCYLINDER, NDISH, NPOLYHEDRON, NPYRAMID, NREVOLUTION, NRTORUS, NSLCYLINDER, NSNOUT, NXTRUSION, PALJOINT, PFITTING, PLOOP, STCSET, TMPLATE · DMRM 5.09.650
+
+| Attribute | What it is | Accepts | Status | Note |
+|---|---|---|---|---|
+| `Description` | Free text about the element; text with spaces goes in \|bars\| | text in \|bars\| or 'quotes' | Command verified |  |
+| `Desparam` | A list of numeric design values | a number | Command verified |  |
+| `Level` | The range of drawing levels at which the element is shown | a number | Command verified |  |
+| `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
+| `Obstruction` | How solid the element counts in clash checks | a number, or HARD / SOFT / NONE | Command verified |  |
+| `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified |  |
+| `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
+| `PosNo` | Position number of the part on the drawing | a number | Command verified |  |
+| `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
+| `Spref` | Link to the component specification | a reference: /NAME, =ref or NULREF | Command verified |  |
+| `Bevcodes` | Codes for how each edge is bevelled | a number | In a real model |  |
+| `Built` | Flag: built or not yet built | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `Excess` | Extra material left on the plate for trimming on site | a number | In a real model |  |
+| `Firesistance` | Fire rating of the steel | a number | In a real model |  |
+| `Function` | Free text: what the element is for | text in \|bars\| or 'quotes' | In a real model |  |
+| `Grade` | Steel grade as a word, e.g. S355 | a number | In a real model |  |
+| `Gtype` | Kind of member as a word: BEAM, COLUMN, BRACE… | a word or text | In a real model |  |
+| `Ispec` | Link to the insulation specification | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Matref` | Points to the material the item is made of | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Number` | A numeric label of the element | a number | In a real model |  |
+| `ParNam` | Name of the part in production | text in \|bars\| or 'quotes' | In a real model |  |
+| `Prodrf` | Link to the item in the production data | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `RepCount` | Counter used when a template rule repeats the element | a number | In a real model |  |
+| `Shop` | TRUE when the item is made in the shop, FALSE when it is made on site | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
+| `StruClassification` | Class of the member in the structure: beam, column, brace… | text in \|bars\| or 'quotes' | In a real model |  |
+| `Tmrref` | Points back to the template element that repeats this one | a reference: /NAME, =ref or NULREF | In a real model |  |
+| `Invfarray` | List of inventory items |  | Manual only |  |
+| `Orrf` | Origin link used by templates |  | Manual only |  |
+| `Uuidia` | Globally unique ID of the element |  | Manual only |  |
 
 
 ## Where everything lives

@@ -1,5 +1,17 @@
 # What is new
 
+## 27 Oct 2026
+
+- `OWNER`: Documented → **Verified**
+- `RADI 500`: Seen in code → **Verified**
+- `ANGLE 90`: Seen in code → **Verified**
+- `XOFF 100`: Seen in code → **Verified**
+- `DTOP 300`: Documented → **Verified**
+- `ALP REQ CLEAR`: Seen in code → **Verified**
+- `return error 1 'Could not run'`: Seen in code → **Verified**
+- `golabel /label`: Documented → **Verified**
+- `return`: Documented → **Verified**
+
 ## 26 Oct 2026
 
 - `PML REHASH ALL`: Documented → **Verified**

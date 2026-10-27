@@ -23,7 +23,7 @@ The element becomes current (CE).
 
 | Argument | What it is |
 |---|---|
-| `TYPE` | CWAY, CWBRAN, RPATH, POINTR, HATTA, TATTA, CTMTRL, EQUI, SUBE, NOZZLE, ELCONN, ZONE, every primitive (BOX, CYLINDER, CONE, SNOUT, DISH, PYRAMID, CTORUS, RTORUS, SLCYLINDER, EXTRUSION, REVOLUTION, POLYHEDRON) and every hole (NBOX, NCYLINDER…) — all created in the run of 26 Oct 2026. The current element must be a legal owner: CWAY in a ZONE, CWBRAN in a CWAY, SUBE only in an EQUI, a hole inside a primitive. |
+| `TYPE` | CWAY, CWBRAN, RPATH, POINTR, HATTA, TATTA, CTMTRL, EQUI, SUBE, NOZZLE, ELCONN, ZONE, every primitive (BOX, CYLINDER, CONE, SNOUT, DISH, PYRAMID, CTORUS, RTORUS, SLCYLINDER, EXTRUSION, REVOLUTION, POLYHEDRON) and every hole (NBOX, NCYLINDER…) — all created in the run of 26 Oct 2026; PIPE, BRAN, STRU, FRMW, SBFR, SCTN, GENSEC, PANE — in the run of 27 Oct 2026. The current element must be a legal owner: CWAY in a ZONE, CWBRAN in a CWAY, SUBE only in an EQUI, a hole inside a primitive, BRAN in a PIPE, SCTN in a FRMW. GPSET in a ZONE: «Cannot create a GPSET at this level». |
 | `/NAME` | Optional: the name of the new element. |
 | `$Q` | Instead of creating, prints the grammar of the command in your build: NEW EQUI $Q. |
 
@@ -158,7 +158,7 @@ There is no two-name form: RENAME /OLD /NEW → «(2,109) Undefined name».
 |---|---|
 | `WHAT BEFORE WHERE` | First what moves, then what it goes before. Full names with the slash, or $!!a / $!!b holding =ref of unnamed elements. |
 
-Only the order in the owner changes; coordinates stay. The AFTER form has not been run.
+Only the order in the owner changes; coordinates stay. WHAT AFTER WHERE ran without an error (27 Oct 2026), but the element already stood there — its effect is not seen yet.
 
 **Forms**
 
@@ -353,11 +353,11 @@ Only the read was checked: MatType unset.
 
 - `XLEN 1000` — Verified · Length along X
 
-## `DIAM` — Cylinder diameter
+## `DIAM` — Diameter (cylinder, dish, sloped cylinder)
 
 | Argument | What it is |
 |---|---|
-| `n` | In mm. |
+| `n` | In mm. Written and read back on CYLINDER, DISH and SLCYLINDER. |
 
 The axis of a new cylinder is the owner's Z (Orientation Y is N and Z is U).
 
@@ -365,11 +365,11 @@ The axis of a new cylinder is the owner's Z (Orientation Y is N and Z is U).
 
 - `DIAM 800` — Verified · Diameter
 
-## `HEIG` — Cylinder height
+## `HEIG` — Height of a primitive
 
 | Argument | What it is |
 |---|---|
-| `n` | In mm. POS is the centre: the cylinder sticks out half its height both ways. |
+| `n` | In mm. Written and read back on CYLINDER, DISH, SNOUT, PYRAMID, SLCYLINDER. POS is the centre: a cylinder sticks out half its height both ways. |
 
 **Forms**
 
@@ -516,8 +516,9 @@ GOTO /NAME is a syntax error: to go by name, type the name itself.
 | `!i from a to b` | A counter — run with from 1 to 3. |
 | `!i from a to b by s` | With a step: from 1 to 5 by 2 gives 1, 3, 5 (run of 26 Oct 2026). |
 | `!e values !list` | Over a list, including a COLLECT result; $!e goes to each element. |
+| `(nothing) … enddo` | A loop without a condition; leave it with break if ( … ). This is the way instead of do while (27 Oct 2026). |
 
-A plain paste gives «Invalid syntax» — use Paste as Macro. do while is a syntax error in E3D 2.1 and stops the macro (run of 26 Oct 2026). indices is not run yet.
+A plain paste gives «Invalid syntax» — use Paste as Macro. Inside: skip if ( … ) goes to the next turn, break if ( … ) leaves the loop (27 Oct 2026). do while is a syntax error in E3D 2.1 and stops the macro (26 Oct 2026). indices is not run yet.
 
 **Forms**
 
@@ -533,8 +534,9 @@ A plain paste gives «Invalid syntax» — use Paste as Macro. do while is a syn
 | Argument | What it is |
 |---|---|
 | `( condition ) then … endif` | A condition in brackets: if (!x GT 5) then. |
+| `elseif ( … ) then / else` | More branches; the right one runs (27 Oct 2026). |
 
-A plain paste gives «Invalid syntax» — use Paste as Macro.
+A plain paste gives «Invalid syntax» — use Paste as Macro. Compare with words — GT, LT, EQ…: the sign > gives «Meaningless symbol(s)» and stops the macro (27 Oct 2026).
 
 **Forms**
 
@@ -547,8 +549,11 @@ A plain paste gives «Invalid syntax» — use Paste as Macro.
 | Argument | What it is |
 |---|---|
 | `any … endhandle` | Right AFTER the line it guards. handle any catches a move to an element that does not exist, and the syntax error of a single command line (TYPE $Q) — the macro goes on. |
+| `(2,109) … endhandle` | Catches only that error number: here «Undefined name». |
+| `… elsehandle any` | After a numbered handle: every other error. |
+| `… elsehandle none` | Runs when the guarded line gave no error. |
 
-A plain paste gives «Invalid syntax» — use Paste as Macro. A syntax error of the macro itself (do while) is not caught: the macro stops.
+A plain paste gives «Invalid syntax» — use Paste as Macro. A syntax error of the macro itself (do while) is not caught: the macro stops. The text of the error — $!!error.text; there is no member code (27 Oct 2026).
 
 **Forms**
 

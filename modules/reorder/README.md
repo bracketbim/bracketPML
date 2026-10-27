@@ -2,7 +2,7 @@
 
 > Sort members of a zone by name with REORDER, moving only the elements that are out of place, and prove the result before it reaches E3D.
 
-**Commands:** `REORDER` **Verified** — last run 21 Oct 2026 · `Q` **Verified** — last run 28 Aug 2026 · `VAR` **Verified** — last run 23 Sep 2026 · `NEXT` **Verified** — last run 27 Sep 2026
+**Commands:** `REORDER` **Verified** — last run 27 Oct 2026 · `Q` **Verified** — last run 28 Aug 2026 · `VAR` **Verified** — last run 23 Sep 2026 · `NEXT` **Verified** — last run 27 Sep 2026
 
 A zone with 120 branches in the order they were created is hard to read. E3D can change the order of members with `REORDER` — it is not in the 2.1 manual, but it is in real PML code, and it works.
 
@@ -12,7 +12,7 @@ A zone with 120 branches in the order they were created is hard to read. E3D can
 REORDER /PMLC-CWBRAN-LP2/02 BEFORE /PMLC-CWBRAN-LP2/01
 ```
 
-- It changes the **order of members** inside the owner. Coordinates, connections and attributes stay as they were. **Verified** — last run 21 Oct 2026
+- It changes the **order of members** inside the owner. Coordinates, connections and attributes stay as they were. **Verified** — last run 27 Oct 2026
 - First what you move, then what it goes before.
 - It works with names and with `=ref` of unnamed elements (through a variable: `REORDER $!!a BEFORE $!!b`).
 - The form `AFTER` exists in the grammar but has **never been run** by us. So the chain below uses `BEFORE` only.

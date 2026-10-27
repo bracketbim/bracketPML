@@ -1,6 +1,6 @@
 # Command syntax
 
-What each command we have run takes. The forms and their statuses come from the [register](register.md); the arguments are described only from what the runs showed.
+What each command tested in E3D 2.1 takes. The forms and their statuses come from the [register](register.md); the arguments are described only from what E3D 2.1 showed.
 
 ## `NAV` — Go to an element
 
@@ -23,7 +23,7 @@ The element becomes current (CE).
 
 | Argument | What it is |
 |---|---|
-| `TYPE` | CWAY, CWBRAN, RPATH, POINTR, HATTA, TATTA, CTMTRL, EQUI, SUBE, NOZZLE, ELCONN, ZONE, every primitive (BOX, CYLINDER, CONE, SNOUT, DISH, PYRAMID, CTORUS, RTORUS, SLCYLINDER, EXTRUSION, REVOLUTION, POLYHEDRON) and every hole (NBOX, NCYLINDER…) — all created in the run of 26 Oct 2026; PIPE, BRAN, STRU, FRMW, SBFR, SCTN, GENSEC, PANE — in the run of 27 Oct 2026. The current element must be a legal owner: CWAY in a ZONE, CWBRAN in a CWAY, SUBE only in an EQUI, a hole inside a primitive, BRAN in a PIPE, SCTN in a FRMW. GPSET in a ZONE: «Cannot create a GPSET at this level». |
+| `TYPE` | CWAY, CWBRAN, RPATH, POINTR, HATTA, TATTA, CTMTRL, EQUI, SUBE, NOZZLE, ELCONN, ZONE, every primitive (BOX, CYLINDER, CONE, SNOUT, DISH, PYRAMID, CTORUS, RTORUS, SLCYLINDER, EXTRUSION, REVOLUTION, POLYHEDRON) and every hole (NBOX, NCYLINDER…) — all created in E3D 2.1; PIPE, BRAN, STRU, FRMW, SBFR, SCTN, GENSEC, PANE — in E3D 2.1. The current element must be a legal owner: CWAY in a ZONE, CWBRAN in a CWAY, SUBE only in an EQUI, a hole inside a primitive, BRAN in a PIPE, SCTN in a FRMW. GPSET in a ZONE: «Cannot create a GPSET at this level». |
 | `/NAME` | Optional: the name of the new element. |
 | `$Q` | Instead of creating, prints the grammar of the command in your build: NEW EQUI $Q. |
 
@@ -158,7 +158,7 @@ There is no two-name form: RENAME /OLD /NEW → «(2,109) Undefined name».
 |---|---|
 | `WHAT BEFORE WHERE` | First what moves, then what it goes before. Full names with the slash, or $!!a / $!!b holding =ref of unnamed elements. |
 
-Only the order in the owner changes; coordinates stay. WHAT AFTER WHERE ran without an error (27 Oct 2026), but the element already stood there — its effect is not seen yet.
+Only the order in the owner changes; coordinates stay. WHAT AFTER WHERE ran without an error, but the element already stood there — its effect is not seen yet.
 
 **Forms**
 
@@ -500,7 +500,7 @@ No arguments: to the next member of the same owner.
 
 | Argument | What it is |
 |---|---|
-| `REFERENCE ATTRIBUTE` | OWNER, PARENT, FRSTWORLD, CLCONNECTIONS… or any reference attribute (from GOTO $Q). Not a name. GOTO OWNER ran on 26 Oct 2026. |
+| `REFERENCE ATTRIBUTE` | OWNER, PARENT, FRSTWORLD, CLCONNECTIONS… or any reference attribute (from GOTO $Q). Not a name. GOTO OWNER is tested in E3D 2.1. |
 
 GOTO /NAME is a syntax error: to go by name, type the name itself.
 
@@ -513,12 +513,12 @@ GOTO /NAME is a syntax error: to go by name, type the name itself.
 
 | Argument | What it is |
 |---|---|
-| `!i from a to b` | A counter — run with from 1 to 3. |
-| `!i from a to b by s` | With a step: from 1 to 5 by 2 gives 1, 3, 5 (run of 26 Oct 2026). |
+| `!i from a to b` | A counter: tested in E3D 2.1 with from 1 to 3. |
+| `!i from a to b by s` | With a step: from 1 to 5 by 2 gives 1, 3, 5. |
 | `!e values !list` | Over a list, including a COLLECT result; $!e goes to each element. |
-| `(nothing) … enddo` | A loop without a condition; leave it with break if ( … ). This is the way instead of do while (27 Oct 2026). |
+| `(nothing) … enddo` | A loop without a condition; leave it with break if ( … ). This is the way instead of do while. |
 
-A plain paste gives «Invalid syntax» — use Paste as Macro. Inside: skip if ( … ) goes to the next turn, break if ( … ) leaves the loop (27 Oct 2026). do while is a syntax error in E3D 2.1 and stops the macro (26 Oct 2026). indices is not run yet.
+A plain paste gives «Invalid syntax» — use Paste as Macro. Inside: skip if ( … ) goes to the next turn, break if ( … ) leaves the loop. do while is a syntax error in E3D 2.1 and stops the macro. indices is not tested yet.
 
 **Forms**
 
@@ -534,9 +534,9 @@ A plain paste gives «Invalid syntax» — use Paste as Macro. Inside: skip if (
 | Argument | What it is |
 |---|---|
 | `( condition ) then … endif` | A condition in brackets: if (!x GT 5) then. |
-| `elseif ( … ) then / else` | More branches; the right one runs (27 Oct 2026). |
+| `elseif ( … ) then / else` | More branches; the right one runs. |
 
-A plain paste gives «Invalid syntax» — use Paste as Macro. Compare with words — GT, LT, EQ…: the sign > gives «Meaningless symbol(s)» and stops the macro (27 Oct 2026).
+A plain paste gives «Invalid syntax» — use Paste as Macro. Compare with words — GT, LT, EQ…: the sign > gives «Meaningless symbol(s)» and stops the macro.
 
 **Forms**
 
@@ -553,7 +553,7 @@ A plain paste gives «Invalid syntax» — use Paste as Macro. Compare with word
 | `… elsehandle any` | After a numbered handle: every other error. |
 | `… elsehandle none` | Runs when the guarded line gave no error. |
 
-A plain paste gives «Invalid syntax» — use Paste as Macro. A syntax error of the macro itself (do while) is not caught: the macro stops. The text of the error — $!!error.text; there is no member code (27 Oct 2026).
+A plain paste gives «Invalid syntax» — use Paste as Macro. A syntax error of the macro itself (do while) is not caught: the macro stops. The text of the error — $!!error.text; there is no member code.
 
 **Forms**
 

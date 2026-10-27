@@ -4,7 +4,7 @@
 
 **E3D prints:** `PML: Invalid syntax in the current context`
 
-**Commands:** `IF` **Macro only** · `DO` **Macro only** · `HANDLE` **Macro only** · `PASTE` **Verified** — last run 27 Sep 2026
+**Commands:** `IF` **Macro only** · `DO` **Macro only** · `HANDLE` **Macro only** · `PASTE` **Verified**
 
 ## What you see
 

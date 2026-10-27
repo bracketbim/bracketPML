@@ -4,9 +4,9 @@
 
 **In fact:** The numbers matched — but the edit gizmo sits on the branch POS. With POS at zero, every gizmo landed on the first tray.
 
-**Commands:** `POS` **Verified** — last run 29 Sep 2026
+**Commands:** `POS` **Verified**
 
-**What we believed.** After a run where every coordinate in the database came out right: all geometry goes into the route points, branch `POS` stays at zero.
+**What we believed.** After a test where every coordinate in the database came out right: all geometry goes into the route points, branch `POS` stays at zero.
 
 **What refuted it.** A designer working with the model: when editing an upper tray, the gizmo sits on the axis of the **lowest** tray, not the one being edited.
 

@@ -4,7 +4,7 @@
 
 **E3D prints:** `CALCULATOR ERROR: The concatenated text is too long`
 
-**Commands:** `WRITEFILE` **Verified** — last run 27 Sep 2026
+**Commands:** `WRITEFILE` **Verified**
 
 ## What you see
 

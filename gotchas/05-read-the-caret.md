@@ -4,7 +4,7 @@
 
 **E3D prints:** `CP: Syntax error`
 
-**Commands:** `CABLAY` **Verified** — last run 27 Aug 2026 · `VWIDTH` **Verified** — last run 22 Sep 2026 · `DESC` **Verified** — last run 15 Oct 2026
+**Commands:** `CABLAY` **Verified** · `VWIDTH` **Verified** · `DESC` **Verified**
 
 ## What you see
 

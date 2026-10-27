@@ -4,7 +4,7 @@
 
 **E3D prints:** `(no error — «РЎРўРђР РћР•» instead of the text)`
 
-**Commands:** `READFILE` **Verified** — last run 18 Sep 2026 · `WRITEFILE` **Verified** — last run 27 Sep 2026 · `$M` **Verified**
+**Commands:** `READFILE` **Verified** · `WRITEFILE` **Verified** · `$M` **Verified**
 
 ## What you see
 

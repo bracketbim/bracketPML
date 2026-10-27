@@ -2,6 +2,35 @@
 
 ## 27 Oct 2026
 
+- `PML REHASH ALL`: the note was updated
+- `OWNER`: the note was updated
+- `GOTO OWNER`: the note was updated
+- `NEW NBOX`: the note was updated
+- `NEW NOZZLE`: the note was updated
+- `NEW CONE`: the note was updated
+- `NEW NCONE`: the note was updated
+- `RADI 500`: the note was updated
+- `ANGLE 90`: the note was updated
+- `XOFF 100`: the note was updated
+- `DTOP 300`: the note was updated
+- `LOCK ALL`: the note was updated
+- `UNLOCK ALL`: the note was updated
+- `ADD CE`: the note was updated
+- `UNMARK ALL`: the note was updated
+- `COL CE GREEN`: the note was updated
+- `AXES AT CE`: the note was updated
+- `ALP REQ CLEAR`: the note was updated
+- `ENHANCE CE COL RED`: the note was updated
+- `console show`: the note was updated
+- `ISO3`: the note was updated
+- `do !i from 1 to 10 by 2`: the note was updated
+- `do while ( !flag )`: the note was updated
+- `return error 1 'Could not run'`: the note was updated
+- `golabel /label`: the note was updated
+- `return`: the note was updated
+
+## 27 Oct 2026
+
 - `OWNER`: Documented → **Verified**
 - `RADI 500`: Seen in code → **Verified**
 - `ANGLE 90`: Seen in code → **Verified**

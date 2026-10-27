@@ -177,7 +177,7 @@
   {
    "code": "CWBRAN",
    "en": "Cable way branch",
-   "n_en": "One run of tray. Head and tail have no coordinates of their own: the first and last points of its RPATH set them. HPOS / TPOS on a CWBRAN give an error — verified by a run.",
+   "n_en": "One run of tray. Head and tail have no coordinates of their own: the first and last points of its RPATH set them. HPOS / TPOS on a CWBRAN give an error — tested in E3D 2.1.",
    "page": "DMRM5.09.130",
    "owners": [
     "CWAY"
@@ -334,7 +334,7 @@
      "st": "ok",
      "key": "VWIDTH",
      "acc": "number",
-     "note_en": "Units are allowed: VWIDTH 700mm (run of 22 Sep). A number in bars is a syntax error."
+     "note_en": "Units are allowed: VWIDTH 700mm. A number in bars is a syntax error."
     },
     {
      "n": "Area",
@@ -462,7 +462,7 @@
   {
    "code": "HATTA",
    "en": "Head attachment point",
-   "n_en": "No coordinates of its own — only name, description and function. Verified by a run.",
+   "n_en": "No coordinates of its own — only name, description and function. Tested in E3D 2.1.",
    "page": "DMRM5.09.135",
    "owners": [
     "CABLE",
@@ -505,7 +505,7 @@
   {
    "code": "TATTA",
    "en": "Tail attachment point",
-   "n_en": "No coordinates of its own — only name, description and function. Verified by a run.",
+   "n_en": "No coordinates of its own — only name, description and function. Tested in E3D 2.1.",
    "page": "DMRM5.09.146",
    "owners": [
     "CABLE",
@@ -548,7 +548,7 @@
   {
    "code": "RPATH",
    "en": "Route path",
-   "n_en": "NEW RPATH does not create the first point: Q MEM right after it is unset. Points are added one by one with NEW POINTR — verified by a run (26 Aug).",
+   "n_en": "NEW RPATH does not create the first point: Q MEM right after it is unset. Points are added one by one with NEW POINTR — tested in E3D 2.1.",
    "page": "DMRM5.09.143",
    "owners": [
     "BPANEL",
@@ -632,7 +632,7 @@
      "st": "ok",
      "key": "FRADIUS",
      "acc": "number",
-     "note_en": "Measured on the tray AXIS, not on its edge (run of 29 Sep); Q FRADIUS prints a number (run of 28 Sep)."
+     "note_en": "Measured on the tray AXIS, not on its edge; Q FRADIUS prints a number."
     },
     {
      "n": "Name",
@@ -884,7 +884,7 @@
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": "EQUI and SUBE have it, BOX does not; 250 characters — «Too many values» (run of 1 Oct)."
+     "note_en": "EQUI and SUBE have it, BOX does not; 250 characters — «Too many values»."
     },
     {
      "n": "Desparam",
@@ -908,7 +908,7 @@
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": "ORI on an EQUI turns it together with its children (run of 24 Sep); with an angle: ORI Y IS N AND Z IS E 45 U (run of 29 Sep)."
+     "note_en": "ORI on an EQUI turns it together with its children; with an angle: ORI Y IS N AND Z IS E 45 U."
     },
     {
      "n": "Position",
@@ -924,7 +924,7 @@
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": "Written and inherited by a copy made in E3D — verified by a run."
+     "note_en": "Written and inherited by a copy made in E3D — tested in E3D 2.1."
     },
     {
      "n": "Spref",

@@ -4,7 +4,7 @@
 
 **E3D prints:** `Cannot assign variable to result - incompatible types (STRING=REAL)`
 
-**Commands:** `VAR` **Verified** — last run 23 Sep 2026
+**Commands:** `VAR` **Verified**
 
 ## What you see
 

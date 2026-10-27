@@ -1,12 +1,12 @@
-name: Run report
+name: Test report
 description: You ran a PML command or a probe in AVEVA E3D — tell us what it printed.
-title: "Run report: <command>"
-labels: ["run report"]
+title: "Test report: <command>"
+labels: ["test report"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you! A run report is how the register grows. Please remove anything you do not want to share (project names, references, paths).
+        Thank you! A test report is how the register grows. Please remove anything you do not want to share (project names, references, paths).
   - type: input
     id: version
     attributes:

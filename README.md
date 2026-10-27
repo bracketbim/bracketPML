@@ -3,7 +3,7 @@
 <h1 align="center">bracketPML</h1>
 
 <p align="center"><b>PML for AVEVA E3D 2.1 — tested, not guessed.</b><br>
-Every command here carries the run that proved it. Nothing is written from memory.</p>
+Every command here is tested in AVEVA E3D 2.1. Nothing is written from memory.</p>
 
 <p align="center">
 <a href="https://bracketbim.com/pml/">Search the library</a> ·
@@ -13,14 +13,14 @@ Every command here carries the run that proved it. Nothing is written from memor
 <a href="#myths">Myths</a> ·
 <a href="attributes.md">Attributes</a> ·
 <a href="syntax.md">Syntax</a> ·
-<a href="CONTRIBUTING.md">Send a run report</a>
+<a href="CONTRIBUTING.md">Send a test report</a>
 </p>
 
 ---
 
-There is almost no public material on PML — and next to none on cable trays and cable supports. What exists is mostly «this should work». bracketPML is the opposite: a register of PML commands for AVEVA E3D 2.1, each one **run in a real E3D model**, with the date of the run, the exact answer E3D printed, and the traps found on the way.
+There is almost no public material on PML — and next to none on cable trays and cable supports. What exists is mostly «this should work». bracketPML is the opposite: a register of PML commands for AVEVA E3D 2.1, each one **tested in a real E3D 2.1 model**, with the exact answer E3D printed, and the traps found on the way.
 
-**194 commands** in the register: **131 verified**, 8 documented failures, 6 macro-only, 26 from documentation and 23 from real code still waiting for a run. Last run: 27 Oct 2026.
+**194 commands** in the register: **131 verified**, 8 documented failures, 6 macro-only, 26 from documentation and 23 from real code still waiting to be tested in E3D 2.1. Updated 27 Oct 2026.
 
 ## How to read a status
 
@@ -29,10 +29,10 @@ There is almost no public material on PML — and next to none on cable trays an
 | ![Verified](https://img.shields.io/badge/-Verified-2e9d5c) | Ran in E3D 2.1, the result was checked. |
 | ![Fails](https://img.shields.io/badge/-Fails-c94a4a) | Ran and gave an error. Do not use — the row says what to use instead. |
 | ![Macro only](https://img.shields.io/badge/-Macro%20only-c98a1e) | Works in a macro file or with Paste as Macro, not line by line. |
-| ![Documented](https://img.shields.io/badge/-Documented-6b7280) | In the AVEVA documentation or in the `$Q` grammar; not run by us yet. |
-| ![Seen in code](https://img.shields.io/badge/-Seen%20in%20code-4f6fae) | Appears in real PML code; not run by us yet. |
+| ![Documented](https://img.shields.io/badge/-Documented-6b7280) | In the AVEVA documentation or in the `$Q` grammar; not tested in E3D yet. |
+| ![Seen in code](https://img.shields.io/badge/-Seen%20in%20code-4f6fae) | Appears in real PML code; not tested in E3D yet. |
 
-A status changes **only after a run**. The order of trust: a run > `$Q` on the real machine > documentation > real code > reasoning.
+A status changes **only after a test in E3D 2.1**. The order of trust: a test in E3D > `$Q` on the real machine > documentation > real code > reasoning.
 
 ## Modules
 

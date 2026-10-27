@@ -4,7 +4,7 @@
 
 **E3D prints:** `(no error — the element is just somewhere else)`
 
-**Commands:** `POS` **Verified** — last run 29 Sep 2026 · `Q` **Verified** — last run 28 Aug 2026
+**Commands:** `POS` **Verified** · `Q` **Verified**
 
 ## What you see
 

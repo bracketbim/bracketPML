@@ -4,7 +4,7 @@
 
 **E3D prints:** `(2,109) Undefined name`
 
-**Commands:** `RENAME` **Verified** — last run 18 Sep 2026 · `NAME` **Verified** — last run 19 Sep 2026
+**Commands:** `RENAME` **Verified** · `NAME` **Verified**
 
 ## What you see
 

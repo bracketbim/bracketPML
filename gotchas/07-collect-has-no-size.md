@@ -4,7 +4,7 @@
 
 **E3D prints:** `Object does not have a member SIZE`
 
-**Commands:** `VAR` **Verified** — last run 23 Sep 2026 · `COLLECT` **Fails** — last run 22 Sep 2026 · `DO` **Macro only**
+**Commands:** `VAR` **Verified** · `COLLECT` **Fails** · `DO` **Macro only**
 
 ## What you see
 

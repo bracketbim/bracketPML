@@ -4,7 +4,7 @@
 
 **E3D prints:** `CP: Syntax error`
 
-**Commands:** `UNDO` **Fails** — last run 16 Sep 2026 · `MARKDB` **Verified** · `UNDODB` **Verified** — last run 19 Sep 2026
+**Commands:** `UNDO` **Fails** · `MARKDB` **Verified** · `UNDODB` **Verified**
 
 ## What you see
 

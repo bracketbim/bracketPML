@@ -2,7 +2,7 @@
 
 > E3D has no UNDO command, but it has a rollback. Put a mark before a bulk change, check, and either save or roll everything back at once.
 
-**Commands:** `MARKDB` **Verified** · `UNDODB` **Verified** — last run 19 Sep 2026 · `SAVEWORK` **Verified** — last run 17 Sep 2026 · `QUIT` **Seen in code** · `UNDO` **Fails** — last run 16 Sep 2026
+**Commands:** `MARKDB` **Verified** · `UNDODB` **Verified** · `SAVEWORK` **Verified** · `QUIT` **Seen in code** · `UNDO` **Fails**
 
 A macro that renames 300 elements or writes 2000 attributes is one paste away from a very long evening. Before you run anything that **writes**, you want a way back. E3D has one — it is just not called `UNDO`.
 
@@ -10,11 +10,11 @@ A macro that renames 300 elements or writes 2000 attributes is one paste away fr
 
 | # | Fact | Status |
 |---|---|---|
-| 1 | There is no command named `UNDO` — `CP: Syntax error`. | **Fails** — last run 16 Sep 2026 |
+| 1 | There is no command named `UNDO` — `CP: Syntax error`. | **Fails** |
 | 2 | `MARKDB \|label\|` sets a rollback mark. The label must be in bars or single quotes; without them it is a syntax error. | **Verified** |
-| 3 | `UNDODB` rolls the database back to the last mark: changed attributes, renames, **and created elements** are undone. | **Verified** — last run 19 Sep 2026 |
-| 4 | One `UNDODB` undoes **everything under one mark** at once — not one edit. `UNDODB 2` goes back two **marks**. Do not count edits. | **Verified** — last run 19 Sep 2026 |
-| 5 | `SAVEWORK` **erases** the mark. After saving, `UNDODB` answers `No mark to UNDO to`. | **Verified** — last run 17 Sep 2026 |
+| 3 | `UNDODB` rolls the database back to the last mark: changed attributes, renames, **and created elements** are undone. | **Verified** |
+| 4 | One `UNDODB` undoes **everything under one mark** at once — not one edit. `UNDODB 2` goes back two **marks**. Do not count edits. | **Verified** |
+| 5 | `SAVEWORK` **erases** the mark. After saving, `UNDODB` answers `No mark to UNDO to`. | **Verified** |
 
 And the second line of defence: `QUIT` leaves without saving — everything since the last `SAVEWORK` is gone. **Seen in code**
 
@@ -52,11 +52,11 @@ Stand on one test element that has a DESC and paste `probe.pmlmac` (a plain past
 
 ## Verified
 
-| Command | What it does | Status | Last run |
-|---|---|---|---|
-| `UNDO` | There is no command with this name | Fails | 16 Sep 2026 |
-| `MARKDB \|before bulk edit\|` | Set a rollback mark BEFORE the operation | Verified | 16 Sep 2026 |
-| `UNDODB` | Roll the database back to the last mark | Verified | 17 Sep 2026 |
-| `SAVEWORK` | Save your work to the database | Verified | 17 Sep 2026 |
-| `QUIT` | Exit WITHOUT saving | Seen in code |  |
+| Command | What it does | Status |
+|---|---|---|
+| `UNDO` | There is no command with this name | Fails |
+| `MARKDB \|before bulk edit\|` | Set a rollback mark BEFORE the operation | Verified |
+| `UNDODB` | Roll the database back to the last mark | Verified |
+| `SAVEWORK` | Save your work to the database | Verified |
+| `QUIT` | Exit WITHOUT saving | Seen in code |
 

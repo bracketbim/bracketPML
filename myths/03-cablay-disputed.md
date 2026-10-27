@@ -4,7 +4,7 @@
 
 **In fact:** The caret was on the value. CABLAY |CEN| works; text values need bars.
 
-**Commands:** `CABLAY` **Verified** — last run 27 Aug 2026
+**Commands:** `CABLAY` **Verified**
 
 **What we believed** for two days, in two versions: first «the command does not work», then «a disputed attribute».
 

@@ -1,15 +1,15 @@
 {
  "about": "bracketPML register — generated, CC BY 4.0",
  "e3d": "2.1",
- "last_run": "2026-10-27",
+ "updated": "2026-10-27",
  "status": {
   "ok": {
    "name": "Verified",
-   "means": "Ran in E3D 2.1, the result was checked."
+   "means": "Tested in E3D 2.1, the result was checked."
   },
   "bad": {
    "name": "Fails",
-   "means": "Ran and gave an error — do not use; the row says what to use instead."
+   "means": "Tested in E3D 2.1 and gave an error — do not use; the row says what to use instead."
   },
   "mac": {
    "name": "Macro only",
@@ -17,11 +17,11 @@
   },
   "doc": {
    "name": "Documented",
-   "means": "In the AVEVA documentation or the $Q grammar; not run by us yet."
+   "means": "In the AVEVA documentation or the $Q grammar; not tested in E3D yet."
   },
   "ref": {
    "name": "Seen in code",
-   "means": "Appears in real PML code; not run by us yet."
+   "means": "Appears in real PML code; not tested in E3D yet."
   }
  },
  "groups": [
@@ -76,7 +76,7 @@
   {
    "id": 8,
    "title": "Beyond E3D — files and Windows",
-   "desc": "Found in real PML code, then verified by runs. Works from a macro file (Paste as Macro) and needs neither admin rights nor PMLLIB. Cyrillic and other non-Latin text passes on write but NOT on read — see the ReadFile row.",
+   "desc": "Found in real PML code, then verified in E3D 2.1. Works from a macro file (Paste as Macro) and needs neither admin rights nor PMLLIB. Cyrillic and other non-Latin text passes on write but NOT on read — see the ReadFile row.",
    "n": 5
   },
   {
@@ -106,11 +106,7 @@
    "what": "Plain paste",
    "note": "Word for word: «executes each line of the copied text as a separate command as if they had been typed». That is why an if line fails with «Invalid syntax» — it runs alone. And on the first error the remaining lines of the paste do NOT run — the tail has to be entered again.",
    "st": "doc",
-   "key": "",
-   "dates": [
-    "2026-09-27"
-   ],
-   "runs": []
+   "key": ""
   },
   {
    "id": "right-click-paste-as-macro",
@@ -119,9 +115,7 @@
    "what": "Paste as a macro",
    "note": "Word for word: «first creates a temporary file containing the copied macro commands and executes this as a macro». This is how if, do and handle work — and it is faster for many commands.",
    "st": "doc",
-   "key": "",
-   "dates": [],
-   "runs": []
+   "key": ""
   },
   {
    "id": "drag-a-mac-file-from-explorer",
@@ -130,9 +124,7 @@
    "what": "Run a macro file",
    "note": "«Macro files can also be dragged into the command window».",
    "st": "doc",
-   "key": "",
-   "dates": [],
-   "runs": []
+   "key": ""
   },
   {
    "id": "m-c-temp-file-pmlmac",
@@ -141,11 +133,7 @@
    "what": "The same, as a command",
    "note": "Arguments $1…$9 work.",
    "st": "ok",
-   "key": "$M",
-   "dates": [
-    "2026-08-26"
-   ],
-   "runs": []
+   "key": "$M"
   },
   {
    "id": "alpha-log-c-temp-log-txt-overwrite",
@@ -154,11 +142,7 @@
    "what": "Write everything the window prints to a file",
    "note": "Long Q MEM and Q ATT outputs land in full, without the window's truncation. The file is UTF-8 with BOM. Stop with alpha log END.",
    "st": "ok",
-   "key": "ALPHA LOG",
-   "dates": [
-    "2026-09-25"
-   ],
-   "runs": []
+   "key": "ALPHA LOG"
   },
   {
    "id": "alpha-log-end",
@@ -167,11 +151,7 @@
    "what": "Stop writing to the file",
    "note": "",
    "st": "ok",
-   "key": "ALPHA LOG",
-   "dates": [
-    "2026-09-25"
-   ],
-   "runs": []
+   "key": "ALPHA LOG"
   },
   {
    "id": "double-click-a-history-line",
@@ -180,9 +160,7 @@
    "what": "Bring a command back into the input field",
    "note": "Up and Down arrows walk the history.",
    "st": "doc",
-   "key": "",
-   "dates": [],
-   "runs": []
+   "key": ""
   },
   {
    "id": "right-click-clear",
@@ -191,9 +169,7 @@
    "what": "Clear the window",
    "note": "The window keeps roughly the last 1000 lines of output.",
    "st": "doc",
-   "key": "",
-   "dates": [],
-   "runs": []
+   "key": ""
   },
   {
    "id": "q-evar-pmllib",
@@ -202,27 +178,16 @@
    "what": "See the PML library path from inside E3D",
    "note": "Printed about ten paths. This is an E3D variable, not a Windows one — echo %PMLLIB% in cmd does not see it. But those folders are not writable for a normal user: your own functions and forms through PMLLIB are out of reach.",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-27",
-    "2026-09-16"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "pml-rehash-all",
    "g": 0,
    "cmd": "PML REHASH ALL",
    "what": "Re-read the library after editing a .pmlfnc",
-   "note": "Run of 26 Oct 2026: ran inside a macro with no error.",
+   "note": "Ran inside a macro with no error.",
    "st": "ok",
-   "key": "PML",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "PML"
   },
   {
    "id": "pml-index",
@@ -231,9 +196,7 @@
    "what": "Library index",
    "note": "",
    "st": "doc",
-   "key": "PML",
-   "dates": [],
-   "runs": []
+   "key": "PML"
   },
   {
    "id": "pml-trace-on",
@@ -242,9 +205,7 @@
    "what": "Trace PML execution",
    "note": "",
    "st": "doc",
-   "key": "PML",
-   "dates": [],
-   "runs": []
+   "key": "PML"
   },
   {
    "id": "pmlc-cway-t1",
@@ -253,11 +214,7 @@
    "what": "Go to an element by name",
    "note": "The main way: just the name on its own line.",
    "st": "ok",
-   "key": "NAV",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "NAV"
   },
   {
    "id": "rpath-1",
@@ -266,9 +223,7 @@
    "what": "Step into a member of the current element by type and number",
    "note": "Inside a branch: RPATH 1, then POINTR 2.",
    "st": "ok",
-   "key": "RPATH",
-   "dates": [],
-   "runs": []
+   "key": "RPATH"
   },
   {
    "id": "pointr-2",
@@ -277,9 +232,7 @@
    "what": "Second route point",
    "note": "Works after stepping into RPATH.",
    "st": "ok",
-   "key": "POINTR",
-   "dates": [],
-   "runs": []
+   "key": "POINTR"
   },
   {
    "id": "equipment-2-of-extzone-pmlc",
@@ -288,11 +241,7 @@
    "what": "Go to an unnamed element by number",
    "note": "The number counts ALL members of the zone and shifts when elements move.",
    "st": "ok",
-   "key": "NAV",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "NAV"
   },
   {
    "id": "12345678-7844",
@@ -301,42 +250,25 @@
    "what": "Go by stable reference",
    "note": "Works; Q NAME afterwards prints the name. A reference does not shift when elements move or are renamed — bulk operations go by =ref only.",
    "st": "ok",
-   "key": "NAV",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "NAV"
   },
   {
    "id": "owner",
    "g": 1,
    "cmd": "OWNER",
    "what": "Go up to the owner",
-   "note": "Run 26 (27 Oct): from a SUBE to its EQUI.",
+   "note": "From a SUBE to its EQUI.",
    "st": "ok",
-   "key": "OWNER",
-   "dates": [
-    "2026-10-27"
-   ],
-   "runs": [
-    26
-   ]
+   "key": "OWNER"
   },
   {
    "id": "goto-owner",
    "g": 1,
    "cmd": "GOTO OWNER",
    "what": "Follow a reference attribute",
-   "note": "GOTO $Q prints what may follow (run of 18 Sep): CFDPROPERTY, LFDPROPERTY, TFDPROPERTY, FRSTWORLD, PARENT, SPLPARENT, CLCONNECTIONS and «any reference attribute». So the command exists, but it follows a REFERENCE, not a name. Run of 26 Oct 2026: from a SUBE it moved to its EQUI.",
+   "note": "GOTO $Q prints what may follow: CFDPROPERTY, LFDPROPERTY, TFDPROPERTY, FRSTWORLD, PARENT, SPLPARENT, CLCONNECTIONS and «any reference attribute». So the command exists, but it follows a REFERENCE, not a name. From a SUBE it moved to its EQUI.",
    "st": "ok",
-   "key": "GOTO",
-   "dates": [
-    "2026-09-18",
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "GOTO"
   },
   {
    "id": "goto-name",
@@ -345,11 +277,7 @@
    "what": "This does NOT work",
    "note": "CP: Syntax error. A name is not among GOTO's continuations — that is why it fails. Going by name means typing the name itself: /PMLC-CWAY-T1. Jumping to a label in a macro is GOLABEL.",
    "st": "bad",
-   "key": "GOTO",
-   "dates": [
-    "2026-08-26"
-   ],
-   "runs": []
+   "key": "GOTO"
   },
   {
    "id": "new-cway-pmlc-cway-t1",
@@ -358,15 +286,7 @@
    "what": "Create a cable tray in a zone",
    "note": "Owner — ZONE. NEW makes the new element current.",
    "st": "ok",
-   "key": "NEW",
-   "dates": [
-    "2026-10-26",
-    "2026-10-27"
-   ],
-   "runs": [
-    25,
-    26
-   ]
+   "key": "NEW"
   },
   {
    "id": "new-cwbran-pmlc-cwbran-t2-01",
@@ -375,15 +295,7 @@
    "what": "Create a branch in a tray",
    "note": "Owner — CWAY.",
    "st": "ok",
-   "key": "NEW",
-   "dates": [
-    "2026-10-26",
-    "2026-10-27"
-   ],
-   "runs": [
-    25,
-    26
-   ]
+   "key": "NEW"
   },
   {
    "id": "pos-e-0-n-0-u-0",
@@ -392,15 +304,7 @@
    "what": "Set the position",
    "note": "Without WRT — FROM THE OWNER. For a tray branch this is where the tray is: the edit gizmo sits on the branch's POS. For a primitive POS is its centre, inside a SUBE — from the SUBE. No minus sign needed: use W / S / D.",
    "st": "ok",
-   "key": "POS",
-   "dates": [
-    "2026-09-18",
-    "2026-09-24",
-    "2026-09-25"
-   ],
-   "runs": [
-    10
-   ]
+   "key": "POS"
   },
   {
    "id": "pos-e-0-n-0-u-0-wrt-world",
@@ -409,11 +313,7 @@
    "what": "The same in world coordinates",
    "note": "The line ran and moved the tray. POS $Q does not list WRT — the $Q grammar is incomplete, and its silence is no argument against a command.",
    "st": "ok",
-   "key": "POS",
-   "dates": [
-    "2026-09-18"
-   ],
-   "runs": []
+   "key": "POS"
   },
   {
    "id": "pos-e-0-n-0-u-500-wrt-pmlc-cway-t1",
@@ -422,11 +322,7 @@
    "what": "Coordinates relative to another element",
    "note": "",
    "st": "ok",
-   "key": "POS",
-   "dates": [
-    "2026-09-19"
-   ],
-   "runs": []
+   "key": "POS"
   },
   {
    "id": "pos-e-0-n-0-u-0-wrt-pmlcins",
@@ -435,11 +331,7 @@
    "what": "Relative to an element whose name is in a variable",
    "note": "VAR !!PMLCINS NAME on the picked element, then this line — the rack landed next to it. This is how «pick an object in E3D» works as an insertion point.",
    "st": "ok",
-   "key": "POS",
-   "dates": [
-    "2026-09-23"
-   ],
-   "runs": []
+   "key": "POS"
   },
   {
    "id": "q-pos-wrt-world",
@@ -448,13 +340,7 @@
    "what": "Current element's world coordinates",
    "note": "Q POS without WRT prints relative to the owner.",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-26",
-    "2026-08-27",
-    "2026-08-28"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "vwidth-600",
@@ -463,11 +349,7 @@
    "what": "Tray width",
    "note": "On a CWBRAN it is VWidth, not WIDTH.",
    "st": "ok",
-   "key": "VWIDTH",
-   "dates": [
-    "2026-09-22"
-   ],
-   "runs": []
+   "key": "VWIDTH"
   },
   {
    "id": "vheight-100",
@@ -476,9 +358,7 @@
    "what": "Tray height",
    "note": "On a CWBRAN it is VHeight, not HEIGHT.",
    "st": "ok",
-   "key": "VHEIGHT",
-   "dates": [],
-   "runs": []
+   "key": "VHEIGHT"
   },
   {
    "id": "cwjusline-cent",
@@ -487,11 +367,7 @@
    "what": "Branch justification line",
    "note": "Q ATT showed CWJusLine CENT.",
    "st": "ok",
-   "key": "CWJUSLINE",
-   "dates": [
-    "2026-09-19"
-   ],
-   "runs": []
+   "key": "CWJUSLINE"
   },
   {
    "id": "new-hatta",
@@ -500,9 +376,7 @@
    "what": "Create the head attachment point",
    "note": "Has no coordinates of its own. NEW moves CE — go back to the branch.",
    "st": "ok",
-   "key": "NEW HATTA",
-   "dates": [],
-   "runs": []
+   "key": "NEW HATTA"
   },
   {
    "id": "new-tatta",
@@ -511,11 +385,7 @@
    "what": "Create the tail attachment point",
    "note": "The same.",
    "st": "ok",
-   "key": "NEW TATTA",
-   "dates": [
-    "2026-08-26"
-   ],
-   "runs": []
+   "key": "NEW TATTA"
   },
   {
    "id": "new-rpath",
@@ -524,15 +394,7 @@
    "what": "Create a route",
    "note": "Creates NO points: Q MEM right after it is unset.",
    "st": "ok",
-   "key": "NEW",
-   "dates": [
-    "2026-10-26",
-    "2026-10-27"
-   ],
-   "runs": [
-    25,
-    26
-   ]
+   "key": "NEW"
   },
   {
    "id": "new-pointr",
@@ -541,15 +403,7 @@
    "what": "Add a route point",
    "note": "Needed twice for a straight branch. CE does NOT move to the new point — set coordinates in a second pass.",
    "st": "ok",
-   "key": "NEW",
-   "dates": [
-    "2026-10-26",
-    "2026-10-27"
-   ],
-   "runs": [
-    25,
-    26
-   ]
+   "key": "NEW"
   },
   {
    "id": "cablay-cen",
@@ -558,11 +412,7 @@
    "what": "Cable layout",
    "note": "The value is text — in vertical bars. Q ATT showed Cablayout CEN.",
    "st": "ok",
-   "key": "CABLAY",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "CABLAY"
   },
   {
    "id": "cablay-cen-2",
@@ -571,11 +421,7 @@
    "what": "This does NOT work",
    "note": "CP: Syntax error with the caret on the value — the bars are needed.",
    "st": "bad",
-   "key": "CABLAY",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "CABLAY"
   },
   {
    "id": "bradius-300",
@@ -584,11 +430,7 @@
    "what": "Branch bend radius",
    "note": "Q ATT of the branch showed BRadius 300mm.",
    "st": "ok",
-   "key": "BRADIUS",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "BRADIUS"
   },
   {
    "id": "bangle-0",
@@ -597,11 +439,7 @@
    "what": "Branch angle",
    "note": "Q ATT of the branch showed Bangle 0degree.",
    "st": "ok",
-   "key": "BANGLE",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "BANGLE"
   },
   {
    "id": "maxlay-1",
@@ -610,11 +448,7 @@
    "what": "Maximum cable layers",
    "note": "Q ATT of the branch showed MaxLay 1.",
    "st": "ok",
-   "key": "MAXLAY",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "MAXLAY"
   },
   {
    "id": "maxcab-0",
@@ -623,11 +457,7 @@
    "what": "Maximum cables",
    "note": "Q ATT of the branch showed MaxCab 0.",
    "st": "ok",
-   "key": "MAXCAB",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "MAXCAB"
   },
   {
    "id": "mattype-unset",
@@ -636,11 +466,7 @@
    "what": "Tray material type",
    "note": "Q ATT: MatType unset. Values: unset, Perforated, Unperforated.",
    "st": "ok",
-   "key": "MATTYPE",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "MATTYPE"
   },
   {
    "id": "fradius-300",
@@ -649,12 +475,7 @@
    "what": "Fillet radius at a point (on POINTR)",
    "note": "The radius is measured on the tray AXIS, not on its edge. Q FRADIUS prints the number.",
    "st": "ok",
-   "key": "FRADIUS",
-   "dates": [
-    "2026-08-27",
-    "2026-09-29"
-   ],
-   "runs": []
+   "key": "FRADIUS"
   },
   {
    "id": "q-hcref",
@@ -663,11 +484,7 @@
    "what": "What the branch head connects to (Q TCREF — the tail)",
    "note": "Unconnected trays print HCRef unset. Connected ones were not seen yet.",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-09-28"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "new-conseq",
@@ -676,11 +493,7 @@
    "what": "Branch connection sequence",
    "note": "Do NOT create it by hand: a tee connection creates it itself, and later branches go into the same one.",
    "st": "ok",
-   "key": "NEW CONSEQ",
-   "dates": [
-    "2026-09-17"
-   ],
-   "runs": []
+   "key": "NEW CONSEQ"
   },
   {
    "id": "usematerial",
@@ -689,9 +502,7 @@
    "what": "Use Material in the branch creation form",
    "note": "Cable Design User Guide 2.1; not run as a command.",
    "st": "doc",
-   "key": "USEMATERIAL",
-   "dates": [],
-   "runs": []
+   "key": "USEMATERIAL"
   },
   {
    "id": "hpos",
@@ -700,9 +511,7 @@
    "what": "Branch head — this does NOT work (nor TPOS, HDIR, TDIR)",
    "note": "Current element does not have a head or a tail attribute: a branch's position is set by its RPATH points.",
    "st": "bad",
-   "key": "HPOS",
-   "dates": [],
-   "runs": []
+   "key": "HPOS"
   },
   {
    "id": "width-600",
@@ -711,9 +520,7 @@
    "what": "Width — this does NOT work (nor HEIGHT)",
    "note": "On a CWBRAN it is VWIDTH / VHEIGHT.",
    "st": "bad",
-   "key": "WIDTH",
-   "dates": [],
-   "runs": []
+   "key": "WIDTH"
   },
   {
    "id": "new-equi-test-equi-001",
@@ -722,11 +529,7 @@
    "what": "Create equipment in a zone",
    "note": "",
    "st": "ok",
-   "key": "NEW EQUI",
-   "dates": [
-    "2026-08-26"
-   ],
-   "runs": []
+   "key": "NEW EQUI"
   },
   {
    "id": "new-sube-test-equi-001-sube-1",
@@ -735,11 +538,7 @@
    "what": "Sub-equipment inside equipment",
    "note": "Owner — EQUIPMENT only. A SUBE has DESC.",
    "st": "ok",
-   "key": "NEW SUBE",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "NEW SUBE"
   },
   {
    "id": "new-box-test-equi-001-box-1",
@@ -748,11 +547,7 @@
    "what": "Box",
    "note": "Owner — EQUI or SUBE. POS is the centre of the box. A BOX has no DESC.",
    "st": "ok",
-   "key": "NEW BOX",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "NEW BOX"
   },
   {
    "id": "xlen-1000",
@@ -761,11 +556,7 @@
    "what": "Length along X",
    "note": "Accepts 0 and negative values too — E3D does not check sizes; your generator must.",
    "st": "ok",
-   "key": "XLEN",
-   "dates": [
-    "2026-09-24"
-   ],
-   "runs": []
+   "key": "XLEN"
   },
   {
    "id": "ylen-1000",
@@ -774,11 +565,7 @@
    "what": "Length along Y",
    "note": "",
    "st": "ok",
-   "key": "YLEN",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "YLEN"
   },
   {
    "id": "zlen-1000",
@@ -787,11 +574,7 @@
    "what": "Height along Z",
    "note": "",
    "st": "ok",
-   "key": "ZLEN",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "ZLEN"
   },
   {
    "id": "new-cylinder-cyl-1",
@@ -800,11 +583,7 @@
    "what": "Cylinder",
    "note": "DIAM and HEIG. POS is the centre of the cylinder.",
    "st": "ok",
-   "key": "NEW CYLINDER",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "NEW CYLINDER"
   },
   {
    "id": "diam-800",
@@ -813,11 +592,7 @@
    "what": "Diameter",
    "note": "",
    "st": "ok",
-   "key": "DIAM",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "DIAM"
   },
   {
    "id": "heig-1000",
@@ -826,11 +601,7 @@
    "what": "Height",
    "note": "",
    "st": "ok",
-   "key": "HEIG",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "HEIG"
   },
   {
    "id": "ori-y-is-n-and-z-is-e",
@@ -839,12 +610,7 @@
    "what": "Rotate: cylinder axis to the east",
    "note": "The cylinder lay perpendicular to face E (Z IS W — to the west). ORI on an EQUI rotates it with all its parts.",
    "st": "ok",
-   "key": "ORI",
-   "dates": [
-    "2026-09-24",
-    "2026-09-25"
-   ],
-   "runs": []
+   "key": "ORI"
   },
   {
    "id": "new-ncylinder",
@@ -853,26 +619,16 @@
    "what": "Round hole (negative primitive)",
    "note": "The hole is visible in 3D. A negative lives INSIDE the primitive, not in the EQUI.",
    "st": "ok",
-   "key": "NEW NCYLINDER",
-   "dates": [
-    "2026-09-18"
-   ],
-   "runs": []
+   "key": "NEW NCYLINDER"
   },
   {
    "id": "new-nbox",
    "g": 3,
    "cmd": "NEW NBOX",
    "what": "Rectangular cut-out",
-   "note": "Run of 26 Oct 2026: created inside a BOX; XLEN / YLEN / ZLEN were written.",
+   "note": "Created inside a BOX; XLEN / YLEN / ZLEN were written.",
    "st": "ok",
-   "key": "NEW NBOX",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "NEW NBOX"
   },
   {
    "id": "delete-equi",
@@ -881,26 +637,16 @@
    "what": "Delete the current equipment",
    "note": "Deleted it with all children; UNDODB brought it back. Check Q NAME first — be sure where you stand.",
    "st": "ok",
-   "key": "DELETE",
-   "dates": [
-    "2026-09-24"
-   ],
-   "runs": []
+   "key": "DELETE"
   },
   {
    "id": "new-nozzle",
    "g": 3,
    "cmd": "NEW NOZZLE",
    "what": "Equipment nozzle",
-   "note": "Run of 26 Oct 2026: created in an EQUI even without a specification — Catref Nulref, Temperature −100000degC. Its look in 3D and connecting to it were not checked.",
+   "note": "Created in an EQUI even without a specification — Catref Nulref, Temperature −100000degC. Its look in 3D and connecting to it were not checked.",
    "st": "ok",
-   "key": "NEW",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "NEW"
   },
   {
    "id": "new-elconn",
@@ -909,11 +655,7 @@
    "what": "Electrical connection point",
    "note": "Created directly in an EQUI, POS works; by default Y is N and Z is U, Catref empty. Like a nozzle on a pipe — a cable connects to it. On real catalogue boxes the link to the catalogue is CATREF, not SPREF. Look in 3D and cable connection not checked.",
    "st": "ok",
-   "key": "NEW ELCONN",
-   "dates": [
-    "2026-09-27"
-   ],
-   "runs": []
+   "key": "NEW ELCONN"
   },
   {
    "id": "purpose-pmlc",
@@ -922,13 +664,7 @@
    "what": "A purpose mark to find your own elements later",
    "note": "Written without bars, Q PURP prints Purpose PMLC, and a Ctrl+C / Ctrl+V copy of the EQUI inherits it — keep that in mind when you filter by it.",
    "st": "ok",
-   "key": "PURPOSE",
-   "dates": [
-    "2026-10-09"
-   ],
-   "runs": [
-    17
-   ]
+   "key": "PURPOSE"
   },
   {
    "id": "level-1-3",
@@ -937,12 +673,7 @@
    "what": "Drawing levels (e.g. hide a service zone from review models)",
    "note": "Q LEVEL prints Level 1 3; works right at creation.",
    "st": "ok",
-   "key": "LEVEL",
-   "dates": [
-    "2026-09-28",
-    "2026-09-29"
-   ],
-   "runs": []
+   "key": "LEVEL"
   },
   {
    "id": "obst-1",
@@ -951,11 +682,7 @@
    "what": "Obstruction level",
    "note": "Q OBST prints Obstruction 1.",
    "st": "ok",
-   "key": "OBST",
-   "dates": [
-    "2026-09-28"
-   ],
-   "runs": []
+   "key": "OBST"
   },
   {
    "id": "ori-y-is-n-and-z-is-e-45-u",
@@ -964,11 +691,7 @@
    "what": "Rotate by an angle (a tilted element)",
    "note": "Q ORI prints the same form back.",
    "st": "ok",
-   "key": "ORI",
-   "dates": [
-    "2026-09-29"
-   ],
-   "runs": []
+   "key": "ORI"
   },
   {
    "id": "q-spref",
@@ -977,11 +700,7 @@
    "what": "Catalogue reference of an item (on an ELCONN — Q CATREF)",
    "note": "Prints the SPCO of a catalogue box. Writing SPREF / CATREF was not run.",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-09-27"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-desparam",
@@ -990,101 +709,61 @@
    "what": "Design parameters from the catalogue",
    "note": "Printed 2 2 1 1 0.3 on a catalogue box; meaning not established.",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-09-27"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "new-cone",
    "g": 3,
    "cmd": "NEW CONE",
    "what": "Cone (also NEW SNOUT, DISH, PYRAMID, CTORUS, RTORUS, SLCYLINDER, EXTRUSION, REVOLUTION, POLYHEDRON)",
-   "note": "Run of 26 Oct 2026: all ten were created in a SUBE with sizes; the Q ATT of each is in the bracketPML attribute reference. Before: DMRM 2.1, Primitive category; not run.",
+   "note": "All ten were created in a SUBE with sizes; the Q ATT of each is in the bracketPML attribute reference. Before: DMRM 2.1, Primitive category; not run.",
    "st": "ok",
-   "key": "NEW CONE",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "NEW CONE"
   },
   {
    "id": "new-ncone",
    "g": 3,
    "cmd": "NEW NCONE",
    "what": "Negative cone — a cut-out (also NSNOUT, NDISH, NPYRAMID, NCTORUS, NRTORUS, NSLCYLINDER)",
-   "note": "Run of 26 Oct 2026: all seven were created inside a BOX.",
+   "note": "All seven were created inside a BOX.",
    "st": "ok",
-   "key": "NEW NCONE",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "NEW NCONE"
   },
   {
    "id": "radi-500",
    "g": 3,
    "cmd": "RADI 500",
    "what": "Primitive radius",
-   "note": "Run 26 (27 Oct): on DISH, Q RADI prints Radius 500mm.",
+   "note": "On DISH, Q RADI prints Radius 500mm.",
    "st": "ok",
-   "key": "RADI",
-   "dates": [
-    "2026-10-27"
-   ],
-   "runs": [
-    26
-   ]
+   "key": "RADI"
   },
   {
    "id": "angle-90",
    "g": 3,
    "cmd": "ANGLE 90",
    "what": "Primitive angle",
-   "note": "Run 26 (27 Oct): on CTORUS, Q ANGLE prints Angle 90degree.",
+   "note": "On CTORUS, Q ANGLE prints Angle 90degree.",
    "st": "ok",
-   "key": "ANGLE",
-   "dates": [
-    "2026-10-27"
-   ],
-   "runs": [
-    26
-   ]
+   "key": "ANGLE"
   },
   {
    "id": "xoff-100",
    "g": 3,
    "cmd": "XOFF 100",
    "what": "X offset (also XBOT, YBOT, XTOP, YTOP)",
-   "note": "Run 26 (27 Oct): all written and read back.",
+   "note": "All written and read back.",
    "st": "ok",
-   "key": "XOFF",
-   "dates": [
-    "2026-10-27"
-   ],
-   "runs": [
-    26
-   ]
+   "key": "XOFF"
   },
   {
    "id": "dtop-300",
    "g": 3,
    "cmd": "DTOP 300",
    "what": "Top diameter (also DBOT, YOFF, RINS, ROUT, XTSH, YTSH, XBSH, YBSH)",
-   "note": "Run 26 (27 Oct): all written and read back.",
+   "note": "All written and read back.",
    "st": "ok",
-   "key": "DTOP",
-   "dates": [
-    "2026-10-27"
-   ],
-   "runs": [
-    26
-   ]
+   "key": "DTOP"
   },
   {
    "id": "new-gpset",
@@ -1093,11 +772,7 @@
    "what": "A set (collection) of elements",
    "note": "NEW GPSET $Q prints its grammar; the element itself was not created.",
    "st": "doc",
-   "key": "NEW GPSET",
-   "dates": [
-    "2026-09-17"
-   ],
-   "runs": []
+   "key": "NEW GPSET"
   },
   {
    "id": "q-pos",
@@ -1106,13 +781,7 @@
    "what": "Current element's coordinates",
    "note": "Position E 10000mm N 0mm U 0mm",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-26",
-    "2026-08-27",
-    "2026-08-28"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-att",
@@ -1121,13 +790,7 @@
    "what": "All attributes of the current element",
    "note": "The fullest answer — and the way to check a result.",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-26",
-    "2026-08-27",
-    "2026-08-28"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-name",
@@ -1136,13 +799,7 @@
    "what": "Name",
    "note": "",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-26",
-    "2026-08-27",
-    "2026-08-28"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-type",
@@ -1151,13 +808,7 @@
    "what": "Element type",
    "note": "",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-26",
-    "2026-08-27",
-    "2026-08-28"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-owner",
@@ -1166,13 +817,7 @@
    "what": "Owner",
    "note": "",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-26",
-    "2026-08-27",
-    "2026-08-28"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-ref",
@@ -1181,13 +826,7 @@
    "what": "Stable reference like =12345678/26685",
    "note": "Does not depend on numbering — the best way to address an element.",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-26",
-    "2026-08-27",
-    "2026-08-28"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-mem",
@@ -1196,13 +835,7 @@
    "what": "Members: what is inside",
    "note": "Prints =ref references of all members at once.",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-26",
-    "2026-08-27",
-    "2026-08-28"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-desc",
@@ -1211,13 +844,7 @@
    "what": "Description",
    "note": "",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-26",
-    "2026-08-27",
-    "2026-08-28"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-drawlist",
@@ -1226,13 +853,7 @@
    "what": "What is on screen now",
    "note": "An element differs from its contents by owner.",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-26",
-    "2026-08-27",
-    "2026-08-28"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-name-of-pmlc-cwbran-t1-01",
@@ -1241,13 +862,7 @@
    "what": "Read an attribute WITHOUT moving to the element",
    "note": "Cuts bulk queries to a third.",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-26",
-    "2026-08-27",
-    "2026-08-28"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-name-type-owner",
@@ -1256,11 +871,7 @@
    "what": "Several attributes in one line",
    "note": "",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-28"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-var-x",
@@ -1269,11 +880,7 @@
    "what": "Show a variable",
    "note": "",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-09-23"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-mem-att",
@@ -1282,11 +889,7 @@
    "what": "Members and attributes",
    "note": "Prints Q MEM and Q ATT of the CURRENT element — not attributes of its members.",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-q",
@@ -1295,13 +898,7 @@
    "what": "What the Q command accepts at all",
    "note": "$Q after any command prints its syntax for your build. Changes nothing.",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-08-26",
-    "2026-08-27",
-    "2026-08-28"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "q-wvol",
@@ -1310,13 +907,7 @@
    "what": "Element's world box — 6 numbers",
    "note": "«Wvolume x1 y1 z1 x2 y2 z2», in mm, without E/N/U, world coordinates. Works on GENSEC, EQUI, TEE.",
    "st": "ok",
-   "key": "Q WVOL",
-   "dates": [
-    "2026-10-09"
-   ],
-   "runs": [
-    17
-   ]
+   "key": "Q WVOL"
   },
   {
    "id": "q-purp",
@@ -1325,13 +916,7 @@
    "what": "Purpose mark (PURPOSE)",
    "note": "Prints Purpose PMLC.",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-10-09"
-   ],
-   "runs": [
-    17
-   ]
+   "key": "Q"
   },
   {
    "id": "q-ori",
@@ -1340,11 +925,7 @@
    "what": "Orientation",
    "note": "Prints Orientation Y is N and Z is U.",
    "st": "ok",
-   "key": "Q",
-   "dates": [
-    "2026-09-24"
-   ],
-   "runs": []
+   "key": "Q"
   },
   {
    "id": "var-x-acttype",
@@ -1353,11 +934,7 @@
    "what": "Project element type (:EXTZONE)",
    "note": "<STRING> ':EXTZONE', with the colon; TYPE of the same zone is ZONE.",
    "st": "ok",
-   "key": "VAR",
-   "dates": [
-    "2026-09-27"
-   ],
-   "runs": []
+   "key": "VAR"
   },
   {
    "id": "next",
@@ -1366,11 +943,7 @@
    "what": "To the next member of the same owner",
    "note": "From ELCONN 1 to ELCONN 2 and 3.",
    "st": "ok",
-   "key": "NEXT",
-   "dates": [
-    "2026-09-27"
-   ],
-   "runs": []
+   "key": "NEXT"
   },
   {
    "id": "new-equi-q",
@@ -1379,11 +952,7 @@
    "what": "$Q after a command — its syntax in this build",
    "note": "The main scouting tool (but the grammar is incomplete: WRT is missing from POS $Q, yet it works).",
    "st": "ok",
-   "key": "NEW EQUI",
-   "dates": [
-    "2026-08-26"
-   ],
-   "runs": []
+   "key": "NEW EQUI"
   },
   {
    "id": "id",
@@ -1392,11 +961,7 @@
    "what": "Pick an element with a click in 3D",
    "note": "ID @ + click — the element becomes current. Esc does not leave the mode.",
    "st": "ok",
-   "key": "ID @",
-   "dates": [
-    "2026-09-28"
-   ],
-   "runs": []
+   "key": "ID @"
   },
   {
    "id": "syn",
@@ -1405,9 +970,7 @@
    "what": "This does NOT work",
    "note": "There is no such command: CP: Syntax error.",
    "st": "bad",
-   "key": "SYN",
-   "dates": [],
-   "runs": []
+   "key": "SYN"
   },
   {
    "id": "pos-e-8000-n-0-u-0",
@@ -1416,19 +979,7 @@
    "what": "Move an element",
    "note": "",
    "st": "ok",
-   "key": "POS",
-   "dates": [
-    "2026-09-17",
-    "2026-09-18",
-    "2026-09-19",
-    "2026-09-23",
-    "2026-09-24",
-    "2026-09-25",
-    "2026-09-29"
-   ],
-   "runs": [
-    14
-   ]
+   "key": "POS"
   },
   {
    "id": "by-w2000",
@@ -1437,11 +988,7 @@
    "what": "Shift by 2000 towards W",
    "note": "Checked on a route point: 10000 became 8000.",
    "st": "ok",
-   "key": "BY",
-   "dates": [
-    "2026-08-26"
-   ],
-   "runs": []
+   "key": "BY"
   },
   {
    "id": "desc-text-with-spaces",
@@ -1450,17 +997,7 @@
    "what": "Write a description",
    "note": "Text with spaces — only in vertical bars (single quotes work too). A $ inside must be doubled: $$.",
    "st": "ok",
-   "key": "DESC",
-   "dates": [
-    "2026-09-22",
-    "2026-09-24",
-    "2026-10-11",
-    "2026-10-15"
-   ],
-   "runs": [
-    18,
-    19
-   ]
+   "key": "DESC"
   },
   {
    "id": "name-new",
@@ -1469,12 +1006,7 @@
    "what": "Rename the CURRENT element",
    "note": "Stand on the element, NAME /NEW — renamed. Together with going by =ref this is bulk tagging: two lines per element and no positional addressing. A name already in use is rejected and nothing changes.",
    "st": "ok",
-   "key": "NAME",
-   "dates": [
-    "2026-08-27",
-    "2026-09-18"
-   ],
-   "runs": []
+   "key": "NAME"
   },
   {
    "id": "rename-new",
@@ -1483,11 +1015,7 @@
    "what": "The same",
    "note": "Works just like NAME.",
    "st": "ok",
-   "key": "RENAME",
-   "dates": [
-    "2026-09-18"
-   ],
-   "runs": []
+   "key": "RENAME"
   },
   {
    "id": "rename-old-new",
@@ -1496,11 +1024,7 @@
    "what": "This does NOT work",
    "note": "«(2,109) Undefined name», caret on the second name. There is no two-argument form: you rename by STANDING on the element.",
    "st": "bad",
-   "key": "RENAME",
-   "dates": [
-    "2026-09-18"
-   ],
-   "runs": []
+   "key": "RENAME"
   },
   {
    "id": "reorder-a-before-b",
@@ -1509,11 +1033,7 @@
    "what": "Move within the list of members",
    "note": "Changes the order inside the owner, does not touch the elements: branches swapped places in Q MEM, coordinates unchanged. First what you move, then what it goes before; works with full names and with =ref of unnamed elements. Found in real public code; the 2.1 manual has no page for it.",
    "st": "ok",
-   "key": "REORDER",
-   "dates": [
-    "2026-09-23"
-   ],
-   "runs": []
+   "key": "REORDER"
   },
   {
    "id": "reorder-a-after-b",
@@ -1522,9 +1042,7 @@
    "what": "The same, but after the given element",
    "note": "The AFTER form was never run — build chains from BEFORE only.",
    "st": "ref",
-   "key": "REORDER",
-   "dates": [],
-   "runs": []
+   "key": "REORDER"
   },
   {
    "id": "include-12345678-6393",
@@ -1533,11 +1051,7 @@
    "what": "Move an element inside the current one",
    "note": "Takes a name or a reference. Does not change CE — stand on the receiving zone once.",
    "st": "ok",
-   "key": "INCLUDE",
-   "dates": [
-    "2026-08-26"
-   ],
-   "runs": []
+   "key": "INCLUDE"
   },
   {
    "id": "claim-pmlc-cwbran-t1-01-hier",
@@ -1546,11 +1060,7 @@
    "what": "Claim an element with its hierarchy",
    "note": "",
    "st": "ok",
-   "key": "CLAIM",
-   "dates": [
-    "2026-08-26"
-   ],
-   "runs": []
+   "key": "CLAIM"
   },
   {
    "id": "unclaim-all",
@@ -1559,24 +1069,16 @@
    "what": "Release claims",
    "note": "",
    "st": "ref",
-   "key": "UNCLAIM",
-   "dates": [],
-   "runs": []
+   "key": "UNCLAIM"
   },
   {
    "id": "lock-all",
    "g": 5,
    "cmd": "LOCK ALL",
    "what": "Lock against changes",
-   "note": "Run of 26 Oct 2026: Q LOCK afterwards — Lock true.",
+   "note": "Q LOCK afterwards — Lock true.",
    "st": "ok",
-   "key": "LOCK",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "LOCK"
   },
   {
    "id": "undo",
@@ -1585,11 +1087,7 @@
    "what": "There is no command with this name",
    "note": "CP: Syntax error. Rollback is called differently — see the next rows.",
    "st": "bad",
-   "key": "UNDO",
-   "dates": [
-    "2026-09-16"
-   ],
-   "runs": []
+   "key": "UNDO"
   },
   {
    "id": "markdb-before-bulk-edit",
@@ -1598,11 +1096,7 @@
    "what": "Set a rollback mark BEFORE the operation",
    "note": "Both forms ran: MARKDB |probe| and MARKDB 'probe'. WITHOUT quotes — CP: Syntax error, as with DESC and CABLAY. PML Console puts a mark as the first line of every code it writes.",
    "st": "ok",
-   "key": "MARKDB",
-   "dates": [
-    "2026-09-16"
-   ],
-   "runs": []
+   "key": "MARKDB"
   },
   {
    "id": "undodb",
@@ -1611,12 +1105,7 @@
    "what": "Roll the database back to the last mark",
    "note": "Restored a broken DESC, undid a rename and the creation of an element; UNDODB n goes back n MARKS (not n edits). After SAVEWORK there is no mark any more — No mark to UNDO to.",
    "st": "ok",
-   "key": "UNDODB",
-   "dates": [
-    "2026-09-16",
-    "2026-09-17"
-   ],
-   "runs": []
+   "key": "UNDODB"
   },
   {
    "id": "incl-12345678-6393",
@@ -1625,9 +1114,7 @@
    "what": "Same as INCLUDE",
    "note": "Abbreviation.",
    "st": "ok",
-   "key": "INCL",
-   "dates": [],
-   "runs": []
+   "key": "INCL"
   },
   {
    "id": "redodb",
@@ -1636,11 +1123,7 @@
    "what": "Redo what UNDODB undid",
    "note": "In the $Q grammar; not run.",
    "st": "doc",
-   "key": "REDODB",
-   "dates": [
-    "2026-09-16"
-   ],
-   "runs": []
+   "key": "REDODB"
   },
   {
    "id": "clearmark",
@@ -1649,11 +1132,7 @@
    "what": "Clear rollback marks",
    "note": "In the $Q grammar; not run.",
    "st": "doc",
-   "key": "CLEARMARK",
-   "dates": [
-    "2026-09-16"
-   ],
-   "runs": []
+   "key": "CLEARMARK"
   },
   {
    "id": "endmarkdb",
@@ -1662,26 +1141,16 @@
    "what": "Close a mark's scope",
    "note": "In the $Q grammar; not run.",
    "st": "doc",
-   "key": "ENDMARKDB",
-   "dates": [
-    "2026-09-16"
-   ],
-   "runs": []
+   "key": "ENDMARKDB"
   },
   {
    "id": "unlock-all",
    "g": 5,
    "cmd": "UNLOCK ALL",
    "what": "Unlock",
-   "note": "Run of 26 Oct 2026: Q LOCK afterwards — Lock false.",
+   "note": "Q LOCK afterwards — Lock false.",
    "st": "ok",
-   "key": "UNLOCK",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "UNLOCK"
   },
   {
    "id": "purpose-pmlc-2",
@@ -1690,26 +1159,16 @@
    "what": "Mark an element as yours (works on equipment too)",
    "note": "Written, and a copy inherits it.",
    "st": "ok",
-   "key": "PURPOSE",
-   "dates": [
-    "2026-10-09"
-   ],
-   "runs": []
+   "key": "PURPOSE"
   },
   {
    "id": "add-ce",
    "g": 6,
    "cmd": "ADD CE",
    "what": "Add the current element to the view",
-   "note": "Run of 26 Oct 2026. ADD /NAME and REMOVE /NAME too: the element appeared in the view and went away.",
+   "note": "Tested in E3D 2.1. ADD /NAME and REMOVE /NAME too: the element appeared in the view and went away.",
    "st": "ok",
-   "key": "ADD",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "ADD"
   },
   {
    "id": "add-all-within-vol-ce-1000-all",
@@ -1718,9 +1177,7 @@
    "what": "Add everything within a distance of the element",
    "note": "",
    "st": "ref",
-   "key": "ADD",
-   "dates": [],
-   "runs": []
+   "key": "ADD"
   },
   {
    "id": "rem-all",
@@ -1729,9 +1186,7 @@
    "what": "Clear the view",
    "note": "",
    "st": "ref",
-   "key": "REM",
-   "dates": [],
-   "runs": []
+   "key": "REM"
   },
   {
    "id": "mark-ce-mem",
@@ -1740,71 +1195,43 @@
    "what": "Label the members of the current element",
    "note": "This is how route points get labels.",
    "st": "ok",
-   "key": "MARK",
-   "dates": [
-    "2026-08-26"
-   ],
-   "runs": []
+   "key": "MARK"
   },
   {
    "id": "unmark-all",
    "g": 6,
    "cmd": "UNMARK ALL",
    "what": "Remove labels",
-   "note": "Run of 26 Oct 2026.",
+   "note": "Tested in E3D 2.1.",
    "st": "ok",
-   "key": "UNMARK",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "UNMARK"
   },
   {
    "id": "col-ce-green",
    "g": 6,
    "cmd": "COL CE GREEN",
    "what": "Change colour",
-   "note": "Run of 26 Oct 2026: no error; the colour on screen was not checked.",
+   "note": "No error; the colour on screen was not checked.",
    "st": "ok",
-   "key": "COL",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "COL"
   },
   {
    "id": "axes-at-ce",
    "g": 6,
    "cmd": "AXES AT CE",
    "what": "Show axes at the element",
-   "note": "Run of 26 Oct 2026: the axes stay in the view even after the rollback — remove them with AXES OFF (not checked).",
+   "note": "The axes stay in the view even after the rollback — remove them with AXES OFF (not checked).",
    "st": "ok",
-   "key": "AXES",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "AXES"
   },
   {
    "id": "alp-req-clear",
    "g": 6,
    "cmd": "ALP REQ CLEAR",
    "what": "Clear the command window",
-   "note": "Run 26 (27 Oct).",
+   "note": "Tested in E3D 2.1.",
    "st": "ok",
-   "key": "ALP",
-   "dates": [
-    "2026-10-27"
-   ],
-   "runs": [
-    26
-   ]
+   "key": "ALP"
   },
   {
    "id": "axes-on",
@@ -1813,9 +1240,7 @@
    "what": "Axes on screen (AXES OFF — remove)",
    "note": "",
    "st": "ref",
-   "key": "AXES",
-   "dates": [],
-   "runs": []
+   "key": "AXES"
   },
   {
    "id": "choo-all",
@@ -1824,9 +1249,7 @@
    "what": "Choose all",
    "note": "",
    "st": "ref",
-   "key": "CHOO",
-   "dates": [],
-   "runs": []
+   "key": "CHOO"
   },
   {
    "id": "dir-n-45-e",
@@ -1835,9 +1258,7 @@
    "what": "View direction",
    "note": "",
    "st": "ref",
-   "key": "DIR",
-   "dates": [],
-   "runs": []
+   "key": "DIR"
   },
   {
    "id": "thro-ce",
@@ -1846,9 +1267,7 @@
    "what": "View through the element",
    "note": "",
    "st": "ref",
-   "key": "THRO",
-   "dates": [],
-   "runs": []
+   "key": "THRO"
   },
   {
    "id": "update-all",
@@ -1857,39 +1276,25 @@
    "what": "Refresh the view",
    "note": "",
    "st": "ref",
-   "key": "UPDATE",
-   "dates": [],
-   "runs": []
+   "key": "UPDATE"
   },
   {
    "id": "enhance-ce-col-red",
    "g": 6,
    "cmd": "ENHANCE CE COL RED",
    "what": "Highlight the element",
-   "note": "Run of 26 Oct 2026: no error; the highlight was not checked.",
+   "note": "No error; the highlight was not checked.",
    "st": "ok",
-   "key": "ENHANCE",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "ENHANCE"
   },
   {
    "id": "console-show",
    "g": 6,
    "cmd": "console show",
    "what": "Show the console window",
-   "note": "Run of 26 Oct 2026: no error.",
+   "note": "No error.",
    "st": "ok",
-   "key": "CONSOLE",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "CONSOLE"
   },
   {
    "id": "new-drwg-cway-iso-001",
@@ -1898,9 +1303,7 @@
    "what": "Create a drawing",
    "note": "Hierarchy DEPT → REGI → DRWG → SHEE → VIEW. Missing DEPT and REGI are created automatically.",
    "st": "doc",
-   "key": "NEW",
-   "dates": [],
-   "runs": []
+   "key": "NEW"
   },
   {
    "id": "new-sheet-sh1",
@@ -1909,9 +1312,7 @@
    "what": "Create a sheet",
    "note": "Can be skipped if the drawing has one sheet.",
    "st": "doc",
-   "key": "NEW",
-   "dates": [],
-   "runs": []
+   "key": "NEW"
   },
   {
    "id": "new-view-v1",
@@ -1920,9 +1321,7 @@
    "what": "Create a view",
    "note": "With NEW DRWG this is the minimum; the rest is optional.",
    "st": "doc",
-   "key": "NEW",
-   "dates": [],
-   "runs": []
+   "key": "NEW"
   },
   {
    "id": "desadd-cway-el-001",
@@ -1931,9 +1330,7 @@
    "what": "Put a model element into the view",
    "note": "Takes a zone, a tray, equipment. Several calls add several elements.",
    "st": "doc",
-   "key": "DESADD",
-   "dates": [],
-   "runs": []
+   "key": "DESADD"
   },
   {
    "id": "desremove-name",
@@ -1942,24 +1339,16 @@
    "what": "Remove an element from the view",
    "note": "Abbreviation DESREM.",
    "st": "doc",
-   "key": "DESREMOVE",
-   "dates": [],
-   "runs": []
+   "key": "DESREMOVE"
   },
   {
    "id": "iso3",
    "g": 7,
    "cmd": "ISO3",
    "what": "Isometric view direction",
-   "note": "There are ISO1…ISO4 — a route may run across the sheet, so the direction is chosen. These are DRAWING view commands: in Model (Run of 26 Oct 2026) ISO3, ELEVATION N and LOOK E gave CP: Syntax error, PLAN gave Incomplete command line; not tried in DRAW.",
+   "note": "There are ISO1…ISO4 — a route may run across the sheet, so the direction is chosen. These are DRAWING view commands: in Model (Tested in E3D 2.1) ISO3, ELEVATION N and LOOK E gave CP: Syntax error, PLAN gave Incomplete command line; not tried in DRAW.",
    "st": "doc",
-   "key": "ISO3",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "ISO3"
   },
   {
    "id": "plan",
@@ -1968,9 +1357,7 @@
    "what": "Plan view",
    "note": "",
    "st": "doc",
-   "key": "PLAN",
-   "dates": [],
-   "runs": []
+   "key": "PLAN"
   },
   {
    "id": "elevation-n",
@@ -1979,9 +1366,7 @@
    "what": "Elevation from the north",
    "note": "",
    "st": "doc",
-   "key": "ELEVATION",
-   "dates": [],
-   "runs": []
+   "key": "ELEVATION"
   },
   {
    "id": "look-e",
@@ -1990,9 +1375,7 @@
    "what": "Look east",
    "note": "Also LOOK N45W and LOOK THROUGH / LOOK FROM with coordinates.",
    "st": "doc",
-   "key": "LOOK",
-   "dates": [],
-   "runs": []
+   "key": "LOOK"
   },
   {
    "id": "update-design",
@@ -2001,9 +1384,7 @@
    "what": "Redraw the view",
    "note": "Required after changing the direction or the contents of the view.",
    "st": "doc",
-   "key": "UPDATE",
-   "dates": [],
-   "runs": []
+   "key": "UPDATE"
   },
   {
    "id": "syscom-cmd-c-mkdir-c-temp-out",
@@ -2012,11 +1393,7 @@
    "what": "Run a Windows command from PML",
    "note": "The command ran and the file was created. The value goes in single quotes or vertical bars: SYSCOM |$!cmd|. No admin rights needed.",
    "st": "ok",
-   "key": "SYSCOM",
-   "dates": [
-    "2026-09-16"
-   ],
-   "runs": []
+   "key": "SYSCOM"
   },
   {
    "id": "ce-attributes",
@@ -2025,11 +1402,7 @@
    "what": "Array of the names of all attributes of the current element",
    "note": "Includes project UDAs.",
    "st": "ok",
-   "key": "!",
-   "dates": [
-    "2026-09-25"
-   ],
-   "runs": []
+   "key": "!"
   },
   {
    "id": "f-object-file-c-temp-out-csv",
@@ -2038,9 +1411,7 @@
    "what": "Open a file from PML",
    "note": "Works in a macro file; PMLLIB not needed.",
    "st": "ok",
-   "key": "!",
-   "dates": [],
-   "runs": []
+   "key": "!"
   },
   {
    "id": "lines-f-readfile",
@@ -2049,11 +1420,7 @@
    "what": "Read a file into an array of lines",
    "note": "Returned an <ARRAY> of lines. ENCODING: a file saved by Notepad in UTF-8 came in as mojibake — ReadFile reads a single-byte code page, so save files for reading in ANSI. On write non-Latin text comes out right — the two directions are not symmetric.",
    "st": "ok",
-   "key": "!",
-   "dates": [
-    "2026-09-18"
-   ],
-   "runs": []
+   "key": "!"
   },
   {
    "id": "f-writefile-overwrite-lines",
@@ -2062,14 +1429,7 @@
    "what": "Write an array of lines to a file",
    "note": "Writes UTF-8 with BOM, read correctly by Notepad and Excel — no PMLLIB, no admin rights. A PML string is at most ~1000 characters, and one written line must stay under ~800 bytes.",
    "st": "ok",
-   "key": "!",
-   "dates": [
-    "2026-09-16",
-    "2026-09-17"
-   ],
-   "runs": [
-    11
-   ]
+   "key": "!"
   },
   {
    "id": "get-work",
@@ -2078,9 +1438,7 @@
    "what": "Pull other users' changes from the database",
    "note": "",
    "st": "ref",
-   "key": "GET",
-   "dates": [],
-   "runs": []
+   "key": "GET"
   },
   {
    "id": "savework",
@@ -2089,11 +1447,7 @@
    "what": "Save your work to the database",
    "note": "Erases the rollback mark — afterwards UNDODB answers No mark to UNDO to. Save only after checking.",
    "st": "ok",
-   "key": "SAVEWORK",
-   "dates": [
-    "2026-09-17"
-   ],
-   "runs": []
+   "key": "SAVEWORK"
   },
   {
    "id": "quit",
@@ -2102,9 +1456,7 @@
    "what": "Exit WITHOUT saving",
    "note": "Rolls back the whole session. The second line of defence: UNDODB undoes one mark, QUIT — everything since the last SAVEWORK.",
    "st": "ref",
-   "key": "QUIT",
-   "dates": [],
-   "runs": []
+   "key": "QUIT"
   },
   {
    "id": "finish",
@@ -2113,9 +1465,7 @@
    "what": "Exit with saving",
    "note": "",
    "st": "ref",
-   "key": "FINISH",
-   "dates": [],
-   "runs": []
+   "key": "FINISH"
   },
   {
    "id": "x-3",
@@ -2124,9 +1474,7 @@
    "what": "Global variable, lives for the whole session",
    "note": "Non-Latin text in the value works.",
    "st": "ok",
-   "key": "!",
-   "dates": [],
-   "runs": []
+   "key": "!"
   },
   {
    "id": "x-3-2",
@@ -2135,11 +1483,7 @@
    "what": "Local — only inside a macro",
    "note": "In the Command Line it does not survive to the next line — use !!x there.",
    "st": "ok",
-   "key": "!",
-   "dates": [
-    "2026-09-19"
-   ],
-   "runs": []
+   "key": "!"
   },
   {
    "id": "var-x-name",
@@ -2148,12 +1492,7 @@
    "what": "Read an attribute of the current element into a variable",
    "note": "Works in the Command Line too. VAR reads an attribute of any type into a string; !x = NAME fails if the types do not match.",
    "st": "ok",
-   "key": "VAR",
-   "dates": [
-    "2026-09-22",
-    "2026-09-23"
-   ],
-   "runs": []
+   "key": "VAR"
   },
   {
    "id": "p-x",
@@ -2162,13 +1501,7 @@
    "what": "Print the value",
    "note": "",
    "st": "ok",
-   "key": "$P",
-   "dates": [
-    "2026-10-11"
-   ],
-   "runs": [
-    18
-   ]
+   "key": "$P"
   },
   {
    "id": "cmd-q-name-then-cmd",
@@ -2177,9 +1510,7 @@
    "what": "Run a command built as a string",
    "note": "The only way found to be dynamic without a macro.",
    "st": "ok",
-   "key": "!",
-   "dates": [],
-   "runs": []
+   "key": "!"
   },
   {
    "id": "var-eq-collect-all-equi-with-type-eq-equi-for-ce",
@@ -2188,13 +1519,7 @@
    "what": "Collect elements with a filter",
    "note": "Collects, but the result has no array methods: !!eq.Size() is an error. do !e values !!eq works.",
    "st": "ok",
-   "key": "VAR",
-   "dates": [
-    "2026-09-16",
-    "2026-09-22",
-    "2026-09-23"
-   ],
-   "runs": []
+   "key": "VAR"
   },
   {
    "id": "m-c-temp-t-mac-arg1-arg2",
@@ -2203,11 +1528,7 @@
    "what": "Run a macro with arguments",
    "note": "$1…$9 are available in the file. Non-Latin text in the file body reads correctly only if the file is saved in ANSI; UTF-8 breaks.",
    "st": "ok",
-   "key": "$M",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "$M"
   },
   {
    "id": "if-then-endif",
@@ -2216,9 +1537,7 @@
    "what": "Condition",
    "note": "Plain paste — PML: Invalid syntax. Through right-click → Paste as Macro it works.",
    "st": "mac",
-   "key": "IF",
-   "dates": [],
-   "runs": []
+   "key": "IF"
   },
   {
    "id": "do-enddo",
@@ -2227,9 +1546,7 @@
    "what": "Loop",
    "note": "The same.",
    "st": "mac",
-   "key": "DO",
-   "dates": [],
-   "runs": []
+   "key": "DO"
   },
   {
    "id": "handle-any-endhandle",
@@ -2238,9 +1555,7 @@
    "what": "Catch an error",
    "note": "The same.",
    "st": "mac",
-   "key": "HANDLE",
-   "dates": [],
-   "runs": []
+   "key": "HANDLE"
   },
   {
    "id": "var-x-owner",
@@ -2249,11 +1564,7 @@
    "what": "An element's owner into a variable — then $!!x goes to it",
    "note": "Returns '/name'.",
    "st": "ok",
-   "key": "VAR",
-   "dates": [
-    "2026-10-01"
-   ],
-   "runs": []
+   "key": "VAR"
   },
   {
    "id": "var-x-collect-all-cwbran-with-unset-desc-for-pml",
@@ -2262,11 +1573,7 @@
    "what": "Collect with a condition on an attribute",
    "note": "Gave 2 of 6 — exactly the number without a description. Logical functions apply to attributes inside WITH.",
    "st": "ok",
-   "key": "VAR",
-   "dates": [
-    "2026-09-19"
-   ],
-   "runs": []
+   "key": "VAR"
   },
   {
    "id": "var-s-collect-all-site-for-world",
@@ -2275,11 +1582,7 @@
    "what": "Collect across the whole database",
    "note": "",
    "st": "ok",
-   "key": "VAR",
-   "dates": [
-    "2026-09-22"
-   ],
-   "runs": []
+   "key": "VAR"
   },
   {
    "id": "nm-name",
@@ -2288,11 +1591,7 @@
    "what": "An attribute of the current element into a variable (in a macro)",
    "note": "!x = REF — the reference. If !x already holds a string and the attribute is a number — incompatible types.",
    "st": "ok",
-   "key": "!",
-   "dates": [
-    "2026-09-19"
-   ],
-   "runs": []
+   "key": "!"
   },
   {
    "id": "a-object-array",
@@ -2301,11 +1600,7 @@
    "what": "An array; .Append() adds",
    "note": "",
    "st": "ok",
-   "key": "!",
-   "dates": [
-    "2026-09-16"
-   ],
-   "runs": []
+   "key": "!"
   },
   {
    "id": "h",
@@ -2314,9 +1609,7 @@
    "what": "Help",
    "note": "",
    "st": "doc",
-   "key": "$H",
-   "dates": [],
-   "runs": []
+   "key": "$H"
   },
   {
    "id": "comment",
@@ -2325,9 +1618,7 @@
    "what": "A comment in a macro",
    "note": "On a par with --; appears 103 times in the code corpus.",
    "st": "ref",
-   "key": "",
-   "dates": [],
-   "runs": []
+   "key": ""
   },
   {
    "id": "if-x-gt-5-then-elseif-else-endif",
@@ -2336,9 +1627,7 @@
    "what": "Condition, PML1 form",
    "note": "PML1: comparisons only in words eq ne gt lt ge le, variables !name, substitution $!name.",
    "st": "ref",
-   "key": "IF",
-   "dates": [],
-   "runs": []
+   "key": "IF"
   },
   {
    "id": "if-x-5-and-n-matchwild-pipe-then",
@@ -2347,9 +1636,7 @@
    "what": "Condition, PML2 form",
    "note": "PML2 added == != > < and the logical AND OR NOT. Matchwild appears 37 times in the corpus.",
    "st": "ref",
-   "key": "IF",
-   "dates": [],
-   "runs": []
+   "key": "IF"
   },
   {
    "id": "do-i-from-1-to-10",
@@ -2358,24 +1645,16 @@
    "what": "Counting loop",
    "note": "88 times in the corpus.",
    "st": "ref",
-   "key": "DO",
-   "dates": [],
-   "runs": []
+   "key": "DO"
   },
   {
    "id": "do-i-from-1-to-10-by-2",
    "g": 11,
    "cmd": "do !i from 1 to 10 by 2",
    "what": "Loop with a step",
-   "note": "Run of 26 Oct 2026, in a macro: do !i from 1 to 5 by 2 printed 1, 3, 5.",
+   "note": "In a macro: do !i from 1 to 5 by 2 printed 1, 3, 5.",
    "st": "ok",
-   "key": "DO",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25
-   ]
+   "key": "DO"
   },
   {
    "id": "do-elem-values-array",
@@ -2384,9 +1663,7 @@
    "what": "Loop over array values",
    "note": "The most common form, 117 times.",
    "st": "ref",
-   "key": "DO",
-   "dates": [],
-   "runs": []
+   "key": "DO"
   },
   {
    "id": "do-i-indices-array",
@@ -2395,25 +1672,16 @@
    "what": "Loop over indices",
    "note": "5 times in the corpus.",
    "st": "ref",
-   "key": "DO",
-   "dates": [],
-   "runs": []
+   "key": "DO"
   },
   {
    "id": "do-while-flag",
    "g": 11,
    "cmd": "do while ( !flag )",
    "what": "Loop on a condition — does NOT work",
-   "note": "Run of 26 Oct 2026, in a macro: CP: Syntax error, pointing at while; the macro stops (handle does not catch it). Instead — do !i from 1 to N with break if ( … ); break if is not checked yet — a probe in the next run.",
+   "note": "In a macro: CP: Syntax error, pointing at while; the macro stops (handle does not catch it). Instead — do !i from 1 to N with break if ( … ); break if is not checked yet — not tested yet.",
    "st": "bad",
-   "key": "DO",
-   "dates": [
-    "2026-10-26"
-   ],
-   "runs": [
-    25,
-    26
-   ]
+   "key": "DO"
   },
   {
    "id": "break",
@@ -2422,9 +1690,7 @@
    "what": "Leave the loop",
    "note": "",
    "st": "ref",
-   "key": "BREAK",
-   "dates": [],
-   "runs": []
+   "key": "BREAK"
   },
   {
    "id": "skip",
@@ -2433,9 +1699,7 @@
    "what": "Go to the next iteration",
    "note": "",
    "st": "ref",
-   "key": "SKIP",
-   "dates": [],
-   "runs": []
+   "key": "SKIP"
   },
   {
    "id": "break-if-skip-if",
@@ -2444,9 +1708,7 @@
    "what": "Leave or skip on a condition",
    "note": "skip if met once, break if — never.",
    "st": "doc",
-   "key": "BREAK",
-   "dates": [],
-   "runs": []
+   "key": "BREAK"
   },
   {
    "id": "handle-any-endhandle-2",
@@ -2455,9 +1717,7 @@
    "what": "Catch any error",
    "note": "193 times in the corpus. It goes RIGHT AFTER the guarded line, not before it.",
    "st": "ref",
-   "key": "HANDLE",
-   "dates": [],
-   "runs": []
+   "key": "HANDLE"
   },
   {
    "id": "handle-41-64",
@@ -2466,9 +1726,7 @@
    "what": "Catch a specific error by number",
    "note": "Not met in the corpus.",
    "st": "doc",
-   "key": "HANDLE",
-   "dates": [],
-   "runs": []
+   "key": "HANDLE"
   },
   {
    "id": "elsehandle-none-elsehandle-any",
@@ -2477,9 +1735,7 @@
    "what": "Handler branches: no error / any",
    "note": "47 times in the corpus.",
    "st": "ref",
-   "key": "ELSEHANDLE",
-   "dates": [],
-   "runs": []
+   "key": "ELSEHANDLE"
   },
   {
    "id": "error-text",
@@ -2488,24 +1744,16 @@
    "what": "Text of the caught error",
    "note": "In the corpus. The code and line fields — by the documentation.",
    "st": "ref",
-   "key": "$!",
-   "dates": [],
-   "runs": []
+   "key": "$!"
   },
   {
    "id": "return-error-1-could-not-run",
    "g": 11,
    "cmd": "return error 1 'Could not run'",
    "what": "Raise your own error",
-   "note": "Run 26 (27 Oct): the error text shows in the window, the macro stops.",
+   "note": "The error text shows in the window, the macro stops.",
    "st": "ok",
-   "key": "RETURN",
-   "dates": [
-    "2026-10-27"
-   ],
-   "runs": [
-    26
-   ]
+   "key": "RETURN"
   },
   {
    "id": "m-c-temp-t-mac-arg1-arg2-2",
@@ -2514,11 +1762,7 @@
    "what": "Run a macro from the Command Line",
    "note": "The only bridge between the command line and the language: the call itself works.",
    "st": "ok",
-   "key": "$M",
-   "dates": [
-    "2026-08-26"
-   ],
-   "runs": []
+   "key": "$M"
   },
   {
    "id": "define-function-name",
@@ -2527,11 +1771,7 @@
    "what": "A function in name.pmlfnc",
    "note": "The file must sit in a PMLLIB folder, and those are not writable for a normal user — the way is closed.",
    "st": "doc",
-   "key": "DEFINE",
-   "dates": [
-    "2026-09-16"
-   ],
-   "runs": []
+   "key": "DEFINE"
   },
   {
    "id": "setup-form-name-exit",
@@ -2540,11 +1780,7 @@
    "what": "A form with fields and buttons straight from a macro",
    "note": "Via Paste as Macro the form appeared without PMLLIB, buttons work — a field, !!CE.Name, q var, $M file.mac. define method after exit — Method not found: keep the logic in .mac files.",
    "st": "ok",
-   "key": "SETUP",
-   "dates": [
-    "2026-09-27"
-   ],
-   "runs": []
+   "key": "SETUP"
   },
   {
    "id": "endif",
@@ -2553,11 +1789,7 @@
    "what": "End of if (macro only)",
    "note": "Plain paste — Invalid syntax; through Paste as Macro — works.",
    "st": "mac",
-   "key": "ENDIF",
-   "dates": [
-    "2026-08-27"
-   ],
-   "runs": []
+   "key": "ENDIF"
   },
   {
    "id": "enddo",
@@ -2566,9 +1798,7 @@
    "what": "End of do (macro only)",
    "note": "The same.",
    "st": "mac",
-   "key": "ENDDO",
-   "dates": [],
-   "runs": []
+   "key": "ENDDO"
   },
   {
    "id": "endhandle",
@@ -2577,39 +1807,25 @@
    "what": "End of handle (macro only)",
    "note": "The same.",
    "st": "mac",
-   "key": "ENDHANDLE",
-   "dates": [],
-   "runs": []
+   "key": "ENDHANDLE"
   },
   {
    "id": "golabel-label",
    "g": 11,
    "cmd": "golabel /label",
    "what": "Jump to a label (and label /label)",
-   "note": "Only in a macro; run 26 (27 Oct).",
+   "note": "Only in a macro; tested in E3D 2.1.",
    "st": "ok",
-   "key": "GOLABEL",
-   "dates": [
-    "2026-10-27"
-   ],
-   "runs": [
-    26
-   ]
+   "key": "GOLABEL"
   },
   {
    "id": "return",
    "g": 11,
    "cmd": "return",
    "what": "Leave the PML file",
-   "note": "Run 26 (27 Oct): lines after return did not run.",
+   "note": "Lines after return did not run.",
    "st": "ok",
-   "key": "RETURN",
-   "dates": [
-    "2026-10-27"
-   ],
-   "runs": [
-    26
-   ]
+   "key": "RETURN"
   },
   {
    "id": "view-v-volume-width-60-height-20",
@@ -2618,13 +1834,7 @@
    "what": "A 3D window in a form from a macro",
    "note": "Shows everything the main 3D view shows.",
    "st": "ok",
-   "key": "VIEW",
-   "dates": [
-    "2026-09-28"
-   ],
-   "runs": [
-    13
-   ]
+   "key": "VIEW"
   },
   {
    "id": "edgpacket",
@@ -2633,13 +1843,7 @@
    "what": "Pick a point on an edge with a click (definePosition)",
    "note": "q var prints the point WRT the owner; the packet lives until Esc.",
    "st": "ok",
-   "key": "EDGPACKET",
-   "dates": [
-    "2026-09-28"
-   ],
-   "runs": [
-    13
-   ]
+   "key": "EDGPACKET"
   }
  ]
 }

@@ -4,7 +4,7 @@
 
 **E3D prints:** `(no error — the text is just shorter)`
 
-**Commands:** `DESC` **Verified** — last run 15 Oct 2026 · `$M` **Verified**
+**Commands:** `DESC` **Verified** · `$M` **Verified**
 
 ## What you see
 

@@ -4,7 +4,7 @@
 
 **E3D prints:** `(no error — XLEN -100 is accepted)`
 
-**Commands:** `XLEN` **Verified** — last run 24 Sep 2026 · `YLEN` **Verified** — last run 27 Aug 2026 · `ZLEN` **Verified** — last run 27 Aug 2026
+**Commands:** `XLEN` **Verified** · `YLEN` **Verified** · `ZLEN` **Verified**
 
 ## What you see
 

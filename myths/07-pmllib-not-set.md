@@ -4,7 +4,7 @@
 
 **In fact:** Q EVAR |PMLLIB| inside E3D prints about ten paths. (They are not writable for a normal user — so the conclusion held, by accident.)
 
-**Commands:** `Q` **Verified** — last run 28 Aug 2026 · `EVAR` **Verified** — last run 27 Oct 2026
+**Commands:** `Q` **Verified** · `EVAR` **Verified**
 
 **What we believed.** `%PMLLIB%` is empty — checked with `echo %PMLLIB%` in a Windows command prompt.
 

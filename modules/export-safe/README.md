@@ -2,9 +2,9 @@
 
 > Write data from E3D to a text file with alpha log so that a broken or half-written file can never pass for a good one.
 
-**Commands:** `ALPHA LOG` **Verified** — last run 27 Sep 2026 · `HANDLE` **Macro only** · `VAR` **Verified** — last run 23 Sep 2026 · `$P` **Verified** — last run 11 Oct 2026 · `DO` **Macro only**
+**Commands:** `ALPHA LOG` **Verified** · `HANDLE` **Macro only** · `VAR` **Verified** · `$P` **Verified** · `DO` **Macro only**
 
-Getting data **out** of E3D is the first step of almost every automation: a list of trays to measure, equipment to tag, a tree to sort. The usual way is `alpha log` — everything the Commands window prints goes to a file. It works, and it fails in three quiet ways. Each of them cost us a real run.
+Getting data **out** of E3D is the first step of almost every automation: a list of trays to measure, equipment to tag, a tree to sort. The usual way is `alpha log` — everything the Commands window prints goes to a file. It works, and it fails in three quiet ways. Each of them cost us a real test in E3D.
 
 ## Three silent failures
 
@@ -62,24 +62,24 @@ alpha log END
 
 ## Verified
 
-| Command | What it does | Status | Last run |
-|---|---|---|---|
-| `alpha log /C:\Temp\log.txt OVERWRITE` | Write everything the window prints to a file | Verified | 25 Sep 2026 |
-| `alpha log END` | Stop writing to the file | Verified | 25 Sep 2026 |
-| `VAR !!x ACTTYPE` | Project element type (:EXTZONE) | Verified | 27 Sep 2026 |
-| `VAR !!x NAME` | Read an attribute of the current element into a variable | Verified | 23 Sep 2026 |
-| `$P $!!x` | Print the value | Verified | 11 Oct 2026 |
-| `VAR !!eq COLLECT ALL EQUI WITH ( TYPE EQ 'EQUI' ) FOR CE` | Collect elements with a filter | Verified | 23 Sep 2026 |
-| `do … enddo` | Loop | Macro only |  |
-| `handle any … endhandle` | Catch an error | Macro only |  |
-| `VAR !!x OWNER` | An element's owner into a variable — then $!!x goes to it | Verified | 1 Oct 2026 |
-| `VAR !x COLLECT ALL CWBRAN WITH (UNSET(DESC)) FOR /PMLC` | Collect with a condition on an attribute | Verified | 19 Sep 2026 |
-| `VAR !s COLLECT ALL SITE FOR WORLD` | Collect across the whole database | Verified | 22 Sep 2026 |
-| `do !i from 1 to 10` | Counting loop | Seen in code |  |
-| `do !i from 1 to 10 by 2` | Loop with a step | Verified | 26 Oct 2026 |
-| `do !elem values !array` | Loop over array values | Seen in code |  |
-| `do !i indices !array` | Loop over indices | Seen in code |  |
-| `do while ( !flag )` | Loop on a condition — does NOT work | Fails | 26 Oct 2026 |
-| `handle any … endhandle` | Catch any error | Seen in code |  |
-| `handle (41,64)` | Catch a specific error by number | Documented |  |
+| Command | What it does | Status |
+|---|---|---|
+| `alpha log /C:\Temp\log.txt OVERWRITE` | Write everything the window prints to a file | Verified |
+| `alpha log END` | Stop writing to the file | Verified |
+| `VAR !!x ACTTYPE` | Project element type (:EXTZONE) | Verified |
+| `VAR !!x NAME` | Read an attribute of the current element into a variable | Verified |
+| `$P $!!x` | Print the value | Verified |
+| `VAR !!eq COLLECT ALL EQUI WITH ( TYPE EQ 'EQUI' ) FOR CE` | Collect elements with a filter | Verified |
+| `do … enddo` | Loop | Macro only |
+| `handle any … endhandle` | Catch an error | Macro only |
+| `VAR !!x OWNER` | An element's owner into a variable — then $!!x goes to it | Verified |
+| `VAR !x COLLECT ALL CWBRAN WITH (UNSET(DESC)) FOR /PMLC` | Collect with a condition on an attribute | Verified |
+| `VAR !s COLLECT ALL SITE FOR WORLD` | Collect across the whole database | Verified |
+| `do !i from 1 to 10` | Counting loop | Seen in code |
+| `do !i from 1 to 10 by 2` | Loop with a step | Verified |
+| `do !elem values !array` | Loop over array values | Seen in code |
+| `do !i indices !array` | Loop over indices | Seen in code |
+| `do while ( !flag )` | Loop on a condition — does NOT work | Fails |
+| `handle any … endhandle` | Catch any error | Seen in code |
+| `handle (41,64)` | Catch a specific error by number | Documented |
 

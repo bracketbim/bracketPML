@@ -1,6 +1,6 @@
 # Attributes
 
-The standard attributes of AVEVA E3D 2.1 elements that we know: the list, owners and members follow the Data Model Reference Manual 2.1 (page reference for each type); the descriptions, statuses and notes are ours. «Accepts» is what `<ATTRIBUTE> $Q` printed in E3D 2.1 (run of 26 Oct 2026); empty — not asked yet. User-defined attributes of a project (`:NAME`) are not here.
+The standard attributes of AVEVA E3D 2.1 elements that we know: the list, owners and members follow the Data Model Reference Manual 2.1 (page reference for each type); the descriptions, statuses and notes are ours. «Accepts» is what `<ATTRIBUTE> $Q` printed in E3D 2.1; empty — not asked yet. User-defined attributes of a project (`:NAME`) are not here.
 
 | Status | Meaning |
 |---|---|
@@ -33,7 +33,7 @@ In a real dump but not in the manual: `Type`, `Lock`, `Owner`
 
 ### CWBRAN — Cable way branch
 
-One run of tray. Head and tail have no coordinates of their own: the first and last points of its RPATH set them. HPOS / TPOS on a CWBRAN give an error — verified by a run.
+One run of tray. Head and tail have no coordinates of their own: the first and last points of its RPATH set them. HPOS / TPOS on a CWBRAN give an error — tested in E3D 2.1.
 
 Owners: CWAY · Members: RBRAN, CTMTRL, HATTA, RPATH, RTFEAT, SEGSEQ, TATTA · DMRM 5.09.130
 
@@ -56,7 +56,7 @@ Owners: CWAY · Members: RBRAN, CTMTRL, HATTA, RPATH, RTFEAT, SEGSEQ, TATTA · D
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified |  |
 | `VHeight` | Height of the tray section | a number | Command verified | Written like VWidth. |
-| `VWidth` | Width of the tray section | a number | Command verified | Units are allowed: VWIDTH 700mm (run of 22 Sep). A number in bars is a syntax error. |
+| `VWidth` | Width of the tray section | a number | Command verified | Units are allowed: VWIDTH 700mm. A number in bars is a syntax error. |
 | `Area` | The area number the element belongs to | a number | In a real model |  |
 | `CExs` | Extra allowance, in percent, for cables passing through | a number | In a real model |  |
 | `CloseFlag` | Flag: the branch forms a closed loop | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |
@@ -76,7 +76,7 @@ In a real dump but not in the manual: `Type`, `Lock`, `Owner`, `AHeight`, `UseMa
 
 ### RPATH — Route path
 
-NEW RPATH does not create the first point: Q MEM right after it is unset. Points are added one by one with NEW POINTR — verified by a run (26 Aug).
+NEW RPATH does not create the first point: Q MEM right after it is unset. Points are added one by one with NEW POINTR — tested in E3D 2.1.
 
 Owners: BPANEL, BPOPEN, CABLE, CTWALL, CWBRAN, HANDRA, PLOPEN, PLTFRM, RBRAN, RUTVOLUME, STRFLT, STRLNG, WLOPEN · Members: CURVE, EXTGEO, POINTR, RSECT · DMRM 5.09.143
 
@@ -96,7 +96,7 @@ Owners: RPATH · Members: — · DMRM 5.09.138
 | Attribute | What it is | Accepts | Status | Note |
 |---|---|---|---|---|
 | `Description` | Free text about the element; text with spaces goes in \|bars\| | text in \|bars\| or 'quotes' | Command verified |  |
-| `Fradius` | Fillet radius at this point, measured on the tray axis | a number | Command verified | Measured on the tray AXIS, not on its edge (run of 29 Sep); Q FRADIUS prints a number (run of 28 Sep). |
+| `Fradius` | Fillet radius at this point, measured on the tray axis | a number | Command verified | Measured on the tray AXIS, not on its edge; Q FRADIUS prints a number. |
 | `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
 | `Function` | Free text: what the element is for | text in \|bars\| or 'quotes' | In a real model |  |
@@ -105,7 +105,7 @@ Owners: RPATH · Members: — · DMRM 5.09.138
 
 ### HATTA — Head attachment point
 
-No coordinates of its own — only name, description and function. Verified by a run.
+No coordinates of its own — only name, description and function. Tested in E3D 2.1.
 
 Owners: CABLE, CTWALL, CWBRAN, HANDRA, RBRAN, RUTVOLUME · Members: — · DMRM 5.09.135
 
@@ -117,7 +117,7 @@ Owners: CABLE, CTWALL, CWBRAN, HANDRA, RBRAN, RUTVOLUME · Members: — · DMRM 
 
 ### TATTA — Tail attachment point
 
-No coordinates of its own — only name, description and function. Verified by a run.
+No coordinates of its own — only name, description and function. Tested in E3D 2.1.
 
 Owners: CABLE, CTWALL, CWBRAN, HANDRA, RBRAN, RUTVOLUME · Members: — · DMRM 5.09.146
 
@@ -169,12 +169,12 @@ Owners: CONVEYOR, ZONE · Members: AIDGROUP, BOX, BPANEL, CONE, CTORUS, CYLINDER
 
 | Attribute | What it is | Accepts | Status | Note |
 |---|---|---|---|---|
-| `Description` | Free text about the element; text with spaces goes in \|bars\| | text in \|bars\| or 'quotes' | Command verified | EQUI and SUBE have it, BOX does not; 250 characters — «Too many values» (run of 1 Oct). |
+| `Description` | Free text about the element; text with spaces goes in \|bars\| | text in \|bars\| or 'quotes' | Command verified | EQUI and SUBE have it, BOX does not; 250 characters — «Too many values». |
 | `Desparam` | A list of numeric design values | a number | Command verified |  |
 | `Name` | The element’s name; it starts with a slash | a name: /NAME | Command verified |  |
-| `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified | ORI on an EQUI turns it together with its children (run of 24 Sep); with an angle: ORI Y IS N AND Z IS E 45 U (run of 29 Sep). |
+| `Orientation` | Which way the element’s axes point | a direction; ORI as Y IS N AND Z IS U | Command verified | ORI on an EQUI turns it together with its children; with an angle: ORI Y IS N AND Z IS E 45 U. |
 | `Position` | Where the element sits, measured from its owner | a position: E … N … U … (WRT …) | Command verified |  |
-| `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified | Written and inherited by a copy made in E3D — verified by a run. |
+| `Purpose` | A short code word for marking and filtering elements | a word or text | Command verified | Written and inherited by a copy made in E3D — tested in E3D 2.1. |
 | `Spref` | Link to the component specification | a reference: /NAME, =ref or NULREF | Command verified |  |
 | `Area` | The area number the element belongs to | a number | In a real model |  |
 | `Built` | Flag: built or not yet built | TRUE / FALSE (YES / NO, ON / OFF) | In a real model |  |

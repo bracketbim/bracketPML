@@ -6,9 +6,9 @@ Every PML command we know about, with its status. **Generated** from the source 
 |---|---|---|
 | **Verified** | Tested in E3D 2.1, the result was checked. | 140 |
 | **Fails** | Tested in E3D 2.1 and gave an error — do not use; the row says what to use instead. | 10 |
-| **Macro only** | Works in a macro file or with Paste as Macro, not line by line. | 15 |
+| **Macro only** | Works in a macro file or with Paste as Macro, not line by line. | 16 |
 | **Documented** | In the AVEVA documentation or the $Q grammar; not tested in E3D yet. | 19 |
-| **Seen in code** | Appears in real PML code; not tested in E3D yet. | 10 |
+| **Seen in code** | Appears in real PML code; not tested in E3D yet. | 9 |
 
 Updated 28 Oct 2026 · E3D 2.1 · searchable at [bracketbim.com/pml](https://bracketbim.com/pml/)
 
@@ -272,7 +272,7 @@ E3D 2.1 runs PML2 with full backward compatibility with PML1: one interpreter, b
 | <a id="break"></a>`break` | Leave the loop | Macro only | A 1…5 loop with break at 3 printed 1, 2. |
 | <a id="skip"></a>`skip` | Go to the next iteration | Macro only | A 1…4 loop with skip at 2 printed 1, 3, 4. |
 | <a id="break-if-skip-if"></a>`break if ( … ) / skip if ( … )` | Leave or skip on a condition | Macro only | Both work in a macro; a plain do with break if replaces do while. |
-| <a id="handle-any-endhandle-2"></a>`handle any … endhandle` | Catch any error | Seen in code | Put it right after the line it guards. The error is caught and the macro goes on. |
+| <a id="handle-any-endhandle-2"></a>`handle any … endhandle` | Catch any error | Macro only | Put it right after the line it guards. The error is caught and the macro goes on. |
 | <a id="handle-41-64"></a>`handle (41,64)` | Catch a specific error by number | Documented | Not met in the corpus. |
 | <a id="elsehandle-none-elsehandle-any"></a>`elsehandle NONE / elsehandle ANY` | Handler branches: no error / any | Macro only | Both branches work in a macro. |
 | <a id="error-text"></a>`$!!error.text` | Text of the caught error | Macro only | The text of the caught error. q var !!error shows PUBLIC_ERROR with TEXT, LINE, COMMAND, CALLSTACK; there is no code member. |

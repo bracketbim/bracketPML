@@ -80,6 +80,6 @@ alpha log END
 | `do !elem values !array` | Loop over array values | Macro only |
 | `do !i indices !array` | Loop over indices | Macro only |
 | `do while ( !flag )` | Loop on a condition — does NOT work | Fails |
-| `handle any … endhandle` | Catch any error | Seen in code |
+| `handle any … endhandle` | Catch any error | Macro only |
 | `handle (41,64)` | Catch a specific error by number | Documented |
 

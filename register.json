@@ -1716,7 +1716,7 @@
    "cmd": "handle any … endhandle",
    "what": "Catch any error",
    "note": "Put it right after the line it guards. The error is caught and the macro goes on.",
-   "st": "ref",
+   "st": "mac",
    "key": "HANDLE"
   },
   {

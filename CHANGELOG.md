@@ -2,6 +2,10 @@
 
 ## 28 Oct 2026
 
+- `handle any … endhandle`: Seen in code → **Macro only**
+
+## 28 Oct 2026
+
 - `right-click → Paste`: Documented → **Verified**
 - `right-click → Paste as Macro`: Documented → **Verified**
 - `PML TRACE ON`: Documented → **Verified**

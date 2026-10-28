@@ -559,7 +559,7 @@ A plain paste gives «Invalid syntax» — use Paste as Macro. A syntax error of
 **Forms**
 
 - `handle any … endhandle` — Macro only · Catch an error
-- `handle any … endhandle` — Seen in code · Catch any error
+- `handle any … endhandle` — Macro only · Catch any error
 - `handle (41,64)` — Documented · Catch a specific error by number
 
 ## `!` — Variables and objects

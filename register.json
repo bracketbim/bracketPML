@@ -47,7 +47,7 @@
    "id": 3,
    "title": "Create — equipment",
    "desc": "Equipment and its geometry: EQUI, SUBE, primitives and negative primitives.",
-   "n": 28
+   "n": 30
   },
   {
    "id": 4,
@@ -59,7 +59,7 @@
    "id": 5,
    "title": "Change",
    "desc": "These write to the database. There is no UNDO command, but rollback exists and is verified: MARKDB |label| before the operation, UNDODB back to it, UNDODB n — n marks back. Its one limit is verified too: SAVEWORK erases the mark, after saving UNDODB answers «No mark to UNDO to». Order of work: mark, change, check, and only then SAVEWORK.",
-   "n": 21
+   "n": 31
   },
   {
    "id": 6,
@@ -775,6 +775,24 @@
    "key": "NEW GPSET"
   },
   {
+   "id": "new-pipe-new-bran",
+   "g": 3,
+   "cmd": "NEW PIPE / NEW BRAN",
+   "what": "A pipe and its branch",
+   "note": "PIPE in a zone, BRAN in the PIPE — no errors.",
+   "st": "ok",
+   "key": "NEW"
+  },
+  {
+   "id": "new-stru-frmw-sbfr-sctn-gensec-pane",
+   "g": 3,
+   "cmd": "NEW STRU / FRMW / SBFR / SCTN / GENSEC / PANE",
+   "what": "Steel: structure, framework, subframework, section, generic section, panel",
+   "note": "STRU in a zone, FRMW in the STRU, SBFR, SCTN, GENSEC and PANE in the FRMW — no errors. GPSET cannot be created in a zone.",
+   "st": "ok",
+   "key": "NEW"
+  },
+  {
    "id": "q-pos",
    "g": 4,
    "cmd": "Q POS",
@@ -1160,6 +1178,96 @@
    "note": "Written, and a copy inherits it.",
    "st": "ok",
    "key": "PURPOSE"
+  },
+  {
+   "id": "move",
+   "g": 5,
+   "cmd": "MOVE …",
+   "what": "Move the current element",
+   "note": "Grammar of the installed build ($Q): a direction E/W/N/S/U/D or X/Y/Z, ALONG, TOWARDS, FROM, points PH/PT/PA/PL. Not run yet.",
+   "st": "doc",
+   "key": "MOVE"
+  },
+  {
+   "id": "copy",
+   "g": 5,
+   "cmd": "COPY …",
+   "what": "Copy an element",
+   "note": "Grammar of the installed build ($Q): LIKE, MEMBERS, ATTRIBUTES, ADJACENT, PREVIOUS / NEXT, FIRST / LAST. Not run yet.",
+   "st": "doc",
+   "key": "COPY"
+  },
+  {
+   "id": "mirror-plane",
+   "g": 5,
+   "cmd": "MIRROR PLANE …",
+   "what": "Mirror",
+   "note": "Grammar of the installed build ($Q): only PLANE after MIRROR. Not run yet.",
+   "st": "doc",
+   "key": "MIRROR"
+  },
+  {
+   "id": "rotate",
+   "g": 5,
+   "cmd": "ROTATE …",
+   "what": "Rotate",
+   "note": "Grammar of the installed build ($Q): ABOUT, THROUGH, BY, AND. Not run yet.",
+   "st": "doc",
+   "key": "ROTATE"
+  },
+  {
+   "id": "align",
+   "g": 5,
+   "cmd": "ALIGN …",
+   "what": "Align",
+   "note": "Grammar of the installed build ($Q): NUMBER, AS, DEFAULT, UNSET, text. Not run yet.",
+   "st": "doc",
+   "key": "ALIGN"
+  },
+  {
+   "id": "connect",
+   "g": 5,
+   "cmd": "CONNECT …",
+   "what": "Connect a head or a tail",
+   "note": "Grammar of the installed build ($Q): START, END, WITH, TO, points PH/PT/PA/PL. Not run yet.",
+   "st": "doc",
+   "key": "CONNECT"
+  },
+  {
+   "id": "disconnect",
+   "g": 5,
+   "cmd": "DISCONNECT …",
+   "what": "Disconnect",
+   "note": "Grammar of the installed build ($Q): START, END, DYNAMIC, FREE, RECALCULATE. Not run yet.",
+   "st": "doc",
+   "key": "DISCONNECT"
+  },
+  {
+   "id": "split",
+   "g": 5,
+   "cmd": "SPLIT …",
+   "what": "Split",
+   "note": "Grammar of the installed build ($Q): PLANE, DISTANCE, CLEARANCE, INFRONT / BEHIND, FROM / TO, THROUGH, UNDER, ONTOP. Not run yet.",
+   "st": "doc",
+   "key": "SPLIT"
+  },
+  {
+   "id": "orientate",
+   "g": 5,
+   "cmd": "ORIENTATE …",
+   "what": "The full word for ORI",
+   "note": "Grammar of the installed build ($Q): directions E/N/U…, TOWARDS, FROM, OPPOSITE, AXES, AXIS, points PH/PT. The short ORI Y IS N AND Z IS U is verified.",
+   "st": "doc",
+   "key": "ORIENTATE"
+  },
+  {
+   "id": "position",
+   "g": 5,
+   "cmd": "POSITION …",
+   "what": "The full word for POS",
+   "note": "Grammar of the installed build ($Q): AT, POLAR, points PH/PT/PA/PL, HEAD / TAIL, FIRST / LAST, OWNER. The short POS E … N … U … is verified.",
+   "st": "doc",
+   "key": "POSITION"
   },
   {
    "id": "add-ce",
@@ -1724,7 +1832,7 @@
    "g": 11,
    "cmd": "handle (41,64)",
    "what": "Catch a specific error by number",
-   "note": "Not met in the corpus.",
+   "note": "Not met in the corpus. Another number is tested — handle (2,109).",
    "st": "doc",
    "key": "HANDLE"
   },

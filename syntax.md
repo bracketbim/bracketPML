@@ -36,6 +36,8 @@ The new element becomes current — except NEW POINTR: CE stays where it was. NE
 - `NEW RPATH` — Verified · Create a route
 - `NEW POINTR` — Verified · Add a route point
 - `NEW NOZZLE` — Verified · Equipment nozzle
+- `NEW PIPE / NEW BRAN` — Verified · A pipe and its branch
+- `NEW STRU / FRMW / SBFR / SCTN / GENSEC / PANE` — Verified · Steel: structure, framework, subframework, section, generic section, panel
 - `NEW DRWG /CWAY-ISO-001` — Documented · Create a drawing
 - `NEW SHEET /SH1` — Documented · Create a sheet
 - `NEW VIEW /V1` — Documented · Create a view

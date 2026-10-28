@@ -1,5 +1,21 @@
 # What is new
 
+## 29 Oct 2026
+
+- New: `NEW PIPE / NEW BRAN` — A pipe and its branch (Verified)
+- New: `NEW STRU / FRMW / SBFR / SCTN / GENSEC / PANE` — Steel: structure, framework, subframework, section, generic section, panel (Verified)
+- New: `MOVE …` — Move the current element (Documented)
+- New: `COPY …` — Copy an element (Documented)
+- New: `MIRROR PLANE …` — Mirror (Documented)
+- New: `ROTATE …` — Rotate (Documented)
+- New: `ALIGN …` — Align (Documented)
+- New: `CONNECT …` — Connect a head or a tail (Documented)
+- New: `DISCONNECT …` — Disconnect (Documented)
+- New: `SPLIT …` — Split (Documented)
+- New: `ORIENTATE …` — The full word for ORI (Documented)
+- New: `POSITION …` — The full word for POS (Documented)
+- `handle (41,64)`: the note was updated
+
 ## 28 Oct 2026
 
 - `handle any … endhandle`: Seen in code → **Macro only**

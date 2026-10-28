@@ -4,10 +4,10 @@ Every PML command we know about, with its status. **Generated** from the source 
 
 | Status | Meaning | Rows |
 |---|---|---|
-| **Verified** | Tested in E3D 2.1, the result was checked. | 140 |
+| **Verified** | Tested in E3D 2.1, the result was checked. | 142 |
 | **Fails** | Tested in E3D 2.1 and gave an error — do not use; the row says what to use instead. | 10 |
 | **Macro only** | Works in a macro file or with Paste as Macro, not line by line. | 16 |
-| **Documented** | In the AVEVA documentation or the $Q grammar; not tested in E3D yet. | 19 |
+| **Documented** | In the AVEVA documentation or the $Q grammar; not tested in E3D yet. | 29 |
 | **Seen in code** | Appears in real PML code; not tested in E3D yet. | 9 |
 
 Updated 28 Oct 2026 · E3D 2.1 · searchable at [bracketbim.com/pml](https://bracketbim.com/pml/)
@@ -114,6 +114,8 @@ Equipment and its geometry: EQUI, SUBE, primitives and negative primitives.
 | <a id="xoff-100"></a>`XOFF 100` | X offset (also XBOT, YBOT, XTOP, YTOP) | Verified | All written and read back. |
 | <a id="dtop-300"></a>`DTOP 300` | Top diameter (also DBOT, YOFF, RINS, ROUT, XTSH, YTSH, XBSH, YBSH) | Verified | All written and read back. |
 | <a id="new-gpset"></a>`NEW GPSET` | A set (collection) of elements | Documented | NEW GPSET $Q prints its grammar; the element itself was not created. |
+| <a id="new-pipe-new-bran"></a>`NEW PIPE / NEW BRAN` | A pipe and its branch | Verified | PIPE in a zone, BRAN in the PIPE — no errors. |
+| <a id="new-stru-frmw-sbfr-sctn-gensec-pane"></a>`NEW STRU / FRMW / SBFR / SCTN / GENSEC / PANE` | Steel: structure, framework, subframework, section, generic section, panel | Verified | STRU in a zone, FRMW in the STRU, SBFR, SCTN, GENSEC and PANE in the FRMW — no errors. GPSET cannot be created in a zone. |
 
 ## Find and look
 
@@ -171,6 +173,16 @@ These write to the database. There is no UNDO command, but rollback exists and i
 | <a id="endmarkdb"></a>`ENDMARKDB` | Close a mark's scope | Documented | In the $Q grammar; not run. |
 | <a id="unlock-all"></a>`UNLOCK ALL` | Unlock | Verified | Q LOCK afterwards — Lock false. |
 | <a id="purpose-pmlc-2"></a>`PURPOSE PMLC` | Mark an element as yours (works on equipment too) | Verified | Written, and a copy inherits it. |
+| <a id="move"></a>`MOVE …` | Move the current element | Documented | Grammar of the installed build ($Q): a direction E/W/N/S/U/D or X/Y/Z, ALONG, TOWARDS, FROM, points PH/PT/PA/PL. Not run yet. |
+| <a id="copy"></a>`COPY …` | Copy an element | Documented | Grammar of the installed build ($Q): LIKE, MEMBERS, ATTRIBUTES, ADJACENT, PREVIOUS / NEXT, FIRST / LAST. Not run yet. |
+| <a id="mirror-plane"></a>`MIRROR PLANE …` | Mirror | Documented | Grammar of the installed build ($Q): only PLANE after MIRROR. Not run yet. |
+| <a id="rotate"></a>`ROTATE …` | Rotate | Documented | Grammar of the installed build ($Q): ABOUT, THROUGH, BY, AND. Not run yet. |
+| <a id="align"></a>`ALIGN …` | Align | Documented | Grammar of the installed build ($Q): NUMBER, AS, DEFAULT, UNSET, text. Not run yet. |
+| <a id="connect"></a>`CONNECT …` | Connect a head or a tail | Documented | Grammar of the installed build ($Q): START, END, WITH, TO, points PH/PT/PA/PL. Not run yet. |
+| <a id="disconnect"></a>`DISCONNECT …` | Disconnect | Documented | Grammar of the installed build ($Q): START, END, DYNAMIC, FREE, RECALCULATE. Not run yet. |
+| <a id="split"></a>`SPLIT …` | Split | Documented | Grammar of the installed build ($Q): PLANE, DISTANCE, CLEARANCE, INFRONT / BEHIND, FROM / TO, THROUGH, UNDER, ONTOP. Not run yet. |
+| <a id="orientate"></a>`ORIENTATE …` | The full word for ORI | Documented | Grammar of the installed build ($Q): directions E/N/U…, TOWARDS, FROM, OPPOSITE, AXES, AXIS, points PH/PT. The short ORI Y IS N AND Z IS U is verified. |
+| <a id="position"></a>`POSITION …` | The full word for POS | Documented | Grammar of the installed build ($Q): AT, POLAR, points PH/PT/PA/PL, HEAD / TAIL, FIRST / LAST, OWNER. The short POS E … N … U … is verified. |
 
 ## Show on screen
 
@@ -273,7 +285,7 @@ E3D 2.1 runs PML2 with full backward compatibility with PML1: one interpreter, b
 | <a id="skip"></a>`skip` | Go to the next iteration | Macro only | A 1…4 loop with skip at 2 printed 1, 3, 4. |
 | <a id="break-if-skip-if"></a>`break if ( … ) / skip if ( … )` | Leave or skip on a condition | Macro only | Both work in a macro; a plain do with break if replaces do while. |
 | <a id="handle-any-endhandle-2"></a>`handle any … endhandle` | Catch any error | Macro only | Put it right after the line it guards. The error is caught and the macro goes on. |
-| <a id="handle-41-64"></a>`handle (41,64)` | Catch a specific error by number | Documented | Not met in the corpus. |
+| <a id="handle-41-64"></a>`handle (41,64)` | Catch a specific error by number | Documented | Not met in the corpus. Another number is tested — handle (2,109). |
 | <a id="elsehandle-none-elsehandle-any"></a>`elsehandle NONE / elsehandle ANY` | Handler branches: no error / any | Macro only | Both branches work in a macro. |
 | <a id="error-text"></a>`$!!error.text` | Text of the caught error | Macro only | The text of the caught error. q var !!error shows PUBLIC_ERROR with TEXT, LINE, COMMAND, CALLSTACK; there is no code member. |
 | <a id="return-error-1-could-not-run"></a>`return error 1 'Could not run'` | Raise your own error | Verified | The error text shows in the window, the macro stops. |

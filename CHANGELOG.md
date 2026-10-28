@@ -1,5 +1,10 @@
 # What is new
 
+## 28 Oct 2026
+
+- `REDODB`: Documented → **Verified**
+- `ADD ALL WITHIN VOL CE 1000 ALL`: Seen in code → **Verified**
+
 ## 27 Oct 2026
 
 - `PML REHASH ALL`: the note was updated

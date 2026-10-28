@@ -47,7 +47,7 @@ Stand on one test element that has a DESC and paste `probe.pmlmac` (a plain past
 
 ## Good to know
 
-- `REDODB`, `CLEARMARK` and `ENDMARKDB` exist in the grammar (`MARKDB $Q` lists them) but we have not run them yet. **Documented**
+- `REDODB`, `CLEARMARK` and `ENDMARKDB` exist in the grammar (`MARKDB $Q` lists them) but we have not run them yet. **Verified**
 - A plain paste stops at the first error, and the lines after it do not run. If that happens after the mark, the lines that did run are under the mark — `UNDODB` is the way back (this exact case has not been run separately yet).
 
 ## Verified

@@ -1,7 +1,7 @@
 {
  "about": "bracketPML register — generated, CC BY 4.0",
  "e3d": "2.1",
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "status": {
   "ok": {
    "name": "Verified",
@@ -1121,8 +1121,8 @@
    "g": 5,
    "cmd": "REDODB",
    "what": "Redo what UNDODB undid",
-   "note": "In the $Q grammar; not run.",
-   "st": "doc",
+   "note": "UNDODB removed a new tray, REDODB brought it back, UNDODB removed it again.",
+   "st": "ok",
    "key": "REDODB"
   },
   {
@@ -1175,8 +1175,8 @@
    "g": 6,
    "cmd": "ADD ALL WITHIN VOL CE 1000 ALL",
    "what": "Add everything within a distance of the element",
-   "note": "",
-   "st": "ref",
+   "note": "The distance works: 0 shows the nearest neighbours, 1000 more, 5000 more still. Without the last ALL — the same by eye.",
+   "st": "ok",
    "key": "ADD"
   },
   {

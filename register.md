@@ -4,13 +4,13 @@ Every PML command we know about, with its status. **Generated** from the source 
 
 | Status | Meaning | Rows |
 |---|---|---|
-| **Verified** | Tested in E3D 2.1, the result was checked. | 131 |
+| **Verified** | Tested in E3D 2.1, the result was checked. | 133 |
 | **Fails** | Tested in E3D 2.1 and gave an error — do not use; the row says what to use instead. | 8 |
 | **Macro only** | Works in a macro file or with Paste as Macro, not line by line. | 6 |
-| **Documented** | In the AVEVA documentation or the $Q grammar; not tested in E3D yet. | 26 |
-| **Seen in code** | Appears in real PML code; not tested in E3D yet. | 23 |
+| **Documented** | In the AVEVA documentation or the $Q grammar; not tested in E3D yet. | 25 |
+| **Seen in code** | Appears in real PML code; not tested in E3D yet. | 22 |
 
-Updated 27 Oct 2026 · E3D 2.1 · searchable at [bracketbim.com/pml](https://bracketbim.com/pml/)
+Updated 28 Oct 2026 · E3D 2.1 · searchable at [bracketbim.com/pml](https://bracketbim.com/pml/)
 
 ## The Commands window — how it runs what you paste
 
@@ -166,7 +166,7 @@ These write to the database. There is no UNDO command, but rollback exists and i
 | <a id="markdb-before-bulk-edit"></a>`MARKDB \|before bulk edit\|` | Set a rollback mark BEFORE the operation | Verified | Both forms ran: MARKDB \|probe\| and MARKDB 'probe'. WITHOUT quotes — CP: Syntax error, as with DESC and CABLAY. PML Console puts a mark as the first line of every code it writes. |
 | <a id="undodb"></a>`UNDODB` | Roll the database back to the last mark | Verified | Restored a broken DESC, undid a rename and the creation of an element; UNDODB n goes back n MARKS (not n edits). After SAVEWORK there is no mark any more — No mark to UNDO to. |
 | <a id="incl-12345678-6393"></a>`INCL =12345678/6393` | Same as INCLUDE | Verified | Abbreviation. |
-| <a id="redodb"></a>`REDODB` | Redo what UNDODB undid | Documented | In the $Q grammar; not run. |
+| <a id="redodb"></a>`REDODB` | Redo what UNDODB undid | Verified | UNDODB removed a new tray, REDODB brought it back, UNDODB removed it again. |
 | <a id="clearmark"></a>`CLEARMARK` | Clear rollback marks | Documented | In the $Q grammar; not run. |
 | <a id="endmarkdb"></a>`ENDMARKDB` | Close a mark's scope | Documented | In the $Q grammar; not run. |
 | <a id="unlock-all"></a>`UNLOCK ALL` | Unlock | Verified | Q LOCK afterwards — Lock false. |
@@ -179,7 +179,7 @@ Working with the view. The model does not change.
 | Command | What it does | Status | Note |
 |---|---|---|---|
 | <a id="add-ce"></a>`ADD CE` | Add the current element to the view | Verified | Tested in E3D 2.1. ADD /NAME and REMOVE /NAME too: the element appeared in the view and went away. |
-| <a id="add-all-within-vol-ce-1000-all"></a>`ADD ALL WITHIN VOL CE 1000 ALL` | Add everything within a distance of the element | Seen in code |  |
+| <a id="add-all-within-vol-ce-1000-all"></a>`ADD ALL WITHIN VOL CE 1000 ALL` | Add everything within a distance of the element | Verified | The distance works: 0 shows the nearest neighbours, 1000 more, 5000 more still. Without the last ALL — the same by eye. |
 | <a id="rem-all"></a>`REM ALL` | Clear the view | Seen in code |  |
 | <a id="mark-ce-mem"></a>`MARK CE MEM` | Label the members of the current element | Verified | This is how route points get labels. |
 | <a id="unmark-all"></a>`UNMARK ALL` | Remove labels | Verified | Tested in E3D 2.1. |

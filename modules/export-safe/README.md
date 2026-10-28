@@ -75,10 +75,10 @@ alpha log END
 | `VAR !!x OWNER` | An element's owner into a variable — then $!!x goes to it | Verified |
 | `VAR !x COLLECT ALL CWBRAN WITH (UNSET(DESC)) FOR /PMLC` | Collect with a condition on an attribute | Verified |
 | `VAR !s COLLECT ALL SITE FOR WORLD` | Collect across the whole database | Verified |
-| `do !i from 1 to 10` | Counting loop | Seen in code |
+| `do !i from 1 to 10` | Counting loop | Macro only |
 | `do !i from 1 to 10 by 2` | Loop with a step | Verified |
-| `do !elem values !array` | Loop over array values | Seen in code |
-| `do !i indices !array` | Loop over indices | Seen in code |
+| `do !elem values !array` | Loop over array values | Macro only |
+| `do !i indices !array` | Loop over indices | Macro only |
 | `do while ( !flag )` | Loop on a condition — does NOT work | Fails |
 | `handle any … endhandle` | Catch any error | Seen in code |
 | `handle (41,64)` | Catch a specific error by number | Documented |

@@ -516,17 +516,18 @@ GOTO /NAME is a syntax error: to go by name, type the name itself.
 | `!i from a to b` | A counter: tested in E3D 2.1 with from 1 to 3. |
 | `!i from a to b by s` | With a step: from 1 to 5 by 2 gives 1, 3, 5. |
 | `!e values !list` | Over a list, including a COLLECT result; $!e goes to each element. |
+| `!i indices !list` | The positions of a list: over two elements gives 1, 2. |
 | `(nothing) … enddo` | A loop without a condition; leave it with break if ( … ). This is the way instead of do while. |
 
-A plain paste gives «Invalid syntax» — use Paste as Macro. Inside: skip if ( … ) goes to the next turn, break if ( … ) leaves the loop. do while is a syntax error in E3D 2.1 and stops the macro. indices is not tested yet.
+A plain paste gives «Invalid syntax» — use Paste as Macro. Inside: skip if ( … ) goes to the next turn, break if ( … ) leaves the loop. do while is a syntax error in E3D 2.1 and stops the macro. Plain break and skip work too.
 
 **Forms**
 
 - `do … enddo` — Macro only · Loop
-- `do !i from 1 to 10` — Seen in code · Counting loop
+- `do !i from 1 to 10` — Macro only · Counting loop
 - `do !i from 1 to 10 by 2` — Verified · Loop with a step
-- `do !elem values !array` — Seen in code · Loop over array values
-- `do !i indices !array` — Seen in code · Loop over indices
+- `do !elem values !array` — Macro only · Loop over array values
+- `do !i indices !array` — Macro only · Loop over indices
 - `do while ( !flag )` — Fails · Loop on a condition — does NOT work
 
 ## `IF` — Condition (macro only)
@@ -541,8 +542,8 @@ A plain paste gives «Invalid syntax» — use Paste as Macro. Compare with word
 **Forms**
 
 - `if … then … endif` — Macro only · Condition
-- `if ( !x gt 5 ) then … elseif … else … endif` — Seen in code · Condition, PML1 form
-- `if ( !x > 5 and !n.Matchwild('PIPE*') ) then` — Seen in code · Condition, PML2 form
+- `if ( !x gt 5 ) then … elseif … else … endif` — Macro only · Condition, PML1 form
+- `if ( !x > 5 and !n.Matchwild('PIPE*') ) then` — Fails · Condition, PML2 form
 
 ## `HANDLE` — Catch an error (macro only)
 

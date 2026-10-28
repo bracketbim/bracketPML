@@ -4,11 +4,11 @@ Every PML command we know about, with its status. **Generated** from the source 
 
 | Status | Meaning | Rows |
 |---|---|---|
-| **Verified** | Tested in E3D 2.1, the result was checked. | 133 |
-| **Fails** | Tested in E3D 2.1 and gave an error — do not use; the row says what to use instead. | 8 |
-| **Macro only** | Works in a macro file or with Paste as Macro, not line by line. | 6 |
-| **Documented** | In the AVEVA documentation or the $Q grammar; not tested in E3D yet. | 25 |
-| **Seen in code** | Appears in real PML code; not tested in E3D yet. | 22 |
+| **Verified** | Tested in E3D 2.1, the result was checked. | 140 |
+| **Fails** | Tested in E3D 2.1 and gave an error — do not use; the row says what to use instead. | 10 |
+| **Macro only** | Works in a macro file or with Paste as Macro, not line by line. | 15 |
+| **Documented** | In the AVEVA documentation or the $Q grammar; not tested in E3D yet. | 19 |
+| **Seen in code** | Appears in real PML code; not tested in E3D yet. | 10 |
 
 Updated 28 Oct 2026 · E3D 2.1 · searchable at [bracketbim.com/pml](https://bracketbim.com/pml/)
 
@@ -18,8 +18,8 @@ Common Functionality User Guide 2.1, Command Window. The window opens from Home 
 
 | Command | What it does | Status | Note |
 |---|---|---|---|
-| <a id="right-click-paste"></a>`right-click → Paste` | Plain paste | Documented | Word for word: «executes each line of the copied text as a separate command as if they had been typed». That is why an if line fails with «Invalid syntax» — it runs alone. And on the first error the remaining lines of the paste do NOT run — the tail has to be entered again. |
-| <a id="right-click-paste-as-macro"></a>`right-click → Paste as Macro` | Paste as a macro | Documented | Word for word: «first creates a temporary file containing the copied macro commands and executes this as a macro». This is how if, do and handle work — and it is faster for many commands. |
+| <a id="right-click-paste"></a>`right-click → Paste` | Plain paste | Verified | Word for word: «executes each line of the copied text as a separate command as if they had been typed». Each line runs as a separate command, so if/do/handle fail (Invalid syntax). The first error stops the rest of the paste — put probes that expect an error in a macro. |
+| <a id="right-click-paste-as-macro"></a>`right-click → Paste as Macro` | Paste as a macro | Verified | Word for word: «first creates a temporary file containing the copied macro commands and executes this as a macro». The pasted text runs as a temporary macro: if, do and handle work. |
 | <a id="drag-a-mac-file-from-explorer"></a>`drag a .mac file from Explorer` | Run a macro file | Documented | «Macro files can also be dragged into the command window». |
 | <a id="m-c-temp-file-pmlmac"></a>`$M C:\Temp\file.pmlmac` | The same, as a command | Verified | Arguments $1…$9 work. |
 | <a id="alpha-log-c-temp-log-txt-overwrite"></a>`alpha log /C:\Temp\log.txt OVERWRITE` | Write everything the window prints to a file | Verified | Long Q MEM and Q ATT outputs land in full, without the window's truncation. The file is UTF-8 with BOM. Stop with alpha log END. |
@@ -29,7 +29,7 @@ Common Functionality User Guide 2.1, Command Window. The window opens from Home 
 | <a id="q-evar-pmllib"></a>`Q EVAR \|PMLLIB\|` | See the PML library path from inside E3D | Verified | Printed about ten paths. This is an E3D variable, not a Windows one — echo %PMLLIB% in cmd does not see it. But those folders are not writable for a normal user: your own functions and forms through PMLLIB are out of reach. |
 | <a id="pml-rehash-all"></a>`PML REHASH ALL` | Re-read the library after editing a .pmlfnc | Verified | Ran inside a macro with no error. |
 | <a id="pml-index"></a>`PML INDEX` | Library index | Documented |  |
-| <a id="pml-trace-on"></a>`PML TRACE ON` | Trace PML execution | Documented |  |
+| <a id="pml-trace-on"></a>`PML TRACE ON` | Trace PML execution | Verified | PML TRACE ON and OFF ran without an error. |
 
 ## Where to stand — navigation
 
@@ -180,13 +180,13 @@ Working with the view. The model does not change.
 |---|---|---|---|
 | <a id="add-ce"></a>`ADD CE` | Add the current element to the view | Verified | Tested in E3D 2.1. ADD /NAME and REMOVE /NAME too: the element appeared in the view and went away. |
 | <a id="add-all-within-vol-ce-1000-all"></a>`ADD ALL WITHIN VOL CE 1000 ALL` | Add everything within a distance of the element | Verified | The distance works: 0 shows the nearest neighbours, 1000 more, 5000 more still. Without the last ALL — the same by eye. |
-| <a id="rem-all"></a>`REM ALL` | Clear the view | Seen in code |  |
+| <a id="rem-all"></a>`REM ALL` | Clear the view | Verified | The view became empty. |
 | <a id="mark-ce-mem"></a>`MARK CE MEM` | Label the members of the current element | Verified | This is how route points get labels. |
 | <a id="unmark-all"></a>`UNMARK ALL` | Remove labels | Verified | Tested in E3D 2.1. |
 | <a id="col-ce-green"></a>`COL CE GREEN` | Change colour | Verified | No error; the colour on screen was not checked. |
 | <a id="axes-at-ce"></a>`AXES AT CE` | Show axes at the element | Verified | The axes stay in the view even after the rollback — remove them with AXES OFF (not checked). |
 | <a id="alp-req-clear"></a>`ALP REQ CLEAR` | Clear the command window | Verified | Tested in E3D 2.1. |
-| <a id="axes-on"></a>`AXES ON` | Axes on screen (AXES OFF — remove) | Seen in code |  |
+| <a id="axes-on"></a>`AXES ON` | Axes on screen (AXES OFF — remove) | Verified | AXES AT CE, OFF, ON, OFF ran without errors; nothing stayed in the view. |
 | <a id="choo-all"></a>`CHOO ALL` | Choose all | Seen in code |  |
 | <a id="dir-n-45-e"></a>`DIR N 45 E` | View direction | Seen in code |  |
 | <a id="thro-ce"></a>`THRO CE` | View through the element | Seen in code |  |
@@ -253,7 +253,7 @@ Works right in the Command Line. Anything beyond substitution lives in a macro f
 | <a id="var-s-collect-all-site-for-world"></a>`VAR !s COLLECT ALL SITE FOR WORLD` | Collect across the whole database | Verified |  |
 | <a id="nm-name"></a>`!nm = NAME` | An attribute of the current element into a variable (in a macro) | Verified | !x = REF — the reference. If !x already holds a string and the attribute is a number — incompatible types. |
 | <a id="a-object-array"></a>`!!a = object ARRAY()` | An array; .Append() adds | Verified |  |
-| <a id="h"></a>`$H` | Help | Documented |  |
+| <a id="h"></a>`$H` | Help | Fails | $H $Q gives (47,51) CP: Illegal ESC-H command. For syntax help put $Q after a command. |
 
 ## The PML language — works in a macro file, not in the Command Line
 
@@ -261,24 +261,24 @@ E3D 2.1 runs PML2 with full backward compatibility with PML1: one interpreter, b
 
 | Command | What it does | Status | Note |
 |---|---|---|---|
-| <a id="comment"></a>`$* comment` | A comment in a macro | Seen in code | On a par with --; appears 103 times in the code corpus. |
-| <a id="if-x-gt-5-then-elseif-else-endif"></a>`if ( !x gt 5 ) then … elseif … else … endif` | Condition, PML1 form | Seen in code | PML1: comparisons only in words eq ne gt lt ge le, variables !name, substitution $!name. |
-| <a id="if-x-5-and-n-matchwild-pipe-then"></a>`if ( !x > 5 and !n.Matchwild('PIPE*') ) then` | Condition, PML2 form | Seen in code | PML2 added == != > < and the logical AND OR NOT. Matchwild appears 37 times in the corpus. |
-| <a id="do-i-from-1-to-10"></a>`do !i from 1 to 10` | Counting loop | Seen in code | 88 times in the corpus. |
+| <a id="comment"></a>`$* comment` | A comment in a macro | Verified | $* and -- are both comments; Cyrillic text after $* is fine in a macro. |
+| <a id="if-x-gt-5-then-elseif-else-endif"></a>`if ( !x gt 5 ) then … elseif … else … endif` | Condition, PML1 form | Macro only | In a macro if … elseif … else chose the middle branch. Compare with words: GT LT EQ. |
+| <a id="if-x-5-and-n-matchwild-pipe-then"></a>`if ( !x > 5 and !n.Matchwild('PIPE*') ) then` | Condition, PML2 form | Fails | The > sign in a condition gives Meaningless symbol(s) and stops the macro. Use the words GT, LT, EQ. |
+| <a id="do-i-from-1-to-10"></a>`do !i from 1 to 10` | Counting loop | Macro only | In a macro do !i from 1 to 3 printed 1, 2, 3. |
 | <a id="do-i-from-1-to-10-by-2"></a>`do !i from 1 to 10 by 2` | Loop with a step | Verified | In a macro: do !i from 1 to 5 by 2 printed 1, 3, 5. |
-| <a id="do-elem-values-array"></a>`do !elem values !array` | Loop over array values | Seen in code | The most common form, 117 times. |
-| <a id="do-i-indices-array"></a>`do !i indices !array` | Loop over indices | Seen in code | 5 times in the corpus. |
+| <a id="do-elem-values-array"></a>`do !elem values !array` | Loop over array values | Macro only | In a macro, over an array a, b it printed a, b. |
+| <a id="do-i-indices-array"></a>`do !i indices !array` | Loop over indices | Macro only | In a macro, over an array of two it gave the indices 1, 2. |
 | <a id="do-while-flag"></a>`do while ( !flag )` | Loop on a condition — does NOT work | Fails | In a macro: CP: Syntax error, pointing at while; the macro stops (handle does not catch it). Instead — do !i from 1 to N with break if ( … ); break if is not checked yet — not tested yet. |
-| <a id="break"></a>`break` | Leave the loop | Seen in code |  |
-| <a id="skip"></a>`skip` | Go to the next iteration | Seen in code |  |
-| <a id="break-if-skip-if"></a>`break if ( … ) / skip if ( … )` | Leave or skip on a condition | Documented | skip if met once, break if — never. |
-| <a id="handle-any-endhandle-2"></a>`handle any … endhandle` | Catch any error | Seen in code | 193 times in the corpus. It goes RIGHT AFTER the guarded line, not before it. |
+| <a id="break"></a>`break` | Leave the loop | Macro only | A 1…5 loop with break at 3 printed 1, 2. |
+| <a id="skip"></a>`skip` | Go to the next iteration | Macro only | A 1…4 loop with skip at 2 printed 1, 3, 4. |
+| <a id="break-if-skip-if"></a>`break if ( … ) / skip if ( … )` | Leave or skip on a condition | Macro only | Both work in a macro; a plain do with break if replaces do while. |
+| <a id="handle-any-endhandle-2"></a>`handle any … endhandle` | Catch any error | Seen in code | Put it right after the line it guards. The error is caught and the macro goes on. |
 | <a id="handle-41-64"></a>`handle (41,64)` | Catch a specific error by number | Documented | Not met in the corpus. |
-| <a id="elsehandle-none-elsehandle-any"></a>`elsehandle NONE / elsehandle ANY` | Handler branches: no error / any | Seen in code | 47 times in the corpus. |
-| <a id="error-text"></a>`$!!error.text` | Text of the caught error | Seen in code | In the corpus. The code and line fields — by the documentation. |
+| <a id="elsehandle-none-elsehandle-any"></a>`elsehandle NONE / elsehandle ANY` | Handler branches: no error / any | Macro only | Both branches work in a macro. |
+| <a id="error-text"></a>`$!!error.text` | Text of the caught error | Macro only | The text of the caught error. q var !!error shows PUBLIC_ERROR with TEXT, LINE, COMMAND, CALLSTACK; there is no code member. |
 | <a id="return-error-1-could-not-run"></a>`return error 1 'Could not run'` | Raise your own error | Verified | The error text shows in the window, the macro stops. |
 | <a id="m-c-temp-t-mac-arg1-arg2-2"></a>`$M C:\Temp\t.mac arg1 arg2` | Run a macro from the Command Line | Verified | The only bridge between the command line and the language: the call itself works. |
-| <a id="define-function-name"></a>`define function !!name` | A function in name.pmlfnc | Documented | The file must sit in a PMLLIB folder, and those are not writable for a normal user — the way is closed. |
+| <a id="define-function-name"></a>`define function !!name` | A function in name.pmlfnc | Verified | Works from your own PMLLIB folder placed first in the list: after pml rehash the function from .pmlfnc ran. |
 | <a id="setup-form-name-exit"></a>`setup form !!name … exit` | A form with fields and buttons straight from a macro | Verified | Via Paste as Macro the form appeared without PMLLIB, buttons work — a field, !!CE.Name, q var, $M file.mac. define method after exit — Method not found: keep the logic in .mac files. |
 | <a id="endif"></a>`endif` | End of if (macro only) | Macro only | Plain paste — Invalid syntax; through Paste as Macro — works. |
 | <a id="enddo"></a>`enddo` | End of do (macro only) | Macro only | The same. |

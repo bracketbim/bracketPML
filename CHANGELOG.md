@@ -2,6 +2,28 @@
 
 ## 28 Oct 2026
 
+- `right-click → Paste`: Documented → **Verified**
+- `right-click → Paste as Macro`: Documented → **Verified**
+- `PML TRACE ON`: Documented → **Verified**
+- `REM ALL`: Seen in code → **Verified**
+- `AXES ON`: Seen in code → **Verified**
+- `$H`: Documented → **Fails**
+- `$* comment`: Seen in code → **Verified**
+- `if ( !x gt 5 ) then … elseif … else … endif`: Seen in code → **Macro only**
+- `if ( !x > 5 and !n.Matchwild('PIPE*') ) then`: Seen in code → **Fails**
+- `do !i from 1 to 10`: Seen in code → **Macro only**
+- `do !elem values !array`: Seen in code → **Macro only**
+- `do !i indices !array`: Seen in code → **Macro only**
+- `break`: Seen in code → **Macro only**
+- `skip`: Seen in code → **Macro only**
+- `break if ( … ) / skip if ( … )`: Documented → **Macro only**
+- `handle any … endhandle`: the note was updated
+- `elsehandle NONE / elsehandle ANY`: Seen in code → **Macro only**
+- `$!!error.text`: Seen in code → **Macro only**
+- `define function !!name`: Documented → **Verified**
+
+## 28 Oct 2026
+
 - `REDODB`: Documented → **Verified**
 - `ADD ALL WITHIN VOL CE 1000 ALL`: Seen in code → **Verified**
 

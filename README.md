@@ -20,7 +20,7 @@ Every command here is tested in AVEVA E3D 2.1. Nothing is written from memory.</
 
 There is almost no public material on PML — and next to none on cable trays and cable supports. What exists is mostly «this should work». bracketPML is the opposite: a register of PML commands for AVEVA E3D 2.1, each one **tested in a real E3D 2.1 model**, with the exact answer E3D printed, and the traps found on the way.
 
-**194 commands** in the register: **133 verified**, 8 documented failures, 6 macro-only, 25 from documentation and 22 from real code still waiting to be tested in E3D 2.1. Updated 28 Oct 2026.
+**194 commands** in the register: **140 verified**, 10 documented failures, 15 macro-only, 19 from documentation and 10 from real code still waiting to be tested in E3D 2.1. Updated 28 Oct 2026.
 
 ## How to read a status
 

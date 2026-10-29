@@ -2,6 +2,7 @@
  "sections": [
   {
    "en": "Cable trays",
+   "ru": "Кабельные трассы",
    "codes": [
     "CWAY",
     "CWBRAN",
@@ -15,6 +16,7 @@
   },
   {
    "en": "Equipment",
+   "ru": "Оборудование",
    "codes": [
     "EQUIPMENT",
     "SUBEQUIPMENT",
@@ -23,6 +25,7 @@
   },
   {
    "en": "Primitives",
+   "ru": "Примитивы",
    "codes": [
     "BOX",
     "CYLINDER",
@@ -40,6 +43,7 @@
   },
   {
    "en": "Holes (negative primitives)",
+   "ru": "Вырезы (отрицательные примитивы)",
    "codes": [
     "NBOX",
     "NCYLINDER",
@@ -54,6 +58,7 @@
   },
   {
    "en": "Pipes and steel",
+   "ru": "Трубы и металл",
    "codes": [
     "PIPE",
     "STRUCTURE",
@@ -66,6 +71,7 @@
   },
   {
    "en": "Where everything lives",
+   "ru": "Где всё лежит",
    "codes": [
     "ZONE",
     "SITE"
@@ -76,7 +82,9 @@
   {
    "code": "CWAY",
    "en": "Cable way",
+   "ru": "Кабельная трасса",
    "n_en": "The container of a cable tray route. It holds branches (CWBRAN); the geometry lives in them, not here.",
+   "n_ru": "Контейнер кабельной трассы. Содержит ветки (CWBRAN); геометрия — в них, а не здесь.",
    "page": "DMRM5.09.129",
    "owners": [
     "CONVEYOR",
@@ -89,82 +97,102 @@
     {
      "n": "Cablayout",
      "en": "Cable arrangement setting; the value is text in |bars|",
+     "ru": "Раскладка кабелей (текст, в чертах)",
      "st": "ok",
      "key": "CABLAYOUT",
      "acc": "text",
-     "note_en": "A text attribute: CABLAY |CEN| — without bars it is a syntax error."
+     "note_en": "A text attribute: CABLAY |CEN| — without bars it is a syntax error.",
+     "note_ru": "Текстовый атрибут: CABLAY |CEN| — без черт синтаксическая ошибка."
     },
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "MaxCab",
      "en": "Upper limit of cables",
+     "ru": "Максимум кабелей",
      "st": "ok",
      "key": "MAXCAB",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "MaxLay",
      "en": "Upper limit of cable layers",
+     "ru": "Максимум слоёв",
      "st": "ok",
      "key": "MAXLAY",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": "A code word, up to 4 characters by DMRM."
+     "note_en": "A code word, up to 4 characters by DMRM.",
+     "note_ru": "Кодовое слово, по DMRM до 4 знаков."
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Underground",
      "en": "Flag: the route runs below ground",
+     "ru": "Подземный",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uuidia",
      "en": "Globally unique ID of the element",
+     "ru": "Уникальный идентификатор",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [
@@ -177,7 +205,9 @@
   {
    "code": "CWBRAN",
    "en": "Cable way branch",
+   "ru": "Ветка кабельной трассы",
    "n_en": "One run of tray. Head and tail have no coordinates of their own: the first and last points of its RPATH set them. HPOS / TPOS on a CWBRAN give an error — tested in E3D 2.1.",
+   "n_ru": "Один участок лотка. Своих координат у головы и хвоста нет: их задают первая и последняя точки RPATH. HPOS / TPOS на CWBRAN дают ошибку — проверено в E3D 2.1.",
    "page": "DMRM5.09.130",
    "owners": [
     "CWAY"
@@ -195,258 +225,322 @@
     {
      "n": "Bangle",
      "en": "Turn of the section about the branch axis (beta)",
+     "ru": "Угол бета",
      "st": "ok",
      "key": "BANGLE",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "BRadius",
      "en": "Radius of the bends along the branch",
+     "ru": "Радиус гиба",
      "st": "ok",
      "key": "BRADIUS",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Cablayout",
      "en": "Cable arrangement setting; the value is text in |bars|",
+     "ru": "Раскладка кабелей (текст, в чертах)",
      "st": "ok",
      "key": "CABLAYOUT",
      "acc": "text",
-     "note_en": "A text attribute: CABLAY |CEN| — without bars it is a syntax error."
+     "note_en": "A text attribute: CABLAY |CEN| — without bars it is a syntax error.",
+     "note_ru": "Текстовый атрибут: CABLAY |CEN| — без черт синтаксическая ошибка."
     },
     {
      "n": "CWJusLine",
      "en": "Which line of the tray section the route follows",
+     "ru": "Линия привязки ветки",
      "st": "ok",
      "key": "CWJUSLINE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Desparam",
      "en": "A list of numeric design values",
+     "ru": "Параметры проектирования",
      "st": "ok",
      "key": "DESPARAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "HCRef",
      "en": "What the start of the branch is connected to",
+     "ru": "Ссылка на голову",
      "st": "ok",
      "key": "HCREF",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "MatType",
      "en": "Kind of tray material",
+     "ru": "Тип материала лотка",
      "st": "ok",
      "key": "MATTYPE",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "MaxCab",
      "en": "Upper limit of cables",
+     "ru": "Максимум кабелей",
      "st": "ok",
      "key": "MAXCAB",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "MaxLay",
      "en": "Upper limit of cable layers",
+     "ru": "Максимум слоёв",
      "st": "ok",
      "key": "MAXLAY",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "VHeight",
      "en": "Height of the tray section",
+     "ru": "Высота лотка",
      "st": "ok",
      "key": "VHEIGHT",
      "acc": "number",
-     "note_en": "Written like VWidth."
+     "note_en": "Written like VWidth.",
+     "note_ru": "Пишется как VWidth."
     },
     {
      "n": "VWidth",
      "en": "Width of the tray section",
+     "ru": "Ширина лотка",
      "st": "ok",
      "key": "VWIDTH",
      "acc": "number",
-     "note_en": "Units are allowed: VWIDTH 700mm. A number in bars is a syntax error."
+     "note_en": "Units are allowed: VWIDTH 700mm. A number in bars is a syntax error.",
+     "note_ru": "Единицы допустимы: VWIDTH 700mm. Число в чертах — синтаксическая ошибка."
     },
     {
      "n": "Area",
      "en": "The area number the element belongs to",
+     "ru": "Зона/участок",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "CExs",
      "en": "Extra allowance, in percent, for cables passing through",
+     "ru": "Запас в процентах на проходящие кабели",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "CloseFlag",
      "en": "Flag: the branch forms a closed loop",
+     "ru": "Закрытый лоток",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Extvolume",
      "en": "Space taken by the tray material",
+     "ru": "Внешний объём",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "IClass",
      "en": "The class used when checking clashes",
+     "ru": "Класс изоляции",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "MaxFil",
      "en": "The highest allowed fill, in percent",
+     "ru": "Предельное заполнение",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Number",
      "en": "A numeric label of the element",
+     "ru": "Номер",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Resvolume",
      "en": "Space kept free around the tray",
+     "ru": "Резервируемый объём",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Rllogical",
      "en": "Logical values used by rules",
+     "ru": "Логические значения для правил",
      "st": "seen",
      "key": "",
      "acc": "expr",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "TCRef",
      "en": "What the end of the branch is connected to",
+     "ru": "Ссылка на хвост",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Underground",
      "en": "Flag: the route runs below ground",
+     "ru": "Подземный",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "VShape",
      "en": "Shape of the tray section",
+     "ru": "Форма сечения",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uuidia",
      "en": "Globally unique ID of the element",
+     "ru": "Уникальный идентификатор",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [
@@ -462,7 +556,9 @@
   {
    "code": "HATTA",
    "en": "Head attachment point",
+   "ru": "Точка привязки головы",
    "n_en": "No coordinates of its own — only name, description and function. Tested in E3D 2.1.",
+   "n_ru": "Своих координат нет — только имя, описание и назначение. Проверено в E3D 2.1.",
    "page": "DMRM5.09.135",
    "owners": [
     "CABLE",
@@ -477,26 +573,32 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -505,7 +607,9 @@
   {
    "code": "TATTA",
    "en": "Tail attachment point",
+   "ru": "Точка привязки хвоста",
    "n_en": "No coordinates of its own — only name, description and function. Tested in E3D 2.1.",
+   "n_ru": "Своих координат нет — только имя, описание и назначение. Проверено в E3D 2.1.",
    "page": "DMRM5.09.146",
    "owners": [
     "CABLE",
@@ -520,26 +624,32 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -548,7 +658,9 @@
   {
    "code": "RPATH",
    "en": "Route path",
+   "ru": "Маршрут ветки",
    "n_en": "NEW RPATH does not create the first point: Q MEM right after it is unset. Points are added one by one with NEW POINTR — tested in E3D 2.1.",
+   "n_ru": "NEW RPATH не создаёт первую точку: Q MEM сразу после него — unset. Точки добавляются по одной через NEW POINTR — проверено в E3D 2.1.08.",
    "page": "DMRM5.09.143",
    "owners": [
     "BPANEL",
@@ -575,34 +687,42 @@
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Drnend",
      "en": "Direction of the cut plane at the end of the section",
+     "ru": "Нормаль плоскости реза в конце сечения",
      "st": "seen",
      "key": "",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Drnstart",
      "en": "Direction of the cut plane at the start of the section",
+     "ru": "Нормаль плоскости реза в начале сечения",
      "st": "seen",
      "key": "",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ydirection",
      "en": "Which way the Y axis of the section should point",
+     "ru": "Желаемое направление оси Y сечения",
      "st": "seen",
      "key": "",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -611,7 +731,9 @@
   {
    "code": "POINTR",
    "en": "Point on a path",
+   "ru": "Точка маршрута",
    "n_en": "A point of the route. Its POS is measured from the owner, like any POS without WRT.",
+   "n_ru": "Точка маршрута. Её POS отсчитывается от владельца, как любой POS без WRT.",
    "page": "DMRM5.09.138",
    "owners": [
     "RPATH"
@@ -621,58 +743,72 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Fradius",
      "en": "Fillet radius at this point, measured on the tray axis",
+     "ru": "Радиус скругления в точке",
      "st": "ok",
      "key": "FRADIUS",
      "acc": "number",
-     "note_en": "Measured on the tray AXIS, not on its edge; Q FRADIUS prints a number."
+     "note_en": "Measured on the tray AXIS, not on its edge; Q FRADIUS prints a number.",
+     "note_ru": "Меряется по ОСИ лотка, а не по кромке; Q FRADIUS печатает число."
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "SIGREF",
      "en": "Link to a significant point",
+     "ru": "Ссылка на характерную точку",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "PointType",
      "en": "Kind of route point",
+     "ru": "Вид точки маршрута",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -681,7 +817,9 @@
   {
    "code": "CONSEQ",
    "en": "Connectivity sequence",
+   "ru": "Последовательность связей",
    "n_en": "A branch made by the standard tool has one; a branch created by hand does not get one. What it is needed for — not found out yet.",
+   "n_ru": "У ветки от штатного инструмента есть, у созданной вручную не появляется. Зачем он нужен — пока не выяснено.",
    "page": "DMRM5.09.119",
    "owners": [
     "CWBRAN",
@@ -694,26 +832,32 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -722,7 +866,9 @@
   {
    "code": "CTMTRL",
    "en": "Cable tray material",
+   "ru": "Материал лотка",
    "n_en": "",
+   "n_ru": "",
    "page": "DMRM5.09.792",
    "owners": [
     "CWBRAN"
@@ -740,98 +886,122 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Desparam",
      "en": "A list of numeric design values",
+     "ru": "Параметры проектирования",
      "st": "ok",
      "key": "DESPARAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "CTSPE",
      "en": "Link to the cable tray specification",
+     "ru": "Ссылка на спецификацию лотка",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "FGap",
      "en": "Gap: the first one",
+     "ru": "Зазор: первый",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "IGap",
      "en": "Gap: the ones in between",
+     "ru": "Зазор: промежуточные",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "LGap",
      "en": "Gap: the last one",
+     "ru": "Зазор: последний",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "TierHeight",
      "en": "Height of each tray tier above the route",
+     "ru": "Высота каждого яруса лотков над маршрутом",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "TrayH",
      "en": "How high the trays are",
+     "ru": "Высота лотков",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "TrayW",
      "en": "How wide the trays are",
+     "ru": "Ширина лотков",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -840,7 +1010,9 @@
   {
    "code": "EQUIPMENT",
    "en": "Equipment",
+   "ru": "Оборудование",
    "n_en": "Can own NOZZLEs besides the usual primitives — that is what sets it apart from other carriers of geometry.",
+   "n_ru": "Может владеть NOZZLE помимо обычных примитивов — этим и отличается от прочих носителей геометрии.",
    "page": "DMRM5.09.184",
    "owners": [
     "CONVEYOR",
@@ -881,250 +1053,312 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": "EQUI and SUBE have it, BOX does not; 250 characters — «Too many values»."
+     "note_en": "EQUI and SUBE have it, BOX does not; 250 characters — «Too many values».",
+     "note_ru": "У EQUI и SUBE есть, у BOX нет; 250 знаков — «Too many values»."
     },
     {
      "n": "Desparam",
      "en": "A list of numeric design values",
+     "ru": "Параметры проектирования",
      "st": "ok",
      "key": "DESPARAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": "ORI on an EQUI turns it together with its children; with an angle: ORI Y IS N AND Z IS E 45 U."
+     "note_en": "ORI on an EQUI turns it together with its children; with an angle: ORI Y IS N AND Z IS E 45 U.",
+     "note_ru": "ORI на EQUI поворачивает вместе с детьми; с углом — ORI Y IS N AND Z IS E 45 U."
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": "Written and inherited by a copy made in E3D — tested in E3D 2.1."
+     "note_en": "Written and inherited by a copy made in E3D — tested in E3D 2.1.",
+     "note_ru": "Записывается и наследуется копией, сделанной в E3D, — проверено в E3D 2.1."
     },
     {
      "n": "Spref",
      "en": "Link to the component specification",
+     "ru": "Ссылка на спецификацию компонента",
      "st": "ok",
      "key": "SPREF",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Area",
      "en": "The area number the element belongs to",
+     "ru": "Зона/участок",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Built",
      "en": "Flag: built or not yet built",
+     "ru": "Признак «построено»",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Dscode",
      "en": "Code of the design standard",
+     "ru": "Код проектирования",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Fstatus",
      "en": "Not explained in the manual",
+     "ru": "В справочнике не расшифрован",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Inprtref",
      "en": "Paint on the inside (link)",
+     "ru": "Окраска внутри (ссылка)",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Inschedule",
      "en": "Schedule of inspections",
+     "ru": "График обследования",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ispec",
      "en": "Link to the insulation specification",
+     "ru": "Спецификация изоляции",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Mdsysf",
      "en": "Links to model and design elements",
+     "ru": "Ссылки на модели и элементы",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Number",
      "en": "A numeric label of the element",
+     "ru": "Номер",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ouprtref",
      "en": "Paint on the outside (link)",
+     "ru": "Окраска снаружи (ссылка)",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Propst",
      "en": "Links to property sets",
+     "ru": "Набор свойств",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ptspec",
      "en": "Link to the paint specification",
+     "ru": "Спецификация окраски",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Skey",
      "en": "Key of the drawing symbol",
+     "ru": "Ключ символа",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "StlRef",
      "en": "Link to a steel element",
+     "ru": "Ссылка на металл",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Usrcogravity",
      "en": "Centre of gravity typed in by hand",
+     "ru": "Центр тяжести, вручную",
      "st": "seen",
      "key": "",
      "acc": "expr",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Usrwcogravity",
      "en": "Centre of gravity with contents, typed in by hand",
+     "ru": "Центр тяжести с заполнением",
      "st": "seen",
      "key": "",
      "acc": "expr",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Usrweight",
      "en": "Weight typed in by hand",
+     "ru": "Вес, задан вручную",
      "st": "seen",
      "key": "",
      "acc": "expr",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Usrwweight",
      "en": "Weight with contents (wet), typed in by hand",
+     "ru": "Вес с заполнением, вручную",
      "st": "seen",
      "key": "",
      "acc": "expr",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uwmtxt",
      "en": "Text kept for the weight manager",
+     "ru": "Текст менеджера весов",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Invfarray",
      "en": "List of inventory items",
+     "ru": "Массив позиций инвентаря",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Stmf",
      "en": "Pointer that picks the template",
+     "ru": "Указатель выбора шаблона",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uuidia",
      "en": "Globally unique ID of the element",
+     "ru": "Уникальный идентификатор",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [
@@ -1137,7 +1371,9 @@
   {
    "code": "SUBEQUIPMENT",
    "en": "Sub-equipment",
+   "ru": "Подсборка оборудования",
    "n_en": "The same as EQUIPMENT, but it lives inside one and cannot hold sub-equipment of its own.",
+   "n_ru": "То же, что EQUIPMENT, но лежит внутри него и своих подсборок иметь не может.",
    "page": "DMRM5.09.187",
    "owners": [
     "EQUIPMENT"
@@ -1174,226 +1410,282 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Desparam",
      "en": "A list of numeric design values",
+     "ru": "Параметры проектирования",
      "st": "ok",
      "key": "DESPARAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Spref",
      "en": "Link to the component specification",
+     "ru": "Ссылка на спецификацию компонента",
      "st": "ok",
      "key": "SPREF",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Area",
      "en": "The area number the element belongs to",
+     "ru": "Зона/участок",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Built",
      "en": "Flag: built or not yet built",
+     "ru": "Признак «построено»",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Dscode",
      "en": "Code of the design standard",
+     "ru": "Код проектирования",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Inschedule",
      "en": "Schedule of inspections",
+     "ru": "График обследования",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ispec",
      "en": "Link to the insulation specification",
+     "ru": "Спецификация изоляции",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Mdsysf",
      "en": "Links to model and design elements",
+     "ru": "Ссылки на модели и элементы",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Number",
      "en": "A numeric label of the element",
+     "ru": "Номер",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Propst",
      "en": "Links to property sets",
+     "ru": "Набор свойств",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ptspec",
      "en": "Link to the paint specification",
+     "ru": "Спецификация окраски",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Skey",
      "en": "Key of the drawing symbol",
+     "ru": "Ключ символа",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "StlRef",
      "en": "Link to a steel element",
+     "ru": "Ссылка на металл",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Usrcogravity",
      "en": "Centre of gravity typed in by hand",
+     "ru": "Центр тяжести, вручную",
      "st": "seen",
      "key": "",
      "acc": "expr",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Usrwcogravity",
      "en": "Centre of gravity with contents, typed in by hand",
+     "ru": "Центр тяжести с заполнением",
      "st": "seen",
      "key": "",
      "acc": "expr",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Usrweight",
      "en": "Weight typed in by hand",
+     "ru": "Вес, задан вручную",
      "st": "seen",
      "key": "",
      "acc": "expr",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Usrwweight",
      "en": "Weight with contents (wet), typed in by hand",
+     "ru": "Вес с заполнением, вручную",
      "st": "seen",
      "key": "",
      "acc": "expr",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uwmtxt",
      "en": "Text kept for the weight manager",
+     "ru": "Текст менеджера весов",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Invfarray",
      "en": "List of inventory items",
+     "ru": "Массив позиций инвентаря",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Stmf",
      "en": "Pointer that picks the template",
+     "ru": "Указатель выбора шаблона",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uuidia",
      "en": "Globally unique ID of the element",
+     "ru": "Уникальный идентификатор",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -1402,7 +1694,9 @@
   {
    "code": "ZONE",
    "en": "Zone",
+   "ru": "Зона",
    "n_en": "",
+   "n_ru": "",
    "page": "DMRM5.09.082",
    "owners": [
     "APPLDATA",
@@ -1444,178 +1738,222 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Area",
      "en": "The area number the element belongs to",
+     "ru": "Зона/участок",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "BendMacReference",
      "en": "Link to the pipe bending machine",
+     "ru": "Ссылка на трубогибочный станок",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "DUnion",
      "en": "Flag used by DRAFT for joining element details",
+     "ru": "Флаг объединения деталей элемента в DRAFT",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Facode",
      "en": "Not explained in the manual",
+     "ru": "В справочнике не расшифрован",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Fstatus",
      "en": "Not explained in the manual",
+     "ru": "В справочнике не расшифрован",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ispec",
      "en": "Link to the insulation specification",
+     "ru": "Спецификация изоляции",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Module",
      "en": "The module the element belongs to",
+     "ru": "Модуль, к которому относится элемент",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Number",
      "en": "A numeric label of the element",
+     "ru": "Номер",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Offsrf",
      "en": "Datum point of the model offset",
+     "ru": "Базовая точка смещения модели",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Pspec",
      "en": "Link to the piping specification",
+     "ru": "Ссылка на спецификацию трубопроводов",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Rlstored",
      "en": "Rules saved by ROUTER",
+     "ru": "Правила, сохранённые ROUTER",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tspec",
      "en": "Link to the trace heating specification",
+     "ru": "Ссылка на спецификацию обогрева",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "SpcRef",
      "en": "Link to a space element",
+     "ru": "Ссылка на элемент пространства",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Stmf",
      "en": "Pointer that picks the template",
+     "ru": "Указатель выбора шаблона",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uuidia",
      "en": "Globally unique ID of the element",
+     "ru": "Уникальный идентификатор",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [
@@ -1629,7 +1967,9 @@
   {
    "code": "SITE",
    "en": "Site",
+   "ru": "Площадка",
    "n_en": "",
+   "n_ru": "",
    "page": "DMRM5.09.079",
    "owners": [
     "WORLD"
@@ -1650,106 +1990,132 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Area",
      "en": "The area number the element belongs to",
+     "ru": "Зона/участок",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Module",
      "en": "The module the element belongs to",
+     "ru": "Модуль, к которому относится элемент",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Number",
      "en": "A numeric label of the element",
+     "ru": "Номер",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Rlstored",
      "en": "Rules saved by ROUTER",
+     "ru": "Правила, сохранённые ROUTER",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Stmf",
      "en": "Pointer that picks the template",
+     "ru": "Указатель выбора шаблона",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uuidia",
      "en": "Globally unique ID of the element",
+     "ru": "Уникальный идентификатор",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -1758,7 +2124,9 @@
   {
    "code": "NOZZLE",
    "en": "Nozzle",
+   "ru": "Штуцер",
    "n_en": "A connection point on equipment, built from a catalogue component (Catref).",
+   "n_ru": "Точка подключения на оборудовании; строится по компоненту каталога (Catref).",
    "page": "DMRM5.09.185",
    "owners": [
     "EQUIPMENT",
@@ -1774,194 +2142,242 @@
     {
      "n": "Angle",
      "en": "How far the shape sweeps or turns, in degrees",
+     "ru": "На сколько градусов тянется или повёрнута фигура",
      "st": "ok",
      "key": "ANGLE",
      "acc": "angle",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Desparam",
      "en": "A list of numeric design values",
+     "ru": "Параметры проектирования",
      "st": "ok",
      "key": "DESPARAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Radius",
      "en": "A radius of the shape (for a dish, the knuckle)",
+     "ru": "Радиус фигуры (у днища — радиус отбортовки)",
      "st": "ok",
      "key": "RADI",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Bselector",
      "en": "Text that picks which bolts the connection takes",
+     "ru": "Текст, по которому выбираются болты соединения",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Catref",
      "en": "Points to the catalogue component this element is drawn from",
+     "ru": "Ссылка на компонент каталога, по которому строится элемент",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Cref",
      "en": "Points to whatever is connected here, such as a pipe branch",
+     "ru": "Ссылка на то, что сюда подключено, например ветку трубы",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Duty",
      "en": "Free text: what the connection carries",
+     "ru": "Свободный текст: что идёт через соединение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Inprtref",
      "en": "Paint on the inside (link)",
+     "ru": "Окраска внутри (ссылка)",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ispec",
      "en": "Link to the insulation specification",
+     "ru": "Спецификация изоляции",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ouprtref",
      "en": "Paint on the outside (link)",
+     "ru": "Окраска снаружи (ссылка)",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Pressure",
      "en": "Design pressure of the connection",
+     "ru": "Расчётное давление соединения",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Temperature",
      "en": "Design temperature of the connection",
+     "ru": "Расчётная температура соединения",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "TPressure",
      "en": "Pressure used to test the connection",
+     "ru": "Давление испытания соединения",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Invfarray",
      "en": "List of inventory items",
+     "ru": "Массив позиций инвентаря",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "SloDirection",
      "en": "A list of directions the slope follows",
+     "ru": "Список направлений уклона",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Stmf",
      "en": "Pointer that picks the template",
+     "ru": "Указатель выбора шаблона",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -1970,7 +2386,9 @@
   {
    "code": "BOX",
    "en": "Box",
+   "ru": "Параллелепипед",
    "n_en": "A block of Xlength by Ylength by Zlength. POS is the centre of the box.",
+   "n_ru": "Брус Xlength × Ylength × Zlength. POS — центр бруса.",
    "page": "DMRM5.09.547",
    "owners": [
     "EQUIPMENT",
@@ -2004,98 +2422,122 @@
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Xlength",
      "en": "Size along the local X axis",
+     "ru": "Размер вдоль местной оси X",
      "st": "ok",
      "key": "XLEN",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ylength",
      "en": "Size along the local Y axis",
+     "ru": "Размер вдоль местной оси Y",
      "st": "ok",
      "key": "YLEN",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Zlength",
      "en": "Size along the local Z axis",
+     "ru": "Размер вдоль местной оси Z",
      "st": "ok",
      "key": "ZLEN",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -2104,7 +2546,9 @@
   {
    "code": "CONE",
    "en": "Cone",
+   "ru": "Конус",
    "n_en": "Two diameters, Dtop and Dbottom, and a Height between them.",
+   "n_ru": "Два диаметра, Dtop и Dbottom, и высота Height между ними.",
    "page": "DMRM5.09.548",
    "owners": [
     "EQUIPMENT",
@@ -2137,98 +2581,122 @@
     {
      "n": "Dbottom",
      "en": "Diameter at the base end",
+     "ru": "Диаметр у основания",
      "st": "ok",
      "key": "DBOT",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Dtop",
      "en": "Diameter at the far end",
+     "ru": "Диаметр у верхнего торца",
      "st": "ok",
      "key": "DTOP",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -2237,7 +2705,9 @@
   {
    "code": "CTORUS",
    "en": "Circular torus",
+   "ru": "Круглый тор",
    "n_en": "A bend of round section: inner and outer radius and the Angle it sweeps.",
+   "n_ru": "Отвод круглого сечения: внутренний и внешний радиус и угол Angle.",
    "page": "DMRM5.09.549",
    "owners": [
     "EQUIPMENT",
@@ -2270,98 +2740,122 @@
     {
      "n": "Angle",
      "en": "How far the shape sweeps or turns, in degrees",
+     "ru": "На сколько градусов тянется или повёрнута фигура",
      "st": "ok",
      "key": "ANGLE",
      "acc": "angle",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Rinside",
      "en": "Distance from the torus centre to its inner edge",
+     "ru": "Расстояние от центра тора до внутренней кромки",
      "st": "ok",
      "key": "RINS",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Routside",
      "en": "Distance from the torus centre to its outer edge",
+     "ru": "Расстояние от центра тора до внешней кромки",
      "st": "ok",
      "key": "ROUT",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -2370,7 +2864,9 @@
   {
    "code": "CYLINDER",
    "en": "Cylinder",
+   "ru": "Цилиндр",
    "n_en": "Diameter and Height; POS is the centre. Without ORI the axis is Z of the owner.",
+   "n_ru": "Diameter и Height; POS — центр. Без ORI ось — Z владельца.",
    "page": "DMRM5.09.550",
    "owners": [
     "EQUIPMENT",
@@ -2403,90 +2899,112 @@
     {
      "n": "Diameter",
      "en": "Full width of the round section",
+     "ru": "Полная ширина круглого сечения",
      "st": "ok",
      "key": "DIAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -2495,7 +3013,9 @@
   {
    "code": "DISH",
    "en": "Dish",
+   "ru": "Днище",
    "n_en": "A dished end: Diameter, Height and the knuckle Radius.",
+   "n_ru": "Днище: Diameter, Height и радиус отбортовки Radius.",
    "page": "DMRM5.09.551",
    "owners": [
     "EQUIPMENT",
@@ -2528,98 +3048,122 @@
     {
      "n": "Diameter",
      "en": "Full width of the round section",
+     "ru": "Полная ширина круглого сечения",
      "st": "ok",
      "key": "DIAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Radius",
      "en": "A radius of the shape (for a dish, the knuckle)",
+     "ru": "Радиус фигуры (у днища — радиус отбортовки)",
      "st": "ok",
      "key": "RADI",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -2628,7 +3172,9 @@
   {
    "code": "EXTRUSION",
    "en": "Extrusion",
+   "ru": "Выдавливание",
    "n_en": "A profile drawn as a loop of vertices, pushed out by Height.",
+   "n_ru": "Профиль — контур из вершин, вытянутый на Height.",
    "page": "DMRM5.09.553",
    "owners": [
     "EQUIPMENT",
@@ -2662,82 +3208,102 @@
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -2746,7 +3312,9 @@
   {
    "code": "POLYHEDRON",
    "en": "Polyhedron",
+   "ru": "Многогранник",
    "n_en": "A solid described face by face.",
+   "n_ru": "Тело, заданное гранями.",
    "page": "DMRM5.09.565",
    "owners": [
     "EQUIPMENT",
@@ -2781,90 +3349,112 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -2873,7 +3463,9 @@
   {
    "code": "PYRAMID",
    "en": "Pyramid",
+   "ru": "Пирамида",
    "n_en": "A rectangular base and top of their own sizes; the top can be shifted.",
+   "n_ru": "Прямоугольные основание и верх своих размеров; верх можно сдвинуть.",
    "page": "DMRM5.09.566",
    "owners": [
     "EQUIPMENT",
@@ -2906,130 +3498,162 @@
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Xbottom",
      "en": "Size of the base along local X",
+     "ru": "Размер основания по местной X",
      "st": "ok",
      "key": "XBOT",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Xoffset",
      "en": "How far the top is shifted from the base along local X",
+     "ru": "Сдвиг верха относительно основания по местной X",
      "st": "ok",
      "key": "XOFF",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Xtop",
      "en": "Size of the top face along local X",
+     "ru": "Размер верхней грани по местной X",
      "st": "ok",
      "key": "XTOP",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ybottom",
      "en": "Size of the base along local Y",
+     "ru": "Размер основания по местной Y",
      "st": "ok",
      "key": "YBOT",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Yoffset",
      "en": "How far the top is shifted from the base along local Y",
+     "ru": "Сдвиг верха относительно основания по местной Y",
      "st": "ok",
      "key": "YOFF",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ytop",
      "en": "Size of the top face along local Y",
+     "ru": "Размер верхней грани по местной Y",
      "st": "ok",
      "key": "YTOP",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -3038,7 +3662,9 @@
   {
    "code": "REVOLUTION",
    "en": "Revolution",
+   "ru": "Тело вращения",
    "n_en": "A profile loop turned about an axis by Angle.",
+   "n_ru": "Контур, повёрнутый вокруг оси на угол Angle.",
    "page": "DMRM5.09.567",
    "owners": [
     "EQUIPMENT",
@@ -3072,82 +3698,102 @@
     {
      "n": "Angle",
      "en": "How far the shape sweeps or turns, in degrees",
+     "ru": "На сколько градусов тянется или повёрнута фигура",
      "st": "ok",
      "key": "ANGLE",
      "acc": "angle",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -3156,7 +3802,9 @@
   {
    "code": "RTORUS",
    "en": "Rectangular torus",
+   "ru": "Прямоугольный тор",
    "n_en": "A bend of rectangular section; Height is the section height.",
+   "n_ru": "Отвод прямоугольного сечения; Height — высота сечения.",
    "page": "DMRM5.09.568",
    "owners": [
     "EQUIPMENT",
@@ -3189,106 +3837,132 @@
     {
      "n": "Angle",
      "en": "How far the shape sweeps or turns, in degrees",
+     "ru": "На сколько градусов тянется или повёрнута фигура",
      "st": "ok",
      "key": "ANGLE",
      "acc": "angle",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Rinside",
      "en": "Distance from the torus centre to its inner edge",
+     "ru": "Расстояние от центра тора до внутренней кромки",
      "st": "ok",
      "key": "RINS",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Routside",
      "en": "Distance from the torus centre to its outer edge",
+     "ru": "Расстояние от центра тора до внешней кромки",
      "st": "ok",
      "key": "ROUT",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -3297,7 +3971,9 @@
   {
    "code": "SLCYLINDER",
    "en": "Slope-bottomed cylinder",
+   "ru": "Цилиндр со скошенными торцами",
    "n_en": "A cylinder whose end faces are tilted (the four shear angles).",
+   "n_ru": "Цилиндр с наклонёнными торцами (четыре угла среза).",
    "page": "DMRM5.09.569",
    "owners": [
     "EQUIPMENT",
@@ -3330,122 +4006,152 @@
     {
      "n": "Diameter",
      "en": "Full width of the round section",
+     "ru": "Полная ширина круглого сечения",
      "st": "ok",
      "key": "DIAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Xbshear",
      "en": "Tilt of the base face, measured about local X",
+     "ru": "Наклон нижнего торца относительно местной X",
      "st": "ok",
      "key": "XBSH",
      "acc": "angle",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Xtshear",
      "en": "Tilt of the top face, measured about local X",
+     "ru": "Наклон верхнего торца относительно местной X",
      "st": "ok",
      "key": "XTSH",
      "acc": "angle",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ybshear",
      "en": "Tilt of the base face, measured about local Y",
+     "ru": "Наклон нижнего торца относительно местной Y",
      "st": "ok",
      "key": "YBSH",
      "acc": "angle",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ytshear",
      "en": "Tilt of the top face, measured about local Y",
+     "ru": "Наклон верхнего торца относительно местной Y",
      "st": "ok",
      "key": "YTSH",
      "acc": "angle",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -3454,7 +4160,9 @@
   {
    "code": "SNOUT",
    "en": "Snout",
+   "ru": "Переход",
    "n_en": "A cone whose top can be shifted off the axis (Xoffset, Yoffset).",
+   "n_ru": "Конус, верх которого можно сдвинуть с оси (Xoffset, Yoffset).",
    "page": "DMRM5.09.570",
    "owners": [
     "EQUIPMENT",
@@ -3487,114 +4195,142 @@
     {
      "n": "Dbottom",
      "en": "Diameter at the base end",
+     "ru": "Диаметр у основания",
      "st": "ok",
      "key": "DBOT",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Dtop",
      "en": "Diameter at the far end",
+     "ru": "Диаметр у верхнего торца",
      "st": "ok",
      "key": "DTOP",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Xoffset",
      "en": "How far the top is shifted from the base along local X",
+     "ru": "Сдвиг верха относительно основания по местной X",
      "st": "ok",
      "key": "XOFF",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Yoffset",
      "en": "How far the top is shifted from the base along local Y",
+     "ru": "Сдвиг верха относительно основания по местной Y",
      "st": "ok",
      "key": "YOFF",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -3603,7 +4339,9 @@
   {
    "code": "NBOX",
    "en": "Negative box",
+   "ru": "Вырез — брус",
    "n_en": "Cut out of its owner primitive; sizes as BOX.",
+   "n_ru": "Вырезается из примитива-владельца; размеры как у BOX.",
    "page": "DMRM5.09.573",
    "owners": [
     "BOX",
@@ -3631,98 +4369,122 @@
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Xlength",
      "en": "Size along the local X axis",
+     "ru": "Размер вдоль местной оси X",
      "st": "ok",
      "key": "XLEN",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ylength",
      "en": "Size along the local Y axis",
+     "ru": "Размер вдоль местной оси Y",
      "st": "ok",
      "key": "YLEN",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Zlength",
      "en": "Size along the local Z axis",
+     "ru": "Размер вдоль местной оси Z",
      "st": "ok",
      "key": "ZLEN",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -3731,7 +4493,9 @@
   {
    "code": "NCONE",
    "en": "Negative cone",
+   "ru": "Вырез — конус",
    "n_en": "Cut out of its owner; sizes as CONE.",
+   "n_ru": "Вырезается из владельца; размеры как у CONE.",
    "page": "DMRM5.09.574",
    "owners": [
     "BOX",
@@ -3759,98 +4523,122 @@
     {
      "n": "Dbottom",
      "en": "Diameter at the base end",
+     "ru": "Диаметр у основания",
      "st": "ok",
      "key": "DBOT",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Dtop",
      "en": "Diameter at the far end",
+     "ru": "Диаметр у верхнего торца",
      "st": "ok",
      "key": "DTOP",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -3859,7 +4647,9 @@
   {
    "code": "NCTORUS",
    "en": "Negative circular torus",
+   "ru": "Вырез — круглый тор",
    "n_en": "Cut out of its owner; sizes as CTORUS.",
+   "n_ru": "Вырезается из владельца; размеры как у CTORUS.",
    "page": "DMRM5.09.575",
    "owners": [
     "BOX",
@@ -3887,98 +4677,122 @@
     {
      "n": "Angle",
      "en": "How far the shape sweeps or turns, in degrees",
+     "ru": "На сколько градусов тянется или повёрнута фигура",
      "st": "ok",
      "key": "ANGLE",
      "acc": "angle",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Rinside",
      "en": "Distance from the torus centre to its inner edge",
+     "ru": "Расстояние от центра тора до внутренней кромки",
      "st": "ok",
      "key": "RINS",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Routside",
      "en": "Distance from the torus centre to its outer edge",
+     "ru": "Расстояние от центра тора до внешней кромки",
      "st": "ok",
      "key": "ROUT",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -3987,7 +4801,9 @@
   {
    "code": "NCYLINDER",
    "en": "Negative cylinder",
+   "ru": "Вырез — цилиндр",
    "n_en": "A round hole in its owner; sizes as CYLINDER.",
+   "n_ru": "Круглое отверстие во владельце; размеры как у CYLINDER.",
    "page": "DMRM5.09.576",
    "owners": [
     "BOX",
@@ -4015,90 +4831,112 @@
     {
      "n": "Diameter",
      "en": "Full width of the round section",
+     "ru": "Полная ширина круглого сечения",
      "st": "ok",
      "key": "DIAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -4107,7 +4945,9 @@
   {
    "code": "NDISH",
    "en": "Negative dish",
+   "ru": "Вырез — днище",
    "n_en": "Cut out of its owner; sizes as DISH.",
+   "n_ru": "Вырезается из владельца; размеры как у DISH.",
    "page": "DMRM5.09.577",
    "owners": [
     "BOX",
@@ -4135,98 +4975,122 @@
     {
      "n": "Diameter",
      "en": "Full width of the round section",
+     "ru": "Полная ширина круглого сечения",
      "st": "ok",
      "key": "DIAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Radius",
      "en": "A radius of the shape (for a dish, the knuckle)",
+     "ru": "Радиус фигуры (у днища — радиус отбортовки)",
      "st": "ok",
      "key": "RADI",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -4235,7 +5099,9 @@
   {
    "code": "NPYRAMID",
    "en": "Negative pyramid",
+   "ru": "Вырез — пирамида",
    "n_en": "Cut out of its owner; sizes as PYRAMID.",
+   "n_ru": "Вырезается из владельца; размеры как у PYRAMID.",
    "page": "DMRM5.09.579",
    "owners": [
     "BOX",
@@ -4263,130 +5129,162 @@
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Xbottom",
      "en": "Size of the base along local X",
+     "ru": "Размер основания по местной X",
      "st": "ok",
      "key": "XBOT",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Xoffset",
      "en": "How far the top is shifted from the base along local X",
+     "ru": "Сдвиг верха относительно основания по местной X",
      "st": "ok",
      "key": "XOFF",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Xtop",
      "en": "Size of the top face along local X",
+     "ru": "Размер верхней грани по местной X",
      "st": "ok",
      "key": "XTOP",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ybottom",
      "en": "Size of the base along local Y",
+     "ru": "Размер основания по местной Y",
      "st": "ok",
      "key": "YBOT",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Yoffset",
      "en": "How far the top is shifted from the base along local Y",
+     "ru": "Сдвиг верха относительно основания по местной Y",
      "st": "ok",
      "key": "YOFF",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ytop",
      "en": "Size of the top face along local Y",
+     "ru": "Размер верхней грани по местной Y",
      "st": "ok",
      "key": "YTOP",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -4395,7 +5293,9 @@
   {
    "code": "NRTORUS",
    "en": "Negative rectangular torus",
+   "ru": "Вырез — прямоугольный тор",
    "n_en": "Cut out of its owner; sizes as RTORUS.",
+   "n_ru": "Вырезается из владельца; размеры как у RTORUS.",
    "page": "DMRM5.09.581",
    "owners": [
     "BOX",
@@ -4423,106 +5323,132 @@
     {
      "n": "Angle",
      "en": "How far the shape sweeps or turns, in degrees",
+     "ru": "На сколько градусов тянется или повёрнута фигура",
      "st": "ok",
      "key": "ANGLE",
      "acc": "angle",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Rinside",
      "en": "Distance from the torus centre to its inner edge",
+     "ru": "Расстояние от центра тора до внутренней кромки",
      "st": "ok",
      "key": "RINS",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Routside",
      "en": "Distance from the torus centre to its outer edge",
+     "ru": "Расстояние от центра тора до внешней кромки",
      "st": "ok",
      "key": "ROUT",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -4531,7 +5457,9 @@
   {
    "code": "NSLCYLINDER",
    "en": "Negative slope-bottomed cylinder",
+   "ru": "Вырез — цилиндр со скосами",
    "n_en": "Cut out of its owner; sizes as SLCYLINDER.",
+   "n_ru": "Вырезается из владельца; размеры как у SLCYLINDER.",
    "page": "DMRM5.09.582",
    "owners": [
     "BOX",
@@ -4559,122 +5487,152 @@
     {
      "n": "Diameter",
      "en": "Full width of the round section",
+     "ru": "Полная ширина круглого сечения",
      "st": "ok",
      "key": "DIAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Xbshear",
      "en": "Tilt of the base face, measured about local X",
+     "ru": "Наклон нижнего торца относительно местной X",
      "st": "ok",
      "key": "XBSH",
      "acc": "angle",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Xtshear",
      "en": "Tilt of the top face, measured about local X",
+     "ru": "Наклон верхнего торца относительно местной X",
      "st": "ok",
      "key": "XTSH",
      "acc": "angle",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ybshear",
      "en": "Tilt of the base face, measured about local Y",
+     "ru": "Наклон нижнего торца относительно местной Y",
      "st": "ok",
      "key": "YBSH",
      "acc": "angle",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ytshear",
      "en": "Tilt of the top face, measured about local Y",
+     "ru": "Наклон верхнего торца относительно местной Y",
      "st": "ok",
      "key": "YTSH",
      "acc": "angle",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -4683,7 +5641,9 @@
   {
    "code": "NSNOUT",
    "en": "Negative snout",
+   "ru": "Вырез — переход",
    "n_en": "Cut out of its owner; sizes as SNOUT.",
+   "n_ru": "Вырезается из владельца; размеры как у SNOUT.",
    "page": "DMRM5.09.583",
    "owners": [
     "BOX",
@@ -4711,114 +5671,142 @@
     {
      "n": "Dbottom",
      "en": "Diameter at the base end",
+     "ru": "Диаметр у основания",
      "st": "ok",
      "key": "DBOT",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Dtop",
      "en": "Diameter at the far end",
+     "ru": "Диаметр у верхнего торца",
      "st": "ok",
      "key": "DTOP",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Height",
      "en": "Length along the local Z axis",
+     "ru": "Длина вдоль местной оси Z",
      "st": "ok",
      "key": "HEIG",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Xoffset",
      "en": "How far the top is shifted from the base along local X",
+     "ru": "Сдвиг верха относительно основания по местной X",
      "st": "ok",
      "key": "XOFF",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Yoffset",
      "en": "How far the top is shifted from the base along local Y",
+     "ru": "Сдвиг верха относительно основания по местной Y",
      "st": "ok",
      "key": "YOFF",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -4827,7 +5815,9 @@
   {
    "code": "PIPE",
    "en": "Pipe",
+   "ru": "Труба",
    "n_en": "A pipeline: holds its branches (BRAN), which hold the fittings.",
+   "n_ru": "Трубопровод: в нём ветки (BRAN), в ветках — детали.",
    "page": "DMRM5.09.531",
    "owners": [
     "CONVEYOR",
@@ -4844,458 +5834,572 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "BendMacReference",
      "en": "Link to the pipe bending machine",
+     "ru": "Ссылка на трубогибочный станок",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Bore",
      "en": "Nominal bore of the pipe, in mm",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Built",
      "en": "Flag: built or not yet built",
+     "ru": "Признак «построено»",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Carea",
      "en": "Area written by the Compipe mode of Isodraft",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Casref",
      "en": "Points to the design case (pressure and temperature set)",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ccentre",
      "en": "Number of the cost centre the item is booked to",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Cclass",
      "en": "Number of the cost class the item is booked to",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Cdrg",
      "en": "Drawing number written by the Compipe mode of Isodraft",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Cnumber",
      "en": "Line number written by the Compipe mode of Isodraft",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Deldsg",
      "en": "Flag for how the pipe is delivered",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Drrf",
      "en": "Link to a drawing made by the older spool tool",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Dscode",
      "en": "Code of the design standard",
+     "ru": "Код проектирования",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Duty",
      "en": "Free text: what the connection carries",
+     "ru": "Свободный текст: что идёт через соединение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Erection",
      "en": "Number of the erection class",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Farea",
      "en": "Area of the site where the pipe is built",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Fdrawing",
      "en": "Number of the isometric for this pipe",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Fluref",
      "en": "Points to the fluid the pipe carries",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Fpline",
      "en": "Line number on the process diagram",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Frdrawing",
      "en": "Numbers of other drawings this pipe refers to",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Frevision",
      "en": "Revision of that isometric",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Fstatus",
      "en": "Not explained in the manual",
+     "ru": "В справочнике не расшифрован",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "HEATT",
      "en": "Heat treatment the pipe needs",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Inprtref",
      "en": "Paint on the inside (link)",
+     "ru": "Окраска внутри (ссылка)",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Inschedule",
      "en": "Schedule of inspections",
+     "ru": "График обследования",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Isohidden",
      "en": "TRUE hides the item on isometric drawings",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ispec",
      "en": "Link to the insulation specification",
+     "ru": "Спецификация изоляции",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Jmaximum",
      "en": "Highest joint number used so far on the spool drawing",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "JNTC",
      "en": "Code of the joint type",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Linetype",
      "en": "Word for the kind of line, used by drawings and reports",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Lissue",
      "en": "TRUE once a drawing of the pipe has gone out",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Matref",
      "en": "Points to the material the item is made of",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Mdsysf",
      "en": "Links to model and design elements",
+     "ru": "Ссылки на модели и элементы",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ouprtref",
      "en": "Paint on the outside (link)",
+     "ru": "Окраска снаружи (ссылка)",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "PLANU",
      "en": "Planning unit the item belongs to",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Pmaximum",
      "en": "Highest part number used so far on the spool drawing",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Pressure",
      "en": "Design pressure of the connection",
+     "ru": "Расчётное давление соединения",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Pspec",
      "en": "Link to the piping specification",
+     "ru": "Ссылка на спецификацию трубопроводов",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ptspec",
      "en": "Link to the paint specification",
+     "ru": "Спецификация окраски",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Rev",
      "en": "Revision number of the pipe; -1 until it is issued",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Rlstored",
      "en": "Rules saved by ROUTER",
+     "ru": "Правила, сохранённые ROUTER",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Safclass",
      "en": "Number of the safety class",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Shop",
      "en": "TRUE when the item is made in the shop, FALSE when it is made on site",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Skey",
      "en": "Key of the drawing symbol",
+     "ru": "Ключ символа",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Sloreference",
      "en": "Points to the slope rule the pipe follows",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Smaximum",
      "en": "Highest spool number used so far on the spool drawing",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Splprefix",
      "en": "Text put in front of every spool number of this pipe",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Temperature",
      "en": "Design temperature of the connection",
+     "ru": "Расчётная температура соединения",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "TPressure",
      "en": "Pressure used to test the connection",
+     "ru": "Давление испытания соединения",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tspec",
      "en": "Link to the trace heating specification",
+     "ru": "Ссылка на спецификацию обогрева",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "WLDC",
      "en": "Code of the weld type",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Wmaximum",
      "en": "Highest weld number used so far on the spool drawing",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uuidia",
      "en": "Globally unique ID of the element",
+     "ru": "Уникальный идентификатор",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -5304,7 +6408,9 @@
   {
    "code": "STRUCTURE",
    "en": "Structure",
+   "ru": "Конструкция",
    "n_en": "Top of a piece of steelwork in a zone; holds frameworks.",
+   "n_ru": "Верх металлоконструкции в зоне; в ней — каркасы.",
    "page": "DMRM5.09.672",
    "owners": [
     "CONVEYOR",
@@ -5355,226 +6461,282 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Desparam",
      "en": "A list of numeric design values",
+     "ru": "Параметры проектирования",
      "st": "ok",
      "key": "DESPARAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Area",
      "en": "The area number the element belongs to",
+     "ru": "Зона/участок",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Built",
      "en": "Flag: built or not yet built",
+     "ru": "Признак «построено»",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "DUnion",
      "en": "Flag used by DRAFT for joining element details",
+     "ru": "Флаг объединения деталей элемента в DRAFT",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Fstatus",
      "en": "Not explained in the manual",
+     "ru": "В справочнике не расшифрован",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "GrdRef",
      "en": "Points to the grid the steel is set out on",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Inprtref",
      "en": "Paint on the inside (link)",
+     "ru": "Окраска внутри (ссылка)",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Number",
      "en": "A numeric label of the element",
+     "ru": "Номер",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Optblo",
      "en": "Name of an optional production block",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ouprtref",
      "en": "Paint on the outside (link)",
+     "ru": "Окраска снаружи (ссылка)",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Pdname",
      "en": "Name the item carries in production",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Propst",
      "en": "Links to property sets",
+     "ru": "Набор свойств",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Skey",
      "en": "Key of the drawing symbol",
+     "ru": "Ключ символа",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Usrcogravity",
      "en": "Centre of gravity typed in by hand",
+     "ru": "Центр тяжести, вручную",
      "st": "seen",
      "key": "",
      "acc": "expr",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Usrwcogravity",
      "en": "Centre of gravity with contents, typed in by hand",
+     "ru": "Центр тяжести с заполнением",
      "st": "seen",
      "key": "",
      "acc": "expr",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Usrweight",
      "en": "Weight typed in by hand",
+     "ru": "Вес, задан вручную",
      "st": "seen",
      "key": "",
      "acc": "expr",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Usrwweight",
      "en": "Weight with contents (wet), typed in by hand",
+     "ru": "Вес с заполнением, вручную",
      "st": "seen",
      "key": "",
      "acc": "expr",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uwmtxt",
      "en": "Text kept for the weight manager",
+     "ru": "Текст менеджера весов",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Invfarray",
      "en": "List of inventory items",
+     "ru": "Массив позиций инвентаря",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Stmf",
      "en": "Pointer that picks the template",
+     "ru": "Указатель выбора шаблона",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uuidia",
      "en": "Globally unique ID of the element",
+     "ru": "Уникальный идентификатор",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -5583,7 +6745,9 @@
   {
    "code": "FRMWORK",
    "en": "Framework",
+   "ru": "Каркас",
    "n_en": "A group of members and panels; settings made here pass down to them.",
+   "n_ru": "Группа балок и панелей; заданное здесь переходит к ним.",
    "page": "DMRM5.09.642",
    "owners": [
     "STRUCTURE"
@@ -5622,202 +6786,252 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Built",
      "en": "Flag: built or not yet built",
+     "ru": "Признак «построено»",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "DUnion",
      "en": "Flag used by DRAFT for joining element details",
+     "ru": "Флаг объединения деталей элемента в DRAFT",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Firesistance",
      "en": "Fire rating of the steel",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Grade",
      "en": "Steel grade as a word, e.g. S355",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "GrdRef",
      "en": "Points to the grid the steel is set out on",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Inprtref",
      "en": "Paint on the inside (link)",
+     "ru": "Окраска внутри (ссылка)",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Inschedule",
      "en": "Schedule of inspections",
+     "ru": "График обследования",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ispec",
      "en": "Link to the insulation specification",
+     "ru": "Спецификация изоляции",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Matref",
      "en": "Points to the material the item is made of",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Number",
      "en": "A numeric label of the element",
+     "ru": "Номер",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Optblo",
      "en": "Name of an optional production block",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ouprtref",
      "en": "Paint on the outside (link)",
+     "ru": "Окраска снаружи (ссылка)",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Pdname",
      "en": "Name the item carries in production",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ptspec",
      "en": "Link to the paint specification",
+     "ru": "Спецификация окраски",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Shop",
      "en": "TRUE when the item is made in the shop, FALSE when it is made on site",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Skey",
      "en": "Key of the drawing symbol",
+     "ru": "Ключ символа",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Stspec",
      "en": "Points to the steel specification members are chosen from",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Supref",
      "en": "Points to the support this steel belongs to",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Stmf",
      "en": "Pointer that picks the template",
+     "ru": "Указатель выбора шаблона",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uuidia",
      "en": "Globally unique ID of the element",
+     "ru": "Уникальный идентификатор",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -5826,7 +7040,9 @@
   {
    "code": "SBFRAMEWORK",
    "en": "Subframework",
+   "ru": "Подкаркас",
    "n_en": "A smaller group inside a framework.",
+   "n_ru": "Группа поменьше внутри каркаса.",
    "page": "DMRM5.09.660",
    "owners": [
     "FRMWORK"
@@ -5859,186 +7075,232 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Built",
      "en": "Flag: built or not yet built",
+     "ru": "Признак «построено»",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "DUnion",
      "en": "Flag used by DRAFT for joining element details",
+     "ru": "Флаг объединения деталей элемента в DRAFT",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Firesistance",
      "en": "Fire rating of the steel",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Grade",
      "en": "Steel grade as a word, e.g. S355",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "GrdRef",
      "en": "Points to the grid the steel is set out on",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Inschedule",
      "en": "Schedule of inspections",
+     "ru": "График обследования",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ispec",
      "en": "Link to the insulation specification",
+     "ru": "Спецификация изоляции",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Matref",
      "en": "Points to the material the item is made of",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Number",
      "en": "A numeric label of the element",
+     "ru": "Номер",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Optblo",
      "en": "Name of an optional production block",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Pdname",
      "en": "Name the item carries in production",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ptspec",
      "en": "Link to the paint specification",
+     "ru": "Спецификация окраски",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Shop",
      "en": "TRUE when the item is made in the shop, FALSE when it is made on site",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Skey",
      "en": "Key of the drawing symbol",
+     "ru": "Ключ символа",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Stspec",
      "en": "Points to the steel specification members are chosen from",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Supref",
      "en": "Points to the support this steel belongs to",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Stmf",
      "en": "Pointer that picks the template",
+     "ru": "Указатель выбора шаблона",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uuidia",
      "en": "Globally unique ID of the element",
+     "ru": "Уникальный идентификатор",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -6047,7 +7309,9 @@
   {
    "code": "SCTN",
    "en": "Section",
+   "ru": "Профиль",
    "n_en": "One straight steel member, from a start point to an end point, with a catalogue profile.",
+   "n_ru": "Один прямой элемент металла от начала до конца, профиль — из каталога.",
    "page": "DMRM5.09.663",
    "owners": [
     "CFLOOR",
@@ -6071,338 +7335,422 @@
     {
      "n": "Bangle",
      "en": "Turn of the section about the branch axis (beta)",
+     "ru": "Угол бета",
      "st": "ok",
      "key": "BANGLE",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Desparam",
      "en": "A list of numeric design values",
+     "ru": "Параметры проектирования",
      "st": "ok",
      "key": "DESPARAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Posend",
      "en": "Where the member ends",
+     "ru": "",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "PosNo",
      "en": "Position number of the part on the drawing",
+     "ru": "",
      "st": "ok",
      "key": "POS",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Posstart",
      "en": "Where the member begins",
+     "ru": "",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Spref",
      "en": "Link to the component specification",
+     "ru": "Ссылка на спецификацию компонента",
      "st": "ok",
      "key": "SPREF",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Antype",
      "en": "How the member is treated in stress analysis",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Bevcodes",
      "en": "Codes for how each edge is bevelled",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Built",
      "en": "Flag: built or not yet built",
+     "ru": "Признак «построено»",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ctyend",
      "en": "Connection type at the end",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ctystart",
      "en": "Connection type at the start: e.g. pinned or fixed",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Drgpriority",
      "en": "Decides how drawings show the section",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Drnend",
      "en": "Direction of the cut plane at the end of the section",
+     "ru": "Нормаль плоскости реза в конце сечения",
      "st": "seen",
      "key": "",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Drnstart",
      "en": "Direction of the cut plane at the start of the section",
+     "ru": "Нормаль плоскости реза в начале сечения",
      "st": "seen",
      "key": "",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Erelease",
      "en": "Which forces and moments are freed at the end",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "none",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Firesistance",
      "en": "Fire rating of the steel",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Grade",
      "en": "Steel grade as a word, e.g. S355",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Gtype",
      "en": "Kind of member as a word: BEAM, COLUMN, BRACE…",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Inref",
      "en": "Points to the insulation put on the member",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ispec",
      "en": "Link to the insulation specification",
+     "ru": "Спецификация изоляции",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Jline",
      "en": "The profile line that meets other members at the joints",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Joiend",
      "en": "Points to the joint at the end of the member",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Joistart",
      "en": "Points to the joint at the start of the member",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Jusline",
      "en": "The profile line laid along the start-to-end line",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Matref",
      "en": "Points to the material the item is made of",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Memline",
      "en": "The line the stress analysis takes for the member",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Number",
      "en": "A numeric label of the element",
+     "ru": "Номер",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "ParNam",
      "en": "Name of the part in production",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Prodrf",
      "en": "Link to the item in the production data",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Shop",
      "en": "TRUE when the item is made in the shop, FALSE when it is made on site",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Srelease",
      "en": "Which forces and moments are freed at the start (stress analysis)",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "none",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "StruClassification",
      "en": "Class of the member in the structure: beam, column, brace…",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "WeldDp",
      "en": "Depth of the weld",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "none",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Invfarray",
      "en": "List of inventory items",
+     "ru": "Массив позиций инвентаря",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uuidia",
      "en": "Globally unique ID of the element",
+     "ru": "Уникальный идентификатор",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -6411,7 +7759,9 @@
   {
    "code": "GENSEC",
    "en": "Generic section",
+   "ru": "Общий профиль",
    "n_en": "A member that can follow a curved or bent path (a spine).",
+   "n_ru": "Элемент, который может идти по кривой или ломаной (по оси SPINE).",
    "page": "DMRM5.09.643",
    "owners": [
     "BOTEXT",
@@ -6459,330 +7809,412 @@
     {
      "n": "Bangle",
      "en": "Turn of the section about the branch axis (beta)",
+     "ru": "Угол бета",
      "st": "ok",
      "key": "BANGLE",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Desparam",
      "en": "A list of numeric design values",
+     "ru": "Параметры проектирования",
      "st": "ok",
      "key": "DESPARAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "PosNo",
      "en": "Position number of the part on the drawing",
+     "ru": "",
      "st": "ok",
      "key": "POS",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Spref",
      "en": "Link to the component specification",
+     "ru": "Ссылка на спецификацию компонента",
      "st": "ok",
      "key": "SPREF",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Antype",
      "en": "How the member is treated in stress analysis",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Bevcodes",
      "en": "Codes for how each edge is bevelled",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Built",
      "en": "Flag: built or not yet built",
+     "ru": "Признак «построено»",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ctyend",
      "en": "Connection type at the end",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ctystart",
      "en": "Connection type at the start: e.g. pinned or fixed",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Drgpriority",
      "en": "Decides how drawings show the section",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Erelease",
      "en": "Which forces and moments are freed at the end",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "none",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Firesistance",
      "en": "Fire rating of the steel",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Grade",
      "en": "Steel grade as a word, e.g. S355",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Gtype",
      "en": "Kind of member as a word: BEAM, COLUMN, BRACE…",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Inref",
      "en": "Points to the insulation put on the member",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ispec",
      "en": "Link to the insulation specification",
+     "ru": "Спецификация изоляции",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Jlnend",
      "en": "Profile line used at the end joint",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Jlnstart",
      "en": "Profile line used at the start joint",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Joiend",
      "en": "Points to the joint at the end of the member",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Joistart",
      "en": "Points to the joint at the start of the member",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Jusline",
      "en": "The profile line laid along the start-to-end line",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "LMirror",
      "en": "TRUE turns the profile over (mirror image)",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Matref",
      "en": "Points to the material the item is made of",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Memline",
      "en": "The line the stress analysis takes for the member",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Number",
      "en": "A numeric label of the element",
+     "ru": "Номер",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "ParNam",
      "en": "Name of the part in production",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Prodrf",
      "en": "Link to the item in the production data",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Shop",
      "en": "TRUE when the item is made in the shop, FALSE when it is made on site",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Srelease",
      "en": "Which forces and moments are freed at the start (stress analysis)",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "none",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "StruClassification",
      "en": "Class of the member in the structure: beam, column, brace…",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "WeldDp",
      "en": "Depth of the weld",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "none",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uuidia",
      "en": "Globally unique ID of the element",
+     "ru": "Уникальный идентификатор",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -6791,7 +8223,9 @@
   {
    "code": "PANEL",
    "en": "Panel",
+   "ru": "Панель",
    "n_en": "A plate: a flat shape with a thickness, e.g. a floor or a stiffener.",
+   "n_ru": "Пластина: плоский контур с толщиной — настил, ребро.",
    "page": "DMRM5.09.650",
    "owners": [
     "BOTEXT",
@@ -6853,234 +8287,292 @@
     {
      "n": "Description",
      "en": "Free text about the element; text with spaces goes in |bars|",
+     "ru": "Описание",
      "st": "ok",
      "key": "DESC",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Desparam",
      "en": "A list of numeric design values",
+     "ru": "Параметры проектирования",
      "st": "ok",
      "key": "DESPARAM",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Level",
      "en": "The range of drawing levels at which the element is shown",
+     "ru": "Уровень отображения",
      "st": "ok",
      "key": "LEVEL",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Name",
      "en": "The element’s name; it starts with a slash",
+     "ru": "Имя элемента",
      "st": "ok",
      "key": "NAME",
      "acc": "name",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Obstruction",
      "en": "How solid the element counts in clash checks",
+     "ru": "Уровень препятствия",
      "st": "ok",
      "key": "OBST",
      "acc": "obst",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orientation",
      "en": "Which way the element’s axes point",
+     "ru": "Ориентация",
      "st": "ok",
      "key": "ORI",
      "acc": "dir",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Position",
      "en": "Where the element sits, measured from its owner",
+     "ru": "Положение",
      "st": "ok",
      "key": "POS",
      "acc": "pos",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "PosNo",
      "en": "Position number of the part on the drawing",
+     "ru": "",
      "st": "ok",
      "key": "POS",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Purpose",
      "en": "A short code word for marking and filtering elements",
+     "ru": "Код назначения",
      "st": "ok",
      "key": "PURPOSE",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Spref",
      "en": "Link to the component specification",
+     "ru": "Ссылка на спецификацию компонента",
      "st": "ok",
      "key": "SPREF",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Bevcodes",
      "en": "Codes for how each edge is bevelled",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Built",
      "en": "Flag: built or not yet built",
+     "ru": "Признак «построено»",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Excess",
      "en": "Extra material left on the plate for trimming on site",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Firesistance",
      "en": "Fire rating of the steel",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Function",
      "en": "Free text: what the element is for",
+     "ru": "Назначение",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Grade",
      "en": "Steel grade as a word, e.g. S355",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Gtype",
      "en": "Kind of member as a word: BEAM, COLUMN, BRACE…",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "word",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Ispec",
      "en": "Link to the insulation specification",
+     "ru": "Спецификация изоляции",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Matref",
      "en": "Points to the material the item is made of",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Number",
      "en": "A numeric label of the element",
+     "ru": "Номер",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "ParNam",
      "en": "Name of the part in production",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Prodrf",
      "en": "Link to the item in the production data",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "RepCount",
      "en": "Counter used when a template rule repeats the element",
+     "ru": "Счётчик, когда правило шаблона повторяет элемент",
      "st": "seen",
      "key": "",
      "acc": "number",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Shop",
      "en": "TRUE when the item is made in the shop, FALSE when it is made on site",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "logical",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "StruClassification",
      "en": "Class of the member in the structure: beam, column, brace…",
+     "ru": "",
      "st": "seen",
      "key": "",
      "acc": "text",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Tmrref",
      "en": "Points back to the template element that repeats this one",
+     "ru": "Ссылка на элемент шаблона, который повторяет этот",
      "st": "seen",
      "key": "",
      "acc": "ref",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Invfarray",
      "en": "List of inventory items",
+     "ru": "Массив позиций инвентаря",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Orrf",
      "en": "Origin link used by templates",
+     "ru": "Ссылка начала координат (шаблоны)",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     },
     {
      "n": "Uuidia",
      "en": "Globally unique ID of the element",
+     "ru": "Уникальный идентификатор",
      "st": "man",
      "key": "",
      "acc": "",
-     "note_en": ""
+     "note_en": "",
+     "note_ru": ""
     }
    ],
    "extra": [],
@@ -7100,6 +8592,20 @@
    "man": [
     "Manual only",
     "In the Data Model Reference Manual 2.1; not in our model dumps."
+   ]
+  },
+  "ru": {
+   "ok": [
+    "Команда проверена",
+    "Команда, которая его пишет или читает, запускалась в E3D — хотя бы на одном типе элемента; на каком — сказано в строке реестра."
+   ],
+   "seen": [
+    "Есть в модели",
+    "Q ATT напечатал его на реальной модели; сами ещё не писали."
+   ],
+   "man": [
+    "По мануалу",
+    "Есть в Data Model Reference Manual 2.1; в наших выгрузках не встречался."
    ]
   }
  },
@@ -7122,6 +8628,20 @@
    "obst": "a number, or HARD / SOFT / NONE",
    "expr": "a value or an expression",
    "none": "not set by its name"
+  },
+  "ru": {
+   "name": "имя: /ИМЯ",
+   "text": "текст в |чертах| или 'кавычках'",
+   "word": "слово или текст",
+   "number": "число",
+   "angle": "угол или как направление",
+   "logical": "TRUE / FALSE (YES / NO, ON / OFF)",
+   "ref": "ссылка: /ИМЯ, =ref или NULREF",
+   "pos": "положение: E … N … U … (WRT …)",
+   "dir": "направление; ORI — Y IS N AND Z IS U",
+   "obst": "число или HARD / SOFT / NONE",
+   "expr": "значение или выражение",
+   "none": "по имени не задаётся"
   }
  },
  "about": "bracketPML attributes — generated, CC BY 4.0; list, owners and members after the AVEVA Data Model Reference Manual 2.1"

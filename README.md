@@ -13,7 +13,8 @@ Every command here is tested in AVEVA E3D 2.1. Nothing is written from memory.</
 <a href="#myths">Myths</a> ·
 <a href="attributes.md">Attributes</a> ·
 <a href="syntax.md">Syntax</a> ·
-<a href="CONTRIBUTING.md">Send a test report</a>
+<a href="CONTRIBUTING.md">Send a test report</a> ·
+<a href="ru/README.md">По-русски</a>
 </p>
 
 ---

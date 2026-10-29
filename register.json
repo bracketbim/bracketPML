@@ -106,7 +106,7 @@
    "what": "Plain paste",
    "note": "Word for word: «executes each line of the copied text as a separate command as if they had been typed». Each line runs as a separate command, so if/do/handle fail (Invalid syntax). The first error stops the rest of the paste — put probes that expect an error in a macro.",
    "st": "ok",
-   "key": ""
+   "key": "ПРАВЫЙ"
   },
   {
    "id": "right-click-paste-as-macro",
@@ -115,7 +115,7 @@
    "what": "Paste as a macro",
    "note": "Word for word: «first creates a temporary file containing the copied macro commands and executes this as a macro». The pasted text runs as a temporary macro: if, do and handle work.",
    "st": "ok",
-   "key": ""
+   "key": "ПРАВЫЙ"
   },
   {
    "id": "drag-a-mac-file-from-explorer",
@@ -124,7 +124,7 @@
    "what": "Run a macro file",
    "note": "«Macro files can also be dragged into the command window».",
    "st": "doc",
-   "key": ""
+   "key": "ПЕРЕТАЩИТЬ"
   },
   {
    "id": "m-c-temp-file-pmlmac",
@@ -160,7 +160,7 @@
    "what": "Bring a command back into the input field",
    "note": "Up and Down arrows walk the history.",
    "st": "doc",
-   "key": ""
+   "key": "ДВОЙНОЙ"
   },
   {
    "id": "right-click-clear",
@@ -169,7 +169,7 @@
    "what": "Clear the window",
    "note": "The window keeps roughly the last 1000 lines of output.",
    "st": "doc",
-   "key": ""
+   "key": "ПРАВЫЙ"
   },
   {
    "id": "q-evar-pmllib",

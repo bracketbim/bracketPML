@@ -4,13 +4,13 @@ Every PML command we know about, with its status. **Generated** from the source 
 
 | Status | Meaning | Rows |
 |---|---|---|
-| **Verified** | Tested in E3D 2.1, the result was checked. | 142 |
-| **Fails** | Tested in E3D 2.1 and gave an error — do not use; the row says what to use instead. | 10 |
+| **Verified** | Tested in E3D 2.1, the result was checked. | 144 |
+| **Fails** | Tested in E3D 2.1 and gave an error — do not use; the row says what to use instead. | 11 |
 | **Macro only** | Works in a macro file or with Paste as Macro, not line by line. | 16 |
-| **Documented** | In the AVEVA documentation or the $Q grammar; not tested in E3D yet. | 29 |
-| **Seen in code** | Appears in real PML code; not tested in E3D yet. | 9 |
+| **Documented** | In the AVEVA documentation or the $Q grammar; not tested in E3D yet. | 30 |
+| **Seen in code** | Appears in real PML code; not tested in E3D yet. | 8 |
 
-Updated 28 Oct 2026 · E3D 2.1 · searchable at [bracketbim.com/pml](https://bracketbim.com/pml/)
+Updated 29 Oct 2026 · E3D 2.1 · searchable at [bracketbim.com/pml](https://bracketbim.com/pml/)
 
 ## The Commands window — how it runs what you paste
 
@@ -114,6 +114,7 @@ Equipment and its geometry: EQUI, SUBE, primitives and negative primitives.
 | <a id="xoff-100"></a>`XOFF 100` | X offset (also XBOT, YBOT, XTOP, YTOP) | Verified | All written and read back. |
 | <a id="dtop-300"></a>`DTOP 300` | Top diameter (also DBOT, YOFF, RINS, ROUT, XTSH, YTSH, XBSH, YBSH) | Verified | All written and read back. |
 | <a id="new-gpset"></a>`NEW GPSET` | A set (collection) of elements | Documented | NEW GPSET $Q prints its grammar; the element itself was not created. |
+| <a id="new-loop-new-vertex"></a>`NEW LOOP / NEW VERTEX` | Outline of an extrusion (EXTRUSION) or a revolution (REVOLUTION), and its points | Verified | A LOOP in an EXTR, four VERTEX with POS relative to the outline — a 1000×600×500 box by Q WVOL. For REVOLUTION the axis is the outline's X, N is the radius. |
 | <a id="new-pipe-new-bran"></a>`NEW PIPE / NEW BRAN` | A pipe and its branch | Verified | PIPE in a zone, BRAN in the PIPE — no errors. |
 | <a id="new-stru-frmw-sbfr-sctn-gensec-pane"></a>`NEW STRU / FRMW / SBFR / SCTN / GENSEC / PANE` | Steel: structure, framework, subframework, section, generic section, panel | Verified | STRU in a zone, FRMW in the STRU, SBFR, SCTN, GENSEC and PANE in the FRMW — no errors. GPSET cannot be created in a zone. |
 
@@ -145,6 +146,8 @@ Read-only. These commands change nothing — use them freely.
 | <a id="new-equi-q"></a>`NEW EQUI $Q` | $Q after a command — its syntax in this build | Verified | The main scouting tool (but the grammar is incomplete: WRT is missing from POS $Q, yet it works). |
 | <a id="id"></a>`ID @` | Pick an element with a click in 3D | Verified | ID @ + click — the element becomes current. Esc does not leave the mode. |
 | <a id="syn"></a>`SYN` | This does NOT work | Fails | There is no such command: CP: Syntax error. |
+| <a id="desclash"></a>`DESCLASH …` | Clash checking | Documented | $Q of your build: CHECK, CHECKADD, BOXCHECK, EXCLUDE, LIMITS, WITHIN, CLEARANCE, TOUCHING, REPORT, CLASHLIST. Not run. |
+| <a id="clash"></a>`CLASH` | This does NOT work | Fails | CLASH $Q — CP: Syntax error. For clashes use DESCLASH. |
 
 ## Change
 
@@ -159,7 +162,7 @@ These write to the database. There is no UNDO command, but rollback exists and i
 | <a id="rename-new"></a>`RENAME /NEW` | The same | Verified | Works just like NAME. |
 | <a id="rename-old-new"></a>`RENAME /OLD /NEW` | This does NOT work | Fails | «(2,109) Undefined name», caret on the second name. There is no two-argument form: you rename by STANDING on the element. |
 | <a id="reorder-a-before-b"></a>`REORDER /A BEFORE /B` | Move within the list of members | Verified | Changes the order inside the owner, does not touch the elements: branches swapped places in Q MEM, coordinates unchanged. First what you move, then what it goes before; works with full names and with =ref of unnamed elements. Found in real public code; the 2.1 manual has no page for it. |
-| <a id="reorder-a-after-b"></a>`REORDER /A AFTER /B` | The same, but after the given element | Seen in code | The AFTER form was never run — build chains from BEFORE only. |
+| <a id="reorder-a-after-b"></a>`REORDER /A AFTER /B` | The same, but after the given element | Verified | Was C, B, A; REORDER /C AFTER /A — became B, A, C. The sort generator builds its chain from BEFORE. |
 | <a id="include-12345678-6393"></a>`INCLUDE =12345678/6393` | Move an element inside the current one | Verified | Takes a name or a reference. Does not change CE — stand on the receiving zone once. |
 | <a id="claim-pmlc-cwbran-t1-01-hier"></a>`CLAIM /PMLC-CWBRAN-T1/01 HIER` | Claim an element with its hierarchy | Verified |  |
 | <a id="unclaim-all"></a>`UNCLAIM ALL` | Release claims | Seen in code |  |

@@ -1,7 +1,7 @@
 {
  "about": "bracketPML register — generated, CC BY 4.0",
  "e3d": "2.1",
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "status": {
   "ok": {
    "name": "Verified",
@@ -47,13 +47,13 @@
    "id": 3,
    "title": "Create — equipment",
    "desc": "Equipment and its geometry: EQUI, SUBE, primitives and negative primitives.",
-   "n": 30
+   "n": 31
   },
   {
    "id": 4,
    "title": "Find and look",
    "desc": "Read-only. These commands change nothing — use them freely.",
-   "n": 22
+   "n": 24
   },
   {
    "id": 5,
@@ -775,6 +775,15 @@
    "key": "NEW GPSET"
   },
   {
+   "id": "new-loop-new-vertex",
+   "g": 3,
+   "cmd": "NEW LOOP / NEW VERTEX",
+   "what": "Outline of an extrusion (EXTRUSION) or a revolution (REVOLUTION), and its points",
+   "note": "A LOOP in an EXTR, four VERTEX with POS relative to the outline — a 1000×600×500 box by Q WVOL. For REVOLUTION the axis is the outline's X, N is the radius.",
+   "st": "ok",
+   "key": "NEW LOOP"
+  },
+  {
    "id": "new-pipe-new-bran",
    "g": 3,
    "cmd": "NEW PIPE / NEW BRAN",
@@ -991,6 +1000,24 @@
    "key": "SYN"
   },
   {
+   "id": "desclash",
+   "g": 4,
+   "cmd": "DESCLASH …",
+   "what": "Clash checking",
+   "note": "$Q of your build: CHECK, CHECKADD, BOXCHECK, EXCLUDE, LIMITS, WITHIN, CLEARANCE, TOUCHING, REPORT, CLASHLIST. Not run.",
+   "st": "doc",
+   "key": "DESCLASH"
+  },
+  {
+   "id": "clash",
+   "g": 4,
+   "cmd": "CLASH",
+   "what": "This does NOT work",
+   "note": "CLASH $Q — CP: Syntax error. For clashes use DESCLASH.",
+   "st": "bad",
+   "key": "CLASH"
+  },
+  {
    "id": "pos-e-8000-n-0-u-0",
    "g": 5,
    "cmd": "POS E 8000 N 0 U 0",
@@ -1058,8 +1085,8 @@
    "g": 5,
    "cmd": "REORDER /A AFTER /B",
    "what": "The same, but after the given element",
-   "note": "The AFTER form was never run — build chains from BEFORE only.",
-   "st": "ref",
+   "note": "Was C, B, A; REORDER /C AFTER /A — became B, A, C. The sort generator builds its chain from BEFORE.",
+   "st": "ok",
    "key": "REORDER"
   },
   {

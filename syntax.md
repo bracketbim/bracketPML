@@ -67,7 +67,7 @@ On a primitive POS is its centre; inside a SUBE — from the SUBE. On a cable tr
 |---|---|
 | `ATTR [ATTR …]` | One or more attributes in one line: Q NAME TYPE OWNER. |
 | `ATT · MEM · REF · POS` | All attributes · members with their =ref · the stable reference · the position (in the owner's system). |
-| `ATTR OF /NAME \| =REF` | Read an attribute of another element without moving to it. |
+| `ATTR OF /NAME \| =REF` | Read an attribute of another element without moving to it. One attribute per OF: in Q TYPE OWNER OF /X only OWNER is read from /X, TYPE comes from the current element. |
 | `POS WRT WORLD` | The position in world coordinates. |
 | `VAR !!x` | The content and type of a variable. |
 | `EVAR \|NAME\|` | An environment variable of E3D (not of Windows). |
@@ -160,12 +160,12 @@ There is no two-name form: RENAME /OLD /NEW → «(2,109) Undefined name».
 |---|---|
 | `WHAT BEFORE WHERE` | First what moves, then what it goes before. Full names with the slash, or $!!a / $!!b holding =ref of unnamed elements. |
 
-Only the order in the owner changes; coordinates stay. WHAT AFTER WHERE ran without an error, but the element already stood there — its effect is not seen yet.
+Only the order in the owner changes; coordinates stay. WHAT AFTER WHERE works too: C, B, A became B, A, C after REORDER /C AFTER /A.
 
 **Forms**
 
 - `REORDER /A BEFORE /B` — Verified · Move within the list of members
-- `REORDER /A AFTER /B` — Seen in code · The same, but after the given element
+- `REORDER /A AFTER /B` — Verified · The same, but after the given element
 
 ## `MARKDB` — Set a rollback mark
 

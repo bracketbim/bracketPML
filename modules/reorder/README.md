@@ -81,7 +81,7 @@ Stand on the **first** member of any owner with at least two members, then paste
 | `VAR !!x ACTTYPE` | Project element type (:EXTZONE) | Verified |
 | `NEXT` | To the next member of the same owner | Verified |
 | `REORDER /A BEFORE /B` | Move within the list of members | Verified |
-| `REORDER /A AFTER /B` | The same, but after the given element | Seen in code |
+| `REORDER /A AFTER /B` | The same, but after the given element | Verified |
 | `VAR !!x NAME` | Read an attribute of the current element into a variable | Verified |
 | `VAR !!eq COLLECT ALL EQUI WITH ( TYPE EQ 'EQUI' ) FOR CE` | Collect elements with a filter | Verified |
 | `VAR !!x OWNER` | An element's owner into a variable — then $!!x goes to it | Verified |

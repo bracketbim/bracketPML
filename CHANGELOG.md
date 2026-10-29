@@ -2,6 +2,13 @@
 
 ## 29 Oct 2026
 
+- New: `NEW LOOP / NEW VERTEX` — Outline of an extrusion (EXTRUSION) or a revolution (REVOLUTION), and its points (Verified)
+- New: `DESCLASH …` — Clash checking (Documented)
+- New: `CLASH` — This does NOT work (Fails)
+- `REORDER /A AFTER /B`: Seen in code → **Verified**
+
+## 29 Oct 2026
+
 - New: `NEW PIPE / NEW BRAN` — A pipe and its branch (Verified)
 - New: `NEW STRU / FRMW / SBFR / SCTN / GENSEC / PANE` — Steel: structure, framework, subframework, section, generic section, panel (Verified)
 - New: `MOVE …` — Move the current element (Documented)

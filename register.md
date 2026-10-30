@@ -4,9 +4,9 @@ Every PML command we know about, with its status. **Generated** from the source 
 
 | Status | Meaning | Rows |
 |---|---|---|
-| **Verified** | Tested in E3D 2.1, the result was checked. | 144 |
+| **Verified** | Tested in E3D 2.1, the result was checked. | 142 |
 | **Fails** | Tested in E3D 2.1 and gave an error — do not use; the row says what to use instead. | 11 |
-| **Macro only** | Works in a macro file or with Paste as Macro, not line by line. | 16 |
+| **Macro only** | Works in a macro file or with Paste as Macro, not line by line. | 15 |
 | **Documented** | In the AVEVA documentation or the $Q grammar; not tested in E3D yet. | 30 |
 | **Seen in code** | Appears in real PML code; not tested in E3D yet. | 8 |
 
@@ -101,7 +101,7 @@ Equipment and its geometry: EQUI, SUBE, primitives and negative primitives.
 | <a id="delete-equi"></a>`DELETE EQUI` | Delete the current equipment | Verified | Deleted it with all children; UNDODB brought it back. Check Q NAME first — be sure where you stand. |
 | <a id="new-nozzle"></a>`NEW NOZZLE` | Equipment nozzle | Verified | Created in an EQUI even without a specification — Catref Nulref, Temperature −100000degC. Its look in 3D and connecting to it were not checked. |
 | <a id="new-elconn"></a>`NEW ELCONN` | Electrical connection point | Verified | Created directly in an EQUI, POS works; by default Y is N and Z is U, Catref empty. Like a nozzle on a pipe — a cable connects to it. On real catalogue boxes the link to the catalogue is CATREF, not SPREF. Look in 3D and cable connection not checked. |
-| <a id="purpose-pmlc"></a>`PURPOSE PMLC` | A purpose mark to find your own elements later | Verified | Written without bars, Q PURP prints Purpose PMLC, and a Ctrl+C / Ctrl+V copy of the EQUI inherits it — keep that in mind when you filter by it. |
+| <a id="purpose-pmlc"></a>`PURPOSE PMLC` | A purpose mark to find your own elements later (works on equipment too) | Verified | Written without bars, Q PURP prints Purpose PMLC, and a Ctrl+C / Ctrl+V copy of the EQUI inherits it (run 17, block 4). The KNK node code and «Difference from model» write it as their last block |
 | <a id="level-1-3"></a>`LEVEL 1 3` | Drawing levels (e.g. hide a service zone from review models) | Verified | Q LEVEL prints Level 1 3; works right at creation. |
 | <a id="obst-1"></a>`OBST 1` | Obstruction level | Verified | Q OBST prints Obstruction 1. |
 | <a id="ori-y-is-n-and-z-is-e-45-u"></a>`ORI Y IS N AND Z IS E 45 U` | Rotate by an angle (a tilted element) | Verified | Q ORI prints the same form back. |
@@ -175,7 +175,6 @@ These write to the database. There is no UNDO command, but rollback exists and i
 | <a id="clearmark"></a>`CLEARMARK` | Clear rollback marks | Documented | In the $Q grammar; not run. |
 | <a id="endmarkdb"></a>`ENDMARKDB` | Close a mark's scope | Documented | In the $Q grammar; not run. |
 | <a id="unlock-all"></a>`UNLOCK ALL` | Unlock | Verified | Q LOCK afterwards — Lock false. |
-| <a id="purpose-pmlc-2"></a>`PURPOSE PMLC` | Mark an element as yours (works on equipment too) | Verified | Written, and a copy inherits it. |
 | <a id="move"></a>`MOVE …` | Move the current element | Documented | Grammar of the installed build ($Q): a direction E/W/N/S/U/D or X/Y/Z, ALONG, TOWARDS, FROM, points PH/PT/PA/PL. Not run yet. |
 | <a id="copy"></a>`COPY …` | Copy an element | Documented | Grammar of the installed build ($Q): LIKE, MEMBERS, ATTRIBUTES, ADJACENT, PREVIOUS / NEXT, FIRST / LAST. Not run yet. |
 | <a id="mirror-plane"></a>`MIRROR PLANE …` | Mirror | Documented | Grammar of the installed build ($Q): only PLANE after MIRROR. Not run yet. |
@@ -259,10 +258,8 @@ Works right in the Command Line. Anything beyond substitution lives in a macro f
 | <a id="p-x"></a>`$P $!!x` | Print the value | Verified |  |
 | <a id="cmd-q-name-then-cmd"></a>`!!cmd = 'Q NAME'   then   $!!cmd` | Run a command built as a string | Verified | The only way found to be dynamic without a macro. |
 | <a id="var-eq-collect-all-equi-with-type-eq-equi-for-ce"></a>`VAR !!eq COLLECT ALL EQUI WITH ( TYPE EQ 'EQUI' ) FOR CE` | Collect elements with a filter | Verified | Collects, but the result has no array methods: !!eq.Size() is an error. do !e values !!eq works. |
-| <a id="m-c-temp-t-mac-arg1-arg2"></a>`$M C:\Temp\t.mac arg1 arg2` | Run a macro with arguments | Verified | $1…$9 are available in the file. Non-Latin text in the file body reads correctly only if the file is saved in ANSI; UTF-8 breaks. |
 | <a id="if-then-endif"></a>`if … then … endif` | Condition | Macro only | Plain paste — PML: Invalid syntax. Through right-click → Paste as Macro it works. |
 | <a id="do-enddo"></a>`do … enddo` | Loop | Macro only | The same. |
-| <a id="handle-any-endhandle"></a>`handle any … endhandle` | Catch an error | Macro only | The same. |
 | <a id="var-x-owner"></a>`VAR !!x OWNER` | An element's owner into a variable — then $!!x goes to it | Verified | Returns '/name'. |
 | <a id="var-x-collect-all-cwbran-with-unset-desc-for-pml"></a>`VAR !x COLLECT ALL CWBRAN WITH (UNSET(DESC)) FOR /PMLC` | Collect with a condition on an attribute | Verified | Gave 2 of 6 — exactly the number without a description. Logical functions apply to attributes inside WITH. |
 | <a id="var-s-collect-all-site-for-world"></a>`VAR !s COLLECT ALL SITE FOR WORLD` | Collect across the whole database | Verified |  |
@@ -287,12 +284,12 @@ E3D 2.1 runs PML2 with full backward compatibility with PML1: one interpreter, b
 | <a id="break"></a>`break` | Leave the loop | Macro only | A 1…5 loop with break at 3 printed 1, 2. |
 | <a id="skip"></a>`skip` | Go to the next iteration | Macro only | A 1…4 loop with skip at 2 printed 1, 3, 4. |
 | <a id="break-if-skip-if"></a>`break if ( … ) / skip if ( … )` | Leave or skip on a condition | Macro only | Both work in a macro; a plain do with break if replaces do while. |
-| <a id="handle-any-endhandle-2"></a>`handle any … endhandle` | Catch any error | Macro only | Put it right after the line it guards. The error is caught and the macro goes on. |
+| <a id="handle-any-endhandle"></a>`handle any … endhandle` | Catch any error | Macro only | Put it right after the line it guards. The error is caught and the macro goes on. |
 | <a id="handle-41-64"></a>`handle (41,64)` | Catch a specific error by number | Documented | Not met in the corpus. Another number is tested — handle (2,109). |
 | <a id="elsehandle-none-elsehandle-any"></a>`elsehandle NONE / elsehandle ANY` | Handler branches: no error / any | Macro only | Both branches work in a macro. |
 | <a id="error-text"></a>`$!!error.text` | Text of the caught error | Macro only | The text of the caught error. q var !!error shows PUBLIC_ERROR with TEXT, LINE, COMMAND, CALLSTACK; there is no code member. |
 | <a id="return-error-1-could-not-run"></a>`return error 1 'Could not run'` | Raise your own error | Verified | The error text shows in the window, the macro stops. |
-| <a id="m-c-temp-t-mac-arg1-arg2-2"></a>`$M C:\Temp\t.mac arg1 arg2` | Run a macro from the Command Line | Verified | The only bridge between the command line and the language: the call itself works. |
+| <a id="m-c-temp-t-mac-arg1-arg2"></a>`$M C:\Temp\t.mac arg1 arg2` | Run a macro from the Command Line | Verified | The only bridge between the command line and the language: the call itself works. |
 | <a id="define-function-name"></a>`define function !!name` | A function in name.pmlfnc | Verified | Works from your own PMLLIB folder placed first in the list: after pml rehash the function from .pmlfnc ran. |
 | <a id="setup-form-name-exit"></a>`setup form !!name … exit` | A form with fields and buttons straight from a macro | Verified | Via Paste as Macro the form appeared without PMLLIB, buttons work — a field, !!CE.Name, q var, $M file.mac. define method after exit — Method not found: keep the logic in .mac files. |
 | <a id="endif"></a>`endif` | End of if (macro only) | Macro only | Plain paste — Invalid syntax; through Paste as Macro — works. |

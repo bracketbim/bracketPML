@@ -3,7 +3,11 @@
 <h1 align="center">bracketPML</h1>
 
 <p align="center"><b>PML for AVEVA E3D 2.1 — tested, not guessed.</b><br>
-Every command here is tested in AVEVA E3D 2.1. Nothing is written from memory.</p>
+168 of 206 commands ran in a real E3D 2.1 model — the rest are marked and waiting. Nothing is written from memory.</p>
+
+<p align="center">
+<a href="https://github.com/bracketbim/bracketPML/actions/workflows/verify.yml"><img src="https://github.com/bracketbim/bracketPML/actions/workflows/verify.yml/badge.svg" alt="verify"></a>
+</p>
 
 <p align="center">
 <a href="https://bracketbim.com/pml/">Search the library</a> ·
@@ -19,9 +23,9 @@ Every command here is tested in AVEVA E3D 2.1. Nothing is written from memory.</
 
 ---
 
-There is almost no public material on PML — and next to none on cable trays and cable supports. What exists is mostly «this should work». bracketPML is the opposite: a register of PML commands for AVEVA E3D 2.1, each one **tested in a real E3D 2.1 model**, with the exact answer E3D printed, and the traps found on the way.
+There is almost no public material on PML — and next to none on cable trays and cable supports. What exists is mostly «this should work». bracketPML is the opposite: a register of PML commands for AVEVA E3D 2.1, each one **either run in a real E3D 2.1 model or explicitly marked as not yet tested**, with the exact answer E3D printed, and the traps found on the way.
 
-**209 commands** in the register: **144 verified**, 11 documented failures, 16 macro-only, 30 from documentation and 8 from real code still waiting to be tested in E3D 2.1. Updated 29 Oct 2026.
+**206 commands** in the register: **142 verified**, 11 documented failures, 15 macro-only, 30 from documentation and 8 from real code still waiting to be tested in E3D 2.1. Updated 29 Oct 2026.
 
 ## How to read a status
 

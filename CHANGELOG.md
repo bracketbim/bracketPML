@@ -1,5 +1,15 @@
 # What is new
 
+## 31 Oct 2026
+
+- `PURPOSE PMLC`: the note was updated
+- `handle any … endhandle`: the note was updated
+- `$M C:\Temp\t.mac arg1 arg2`: the note was updated
+- Removed: `PURPOSE PMLC`
+- Removed: `handle any … endhandle`
+- Removed: `$M C:\Temp\t.mac arg1 arg2`
+
+
 ## 29 Oct 2026
 
 - New: `NEW LOOP / NEW VERTEX` — Outline of an extrusion (EXTRUSION) or a revolution (REVOLUTION), and its points (Verified)
@@ -7,7 +17,6 @@
 - New: `CLASH` — This does NOT work (Fails)
 - `REORDER /A AFTER /B`: Seen in code → **Verified**
 
-## 29 Oct 2026
 
 - New: `NEW PIPE / NEW BRAN` — A pipe and its branch (Verified)
 - New: `NEW STRU / FRMW / SBFR / SCTN / GENSEC / PANE` — Steel: structure, framework, subframework, section, generic section, panel (Verified)

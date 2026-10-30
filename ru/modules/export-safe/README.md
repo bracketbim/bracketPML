@@ -71,7 +71,6 @@ alpha log END
 | `$P $!!x` | Напечатать значение | Проверено |
 | `VAR !!eq COLLECT ALL EQUI WITH ( TYPE EQ 'EQUI' ) FOR CE` | Собрать элементы с фильтром | Проверено |
 | `do … enddo` | Цикл | Только макрос |
-| `handle any … endhandle` | Перехват ошибки | Только макрос |
 | `VAR !!x OWNER` | Владелец элемента в переменную — потом $!!x переходит к нему | Проверено |
 | `VAR !x COLLECT ALL CWBRAN WITH (UNSET(DESC)) FOR /PMLC` | Собрать с условием на атрибут | Проверено |
 | `VAR !s COLLECT ALL SITE FOR WORLD` | Собрать по всей базе | Проверено |

@@ -235,7 +235,6 @@ Non-Latin text in the file is read correctly only if the file is saved in ANSI.
 **Forms**
 
 - `$M C:\Temp\file.pmlmac` — Verified · The same, as a command
-- `$M C:\Temp\t.mac arg1 arg2` — Verified · Run a macro with arguments
 - `$M C:\Temp\t.mac arg1 arg2` — Verified · Run a macro from the Command Line
 
 ## `CABLAY` — Cable layout
@@ -487,8 +486,7 @@ A copy of the element made in E3D inherits it.
 
 **Forms**
 
-- `PURPOSE PMLC` — Verified · A purpose mark to find your own elements later
-- `PURPOSE PMLC` — Verified · Mark an element as yours (works on equipment too)
+- `PURPOSE PMLC` — Verified · A purpose mark to find your own elements later (works on equipment too)
 
 ## `NEXT` — Go to the next member
 
@@ -560,7 +558,6 @@ A plain paste gives «Invalid syntax» — use Paste as Macro. A syntax error of
 
 **Forms**
 
-- `handle any … endhandle` — Macro only · Catch an error
 - `handle any … endhandle` — Macro only · Catch any error
 - `handle (41,64)` — Documented · Catch a specific error by number
 

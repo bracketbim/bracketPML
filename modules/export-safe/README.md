@@ -71,7 +71,6 @@ alpha log END
 | `$P $!!x` | Print the value | Verified |
 | `VAR !!eq COLLECT ALL EQUI WITH ( TYPE EQ 'EQUI' ) FOR CE` | Collect elements with a filter | Verified |
 | `do … enddo` | Loop | Macro only |
-| `handle any … endhandle` | Catch an error | Macro only |
 | `VAR !!x OWNER` | An element's owner into a variable — then $!!x goes to it | Verified |
 | `VAR !x COLLECT ALL CWBRAN WITH (UNSET(DESC)) FOR /PMLC` | Collect with a condition on an attribute | Verified |
 | `VAR !s COLLECT ALL SITE FOR WORLD` | Collect across the whole database | Verified |

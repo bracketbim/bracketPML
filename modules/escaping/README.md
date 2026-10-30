@@ -64,6 +64,5 @@ One line in the probe is marked **not yet verified by us** — a bar inside sing
 | `CABLAY CEN` | This does NOT work | Fails |
 | `DESC \|text with spaces\|` | Write a description | Verified |
 | `NAME /NEW` | Rename the CURRENT element | Verified |
-| `$M C:\Temp\t.mac arg1 arg2` | Run a macro with arguments | Verified |
 | `$M C:\Temp\t.mac arg1 arg2` | Run a macro from the Command Line | Verified |
 

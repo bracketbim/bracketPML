@@ -59,7 +59,7 @@
    "id": 5,
    "title": "Change",
    "desc": "These write to the database. There is no UNDO command, but rollback exists and is verified: MARKDB |label| before the operation, UNDODB back to it, UNDODB n — n marks back. Its one limit is verified too: SAVEWORK erases the mark, after saving UNDODB answers «No mark to UNDO to». Order of work: mark, change, check, and only then SAVEWORK.",
-   "n": 31
+   "n": 30
   },
   {
    "id": 6,
@@ -89,7 +89,7 @@
    "id": 10,
    "title": "Variables and substitution",
    "desc": "Works right in the Command Line. Anything beyond substitution lives in a macro file — see the next section.",
-   "n": 16
+   "n": 14
   },
   {
    "id": 11,
@@ -661,8 +661,8 @@
    "id": "purpose-pmlc",
    "g": 3,
    "cmd": "PURPOSE PMLC",
-   "what": "A purpose mark to find your own elements later",
-   "note": "Written without bars, Q PURP prints Purpose PMLC, and a Ctrl+C / Ctrl+V copy of the EQUI inherits it — keep that in mind when you filter by it.",
+   "what": "A purpose mark to find your own elements later (works on equipment too)",
+   "note": "Written without bars, Q PURP prints Purpose PMLC, and a Ctrl+C / Ctrl+V copy of the EQUI inherits it (run 17, block 4). The KNK node code and «Difference from model» write it as their last block",
    "st": "ok",
    "key": "PURPOSE"
   },
@@ -1198,15 +1198,6 @@
    "key": "UNLOCK"
   },
   {
-   "id": "purpose-pmlc-2",
-   "g": 5,
-   "cmd": "PURPOSE PMLC",
-   "what": "Mark an element as yours (works on equipment too)",
-   "note": "Written, and a copy inherits it.",
-   "st": "ok",
-   "key": "PURPOSE"
-  },
-  {
    "id": "move",
    "g": 5,
    "cmd": "MOVE …",
@@ -1657,15 +1648,6 @@
    "key": "VAR"
   },
   {
-   "id": "m-c-temp-t-mac-arg1-arg2",
-   "g": 10,
-   "cmd": "$M C:\\Temp\\t.mac arg1 arg2",
-   "what": "Run a macro with arguments",
-   "note": "$1…$9 are available in the file. Non-Latin text in the file body reads correctly only if the file is saved in ANSI; UTF-8 breaks.",
-   "st": "ok",
-   "key": "$M"
-  },
-  {
    "id": "if-then-endif",
    "g": 10,
    "cmd": "if … then … endif",
@@ -1682,15 +1664,6 @@
    "note": "The same.",
    "st": "mac",
    "key": "DO"
-  },
-  {
-   "id": "handle-any-endhandle",
-   "g": 10,
-   "cmd": "handle any … endhandle",
-   "what": "Catch an error",
-   "note": "The same.",
-   "st": "mac",
-   "key": "HANDLE"
   },
   {
    "id": "var-x-owner",
@@ -1846,7 +1819,7 @@
    "key": "BREAK"
   },
   {
-   "id": "handle-any-endhandle-2",
+   "id": "handle-any-endhandle",
    "g": 11,
    "cmd": "handle any … endhandle",
    "what": "Catch any error",
@@ -1891,7 +1864,7 @@
    "key": "RETURN"
   },
   {
-   "id": "m-c-temp-t-mac-arg1-arg2-2",
+   "id": "m-c-temp-t-mac-arg1-arg2",
    "g": 11,
    "cmd": "$M C:\\Temp\\t.mac arg1 arg2",
    "what": "Run a macro from the Command Line",

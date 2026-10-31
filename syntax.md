@@ -16,7 +16,6 @@ The element becomes current (CE).
 **Forms**
 
 - `/PMLC-CWAY-T1` — Verified · Go to an element by name
-- `EQUIPMENT 2 of :EXTZONE /PMLC` — Verified · Go to an unnamed element by number
 - `=12345678/7844` — Verified · Go by stable reference
 
 ## `NEW` — Create an element inside the current one
@@ -110,7 +109,6 @@ FOR element takes everything under it, nested elements included.
 
 **Forms**
 
-- `VAR !!x ACTTYPE` — Verified · Project element type (:EXTZONE)
 - `VAR !!x NAME` — Verified · Read an attribute of the current element into a variable
 - `VAR !!eq COLLECT ALL EQUI WITH ( TYPE EQ 'EQUI' ) FOR CE` — Verified · Collect elements with a filter
 - `VAR !!x OWNER` — Verified · An element's owner into a variable — then $!!x goes to it

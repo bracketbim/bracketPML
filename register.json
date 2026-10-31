@@ -35,7 +35,7 @@
    "id": 1,
    "title": "Where to stand — navigation",
    "desc": "Almost every command works on the current element (CE). First stand on it, then act.",
-   "n": 8
+   "n": 7
   },
   {
    "id": 2,
@@ -53,7 +53,7 @@
    "id": 4,
    "title": "Find and look",
    "desc": "Read-only. These commands change nothing — use them freely.",
-   "n": 24
+   "n": 23
   },
   {
    "id": 5,
@@ -233,15 +233,6 @@
    "note": "Works after stepping into RPATH.",
    "st": "ok",
    "key": "POINTR"
-  },
-  {
-   "id": "equipment-2-of-extzone-pmlc",
-   "g": 1,
-   "cmd": "EQUIPMENT 2 of :EXTZONE /PMLC",
-   "what": "Go to an unnamed element by number",
-   "note": "The number counts ALL members of the zone and shifts when elements move.",
-   "st": "ok",
-   "key": "NAV"
   },
   {
    "id": "12345678-7844",
@@ -953,15 +944,6 @@
    "note": "Prints Orientation Y is N and Z is U.",
    "st": "ok",
    "key": "Q"
-  },
-  {
-   "id": "var-x-acttype",
-   "g": 4,
-   "cmd": "VAR !!x ACTTYPE",
-   "what": "Project element type (:EXTZONE)",
-   "note": "<STRING> ':EXTZONE', with the colon; TYPE of the same zone is ZONE.",
-   "st": "ok",
-   "key": "VAR"
   },
   {
    "id": "next",

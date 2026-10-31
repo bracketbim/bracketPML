@@ -66,7 +66,6 @@ alpha log END
 |---|---|---|
 | `alpha log /C:\Temp\log.txt OVERWRITE` | Write everything the window prints to a file | Verified |
 | `alpha log END` | Stop writing to the file | Verified |
-| `VAR !!x ACTTYPE` | Project element type (:EXTZONE) | Verified |
 | `VAR !!x NAME` | Read an attribute of the current element into a variable | Verified |
 | `$P $!!x` | Print the value | Verified |
 | `VAR !!eq COLLECT ALL EQUI WITH ( TYPE EQ 'EQUI' ) FOR CE` | Collect elements with a filter | Verified |

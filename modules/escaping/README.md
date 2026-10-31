@@ -8,15 +8,15 @@ When you generate PML from Excel, Python or a web page, every text value has to 
 
 ## The rules
 
-| Your text | Write it as | E3D stores | Status |
+| Rule | Write it as | E3D stores | Status |
 |---|---|---|---|
-| `cable tray 600` | `DESC \|cable tray 600\|` | `cable tray 600` | **Verified** |
-| `cable tray 600` | `DESC 'cable tray 600'` | `cable tray 600` | **Verified** — single quotes are equal to bars |
-| `price $5` | `DESC \|price $$5\|` | `price $5` | **Verified** — double every `$` |
-| `price $5` in a **macro**, not doubled | `DESC \|a$1b\|` | `ab` — **`$1` is eaten** as a macro argument | **Verified** |
-| `3/4" pipe` | `DESC \|3/4" pipe\|` | `3/4" pipe` | **Verified** — a double quote goes in as it is |
-| `CEN` (a text attribute) | `CABLAY \|CEN\|` | `CEN` | **Verified** — `CABLAY CEN` without bars is a syntax error |
-| `600` (a number attribute) | `VWIDTH 600` or `VWIDTH 600mm` | `600mm` | **Verified** — **no bars** on numbers: `VWIDTH \|600\|` is a syntax error |
+| Wrap a text in bars | `DESC \|cable tray 600\|` | `cable tray 600` | **Verified** |
+| Single quotes work the same as bars | `DESC 'cable tray 600'` | `cable tray 600` | **Verified** |
+| Double every `$` | `DESC \|price $$5\|` | `price $5` | **Verified** |
+| In a **macro** a single `$1` is eaten as an argument — the text is silently shorter | `DESC \|a$1b\|` | `ab` | **Verified** |
+| A double quote goes in as it is | `DESC \|3/4" pipe\|` | `3/4" pipe` | **Verified** |
+| A text attribute needs bars too: `CABLAY CEN` is a syntax error | `CABLAY \|CEN\|` | `CEN` | **Verified** |
+| A number takes **no bars** (`600` or `600mm`): `VWIDTH \|600\|` is a syntax error | `VWIDTH 600` | `600mm` | **Verified** |
 
 ### Two texts that cannot be written
 

@@ -78,7 +78,6 @@ Stand on the **first** member of any owner with at least two members, then paste
 | `Q $Q` | What the Q command accepts at all | Verified |
 | `Q PURP` | Purpose mark (PURPOSE) | Verified |
 | `Q ORI` | Orientation | Verified |
-| `VAR !!x ACTTYPE` | Project element type (:EXTZONE) | Verified |
 | `NEXT` | To the next member of the same owner | Verified |
 | `REORDER /A BEFORE /B` | Move within the list of members | Verified |
 | `REORDER /A AFTER /B` | The same, but after the given element | Verified |

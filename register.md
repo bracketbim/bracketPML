@@ -4,7 +4,7 @@ Every PML command we know about, with its status. **Generated** from the source 
 
 | Status | Meaning | Rows |
 |---|---|---|
-| **Verified** | Tested in E3D 2.1, the result was checked. | 142 |
+| **Verified** | Tested in E3D 2.1, the result was checked. | 140 |
 | **Fails** | Tested in E3D 2.1 and gave an error — do not use; the row says what to use instead. | 11 |
 | **Macro only** | Works in a macro file or with Paste as Macro, not line by line. | 15 |
 | **Documented** | In the AVEVA documentation or the $Q grammar; not tested in E3D yet. | 30 |
@@ -40,7 +40,6 @@ Almost every command works on the current element (CE). First stand on it, then 
 | <a id="pmlc-cway-t1"></a>`/PMLC-CWAY-T1` | Go to an element by name | Verified | The main way: just the name on its own line. |
 | <a id="rpath-1"></a>`RPATH 1` | Step into a member of the current element by type and number | Verified | Inside a branch: RPATH 1, then POINTR 2. |
 | <a id="pointr-2"></a>`POINTR 2` | Second route point | Verified | Works after stepping into RPATH. |
-| <a id="equipment-2-of-extzone-pmlc"></a>`EQUIPMENT 2 of :EXTZONE /PMLC` | Go to an unnamed element by number | Verified | The number counts ALL members of the zone and shifts when elements move. |
 | <a id="12345678-7844"></a>`=12345678/7844` | Go by stable reference | Verified | Works; Q NAME afterwards prints the name. A reference does not shift when elements move or are renamed — bulk operations go by =ref only. |
 | <a id="owner"></a>`OWNER` | Go up to the owner | Verified | From a SUBE to its EQUI. |
 | <a id="goto-owner"></a>`GOTO OWNER` | Follow a reference attribute | Verified | GOTO $Q prints what may follow: CFDPROPERTY, LFDPROPERTY, TFDPROPERTY, FRSTWORLD, PARENT, SPLPARENT, CLCONNECTIONS and «any reference attribute». So the command exists, but it follows a REFERENCE, not a name. From a SUBE it moved to its EQUI. |
@@ -141,7 +140,6 @@ Read-only. These commands change nothing — use them freely.
 | <a id="q-wvol"></a>`Q WVOL` | Element's world box — 6 numbers | Verified | «Wvolume x1 y1 z1 x2 y2 z2», in mm, without E/N/U, world coordinates. Works on GENSEC, EQUI, TEE. |
 | <a id="q-purp"></a>`Q PURP` | Purpose mark (PURPOSE) | Verified | Prints Purpose PMLC. |
 | <a id="q-ori"></a>`Q ORI` | Orientation | Verified | Prints Orientation Y is N and Z is U. |
-| <a id="var-x-acttype"></a>`VAR !!x ACTTYPE` | Project element type (:EXTZONE) | Verified | <STRING> ':EXTZONE', with the colon; TYPE of the same zone is ZONE. |
 | <a id="next"></a>`NEXT` | To the next member of the same owner | Verified | From ELCONN 1 to ELCONN 2 and 3. |
 | <a id="new-equi-q"></a>`NEW EQUI $Q` | $Q after a command — its syntax in this build | Verified | The main scouting tool (but the grammar is incomplete: WRT is missing from POS $Q, yet it works). |
 | <a id="id"></a>`ID @` | Pick an element with a click in 3D | Verified | ID @ + click — the element becomes current. Esc does not leave the mode. |

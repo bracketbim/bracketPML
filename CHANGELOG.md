@@ -2,6 +2,12 @@
 
 ## 31 Oct 2026
 
+- Removed: `EQUIPMENT 2 of :EXTZONE /PMLC`
+- Removed: `VAR !!x ACTTYPE`
+
+
+## 31 Oct 2026
+
 - `PURPOSE PMLC`: the note was updated
 - `handle any … endhandle`: the note was updated
 - `$M C:\Temp\t.mac arg1 arg2`: the note was updated

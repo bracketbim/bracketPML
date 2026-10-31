@@ -2,8 +2,7 @@
 
 ## 31 Oct 2026
 
-- Removed: `EQUIPMENT 2 of :EXTZONE /PMLC`
-- Removed: `VAR !!x ACTTYPE`
+- Removed: two rows about a project-specific element type
 
 
 ## 31 Oct 2026
